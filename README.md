@@ -20,3 +20,8 @@
 -Usuario: Registro, apuntarse a clases, selección y seguimiento de entrenamiento y dietas, compra de productos
 
 -Administrador: Registro, dar de alta clases, modificar clases, modificar horarios, crear entrenamientos, crear dietas e introducir       productos
+
+### Información de los gráficos
+-Asistencia a clases
+-Partes del cuerpo ejercitadas en función del entrenamiento
+-Urls de productos más visitados

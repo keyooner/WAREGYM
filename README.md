@@ -14,19 +14,19 @@
 - Usuario  
 - Clases  
 - Entrenamiento  
-- Nutrición
+- Dieta
+- Producto
  
 ### Funcionalidad avanzada:
-- Usuario: Registro, apuntarse a clases, selección y seguimiento de entrenamiento y dietas, compra de productos.
-
+- Usuario: Registro, apuntarse a clases, selección y seguimiento de entrenamiento y dietas.
 - Administrador: Registro, dar de alta clases, modificar clases, modificar horarios, crear entrenamientos, crear dietas e introducir productos.
+- App: Envio de correos para incentivar, clases recomendadas, entrenamientos recomendados.
 
 ### Información de los gráficos:
 - Asistencia a clases
 - Partes del cuerpo ejercitadas en función del entrenamiento
-- Urls de productos más visitados
 
 ### Tecnología que no se va a ver en el material:
 - Captcha
 - Registro con cuenta de google
-- Ubicación del gimnasio (google maps)
+- Correo electronico

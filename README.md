@@ -25,3 +25,8 @@
 -Asistencia a clases
 -Partes del cuerpo ejercitadas en función del entrenamiento
 -Urls de productos más visitados
+
+### Tecnología que no se va a ver en el material:
+-Captcha
+-Registro con cuenta de google
+-Ubicación del gimnasio (google maps)

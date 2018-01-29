@@ -17,10 +17,6 @@
 -Nutrición
  
  ### Funcionalidad avanzada:
--Usuario: Registro, apuntarse a clases, selección y seguimiento de entrenamiento y dietas, compra de productos.
--Administrador: Registro, dar de alta clases, modificar clases, modificar horarios, crear entrenamientos, crear dietas e introducir       productos.
- 
- 
- 
-  
-mm
+-Usuario: Registro, apuntarse a clases, selección y seguimiento de entrenamiento y dietas, compra de productos
+
+-Administrador: Registro, dar de alta clases, modificar clases, modificar horarios, crear entrenamientos, crear dietas e introducir       productos

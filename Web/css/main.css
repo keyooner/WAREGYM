@@ -214,6 +214,11 @@ p.lead {
    text-align: justify;
 }
 
+#waregym-title{
+    font: 25px arial, sans-serif;
+    color: black;
+}
+
 @media only screen and (max-width:800px) {
    p.lead {
       font-size: 1.8rem;

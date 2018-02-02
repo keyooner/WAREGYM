@@ -1575,7 +1575,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
    color: #0054a5;
 }
 
-.masonry .entry__meta a:hover, .masonry .entry__meta a:focus {
+.masonry .entry__meta a:hover {
    color: #000000;
 }
 

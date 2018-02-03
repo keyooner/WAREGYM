@@ -490,6 +490,11 @@ button, .btn {
    margin-bottom: 1.2rem;
 }
 
+.class-inscription {
+    list-style-type: none;
+    font: 30px Arial;
+}
+
 fieldset {
    margin-bottom: 1.5rem;
 }
@@ -3559,7 +3564,7 @@ footer h4::after {
  *
  * ------------------------------------------------------------------- */
 .s-content--narrow .s-content__header {
-   padding: 0 8rem;
+   padding-bottom: 20px 8rem;
 }
 
 .s-content--narrow h3.remove-top-margin {

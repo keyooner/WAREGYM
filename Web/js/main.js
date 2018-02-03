@@ -130,7 +130,7 @@
             e.stopPropagation();
         });
             
-        searchField.attr({placeholder: 'Type Keywords', autocomplete: 'off'});
+        searchField.attr({placeholder: 'Escribir palabras', autocomplete: 'off'});
     
     };
 

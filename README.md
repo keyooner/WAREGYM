@@ -58,3 +58,23 @@
 
 ![Cualquier usuario podrá ver los productos mejor valorizados y vendidos](https://github.com/keyooner/WAREGYM/blob/master/Productos.PNG "Productos")
 - Cualquier usuario podrá ver los productos mejor valorizados y vendidos
+
+### Diagrama de navegación:
+Header único y común a todas las páginas html de la aplicación, y por tanto accesible, con la siguiente jerarquía:
+- index
+- clases (desplegable, no página)
+       - inscripcion
+       - spinning
+       - body-combat
+       - moi-thai
+       - kick-boxing
+- entrenamientos (desplegable, no página)
+       - entrenamiento
+       - principiante
+       - medio
+       - avanzado
+       - experto
+- waregym
+- productos
+- contacto
+- login

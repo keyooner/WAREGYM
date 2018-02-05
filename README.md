@@ -32,4 +32,4 @@
 - Correo electronico
 
 ### Capturas de pantalla de la Web:
-![Se muestra diferente información de interés para el usuario](inicio.png "Página principal")
+![Se muestra diferente información de interés para el usuario](https://github.com/keyooner/WAREGYM/blob/master/Inicio.PNG "Página principal")

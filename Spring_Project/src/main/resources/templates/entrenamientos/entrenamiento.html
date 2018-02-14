@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Entrenamiento | Mi Entrenamiento</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/vendor.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/calendario.css">
+    <link rel="stylesheet" href="../css/theme2.css">
+    <link rel="stylesheet" href="../css/demo.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+
+
+    <!-- script
+    ================================================== -->
+    <script src="../js/modernizr.js"></script>
+    <script src="../js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top">
+
+    <!-- pageheader
+    ================================================== -->
+    <div class="s-pageheader">
+
+        <header class="header">
+            <div class="header__content row">
+
+                <div class="header__logo">
+                    <a class="logo" href="index.html">
+                        <img src="../images/logoGYM.png" alt="Homepage">
+                    </a>
+                </div>
+                <!-- end header__logo -->
+
+                <ul class="header__social">
+                    <li>
+                        <a href="https://es-es.facebook.com/FitnessMotivacion/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/fltness?lang=es" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/fitnessgirlsmotivation/?hl=es" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.pinterest.es/categories/health_fitness/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+                <!-- end header__social -->
+
+                <a class="header__search-trigger" href="#0"></a>
+
+                <div class="header__search">
+
+                    <form role="search" method="get" class="header__search-form" action="#">
+                        <label>
+                            <span class="hide-content">Buscar:</span>
+                            <input type="search" class="search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off">
+                        </label>
+                        <input type="submit" class="search-submit" value="Search">
+                    </form>
+
+                    <a href="#0" title="Close Search" class="header__overlay-close">Cerrar</a>
+
+                </div>
+                <!-- end header__search -->
+
+
+                <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
+
+                <nav class="header__nav-wrap">
+
+                    <h2 class="header__nav-heading h6">Navegación</h2>
+
+                    <ul class="header__nav">
+                        <li><a href="../index.html" title="">Inicio</a></li>
+                        <li class="has-children">
+                            <a href="#0" title="">Clases</a>
+                            <ul class="sub-menu">
+                                <li><a href="../clases/inscripcion.html">Apúntate</a></li>
+                                <li><a href="../clases/spinning.html">Spinning</a></li>
+                                <li><a href="../clases/body-combat.html">Body Combat</a></li>
+                                <li><a href="../clases/moi-thai.html">Moi-Thai</a></li>
+                                <li><a href="../clases/kick-boxing.html">Kick Boxing</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-children">
+                            <a href="#0" title="">Entrenamientos</a>
+                            <ul class="sub-menu">
+                                <li class="current"><a href="entrenamiento.html">Mi Entrenamiento</a></li>
+                                <li><a href="principiante.html">Principiante</a></li>
+                                <li><a href="medio.html">Medio</a></li>
+                                <li><a href="avanzado.html">Avanzado</a></li>
+                                <li><a href="experto.html">Experto</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../waregym.html" title="">Waregym</a></li>
+                        <li><a href="../productos.html" title="">Productos</a></li>
+                        <li><a href="../contacto.html" title="">Contacto</a></li>
+                        <li><a href="../login.html" title="">Iniciar Sesión</a></li>
+                    </ul>
+                    <!-- end header__nav -->
+
+                    <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Cerrar</a>
+
+                </nav>
+                <!-- end header__nav-wrap -->
+
+
+            </div>
+            <!-- header-content -->
+        </header>
+        <!-- header -->
+    </div>
+    <!-- end s-pageheader -->
+
+
+    <!-- s-content
+    ================================================== -->
+    <section class="s-content s-content--narrow s-content--no-padding-bottom">
+
+        <article class="row format-video">
+            <div class="s-content__header col-full">
+                <h1 class="s-content__header-title">
+                    MI ENTRENAMIENTO
+                </h1>
+            </div>
+            <!-- end s-content__header -->
+
+            <div class="calendario text-center">
+                <h2>CALENDARIO DE ENTRENAMIENTOS</h2>
+                <div id="caleandar" style="margin-left: 250px">
+
+                </div>
+
+                <script type="text/javascript" src="../js/caleandar.js"></script>
+                <script type="text/javascript" src="../js/demo.js"></script>
+            </div>
+            <!-- FIN CALENDARIO -->
+
+            <!-- FORMULARIO -->
+            <form>
+                <center>
+                    <div>
+                        <label style="display: inline-block" for="date">Día:</label>
+                        <input type="date" id="date">
+                    </div>
+                    <div>
+                        <label style="display: inline-block" for="level">Nivel:</label>
+                        <select name="level" id="levels">
+                            <option>Principiante</option>
+                            <option>Medio</option>
+                            <option>Avanzado</option>
+                            <option>Experto</option>
+                        </select>
+                    </div>
+                </center>
+                <table>
+                    <tr>
+                        <td></td>
+                        <td>Peso</td>
+                        <td></td>
+                        <td>Repeticiones</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Press de banca</label>
+                        </td>
+                        <td>
+                            <input class="form-control" type="text" maxlength="4" id="Ppdb">
+                        </td>
+                        <td>
+                            <label>Kg.</label>
+                        </td>
+                        <td>
+                            <input type="text" maxlength="3" id="Rpdb">
+                        </td>
+                        <td>
+                            <label>Rep.</label>
+                        </td>
+                        <tr>
+                            <td>
+                                <label>Jalón al pecho</label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="4" id="Pjap">
+                            </td>
+                            <td>
+                                <label>Kg.</label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="3" id="Rjap">
+                            </td>
+                            <td>
+                                <label>Rep.</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Elevaciones laterales</label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="4" id="Pel">
+                            </td>
+                            <td>
+                                <label>Kg.</label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="3" id="Rel">
+                            </td>
+                            <td>
+                                <label>Rep.</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Dominadas con lastre</label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="4" id="Pdcl">
+                            </td>
+                            <td>
+                                <label>Kg.</label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="3" id="Rdcl">
+                            </td>
+                            <td>
+                                <label>Rep.</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Prensa inclinada</label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="4" id="Ppi">
+                            </td>
+                            <td>
+                                <label>Kg.</label>
+                            </td>
+                            <td>
+                                <input type="text" maxlength="3" id="Rpi">
+                            </td>
+                            <td>
+                                <label>Rep.</label>
+                            </td>
+                        </tr>
+                </table>
+                <center>
+                    <button>Confirmar entrenamiento</button>
+                </center>
+            </form>
+
+            <!-- SEGUIMIENTO -->
+            <div>
+                <h2 style="text-align: center">SEGUIMIENTO DEL ENTRENAMIENTO</h2>
+                <div class="masonry" style="position: relative; height: 1388px; weigth: 2000px">
+
+                    <div class="grid-sizer"></div>
+
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">SESIONES TOTALES</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">3 </p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">SERIES TOTALES</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">12 </p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">PESO TOTAL</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">950 kg </p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">TIEMPO TOTAL DE ENTRENAMIENTO</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">20 minutos </p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">MAYOR CANTIDAD DE PESO LEVANTADO</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">50 kg </p>
+                                <p style="text-align: center;">17, Noviembre 2017</p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">MAYOR CANTIDAD DE SERIES</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">3 </p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">EJERCICIOS DIFERENTES REALIZADOS</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">7 </p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">EJERCICIO PREFERIDO</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">BODY-COMBAT </p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 100%">
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">SESIÓN DE EJERCICIOS MÁS LARGA</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">24</p>
+                                <p style="text-align: center; font-size-adjust: auto"> 3 Enero, 2018</p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+
+                </div>
+            </div>
+            <!-- end SEGUIMIENTO -->
+
+        </article>
+    </section>
+
+
+    <!-- s-footer
+    ================================================== -->
+    <footer class="s-footer">
+
+        <div class="s-footer__main">
+            <div class="row">
+
+                <div class="col-two md-four mob-full s-footer__sitelinks">
+
+                    <h4>Secciones</h4>
+
+                    <ul class="s-footer__linklist">
+                        <li><a href="../clases/inscripcion.html">Apúntate</a></li>
+                        <li><a href="../clases/spinning.html">Spinning</a></li>
+                        <li><a href="../clases/body-combat.html">Body Combat</a></li>
+                        <li><a href="../clases/moi-thai.html">Moi-Thai</a></li>
+                        <li><a href="../clases/kick-boxing.html">Kick Boxing</a></li>
+                    </ul>
+
+                </div>
+                <!-- end s-footer__archives -->
+
+                <div class="col-two md-four mob-full s-footer__social">
+
+                    <h4>Entrenamiento</h4>
+
+                    <ul class="s-footer__linklist">
+                        <li><a href="entrenamiento.html">Mi Entrenamiento</a></li>
+                        <li><a href="principiante.html">Principiante</a></li>
+                        <li><a href="medio.html">Medio</a></li>
+                        <li><a href="avanzado.html">Avanzado</a></li>
+                        <li><a href="experto.html">Experto</a></li>
+                    </ul>
+
+                </div>
+                <!-- end s-footer__archives -->
+
+                <div class="col-two md-four mob-full s-footer__social">
+
+                    <h4>Entrenamiento</h4>
+
+                    <ul class="s-footer__linklist">
+                        <li><a href="principiante.html">Principiante</a></li>
+                        <li><a href="medio.html">Medio</a></li>
+                        <li><a href="avanzado.html">Avanzado</a></li>
+                        <li><a href="experto.html">Experto</a></li>
+                    </ul>
+
+                </div>
+                <!-- end s-footer__social -->
+
+                <div class="col-five md-full end s-footer__subscribe">
+
+                    <h4>Contacto</h4>
+
+                    <p>Telf: (+34) 123 456 789
+                        <br> Ubicación: C/Serrano n º 1, Madrid, España </p>
+
+                </div>
+                <!-- end s-footer__subscribe -->
+
+            </div>
+        </div>
+        <!-- end s-footer__main -->
+
+        <div class="s-footer__bottom">
+            <div class="row">
+                <div class="col-full">
+                    <div class="s-footer__copyright">
+                        <span>© Copyright Waregym 2018</span>
+                    </div>
+
+                    <div class="go-top">
+                        <a class="smoothscroll" title="Back to Top" href="#top"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end s-footer__bottom -->
+
+    </footer>
+    <!-- end s-footer -->
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>
+<script>
+    var actual = new Date();
+
+    function mostrarCalendario(year, month) {
+        var now = new Date(year, month - 1, 1);
+        var last = new Date(year, month, 0);
+        var primerDiaSemana = (now.getDay() == 0) ? 7 : now.getDay();
+        var ultimoDiaMes = last.getDate();
+        var dia = 0;
+        var resultado = "<tr bgcolor='silver'>";
+        var diaActual = 0;
+        console.log(ultimoDiaMes);
+
+        var last_cell = primerDiaSemana + ultimoDiaMes;
+
+        // hacemos un bucle hasta 42, que es el máximo de valores que puede
+        // haber... 6 columnas de 7 dias
+        for (var i = 1; i <= 42; i++) {
+            if (i == primerDiaSemana) {
+                // determinamos en que dia empieza
+                dia = 1;
+            }
+            if (i < primerDiaSemana || i >= last_cell) {
+                // celda vacia
+                resultado += "<td>&nbsp;</td>";
+            } else {
+                // mostramos el dia
+                if (dia == actual.getDate() && month == actual.getMonth() + 1 && year == actual.getFullYear())
+                    resultado += "<td class='hoy'>" + dia + "</td>";
+                else
+                    resultado += "<td>" + dia + "</td>";
+                dia++;
+            }
+            if (i % 7 == 0) {
+                if (dia > ultimoDiaMes)
+                    break;
+                resultado += "</tr><tr>\n";
+            }
+        }
+        resultado += "</tr>";
+
+        var meses = Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+
+        // Calculamos el siguiente mes y año
+        nextMonth = month + 1;
+        nextYear = year;
+        if (month + 1 > 12) {
+            nextMonth = 1;
+            nextYear = year + 1;
+        }
+
+        // Calculamos el anterior mes y año
+        prevMonth = month - 1;
+        prevYear = year;
+        if (month - 1 < 1) {
+            prevMonth = 12;
+            prevYear = year - 1;
+        }
+
+        document.getElementById("calendar").getElementsByTagName("caption")[0].innerHTML = "<div>" + meses[month - 1] + " / " + year + "</div><div><a onclick='mostrarCalendario(" + prevYear + "," + prevMonth + ")'>&lt;</a> <a onclick='mostrarCalendario(" + nextYear + "," + nextMonth + ")'>&gt;</a></div>";
+        document.getElementById("calendar").getElementsByTagName("tbody")[0].innerHTML = resultado;
+    }
+
+    mostrarCalendario(actual.getFullYear(), actual.getMonth() + 1);
+</script>

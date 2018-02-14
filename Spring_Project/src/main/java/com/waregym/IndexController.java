@@ -12,4 +12,12 @@ public class IndexController {
 	 
 		return "index";
 	 }
+	
+	@RequestMapping("/login")
+	 public String login(Model model) {
+	 
+		return "login";
+	 }
+	
+	
 }

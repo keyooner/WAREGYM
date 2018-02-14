@@ -24,4 +24,22 @@ public class IndexController {
 	 
 		return "contacto";
 	 }
+	
+	@RequestMapping("/productos")
+	 public String productos(Model model) {
+	 
+		return "productos";
+	 }
+	
+	@RequestMapping("/signup")
+	 public String signup(Model model) {
+	 
+		return "signup";
+	 }
+	
+	@RequestMapping("/waregym")
+	 public String waregym(Model model) {
+	 
+		return "waregym";
+	 }
 }

@@ -19,5 +19,9 @@ public class IndexController {
 		return "login";
 	 }
 	
-	
+	@RequestMapping("/contacto")
+	 public String contacto(Model model) {
+	 
+		return "contacto";
+	 }
 }

@@ -6,7 +6,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Contacto</title>
+    <title>Bienvenido | WAREGYM</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -36,14 +36,14 @@
 
     <!-- pageheader
     ================================================== -->
-    <div class="s-pageheader">
+    <section class="s-pageheader s-pageheader--home">
 
         <header class="header">
             <div class="header__content row">
 
                 <div class="header__logo">
                     <a class="logo" href="index.html">
-                        <img src="images/logoGYM.png" alt="Homepage">
+                        <img href="index.html" src="images/logoGYM.png" alt="Homepage">
                     </a>
                 </div>
                 <!-- end header__logo -->
@@ -70,8 +70,8 @@
 
                     <form role="search" method="get" class="header__search-form" action="#">
                         <label>
-                            <span class="hide-content">Search for:</span>
-                            <input type="search" class="search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off">
+                            <span class="hide-content">Buscar por:</span>
+                            <input type="search" class="search-field" placeholder="Type Keywords" value="" name="s" title="Buscar por:" autocomplete="off">
                         </label>
                         <input type="submit" class="search-submit" value="Search">
                     </form>
@@ -89,14 +89,15 @@
                     <h2 class="header__nav-heading h6">Site Navigation</h2>
 
                     <ul class="header__nav">
-                        <li><a href="index.html" title="">Inicio</a></li>
+                        <li class="current"><a href="index.html" title="">Inicio</a></li>
                         <li class="has-children">
-                            <a href="#0" title="">Clases</a>
+                            <a href="#0">Clases</a>
                             <ul class="sub-menu">
                                 <li><a href="clases/inscripcion.html">Apúntate</a></li>
                                 <li><a href="clases/spinning.html">Spinning</a></li>
                                 <li><a href="clases/body-combat.html">Body Combat</a></li>
                                 <li><a href="clases/moi-thai.html">Moi-Thai</a></li>
+                                <li><a href="clases/kick-boxing.html">Kick Boxing</a></li>
                             </ul>
                         </li>
                         <li class="has-children">
@@ -106,11 +107,12 @@
                                 <li><a href="entrenamientos/principiante.html">Principiante</a></li>
                                 <li><a href="entrenamientos/medio.html">Medio</a></li>
                                 <li><a href="entrenamientos/avanzado.html">Avanzado</a></li>
-                                <li><a href="entrenamientos/.html">Experto</a></li>
+                                <li><a href="entrenamientos/experto.html">Experto</a></li>
                             </ul>
                         </li>
                         <li><a href="waregym.html" title="">Waregym</a></li>
-                        <li class="current"><a href="contacto.html" title="">Contacto</a></li>
+                        <li><a href="productos.html" title="">Productos</a></li>
+                        <li><a href="contacto.html" title="">Contacto</a></li>
                         <li><a href="login.html" title="">Iniciar Sesión</a></li>
                     </ul>
                     <!-- end header__nav -->
@@ -125,99 +127,168 @@
         </header>
         <!-- header -->
 
-    </div>
+        <!-- end s-pageheader -->
+
+
+        <!-- s-content
+    ================================================== -->
+        <div class="pageheader-content row">
+            <div class="col-full">
+
+                <div class="featured">
+
+                    <div class="featured__column featured__column--big">
+                        <div class="entry" style="background-image:url('images/thumbs/featured/featured-fitnessworld.jpg');">
+
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="waregym.html">Fitness</a></span>
+
+                                <h1><a href="waregym.html" title="">¿POR QUÉ WAREGYM?</a></h1>
+
+                            </div>
+                            <!-- end entry__content -->
+
+                        </div>
+                        <!-- end entry -->
+                    </div>
+                    <!-- end featured__big -->
+
+                    <div class="featured__column featured__column--small">
+
+                        <div class="entry" style="background-image:url('images/index/oferta-gym.jpg');">
+
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="waregym.html">Precios</a></span>
+
+                                <h1><a href="waregym.html" title="">¡OFERTA ESPECIAL!</a></h1>
+
+                            </div>
+                            <!-- end entry__content -->
+
+                        </div>
+                        <!-- end entry -->
+
+                        <div class="entry" style="background-image:url('images/thumbs/featured/featured-workout.jpg');">
+
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="entrenamientos/entrenamiento.html">Rutinas</a></span>
+
+                                <h1><a href="entrenamientos/entrenamiento.html" title="">Entrenamiento personal</a></h1>
+
+                            </div>
+                            <!-- end entry__content -->
+
+                        </div>
+                        <!-- end entry -->
+
+                    </div>
+                    <!-- end featured__small -->
+                </div>
+                <!-- end featured -->
+
+            </div>
+            <!-- end col-full -->
+        </div>
+        <!-- end pageheader-content row -->
+
+    </section>
     <!-- end s-pageheader -->
 
 
     <!-- s-content
     ================================================== -->
-    <section class="s-content s-content--narrow">
+    <section class="s-content">
 
-        <div class="row">
+        <div class="row masonry-wrap">
+            <div class="masonry">
 
-            <div class="s-content__header col-full">
-                <h1 class="s-content__header-title">
-                    Contacta con nosotros
-                </h1>
-            </div>
-            <!-- end s-content__header -->
+                <div class="grid-sizer"></div>
 
-            <div class="s-content__media col-full">
-                <div id="map-wrap">
-                    <div id="map-container"></div>
-                    <div id="map-zoom-in"></div>
-                    <div id="map-zoom-out"></div>
-                </div>
-            </div>
-            <!-- end s-content__media -->
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
 
-            <div class="col-full s-content__main">
-
-                <p class="lead">PUEDES ENCONTRAR LA INFORMACIÓN DE NUESTROS CENTROS EN LA PÁGINA WEB.</p>
-
-                <p>Si tu pregunta está relacionada con nuestras actividades dirigidas consulta el horario de actividades dirigidas en la sección "Clases". Si quieres saber más sobre la actividad podrás encontrar toda la información en "Entrenamientos".
-                </p>
-
-                <p>Si tu pregunta está relacionada con nuestras cuotas, podrás consultar nuestras cuotas y promociones en la página principal.
-                </p>
-
-                <div class="row">
-                    <div class="col-six tab-full">
-                        <h3>Donde entontrarnos</h3>
-
-                        <p>
-                            Calle Serrano 1
-                            <br> Madrid
-                            <br> 28901
-                        </p>
-
+                    <div class="entry__thumb">
+                        <a href="productos.html" class="entry__thumb-link">
+                            <img src="images/thumbs/masonry/product-400.jpg" srcset="images/thumbs/masonry/product-400.jpg 1x, images/thumbs/masonry/product-800.jpg 2x" alt="">
+                        </a>
                     </div>
 
-                    <div class="col-six tab-full">
-                        <h3>Información de contacto</h3>
-
-                        <p>contacto@waregym.com
-                            <br> info@waregym.com
-                            <br> Phone: (+1) 123 456
-                        </p>
-
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            <h1 class="entry__title"><a href="productos.html">Nuestros productos</a></h1>
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                Conoce en un clic los productos que tu cuerpo necesita.
+                            </p>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="productos.html">Nutrición</a> 
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <!-- end row -->
 
-                <h3>Déjanos tu mensaje</h3>
+                </article>
+                <!-- end article -->
 
-                <form name="cForm" id="cForm" method="post" action="">
-                    <fieldset>
+                <article class="masonry__brick entry format-quote" data-aos="fade-up">
 
-                        <div class="form-field">
-                            <input name="nombre" type="text" id="cName" class="full-width" placeholder="Nombre" value="">
+                    <div class="entry__thumb">
+                        <blockquote>
+                            <p>Si eres persistente, lo conseguirás. If you are consistent, you will keep it.</p>
+
+                            <cite>Bruce Lee</cite>
+                        </blockquote>
+                    </div>
+
+                </article>
+                <!-- end article -->
+
+                <article class="masonry__brick entry format-quote" data-aos="fade-up">
+
+                    <div class="entry__thumb">
+                        <blockquote>
+                            <p>Un ganador es un perdedor que nunca se dió por vencido.</p>
+
+                            <cite>Arnold Schwarzenegger</cite>
+                        </blockquote>
+                    </div>
+
+                </article>
+                <!-- end article -->
+
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+
+                    <div class="entry__thumb">
+                        <a href="waregym.html" class="entry__thumb-link">
+                            <img src="images/thumbs/masonry/gym-400.jpg" srcset="images/thumbs/masonry/gym-400.jpg 1x, images/thumbs/masonry/gym-800.jpg 2x" alt="">
+                        </a>
+                    </div>
+
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            <h1 class="entry__title"><a href="waregym.html">Instalaciones únicas</a></h1>
                         </div>
-
-                        <div class="form-field">
-                            <input name="movil" type="number" id="cName" class="full-width" placeholder="Móvil" value="">
+                        <div class="entry__excerpt">
+                            <p>
+                                Échale un vistazo a nuestras instalaciones y precios.
+                            </p>
                         </div>
-
-                        <div class="form-field">
-                            <input name="email" type="text" id="cEmail" class="full-width" placeholder="Correo electrónico" value="">
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="waregym.html">Salud</a>
+                            </span>
                         </div>
+                    </div>
 
-                        <div class="message form-field">
-                            <textarea name="mensaje" id="cMessage" class="full-width" placeholder="Tu mensaje"></textarea>
-                        </div>
-
-                        <button type="submit" value="Enviar" class="submit btn btn--primary full-width">Enviar</button>
-
-                    </fieldset>
-                </form>
-                <!-- end form -->
-
+                </article>
+                <!-- end article -->
 
             </div>
-            <!-- end s-content__main -->
-
+            <!-- end masonry -->
         </div>
-        <!-- end row -->
+        <!-- end masonry-wrap -->
 
     </section>
     <!-- s-content -->
@@ -232,11 +303,12 @@
 
                 <div class="col-two md-four mob-full s-footer__sitelinks">
 
-                    <h4>Quick Links</h4>
+                    <h4>Secciones</h4>
 
                     <ul class="s-footer__linklist">
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="waregym.html">Waregym</a></li>
+                        <li><a href="productos.html">Productos</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                         <li><a href="login.html">Iniciar Sesión</a></li>
                     </ul>
@@ -264,7 +336,7 @@
                     <h4>Entrenamiento</h4>
 
                     <ul class="s-footer__linklist">
-                        <li><a href="entrenamientos/entrenamiento.html">Apúntate</a></li>
+                        <li><a href="entrenamientos/entrenamiento.html">Mi Entrenamiento</a></li>
                         <li><a href="entrenamientos/principiante.html">Principiante</a></li>
                         <li><a href="entrenamientos/medio.html">Medio</a></li>
                         <li><a href="entrenamientos/avanzado.html">Avanzado</a></li>
@@ -278,7 +350,8 @@
 
                     <h4>Contacto</h4>
 
-                    <p>Telf: (+34) 123 456 789 <br> Ubicación: C/Serrano n º 1, Madrid, España </p>
+                    <p>Telf: (+34) 123 456 789
+                        <br> Ubicación: C/Serrano n º 1, Madrid, España </p>
 
                 </div>
                 <!-- end s-footer__subscribe -->
@@ -325,7 +398,6 @@
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="js/main.js"></script>
 
 </body>

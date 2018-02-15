@@ -24,7 +24,7 @@ public class IndexController {
 	
 	@RequestMapping("/contacto")
 	 public String contacto(Model model) {
-	 
+		
 		return "contacto";
 	 }
 	

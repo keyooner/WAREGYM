@@ -1,5 +1,8 @@
 package com.waregym;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,7 +48,15 @@ public class IndexController {
 	
 	@RequestMapping("/clases/body-combat")
 	 public String bodyCombat(Model model) {
-	 
+		
+		List<String> days = Arrays.asList("HORA","Lunes", "Miercoles", "Viernes");
+		model.addAttribute("days", days);
+		
+		List<String> hours = Arrays.asList("11:00","13:00","17:30");
+		model.addAttribute("hours",hours);
+		
+		model.addAttribute("class", "X");
+		
 		return "/clases/body-combat";
 	 }
 	

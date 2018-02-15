@@ -206,30 +206,29 @@
                 <table class="table table-sm">
                     <thead>
                         <tr>
-                            <th style="text-align:center" scope="col">Días</th>
-                            <th style="text-align:center" scope="col">Lunes</th>
-                            <th style="text-align:center" scope="col">Miércoles</th>
-                            <th style="text-align:center" scope="col">Viernes</th>
-                        </tr>
+                        {{#days}}
+                            <th style="text-align:center" scope="col">{{.}}</th>
+                        {{/days}}
+                        </tr> 
                     </thead>
                     <tbody>
                         <tr>
                             <th style="text-align:center" scope="row">11:00</th>
-                            <td style="text-align:center">X</td>
-                            <td style="text-align:center">X</td>
+                            <td style="text-align:center">{{class}}</td>
+                            <td style="text-align:center">{{class}}</td>
                             <td style="text-align:center"></td>
                         </tr>
                         <tr>
                             <th style="text-align:center" scope="row">13:00</th>
                             <td style="text-align:center"></td>
-                            <td style="text-align:center">X</td>
-                            <td style="text-align:center">X</td>
+                            <td style="text-align:center">{{class}}</td>
+                            <td style="text-align:center">{{class}}</td>
                         </tr>
                         <tr>
                             <th style="text-align:center" scope="row">18:30</th>
-                            <td style="text-align:center">X</td>
-                            <td style="text-align:center">X</td>
-                            <td style="text-align:center">X</td>
+                            <td style="text-align:center">{{class}}</td>
+                            <td style="text-align:center">{{class}}</td>
+                            <td style="text-align:center">{{class}}</td>
                         </tr>
                     </tbody>
                 </table>

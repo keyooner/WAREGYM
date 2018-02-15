@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 @Controller
 public class IndexController {
 	
@@ -24,9 +23,8 @@ public class IndexController {
 	 }
 	
 	@RequestMapping("/contacto")
-	public String guardarContacto(Model model, Contacto contacto) {
-
-		model.addAttribute("contacto", contacto);
+	 public String contacto(Model model) {
+	 
 		return "contacto";
 	 }
 	

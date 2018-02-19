@@ -1,4 +1,4 @@
-package com.waregym;
+package com.waregym.ClasesJava;
 
 public class Formulario {
 	

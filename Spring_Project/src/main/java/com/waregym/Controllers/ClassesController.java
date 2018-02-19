@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class ClasesController {
+public class ClassesController {
 	
 	@RequestMapping("/clases/body-combat")
 	 public String bodyCombat(Model model) {

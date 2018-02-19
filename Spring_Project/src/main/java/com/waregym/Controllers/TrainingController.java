@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class EntrenamientosController {
+public class TrainingController {
 
 	@RequestMapping("/entrenamientos/avanzado")
 	 public String avanzado(Model model) {

@@ -1,19 +1,21 @@
 package com.waregym.ClassesJava;
 
-public class Class {
-	
+public class Activity {
+
+	private Integer id;
 	private String name;
 	private String[] images;
 	private String description;
 	private String development;
 	private String benefit;
 	
-	public Class() {
+	public Activity() {
 		this.images = new String[3];
 	}
 	
-	public Class(String name, String image1, String image2, String image3, 
+	public Activity(String name, String image1, String image2, String image3, 
 		String description, String development, String benefit) {
+		
 		this.name = name;
 		this.images = new String[3];
 		this.images[0] = image1;
@@ -22,6 +24,14 @@ public class Class {
 		this.description = description;
 		this.development = development;
 		this.benefit = benefit;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -63,6 +73,4 @@ public class Class {
 	public void setBenefit(String benefit) {
 		this.benefit = benefit;
 	}
-
-
 }

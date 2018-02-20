@@ -6,7 +6,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Clases | Body Combat</title>
+    <title>Clases | Añadir Clase</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -94,10 +94,9 @@
                             <a href="#0" title="">Clases</a>
                             <ul class="sub-menu">
                                 <li><a href="inscripcion.html">Apúntate</a></li>
-                                <li><a href="spinning.html">Spinning</a></li>
-                                <li class="current"><a href="body-combat.html">Body Combat</a></li>
-                                <li><a href="moi-thai.html">Moi-Thai</a></li>
-                                <li><a href="kick-boxing.html">Kick Boxing</a></li>
+                                {{#activities}}
+                                <li><a href="{{id}}-{{name}}.html">{{name}}</a></li>
+                                {{/activities}}
                             </ul>
                         </li>
                         <li class="has-children">
@@ -136,29 +135,29 @@
     <section class="s-content s-content--narrow s-content--no-padding-bottom">
 
         <center>
-            <form id="newClass">
+            <form action="clase_añadida" method="post">
                 <label style="display: inline-block">Nombre de la clase:</label>
-                <input type="text">
+                <input type="text" name="name">
                 <label style="display: inline-block">Descripción:</label>
-                <textarea id="DescriptionInput" form="newClass" style="width: 80%; height: 100px; padding: 12px 20px; box-sizing: border-box; border: 2px solid #ccc; resize: none;"></textarea>
+                <textarea name="description" style="width: 80%; height: 100px; padding: 12px 20px; box-sizing: border-box; border: 2px solid #ccc; resize: none;"></textarea>
                 <label style="display: inline-block">Desarrollo:</label>
-                <textarea id="DevelopmentInput" form="newClass" style="width: 80%; height: 100px; padding: 12px 20px; box-sizing: border-box; border: 2px solid #ccc; resize: none;"></textarea>
+                <textarea name="development" style="width: 80%; height: 100px; padding: 12px 20px; box-sizing: border-box; border: 2px solid #ccc; resize: none;"></textarea>
                 <label style="display: inline-block">Beneficios:</label>
-                <textarea id="BenefitsInput" form="newClass" style="width: 80%; height: 100px; padding: 12px 20px; box-sizing: border-box; border: 2px solid #ccc; resize: none;"></textarea>
+                <textarea name="benefit" style="width: 80%; height: 100px; padding: 12px 20px; box-sizing: border-box; border: 2px solid #ccc; resize: none;"></textarea>
                 <button>Subir imagen</button>
+            	<div>
+                	<img src="images/spinning-4.jpg" srcset="images/spinning-4.jpg 2000w, 
+                                         images/spinning-4.jpg 1000w, 
+                                         images/spinning-4.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+                	<img src="images/spinning-4.jpg" srcset="images/spinning-4.jpg 2000w, 
+                                         images/spinning-4.jpg 1000w, 
+                                         images/spinning-4.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+                	<img src="images/spinning-4.jpg" srcset="images/spinning-4.jpg 2000w, 
+                                         images/spinning-4.jpg 1000w, 
+                                         images/spinning-4.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+            	</div>
+            	<button type="submit">Añadir Clase</button>
             </form>
-            <div>
-                <img src="images/spinning-4.jpg" srcset="images/spinning-4.jpg 2000w, 
-                                         images/spinning-4.jpg 1000w, 
-                                         images/spinning-4.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
-                <img src="images/spinning-4.jpg" srcset="images/spinning-4.jpg 2000w, 
-                                         images/spinning-4.jpg 1000w, 
-                                         images/spinning-4.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
-                <img src="images/spinning-4.jpg" srcset="images/spinning-4.jpg 2000w, 
-                                         images/spinning-4.jpg 1000w, 
-                                         images/spinning-4.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
-            </div>
-            <button>Añadir Clase</button>
         </center>
 
 

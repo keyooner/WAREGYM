@@ -6,7 +6,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Clases | {{class.name}}</title>
+    <title>Clase | {{activity.name}}</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -22,6 +22,8 @@
 
     <!-- script
     ================================================== -->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="../js/activities.js"></script>
     <script src="../js/modernizr.js"></script>
     <script src="../js/pace.min.js"></script>
 
@@ -93,10 +95,11 @@
                         <li class="has-children">
                             <a href="#0" title="">Clases</a>
                             <ul class="sub-menu">
+                            	<li><a href="añadir_clase">Añadir Clase</a></li>
                                 <li><a href="inscripcion.html">Apúntate</a></li>
-                                {{#classes}}
-                                <li><a href="spinning.html">{{.name}}</a></li>
-                                {{/classes}}
+                                {{#activities}}
+                                <li><a href="{{id}}-{{name}}.html">{{name}}</a></li>
+                                {{/activities}}
                             </ul>
                         </li>
                         <li class="has-children">
@@ -138,7 +141,7 @@
 
             <div class="s-content__header col-full">
                 <h1 class="s-content__header-title">
-                    {{class.name}}
+                    {{activity.name}}
                 </h1>
             </div>
             <!-- end s-content__header -->
@@ -169,15 +172,15 @@
             <div class="col-full s-content__main">
 
                 <div class="text-center">
-                    <h1 class="lead">¿Qué es el {{class.name}}?</h1>
+                    <h1 class="lead">¿Qué es el {{activity.name}}?</h1>
                 </div>
 
-                <p class="lead">{{class.description}}</p>
+                <p class="lead">{{activity.description}}</p>
 
                 <div class="text-center">
                     <h1 class="lead">Desarrollo de una clase</h1>
 
-                    <p class="lead">{{class.development}}</p>
+                    <p class="lead">{{activity.development}}</p>
 
                     <img src="images/body-combat-4.jpg" srcset="images/body-combat-4.jpg 2000w, images/body-combat-4.jpg 1000w, images/body-combat-4.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
 
@@ -185,7 +188,7 @@
                         <h1 class="lead">Beneficios</h1>
                     </div>
 
-                    <p class="lead">{{class.benefits}}</p>
+                    <p class="lead">{{activity.benefit}}</p>
 
                     <div class="text-center">
                         <h1 class="lead">Horarios</h1>

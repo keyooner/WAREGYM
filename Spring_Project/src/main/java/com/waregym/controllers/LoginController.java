@@ -1,15 +1,15 @@
-package com.waregym.Controllers;
+package com.waregym.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class SignUpController {
+public class LoginController {
 
-	@RequestMapping("/signup")
-	 public String signup(Model model) {
+	@RequestMapping("/login")
+	 public String login(Model model) {
 	 
-		return "signup";
+		return "login";
 	 }
 }

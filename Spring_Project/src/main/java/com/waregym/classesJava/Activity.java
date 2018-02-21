@@ -1,4 +1,4 @@
-package com.waregym.ClassesJava;
+package com.waregym.classesJava;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

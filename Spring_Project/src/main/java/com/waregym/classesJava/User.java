@@ -1,4 +1,4 @@
-package com.waregym.ClassesJava;
+package com.waregym.classesJava;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +16,9 @@ public class User {
 	private String name;
 	private String email;
 	private String password;
+	
+	
+	public User() {}
 	
 	public User(Long id, Integer type, String name, String email, String password) {
 		super();

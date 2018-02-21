@@ -1,15 +1,15 @@
-package com.waregym.Controllers;
+package com.waregym.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class WaregymController {
+public class ContactController {
 
-	@RequestMapping("/waregym")
-	 public String waregym(Model model) {
-	 
-		return "waregym";
+	@RequestMapping("/contacto")
+	 public String contacto(Model model) {
+		
+		return "contacto";
 	 }
 }

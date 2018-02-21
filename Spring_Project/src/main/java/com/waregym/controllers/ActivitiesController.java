@@ -1,4 +1,4 @@
-package com.waregym.Controllers;
+package com.waregym.controllers;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.waregym.ClassesJava.Activity;
-import com.waregym.Repositories.ActivityRepository;
+import com.waregym.classesJava.Activity;
+import com.waregym.repositories.ActivityRepository;
 
 @Controller
 public class ActivitiesController {

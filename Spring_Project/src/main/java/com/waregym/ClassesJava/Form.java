@@ -16,7 +16,6 @@ public class Form {
 		this.text = text;
 	}
 
-
 	public String getName() {
 		return name;
 	}

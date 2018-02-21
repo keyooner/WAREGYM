@@ -1,8 +1,17 @@
 package com.waregym.ClassesJava;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class User {
 	
-	private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	
 	private Integer type;
 	private String name;
 	private String email;
@@ -15,14 +24,6 @@ public class User {
 		this.name = name;
 		this.email = email;
 		this.password = password;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public Integer getType() {

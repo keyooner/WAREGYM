@@ -1,9 +1,16 @@
 package com.waregym.ClassesJava;
 
-public class Activity {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-	private Integer id;
+@Entity
+public class Activity {
+	
+	@Id
 	private String name;
+	
 	private String[] images;
 	private String description;
 	private String development;
@@ -24,14 +31,6 @@ public class Activity {
 		this.description = description;
 		this.development = development;
 		this.benefit = benefit;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getName() {

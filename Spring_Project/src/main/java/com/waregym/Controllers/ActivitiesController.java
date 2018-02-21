@@ -1,12 +1,7 @@
 package com.waregym.Controllers;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -18,17 +13,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.waregym.ClassesJava.Activity;
+import com.waregym.Repositories.ActivityRepository;
 
 @Controller
 public class ActivitiesController {
 	
-	private Map<Integer,Activity> activities = new ConcurrentHashMap<>();
-	private AtomicInteger id = new AtomicInteger();
+	@Autowired
+	ActivityRepository activities;
 	
 	@RequestMapping("clases/añadir_clase")
-	public String newActivity(Model model, Activity activity) {
-		
-		model.addAttribute("activities", activities.values());
+	public String newActivity(Model model) {
 		
 		return "new_activity";
 	}
@@ -36,26 +30,20 @@ public class ActivitiesController {
 	@RequestMapping("clases/clase_añadida")
 	public String addActivity(Model model, Activity activity) {
 		
-		Integer activityId = id.getAndIncrement();
-		
-		activity.setId(activityId);
-		
-		activities.put(activityId, activity);
+		activities.save(activity);
 		
 		model.addAttribute("activity", activity);
-		model.addAttribute("activities", activities.values());
 		
 		return "activity_template";
 	}
 	
-	@RequestMapping("clases/{id}-{name}")
-	 public String showActivity(Model model, @PathVariable int id, @PathVariable String name) {
+	@RequestMapping("clases/{name}")
+	 public String showActivity(Model model, @PathVariable String name) {
 		
-		Activity activity = activities.get(id);
+		Activity activity = activities.getOne(name);
 		
-		model.addAttribute("activity", activity);
-		model.addAttribute("activities", activities.values());
-	 
+		model.addAttribute("activity",activity);
+		
 		return "activity_template";
 	 }
 	

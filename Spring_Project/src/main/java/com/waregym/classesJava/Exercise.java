@@ -17,7 +17,8 @@ public class Exercise {
 	private int reps;
 	
 	public Exercise() {}
-	
+
+
 	public Exercise(String name, int weight, int reps) {
 		
 		this.name = name;

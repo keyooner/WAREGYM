@@ -1,26 +1,29 @@
 package com.waregym.classesJava;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Activity {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	
 	private String name;
+	
 	private String[] images;
 	private String description;
 	private String development;
 	private String benefit;
 	
-	public Activity() {
-		this.images = new String[3];
-	}
+	
+	@ManyToMany(mappedBy="activities")
+	 private List<User> users;	 
+	
+	public Activity() {}
 	
 	public Activity(String name, String image1, String image2, String image3, 
 		String description, String development, String benefit) {
@@ -33,6 +36,7 @@ public class Activity {
 		this.description = description;
 		this.development = development;
 		this.benefit = benefit;
+		this.users = new ArrayList<>();	
 	}
 
 	public String getName() {
@@ -74,4 +78,13 @@ public class Activity {
 	public void setBenefit(String benefit) {
 		this.benefit = benefit;
 	}
+	
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+	
 }

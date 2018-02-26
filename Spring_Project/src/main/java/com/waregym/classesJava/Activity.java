@@ -17,13 +17,16 @@ public class Activity {
 	private String description;
 	private String development;
 	private String benefit;
+	private String date;
+	private String time;
+	
 	
 	public Activity() {
 		this.images = new String[3];
 	}
 	
 	public Activity(String name, String image1, String image2, String image3, 
-		String description, String development, String benefit) {
+		String description, String development, String benefit, String date, String time) {
 		
 		this.name = name;
 		this.images = new String[3];
@@ -33,6 +36,8 @@ public class Activity {
 		this.description = description;
 		this.development = development;
 		this.benefit = benefit;
+		this.date = date;
+		this.time = time;
 	}
 
 	public String getName() {
@@ -73,5 +78,21 @@ public class Activity {
 
 	public void setBenefit(String benefit) {
 		this.benefit = benefit;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 }

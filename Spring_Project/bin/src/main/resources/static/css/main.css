@@ -145,6 +145,10 @@ h6,
     text-rendering: optimizeLegibility;
 }
 
+#boton-plus{
+    border-radius: 80px 80px;
+}
+
 h1,
 .h1,
 h2,

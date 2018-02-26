@@ -89,11 +89,11 @@
                         <li class="has-children">
                             <a href="#0" title="">Clases</a>
                             <ul class="sub-menu">
-                            <li><a href="clases/inscripcion.html">Apúntate</a></li>
-                            <li><a href="clases/spinning.html">Spinning</a></li>
-                            <li><a href="clases/body-combat.html">Body Combat</a></li>
-                            <li><a href="clases/moi-thai.html">Moi-Thai</a></li>
-                            <li><a href="clases/kick-boxing.html">Kick Boxing</a></li>
+                            	<li><a href="clases/añadir_clase">Añadir Clase</a></li>
+                                <li><a href="clases/inscripcion.html">Apúntate</a></li>
+                                {{#activities}}
+                                <li><a href="clases/{{id}}-{{name}}.html">{{name}}</a></li>
+                                {{/activities}}
                             </ul>
                         </li>
                         <li class="has-children">
@@ -369,6 +369,30 @@
                             </span>
                         </div>
                     </div>
+                    
+                     <ul class="sub-menu">
+                        <li><a href="inscripcion.html">Apúntate</a></li>
+                        {{#products}}
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="entry__title"><a href="single-standard.html">{{name}}</a></h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                   {{description}} 
+                                </p>
+                                <p class="lead">
+                                    Valoración: {{value}}  
+                                </p>
+                            </div>
+                            <div class="entry__meta">
+                                <span class="entry__meta-links">
+                                    <a href="{{link}}">Enlace Compra</a> 
+                                </span>
+                            </div>
+                        </div>
+                        {{/products}}
+                     </ul>
     
                 </article> <!-- end article -->
 

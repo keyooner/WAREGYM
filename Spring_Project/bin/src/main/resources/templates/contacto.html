@@ -93,10 +93,11 @@
                         <li class="has-children">
                             <a href="#0" title="">Clases</a>
                             <ul class="sub-menu">
+                                <li><a href="clases/añadir_clase">Añadir Clase</a></li>
                                 <li><a href="clases/inscripcion.html">Apúntate</a></li>
-                                <li><a href="clases/spinning.html">Spinning</a></li>
-                                <li><a href="clases/body-combat.html">Body Combat</a></li>
-                                <li><a href="clases/moi-thai.html">Moi-Thai</a></li>
+                                {{#activities}}
+                                <li><a href="clases/{{id}}-{{name}}.html">{{name}}</a></li>
+                                {{/activities}}
                             </ul>
                         </li>
                         <li class="has-children">
@@ -110,6 +111,7 @@
                             </ul>
                         </li>
                         <li><a href="waregym.html" title="">Waregym</a></li>
+                        <li><a href="/productos" title="">Productos</a></li>
                         <li class="current"><a href="contacto.html" title="">Contacto</a></li>
                         <li><a href="login.html" title="">Iniciar Sesión</a></li>
                     </ul>
@@ -191,22 +193,22 @@
                     <fieldset>
 
                         <div class="form-field">
-                            <input name="cName" type="text" id="cName" class="full-width" placeholder="Nombre" value="">
+                            <input name="nombre" type="text" id="cName" class="full-width" placeholder="Nombre" value="">
                         </div>
 
                         <div class="form-field">
-                            <input name="cMovil" type="number" id="cName" class="full-width" placeholder="Móvil" value="">
+                            <input name="movil" type="number" id="cName" class="full-width" placeholder="Móvil" value="">
                         </div>
 
                         <div class="form-field">
-                            <input name="cEmail" type="text" id="cEmail" class="full-width" placeholder="Correo electrónico" value="">
+                            <input name="email" type="text" id="cEmail" class="full-width" placeholder="Correo electrónico" value="">
                         </div>
 
                         <div class="message form-field">
-                            <textarea name="cMessage" id="cMessage" class="full-width" placeholder="Tu mensaje"></textarea>
+                            <textarea name="mensaje" id="cMessage" class="full-width" placeholder="Tu mensaje"></textarea>
                         </div>
 
-                        <button type="submit" class="submit btn btn--primary full-width">Enviar</button>
+                        <button type="submit" value="Enviar" class="submit btn btn--primary full-width">Enviar</button>
 
                     </fieldset>
                 </form>

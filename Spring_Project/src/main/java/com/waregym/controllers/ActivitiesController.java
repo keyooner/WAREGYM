@@ -24,6 +24,8 @@ public class ActivitiesController {
 	@RequestMapping("clases/añadir_clase")
 	public String newActivity(Model model) {
 		
+		model.addAttribute("activities", activities.findAll());
+		
 		return "new_activity";
 	}
 	
@@ -33,23 +35,27 @@ public class ActivitiesController {
 		activities.save(activity);
 		
 		model.addAttribute("activity", activity);
+		model.addAttribute("activities", activities.findAll());
 		
 		return "activity_template";
 	}
 	
-	@RequestMapping("clases/{name}")
-	 public String showActivity(Model model, @PathVariable String name) {
+	@RequestMapping("clases/{id}-{name}")
+	 public String showActivity(Model model, @PathVariable long id, @PathVariable String name) {
 		
-		Activity activity = activities.getOne(name);
+		Activity activity = activities.findOne(id);
 		
 		model.addAttribute("activity",activity);
+		model.addAttribute("activities", activities.findAll());
 		
 		return "activity_template";
 	 }
 	
 	@RequestMapping("clases/inscripcion")
 	 public String inscripcion(Model model) {
+		
+		model.addAttribute("activities", activities.findAll());
 	 
-		return "/clases/inscripcion";
+		return "inscripcion";
 	 }
 }

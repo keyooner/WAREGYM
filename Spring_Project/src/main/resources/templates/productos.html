@@ -369,6 +369,30 @@
                             </span>
                         </div>
                     </div>
+                    
+                     <ul class="sub-menu">
+                        <li><a href="inscripcion.html">Apúntate</a></li>
+                        {{#products}}
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="entry__title"><a href="single-standard.html">{{name}}</a></h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                   {{description}} 
+                                </p>
+                                <p class="lead">
+                                    Valoración: {{value}}  
+                                </p>
+                            </div>
+                            <div class="entry__meta">
+                                <span class="entry__meta-links">
+                                    <a href="{{link}}">Enlace Compra</a> 
+                                </span>
+                            </div>
+                        </div>
+                        {{/products}}
+                     </ul>
     
                 </article> <!-- end article -->
 

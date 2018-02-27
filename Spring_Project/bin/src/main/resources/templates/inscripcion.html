@@ -89,11 +89,11 @@
                         <li class="has-children">
                             <a href="inscripcion.html" title="">Clases</a>
                             <ul class="sub-menu">
+                            <li><a href="añadir_clase">Añadir Clase</a></li>
                             <li class="current"><a href="inscripcion.html">Apúntate</a></li>	
-                            <li><a href="spinning.html">Spinning</a></li>
-                            <li><a href="body-combat.html">Body Combat</a></li>
-                            <li><a href="moi-thai.html">Moi-Thai</a></li>
-                            <li><a href="kick-boxing.html">Kick Boxing</a></li>
+                            {{#activities}}
+                                <li><a href="{{id}}-{{name}}.html">{{name}}</a></li>
+                            {{/activities}}
                             </ul>
                         </li>
                         <li class="has-children">

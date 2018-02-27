@@ -144,8 +144,15 @@
                 <textarea name="development" style="width: 80%; height: 100px; padding: 12px 20px; box-sizing: border-box; border: 2px solid #ccc; resize: none;"></textarea>
                 <label style="display: inline-block">Beneficios:</label>
                 <textarea name="benefit" style="width: 80%; height: 100px; padding: 12px 20px; box-sizing: border-box; border: 2px solid #ccc; resize: none;"></textarea>
-                <button>Subir imagen</button>
-            	<div>
+            	<div class="row">
+            		<h2>Imagenes</h2>
+            		<form action="/image/upload" method="post" enctype="multipart/form-data">
+						<label>Imagen 1</label><input type="file" name="file" />
+						<label>Imagen 2</label><input type="file" name="file" />
+						<label>Imagen 3</label><input type="file" name="file" />
+					</form>
+            	</div>
+            	<div class="row">
                 	<img src="images/spinning-4.jpg" srcset="images/spinning-4.jpg 2000w, 
                                          images/spinning-4.jpg 1000w, 
                                          images/spinning-4.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
@@ -156,6 +163,43 @@
                                          images/spinning-4.jpg 1000w, 
                                          images/spinning-4.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
             	</div>
+            	<div class="row">
+            		<h2>Horario</h2>
+	            	<table>
+	                    <tr>
+	                    	<td>Hora</td>
+	                        <td>Lunes</td>
+	                        <td>Martes</td>
+	                        <td>Miércoles</td>
+	                        <td>Jueves</td>
+	                        <td>Viernes</td>
+	                    </tr>
+	                    <tr>
+	                    	<td>10:00</td>
+	                        <td><input type="checkbox"></td>
+	                        <td><input type="checkbox"></td>
+	                        <td><input type="checkbox"></td>
+	                        <td><input type="checkbox"></td>
+	                        <td><input type="checkbox"></td>
+	                    </tr>
+	                    <tr>
+	                    	<td>12:00</td>
+	                        <td><input type="checkbox"></td>
+	                        <td><input type="checkbox"></td>
+	                        <td><input type="checkbox"></td>
+	                        <td><input type="checkbox"></td>
+	                        <td><input type="checkbox"></td>
+	                    </tr>
+	                    <tr>
+	                    	<td>17:00</td>
+	                        <td><input type="checkbox"></td>
+	                        <td><input type="checkbox"></td>
+	                        <td><input type="checkbox"></td>
+	                        <td><input type="checkbox"></td>
+	                        <td><input type="checkbox"></td>
+	                    </tr>
+	                </table>
+                </div>
             	<button type="submit">Añadir Clase</button>
             </form>
         </center>

@@ -13,20 +13,22 @@ public class Activity {
 	private long id;
 	
 	private String name;
-	private String[] images;
+	private Image[] images;
 	private String description;
 	private String development;
 	private String benefit;
+	private int[][] schedule;
 	
 	public Activity() {
-		this.images = new String[3];
+		this.images = new Image[3];
+		this.schedule = new int[5][3];
 	}
 	
-	public Activity(String name, String image1, String image2, String image3, 
-		String description, String development, String benefit) {
+	public Activity(String name, Image image1, Image image2, Image image3, 
+		String description, String development, String benefit, int[][] schedule) {
 		
 		this.name = name;
-		this.images = new String[3];
+		this.images = new Image[3];
 		this.images[0] = image1;
 		this.images[1] = image2;
 		this.images[2] = image3;
@@ -43,11 +45,11 @@ public class Activity {
 		this.name = name;
 	}
 
-	public String[] getImages() {
+	public Image[] getImages() {
 		return images;
 	}
 
-	public void setImages(String[] images) {
+	public void setImages(Image[] images) {
 		this.images = images;
 	}
 

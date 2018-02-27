@@ -40,14 +40,6 @@ public class ImageManagerController {
 		}
 	}
 
-	@RequestMapping("/")
-	public String index(Model model) {
-		
-		model.addAttribute("images", images.values());
-		
-		return "index";
-	}
-
 	@RequestMapping(value = "/image/upload", method = RequestMethod.POST)
 	public String handleFileUpload(Model model, @RequestParam("imageTitle") String imageTitle,
 			@RequestParam("file") MultipartFile file) {

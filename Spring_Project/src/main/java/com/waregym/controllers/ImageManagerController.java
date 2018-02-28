@@ -39,7 +39,7 @@ public class ImageManagerController {
 			Files.createDirectories(FILES_FOLDER);
 		}
 	}
-
+	
 	@RequestMapping(value = "/image/upload", method = RequestMethod.POST)
 	public String handleFileUpload(Model model, @RequestParam("imageTitle") String imageTitle,
 			@RequestParam("file") MultipartFile file) {
@@ -74,6 +74,7 @@ public class ImageManagerController {
 	// NOTE: The url format "/image/{fileName:.+}" avoid Spring MVC remove file
 	// extension.
 
+	/*
 	@RequestMapping("/image/{fileName:.+}")
 	public void handleFileDownload(@PathVariable String fileName, HttpServletResponse res)
 			throws FileNotFoundException, IOException {
@@ -89,6 +90,8 @@ public class ImageManagerController {
 			res.sendError(404, "File" + fileName + "(" + image.toAbsolutePath() + ") does not exist");
 		}
 	}
+	*/
+	
 
 }
 

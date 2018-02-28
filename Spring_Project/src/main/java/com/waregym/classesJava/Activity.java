@@ -13,28 +13,25 @@ public class Activity {
 	private long id;
 	
 	private String name;
-	private Image[] images;
+	private String image1;
+	private String image2;
+	private String image3;
 	private String description;
 	private String development;
 	private String benefit;
 	private int[][] schedule;
 	
 	public Activity() {
-		this.images = new Image[3];
 		this.schedule = new int[5][3];
 	}
 	
-	public Activity(String name, Image image1, Image image2, Image image3, 
-		String description, String development, String benefit, int[][] schedule) {
+	public Activity(String name, String description, String development, String benefit) {
 		
 		this.name = name;
-		this.images = new Image[3];
-		this.images[0] = image1;
-		this.images[1] = image2;
-		this.images[2] = image3;
 		this.description = description;
 		this.development = development;
 		this.benefit = benefit;
+		this.schedule = new int[5][3];
 	}
 
 	public String getName() {
@@ -45,12 +42,28 @@ public class Activity {
 		this.name = name;
 	}
 
-	public Image[] getImages() {
-		return images;
+	public String getImage1() {
+		return image1;
 	}
 
-	public void setImages(Image[] images) {
-		this.images = images;
+	public void setImage1(String image1) {
+		this.image1 = image1;
+	}
+
+	public String getImage2() {
+		return image2;
+	}
+
+	public void setImage2(String image2) {
+		this.image2 = image2;
+	}
+
+	public String getImage3() {
+		return image3;
+	}
+
+	public void setImage3(String image3) {
+		this.image3 = image3;
 	}
 
 	public String getDescription() {

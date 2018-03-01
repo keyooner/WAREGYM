@@ -110,7 +110,13 @@
                             </ul>
                         </li>
                         <li><a href="../waregym.html" title="">Waregym</a></li>
-                        <li><a href="/productos" title="">Productos</a></li>
+                        <li class="has-children">
+                            <a href="#0" title="">Productos</a>
+                            <ul class="sub-menu">
+                            	<li><a href="/nuevoProducto">Añadir producto</a></li>
+                                <li><a href="/productos">Productos disponibles</a></li>
+                            </ul>
+                        </li>
                         <li><a href="../contacto.html" title="">Contacto</a></li>
                         <li><a href="../login.html" title="">Iniciar Sesión</a></li>
                     </ul>
@@ -135,8 +141,7 @@
     <section class="s-content s-content--narrow s-content--no-padding-bottom">
 
         <center>
-            <form action="youu" method="post">
-                
+            <form action="producto_añadido" method="post" enctype="multipart/form-data">
                 <label style="display: inline-block">Tipo de producto:</label>
                 <input type="text" name="type">
                 <label style="display: inline-block">Nombre:</label>
@@ -145,14 +150,9 @@
                 <input style="width: 4%" type="text" name="value">
                 <label style="display: inline-block">Enlace:</label>
                 <input style="width: 50%;" type="text" name="link">
-                <label style="display: inline-block">Imagen:</label>
-                <textarea style="width: 80%; height: 100px; padding: 12px 20px; box-sizing: border-box; border: 2px solid #ccc; resize: none;"></textarea>
-                <button>Subir imagen</button>
-            	
-                <button type="submit">Añadir Producto</button>
+                <label>Imagen:</label><input type="file" name="file" />
+                <p><button type="submit">Añadir Producto</button>
             </form>
-            
-            <a href="/index"><button type="submit">Añadir Producto</button></a>
         </center>
 
 

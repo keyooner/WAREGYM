@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
@@ -50,12 +51,14 @@ public class ActivitiesController {
 	
 	@RequestMapping(value = "clases/clase_añadida", method = RequestMethod.POST)
 	public String addActivity(Model model, Activity activity, 
-			@RequestParam("file") MultipartFile[] files)  {
+			@RequestParam("file") MultipartFile[] files,
+			@RequestParam("schedule") String[] schedule)  {
 
 		String[] fileName = new String[3];
 		File[] uploadedFiles = new File[3];
+		String[][] activitySchedule = new String[5][3];
 		
-		for(int i=0; i<3; i++) {
+		for (int i=0; i<3; i++) {
 			
 			fileName[i] = "image-" + activity.getName() + "-" + (i+1) + ".jpg";
 			
@@ -77,6 +80,19 @@ public class ActivitiesController {
 		activity.setImage1(fileName[0]);
 		activity.setImage2(fileName[1]);
 		activity.setImage3(fileName[2]);
+		
+		for (int j=0; j<15; j++) {
+			
+			activitySchedule[j%5][j/5] = "";
+}
+		
+		for (int k=0; k<schedule.length; k++) {
+					
+					activitySchedule[Integer.parseInt(schedule[k])%5][Integer.parseInt(schedule[k])/5] = "X";
+		}
+		
+		activity.setSchedule(activitySchedule);
+		
 		activities.save(activity);
 					
 		model.addAttribute("activity", activity);

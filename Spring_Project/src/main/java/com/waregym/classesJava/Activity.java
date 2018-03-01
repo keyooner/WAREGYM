@@ -19,10 +19,10 @@ public class Activity {
 	private String description;
 	private String development;
 	private String benefit;
-	private int[][] schedule;
+	private String[][] schedule;
 	
 	public Activity() {
-		this.schedule = new int[5][3];
+		this.schedule = new String[5][3];
 	}
 	
 	public Activity(String name, String description, String development, String benefit) {
@@ -31,7 +31,7 @@ public class Activity {
 		this.description = description;
 		this.development = development;
 		this.benefit = benefit;
-		this.schedule = new int[5][3];
+		this.schedule = new String[5][3];
 	}
 
 	public String getName() {
@@ -89,4 +89,14 @@ public class Activity {
 	public void setBenefit(String benefit) {
 		this.benefit = benefit;
 	}
+
+	public String[][] getSchedule() {
+		return schedule;
+	}
+
+	public void setSchedule(String[][] schedule) {
+		this.schedule = schedule;
+	}
+	
+	
 }

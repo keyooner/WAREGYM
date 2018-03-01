@@ -107,7 +107,13 @@
                             </ul>
                         </li>
                         <li><a href="waregym.html" title="">Waregym</a></li>
-                        <li class="current"><a href="productos.html" title="">Productos</a></li>
+                        <li class="has-children">
+                            <a href="#0" title="">Productos</a>
+                            <ul class="sub-menu">
+                            	<li><a href="/productos/nuevoProducto">Añadir producto</a></li>
+                                <li><a href="/productos">Productos disponibles</a></li>
+                            </ul>
+                        </li>
                         <li><a href="contacto.html" title="">Contacto</a></li>
                         <li><a href="login.html" title="">Iniciar Sesión</a></li>
                     </ul> <!-- end header__nav -->
@@ -370,31 +376,40 @@
                         </div>
                     </div>
                     
-                     <ul class="sub-menu">
-                        <li><a href="inscripcion.html">Apúntate</a></li>
-                        {{#products}}
-                        <div class="entry__text">
-                            <div class="entry__header">
-                                <h1 class="entry__title"><a href="single-standard.html">{{name}}</a></h1>
-                            </div>
-                            <div class="entry__excerpt">
-                                <p>
-                                   {{description}} 
-                                </p>
-                                <p class="lead">
-                                    Valoración: {{value}}  
-                                </p>
-                            </div>
-                            <div class="entry__meta">
-                                <span class="entry__meta-links">
-                                    <a href="{{link}}">Enlace Compra</a> 
-                                </span>
-                            </div>
-                        </div>
-                        {{/products}}
-                     </ul>
+                </article> <!-- end article --> 
+                
+                {{#products}}
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+                        
+                    <div class="entry__thumb">
+                        <a href="{{link}}" target="_blank" class="entry__thumb-link">
+                            <img src="images/productos/aminoacidos_2.png" 
+                                    srcset="images/productos/aminoacidos_2.png 1x, images/productos/aminoacidos_2.png 2x" alt="">
+                        </a>
+                    </div>
     
-                </article> <!-- end article -->
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            <h1 class="entry__title"><a href="single-standard.html">{{type}}</a></h1>
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                {{name}}
+                            </p>
+                            <p class="lead">
+                                Valoración: {{value}}/10  
+                            </p>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="{{link}}" target="_blank">Enlace Compra</a> 
+                            </span>
+                        </div>
+                    </div>
+                    
+                </article> <!-- end article --> 
+                {{/products}} 
+              
 
             </div> <!-- end masonry -->
         </div> <!-- end masonry-wrap -->

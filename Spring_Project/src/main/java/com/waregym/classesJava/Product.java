@@ -12,14 +12,23 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+	private String type;
 	private String name;
-	private String description;
 	private Double value;
 	private String link;
 	//private ImageClass image;
 	
 	
 	public Product() {}
+	
+
+	public Product(String type, String name, Double value, String link) {
+		super();
+		this.type = type;
+		this.name = name;
+		this.value = value;
+		this.link = link;
+	}
 	
 	
 

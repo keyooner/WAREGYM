@@ -9,6 +9,9 @@ import java.nio.file.Paths;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -59,13 +62,19 @@ public class ProductsController {
 	}
 	
 	@RequestMapping("/productos")
-	 public String products(Model model) {
+	 public String products(Model model, Pageable page) {
 		
-		model.addAttribute("products",products.findAll());
+		Page<Product> productsPage = products.findAll(new PageRequest(page.getPageNumber(), 4));
+		model.addAttribute("products",productsPage);
 		model.addAttribute("activities",activities.findAll());
 		
+		model.addAttribute("showNext",!productsPage.isLast());
+		model.addAttribute("showPrev",!productsPage.isFirst());
+		model.addAttribute("nextPage",productsPage.getNumber()+1);
+		model.addAttribute("prevPage",productsPage.getNumber()-1);
+		
 		return "productos";
-	 }
+	 }	
 	
 	@RequestMapping("/nuevoProducto")
 	 public String newProduct(Model model) {

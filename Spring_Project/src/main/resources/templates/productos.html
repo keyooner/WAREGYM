@@ -167,13 +167,28 @@
                     </div>
                     
                 </article> <!-- end article --> 
-                {{/products}} 
+                {{/products}}
+                
+           
+
               
 
             </div> <!-- end masonry -->
         </div> <!-- end masonry-wrap -->
-
+    
+        <div>
+            <div style="margin:0 auto; width: 400px;">
+                {{#showPrev}}
+                    <a href="/productos?page={{prevPage}}"><button>Anterior</button></a>
+                {{/showPrev}}
+                {{#showNext}}
+                    <a style="margin-left: 30px" href="/productos?page={{nextPage}}"><button>Siguiente</button></a>
+                {{/showNext}}
+            </div>
+        </div>
+        
     </section> <!-- s-content -->
+        
 
    
 

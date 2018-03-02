@@ -37,7 +37,7 @@ public class ProductsController {
 		if (!Files.exists(FILES_FOLDER)) {
 			Files.createDirectories(FILES_FOLDER);
 		}
-		
+		/*
 		Product p1 = new Product("a", "a", 5.0, "a");
 		Product p2 = new Product("b", "b", 5.0, "b");
 		Product p3 = new Product("c", "c", 5.0, "c");
@@ -49,7 +49,7 @@ public class ProductsController {
 		products.save(p3);
 		products.save(p4);
 		products.save(p5);
-
+		*/
 	}
 	
 	@RequestMapping("/productos")

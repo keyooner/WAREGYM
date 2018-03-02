@@ -26,15 +26,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/logout").permitAll();
         http.authorizeRequests().antMatchers("/logout").permitAll();
         http.authorizeRequests().antMatchers("/waregym").permitAll();
+        http.authorizeRequests().antMatchers("/productos").permitAll();
         http.authorizeRequests().antMatchers("/contacto").permitAll();
         http.authorizeRequests().antMatchers("/activity_template").permitAll();
+        
 
         // Private pages (all other pages)
-        http.authorizeRequests().antMatchers("/entrenamiento").hasAnyRole("USER");
-        http.authorizeRequests().antMatchers("/principiante").hasAnyRole("USER");
-        http.authorizeRequests().antMatchers("/medio").hasAnyRole("USER");
-        http.authorizeRequests().antMatchers("/avanzado").hasAnyRole("USER");
-        http.authorizeRequests().antMatchers("/experto").hasAnyRole("USER");
+        http.authorizeRequests().antMatchers("/clases/añadir_clase").hasAnyRole("ADMIN");
+        http.authorizeRequests().antMatchers("/clases/inscripcion").hasAnyRole("USER");
+        http.authorizeRequests().antMatchers("/entrenamientos/entrenamiento").hasAnyRole("USER");
+        http.authorizeRequests().antMatchers("/entrenamientos/principiante").hasAnyRole("USER");
+        http.authorizeRequests().antMatchers("/entrenamientos/medio").hasAnyRole("USER");
+        http.authorizeRequests().antMatchers("/entrenamientos/avanzado").hasAnyRole("USER");
+        http.authorizeRequests().antMatchers("/entrenamientos/experto").hasAnyRole("USER");
+        http.authorizeRequests().antMatchers("/productos/nuevoProducto").permitAll();
         http.authorizeRequests().antMatchers("/home").hasAnyRole("USER");
         http.authorizeRequests().antMatchers("/admin").hasAnyRole("ADMIN");
 

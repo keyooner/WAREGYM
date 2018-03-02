@@ -1,4 +1,4 @@
-package com.waregym.controllers;
+package com.waregym.databases;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

@@ -135,31 +135,16 @@
     ================================================== -->
     <section class="s-content s-content--narrow">
         <div class="row text-center">
-            <form class="form-sigin">
-            	<form action="/login">
-	            	<img class="mb-4" src="favicon.png" alt="" width="72" height="72">
-	                <h4 class="h3 mb-3 font-weight-normal">Por favor, inicia sesión</h4>
-	                <label for="inputEmail" class="sr-only">Dirección de correo</label>
-	                <center><input type="email" id="inputEmail" class="form-control" placeholder="Correo electrónico" required="" autofocus=""></center>
-	                <label for="inputPassword" class="sr-only">Contraseña</label>
-	                <center><input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required=""></center>
-	                <div class="checkbox mb-3">
-	                    <label>
-	                    <input type="checkbox" value="remember-me"> Recuerdame
-	                </label>
-	                </div>
-	                <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
-            	</form>
-                <button class="btn btn-lg btn-primary btn-block" type="submit"><a href="signup.html">Registrarme</a></button>
-            </form>
 
-
-            <form class="form-sigin">
-                <button class="btn btn-lg btn-primary btn-block" type="submit"><img class="mb-4" src="images/g.png" alt="" width="32" height="32">Registrate o inicia sesión</button>
-                <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+            <form action="/login" method="post">
+                <label>User Name:</label><input type="text" name="username" /><br />
+                <label>Password:</label><input type="password" name="password" /><br />
+                <center><input type="submit" value="Sign In" /><br /></center>
+                <center><input type="hidden" name="_csrf" value="{{token}}" /></center>
             </form>
-        </div>
-    </section>
+            
+         </div>
+     </section>
     <!-- s-content -->
 
 

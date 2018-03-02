@@ -118,7 +118,12 @@
                             </ul>
                         </li>
                         <li><a href="../contacto.html" title="">Contacto</a></li>
-                        <li><a href="../login.html" title="">Iniciar Sesión</a></li>
+                        {{#user}}
+						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /><input type="hidden" name="_csrf" value="{{token}}"/></form></li>
+						{{/user}}
+                        {{#hidden}}
+              			<li><a href="../login.html" title="">Iniciar Sesión</a></li>
+                        {{/hidden}}
                     </ul>
                     <!-- end header__nav -->
 
@@ -194,6 +199,7 @@
 	                </table>
                 </div>
             	<button type="submit">Añadir Clase</button>
+            	<input type="hidden" name="_csrf" value="{{token}}" />
             </form>
         </div>
 

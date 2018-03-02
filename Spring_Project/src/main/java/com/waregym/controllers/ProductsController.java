@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -62,7 +63,11 @@ public class ProductsController {
 	}
 	
 	@RequestMapping("/productos")
-	 public String products(Model model, Pageable page) {
+	 public String products(Model model, HttpServletRequest request, Pageable page) {
+		
+		model.addAttribute("user", request.isUserInRole("USER"));
+    	model.addAttribute("hidden",! request.isUserInRole("USER"));
+    	model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		
 		Page<Product> productsPage = products.findAll(new PageRequest(page.getPageNumber(), 4));
 		model.addAttribute("products",productsPage);
@@ -77,7 +82,11 @@ public class ProductsController {
 	 }	
 	
 	@RequestMapping("/nuevoProducto")
-	 public String newProduct(Model model) {
+	 public String newProduct(Model model, HttpServletRequest request) {
+			
+			model.addAttribute("user", request.isUserInRole("USER"));
+	    	model.addAttribute("hidden",! request.isUserInRole("USER"));
+	    	model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		
 		model.addAttribute("products",products.findAll());
 		model.addAttribute("activities",activities.findAll());
@@ -86,8 +95,12 @@ public class ProductsController {
 	 }
 	
 	@RequestMapping("/producto_añadido")
-	public String addActivity(Model model, Product product,
+	public String addActivity(Model model, HttpServletRequest request,Product product,
 			@RequestParam("file") MultipartFile file) {
+		
+		model.addAttribute("user", request.isUserInRole("USER"));
+    	model.addAttribute("hidden",! request.isUserInRole("USER"));
+    	model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		
 		String fileName = "image-" + product.getName() + ".jpg";
 		

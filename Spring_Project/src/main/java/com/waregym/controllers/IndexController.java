@@ -20,6 +20,7 @@ public class IndexController {
 		
 		model.addAttribute("user", request.isUserInRole("USER"));
     	model.addAttribute("hidden",! request.isUserInRole("USER"));
+    	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	
 		model.addAttribute("activities", activities.findAll());
 		

@@ -1,6 +1,7 @@
 package com.waregym.classesJava;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.ElementCollection;
@@ -9,45 +10,30 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Entity
 public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	
-	private Integer type;
+	private Long id;
+
 	private String name;
-	private String email;
-	private String password;
-	
+
+	private String passwordHash;
+
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
 
-	@ManyToMany
-	private List<Activity> activities;
-	
-	public User() {}
-	
-	public User(Long id, Integer type, String name, String email, String password) {
-		super();
-		this.id = id;
-		this.type = type;
+	public User() {
+	}
+
+	public User(String name, String password, String... roles) {
 		this.name = name;
-		this.email = email;
-		this.password = password;
-		this.activities = new ArrayList<Activity>();
-		
-	}
-
-	public Integer getType() {
-		return type;
-	}
-
-	public void setType(Integer type) {
-		this.type = type;
+		this.passwordHash = new BCryptPasswordEncoder().encode(password);
+		this.roles = new ArrayList<>(Arrays.asList(roles));
 	}
 
 	public String getName() {
@@ -58,28 +44,12 @@ public class User {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getPasswordHash() {
+		return passwordHash;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	 public List<Activity> getActivitiesUser() {
-		return activities;
-	}
-
-	public void setActivitiesUser(List<Activity> activities) {
-		this.activities = activities;
+	public void setPasswordHash(String passwordHash) {
+		this.passwordHash = passwordHash;
 	}
 
 	public List<String> getRoles() {

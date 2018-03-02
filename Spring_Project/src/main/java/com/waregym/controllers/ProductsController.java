@@ -38,24 +38,18 @@ public class ProductsController {
 			Files.createDirectories(FILES_FOLDER);
 		}
 		
-		Product p1 = new Product("Proteínas en polvo", "BSN SYNTHA-6 5LB", 10.0, "https://zentenoshop.com/suplementos/bsn-syntha-6-5lb-proteinas-de-calidad-ultra-premium-370","Proteinas_3.jpg");
-		Product p2 = new Product("Proteínas en polvo", "OPTIUM NUTRITION GOLD 900G", 9.2, "https://www.amazon.es/Optimum-Nutrition-Standard-Prote%C3%ADna-Chocolate/dp/B002DYIZHG/ref=sr_1_1?ie=UTF8&qid=1517564704&sr=8-1&keywords=proteinas","Proteinas_0.jpg");
-		Product p3 = new Product("Proteínas en polvo", "WHEY 9 FRESA 900 G APTONIA", 9.4, "https://www.decathlon.es/proteina-whey-9-fresa-900-g--id_8377278.html","Proteinas_1.jpg");
-		Product p4 = new Product("Proteínas en polvo", "PURE ISOLAT 2KG - 3XL", 8.0, "http://peopleandfitness.com/tienda-online/es/944-comprar-proteinas-pure-isolat-2-kg-nutrytec.html0","Proteinas_2.jpg");
-		Product p5 = new Product("Aminoácidos", "ESENCIALES AAEE", 9.5, "https://nutrisport.es/aminoacidos-y-peptidos/41-aminoacidos-esenciales.html","aminoacidos_0.jpg");
-		Product p6 = new Product("Aminoácidos", "API AMINO 6000", 9.1, "https://www.onelastrep.cl/products/api-amino-6000-aminoacidos-325-tabletas","aminoacidos_1.png");
-		Product p7 = new Product("Aminoácidos", "AMINO ENERGY 270 GR", 9.1, "http://peopleandfitness.com/tienda-online/es/383-comprar-aminoacidos-amino-optimum-nutrition.html","aminoacidos_3.jpg");
-		Product p8 = new Product("Aminoácidos", "API BCAA 180", 8.0, "https://www.onelastrep.cl/products/api-bcaa-tablets-aminoacidos-180-tabletas","aminoacidos_2.png");
+		Product p1 = new Product("a", "a", 5.0, "a");
+		Product p2 = new Product("b", "b", 5.0, "b");
+		Product p3 = new Product("c", "c", 5.0, "c");
+		Product p4 = new Product("d", "d", 5.0, "d");
+		Product p5 = new Product("e", "e", 5.0, "e");
 
-		
 		products.save(p1);
 		products.save(p2);
 		products.save(p3);
 		products.save(p4);
 		products.save(p5);
-		products.save(p6);
-		products.save(p7);
-		products.save(p8);
+
 	}
 	
 	@RequestMapping("/productos")

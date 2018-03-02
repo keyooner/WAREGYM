@@ -18,6 +18,7 @@ public class Product {
 	private String link;
 	private String image;
 	
+	
 	public Product() {}
 	
 	public Product(String type, String name, Double value, String link) {
@@ -26,15 +27,6 @@ public class Product {
 		this.name = name;
 		this.value = value;
 		this.link = link;
-	}
-	
-	public Product(String type, String name, Double value, String link, String image) {
-		super();
-		this.type = type;
-		this.name = name;
-		this.value = value;
-		this.link = link;
-		this.image = image;
 	}
 
 	public String getType() {

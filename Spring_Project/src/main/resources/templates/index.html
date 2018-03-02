@@ -119,7 +119,12 @@
                             </ul>
                         </li>
                         <li><a href="contacto.html" title="">Contacto</a></li>
-                        <li><a href="login.html" title="">Iniciar Sesión</a></li>
+                        {{#user}}
+						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /><input type="hidden" name="_csrf" value="{{token}}"/></form></li>
+						{{/user}}
+                        {{#hidden}}
+              			<li><a href="login.html" title="">Iniciar Sesión</a></li>
+                        {{/hidden}}
                     </ul>
                     <!-- end header__nav -->
 
@@ -204,7 +209,9 @@
     <!-- s-content
     ================================================== -->
     <section class="s-content">
-
+     <p>This is a public page</p>
+	<p>Go to a <a href="/home">private page</a>!
+	
         <div class="row masonry-wrap">
             <div class="masonry">
 

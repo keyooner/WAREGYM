@@ -1,23 +1,20 @@
 package com.waregym.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.waregym.repositories.ActivityRepository;
-
 @Controller
 public class IndexController {
 	
-	@Autowired
-	ActivityRepository activities;
-	
 	@RequestMapping(value={"/index","/"})
-	 public String index(Model model) {
-		
-		model.addAttribute("activities", activities.findAll());
-		
+	 public String index(Model model, HttpServletRequest request) {
+	    	
+	    	model.addAttribute("user", request.isUserInRole("USER"));
+	    	model.addAttribute("hidden",! request.isUserInRole("USER"));
+	    	
 		return "index";
 	 }
 }

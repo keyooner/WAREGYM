@@ -247,10 +247,10 @@
             </div>
                     <button>Inscribirse/Borrar Inscripción</button>
             
-            <ul class="class-inscription">
+                <ul class="class-inscription">
                     <li><br><a href="kick-boxing.html">Kick Boxing</a></li>
-                    </ul>
-                    <div class="row-center">
+                </ul>
+                <div class="row-center">
                 <table class="table table-sm">
                     <thead>
                         <tr>
@@ -281,9 +281,56 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-                    <button>Inscribirse/Borrar Inscripción</button>
+                        <button>Inscribirse/Borrar Inscripción</button>
+                </div>
+                    
 
+                {{#activities_ins}}
+                
+                <form action="/inscripcion/{{name}}">
+                <ul class="class-inscription">
+                    <li><br><a href="clases/{{id}}-{{name}}">{{name}}</a></li>
+                </ul>
+                <div class="row-center">
+                    <table>
+	                    <tr>
+	                    	<td>Días/Horas</td>
+	                        <td>Lunes</td>
+	                        <td>Martes</td>
+	                        <td>Miércoles</td>
+	                        <td>Jueves</td>
+	                        <td>Viernes</td>
+	                    </tr>
+	                    <tr>
+	                    	<td>10:00</td>
+	                        <td><input type="checkbox" name ="schedule" value="0" {{#checked0}}checked{{/checked0}}></td>
+	                        <td><input type="checkbox" name ="schedule" value="1" {{#checked1}}checked{{/checked1}}></td>
+	                        <td><input type="checkbox" name ="schedule" value="2" {{#checked2}}checked{{/checked2}}></td>
+	                        <td><input type="checkbox" name ="schedule" value="3" {{#checked3}}checked{{/checked3}}></td>
+	                        <td><input type="checkbox" name ="schedule" value="4" {{#checked4}}checked{{/checked4}}></td>
+	                    </tr>
+	                    <tr>
+	                    	<td>12:00</td>
+	                        <td><input type="checkbox" name ="schedule" value="5" {{#checked5}}checked{{/checked5}}></td>
+	                        <td><input type="checkbox" name ="schedule" value="6" {{#checked6}}checked{{/checked6}}></td>
+	                        <td><input type="checkbox" name ="schedule" value="7" {{#checked7}}checked{{/checked7}}></td>
+	                        <td><input type="checkbox" name ="schedule" value="8" {{#checked8}}checked{{/checked8}}></td>
+	                        <td><input type="checkbox" name ="schedule" value="9" {{#checked9}}checked{{/checked9}}></td>
+	                    </tr>
+	                    <tr>
+	                    	<td>17:00</td>
+	                        <td><input type="checkbox" name ="schedule" value="10" {{#checked10}}checked{{/checked10}}></td>
+	                        <td><input type="checkbox" name ="schedule" value="11" {{#checked11}}checked{{/checked11}}></td>
+	                        <td><input type="checkbox" name ="schedule" value="12" {{#checked12}}checked{{/checked12}}></td>
+	                        <td><input type="checkbox" name ="schedule" value="13" {{#checked13}}checked{{/checked13}}></td>
+	                        <td><input type="checkbox" name ="schedule" value="14" {{#checked14}}checked{{/checked14}}></td>
+	                    </tr>
+	               </table>
+                   <button type="submit">Modificar inscripción</button>
+                </div>
+                </form>
+                {{/activities_ins}}
+                
             </div>
 
         </article>

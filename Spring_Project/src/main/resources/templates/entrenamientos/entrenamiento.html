@@ -36,14 +36,6 @@
     ================================================== -->
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-
-    <script>
-        function anadirEjercicio(){
-            $('<div>hello</div>').appendTo('#form-new-training');
-            $("#form-new-training").append("<strong>hola</strong>");
-            alert("hola");
-        }
-    </script>
 </head>
 
 <body id="top">
@@ -169,7 +161,6 @@
             <!-- FIN CALENDARIO -->
 
             <!-- FORMULARIO -->
-            <form action='/index'>
                 <center>
                     <div>
                         <label style="display: inline-block" for="date">Día:</label>
@@ -177,48 +168,22 @@
                     </div>
                 </center>
                 <table>
-                    <tr>
-                        <td>Ejercicio</td>
-                        <td>Peso</td>
-                        <td></td>
-                        <td>Repeticiones</td>
-                        <td></td>
-                    </tr>
-                   
-                        <div id="okk">
-                        <tr>
-                        <td>
-                            <select>
-                              <option value="Jalón al pecho">Jalón al pecho</option>
-                              <option value="Press de banca">Press de banca</option>
-                              <option value="opel">Opel</option>
-                              <option value="audi">Audi</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input class="form-control" type="text" name="weight" maxlength="3" id="Ppdb">
-                        </td>
-                        <td>
-                            <label>Kg.</label>
-                        </td>
-                        <td>    
-                            <input type="text" maxlength="3" name="reps" id="Rpdb">
-                        </td>
-                        <td>
-                            <label>Rep.</label>
-                        </td>
-                        </tr>
-                        <div id="form-new-training">
-                        </div>
-                    </div>
+                <script>
+                function accion(){
+                	dir = document.getElementById("tipo").value
+                	return location.href="https://localhost:8443/entrenamientos"+dir
+                }
+                </script>
+                <form action="javascript:;" onsubmit="accion()">
+                <select id="tipo" name="tipo">
+                   <option value="/avanzado">Avanzado</option>
+                   <option value="/medio">Medio</option>
+                   <option value="/experto">Experto</option>
+                   <option value="/principiante">Principiante</option>
+                 </select>       
+                 <input type="submit"/>
+                 </form>
                 </table>
-                <center>
-                    <input type='button' onclick="anadirEjercicio()" id="boton-plus" value='Añadir ejercicio'>
-                    <br><br><br><br>
-                    <input type='submit' value='Confirmar entrenamiento'>
-                </center>
-            </form>
-
             <!-- SEGUIMIENTO -->
             <div>
                 <h2 style="text-align: center">SEGUIMIENTO DEL ENTRENAMIENTO</h2>

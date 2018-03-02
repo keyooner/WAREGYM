@@ -10,7 +10,6 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 
 import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,10 +42,7 @@ public class ActivitiesController {
 	}
 	
 	@RequestMapping("clases/añadir_clase")
-	public String newActivity(Model model, HttpServletRequest request) {
-    	
-    	model.addAttribute("user", request.isUserInRole("USER"));
-    	model.addAttribute("hidden",! request.isUserInRole("USER"));
+	public String newActivity(Model model) {
 		
 		model.addAttribute("activities", activities.findAll());
 		
@@ -54,13 +50,10 @@ public class ActivitiesController {
 	}
 	
 	@RequestMapping(value = "clases/clase_añadida", method = RequestMethod.POST)
-	public String addActivity(Model model, HttpServletRequest request, Activity activity, 
+	public String addActivity(Model model, Activity activity, 
 			@RequestParam("file") MultipartFile[] files,
 			@RequestParam("schedule") String[] schedule)  {
 
-		model.addAttribute("user", request.isUserInRole("USER"));
-    	model.addAttribute("hidden",! request.isUserInRole("USER"));
-		
 		String[] fileName = new String[3];
 		File[] uploadedFiles = new File[3];
 		String[][] activitySchedule = new String[5][3];

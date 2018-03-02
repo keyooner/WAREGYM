@@ -35,13 +35,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/medio").hasAnyRole("USER");
         http.authorizeRequests().antMatchers("/avanzado").hasAnyRole("USER");
         http.authorizeRequests().antMatchers("/experto").hasAnyRole("USER");
-        http.authorizeRequests().antMatchers("/admin").hasAnyRole("ADMIN");
-        http.authorizeRequests().antMatchers("/clases/añadir_clase").hasAnyRole("ADMIN");
-        http.authorizeRequests().antMatchers("/home").hasAnyRole("USER");
 
         // Login form
         http.formLogin().loginPage("/login");
-        http.formLogin().usernameParameter("username");
+        http.formLogin().usernameParameter("email");
         http.formLogin().passwordParameter("password");
         http.formLogin().defaultSuccessUrl("/");
         http.formLogin().failureUrl("/loginerror");
@@ -51,7 +48,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.logout().logoutSuccessUrl("/");
         
         //Disable CSRF at the moment
-        //http.csrf().disable();
+        http.csrf().disable();
     }
 
     @Override

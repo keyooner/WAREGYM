@@ -21,19 +21,19 @@ import com.waregym.repositories.UserRepository;
 public class UserRepositoryAuthenticationProvider implements AuthenticationProvider {
 
 	@Autowired
-	private UserRepository userRepository;
+	private UserRepository users;
 
 	@Override
 	public Authentication authenticate(Authentication auth) throws AuthenticationException {
 
-		User user = userRepository.findByName(auth.getName());
+		User user = users.findByName(auth.getName());
 
 		if (user == null) {
 			throw new BadCredentialsException("User not found");
 		}
 
 		String password = (String) auth.getCredentials();
-		if (!new BCryptPasswordEncoder().matches(password, user.getPasswordHash())) {
+		if (!new BCryptPasswordEncoder().matches(password, user.getPassword())) {
 			throw new BadCredentialsException("Wrong password");
 		}
 

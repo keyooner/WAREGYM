@@ -111,12 +111,12 @@
                             <a href="#0" title="">Productos</a>
                             <ul class="sub-menu">
                             	<li><a href="/nuevoProducto">Añadir producto</a></li>
-                                <li><a href="/productos">Productos disponibles</a></li>
+                                <li class="current"><a href="/productos">Productos disponibles</a></li>
                             </ul>
                         </li>
                         <li><a href="contacto.html" title="">Contacto</a></li>
                         {{#user}}
-						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /><input type="hidden" name="_csrf" value="{{token}}"/></form></li>
+						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /></form></li>
 						{{/user}}
                         {{#hidden}}
               			<li><a href="login.html" title="">Iniciar Sesión</a></li>

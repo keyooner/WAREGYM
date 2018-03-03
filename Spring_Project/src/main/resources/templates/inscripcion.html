@@ -99,17 +99,22 @@
                         <li class="has-children">
                             <a href="#0" title="">Entrenamientos</a>
                             <ul class="sub-menu">
-                            <li><a href="../entrenamientos/entrenamiento">Mi Entrenamiento</a></li>
-                            <li><a href="../entrenamientos/principiante">Principiante</a></li>
-                            <li><a href="../entrenamientos/medio">Medio</a></li>
-                            <li><a href="../entrenamientos/avanzado">Avanzado</a></li>
-                            <li><a href="../entrenamientos/experto">Experto</a></li>
+                            <li><a href="/entrenamientos/entrenamiento">Mi Entrenamiento</a></li>
+                            <li><a href="/entrenamientos/principiante">Principiante</a></li>
+                            <li><a href="/entrenamientos/medio">Medio</a></li>
+                            <li><a href="/entrenamientos/avanzado">Avanzado</a></li>
+                            <li><a href="/entrenamientos/experto">Experto</a></li>
                             </ul>
                         </li>
-                        <li><a href="../waregym" title="">Waregym</a></li>
+                        <li><a href="/waregym" title="">Waregym</a></li>
                         <li><a href="/productos" title="">Productos</a></li>
-                        <li><a href="../contacto" title="">Contacto</a></li>
-                        <li><a href="../login" title="">Iniciar Sesión</a></li>
+                        <li><a href="/contacto" title="">Contacto</a></li>
+                        {{#user}}
+						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /></form></li>
+						{{/user}}
+                        {{#hidden}}
+              			<li><a href="/login" title="">Iniciar Sesión</a></li>
+                        {{/hidden}}
                     </ul> <!-- end header__nav -->
 
                     <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Cerrar</a>

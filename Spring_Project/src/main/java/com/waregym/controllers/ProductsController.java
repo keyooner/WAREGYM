@@ -129,18 +129,25 @@ public class ProductsController {
 	} 
 	
 	@RequestMapping("/producto_eliminado")
-	public String deleteProduct(Model model, HttpServletRequest request, @RequestParam("id") long id) {
+	public String deleteProduct(Model model, HttpServletRequest request, @RequestParam("id") long id, Pageable page) {
+		
+		products.delete(id);
 		
 		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN"));
     	model.addAttribute("hidden",! request.isUserInRole("USER")||request.isUserInRole("ADMIN"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		
-    	products.delete(id);
+		Page<Product> productsPage = products.findAll(new PageRequest(page.getPageNumber(), 4));
+		model.addAttribute("products",productsPage);
+		model.addAttribute("activities",activities.findAll());
 		
-		model.addAttribute("products",products.findAll());
-		model.addAttribute("activities", activities.findAll());
-		
-		return "productos";
+		model.addAttribute("showNext",!productsPage.isLast());
+		model.addAttribute("showPrev",!productsPage.isFirst());
+		model.addAttribute("nextPage",productsPage.getNumber()+1);
+		model.addAttribute("prevPage",productsPage.getNumber()-1);
+    	
+    	return "productos";
+
 	} 
 	
 	

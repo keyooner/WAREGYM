@@ -84,8 +84,8 @@ public class ProductsController {
 	@RequestMapping("/nuevoProducto")
 	 public String newProduct(Model model, HttpServletRequest request) {
 			
-		model.addAttribute("user", request.isUserInRole("USER"));
-    	model.addAttribute("hidden",! request.isUserInRole("USER"));
+		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
+    	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		
 		model.addAttribute("products",products.findAll());

@@ -172,6 +172,11 @@
                                 <a href="{{link}}" target="_blank">Enlace Compra</a> 
                             </span>
                         </div>
+                        <p>
+                        <form action="producto_eliminado" method="post">
+                        	<input type="hidden" name="id" value="{{id}}">
+                        	<button type="submit">Eliminar producto</button>
+                        </form>
                     </div>
                     
                 </article> <!-- end article --> 

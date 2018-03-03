@@ -128,5 +128,20 @@ public class ProductsController {
 		return "productos";
 	} 
 	
+	@RequestMapping("/producto_eliminado")
+	public String deleteProduct(Model model, HttpServletRequest request, @RequestParam("id") long id) {
+		
+		model.addAttribute("user", request.isUserInRole("USER"));
+    	model.addAttribute("hidden",! request.isUserInRole("USER"));
+    	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+		
+    	products.delete(id);
+		
+		model.addAttribute("products",products.findAll());
+		model.addAttribute("activities", activities.findAll());
+		
+		return "productos";
+	} 
+	
 	
 }

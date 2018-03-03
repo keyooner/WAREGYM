@@ -1,9 +1,12 @@
 package com.waregym.classesJava;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Activity {
@@ -20,7 +23,27 @@ public class Activity {
 	private String development;
 	private String benefit;
 	private String[][] schedule;
+	private int inscribed;
 	
+	@ManyToMany (mappedBy="activities")
+	private List<User> users;
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
 	public Activity() {
 		this.schedule = new String[5][3];
 	}
@@ -32,6 +55,15 @@ public class Activity {
 		this.development = development;
 		this.benefit = benefit;
 		this.schedule = new String[5][3];
+		this.inscribed = 30;
+	}
+
+	public int getInscribed() {
+		return inscribed;
+	}
+
+	public void setInscribed(int inscribed) {
+		this.inscribed = inscribed;
 	}
 
 	public String getName() {

@@ -10,6 +10,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -20,9 +22,28 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public List<Activity> getActivities() {
+		return activities;
+	}
+
+	public void setActivities(List<Activity> activities) {
+		this.activities = activities;
+	}
+
 	private String name;
 
 	private String passwordHash;
+	
+	@ManyToMany
+	private List<Activity> activities;
 
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;

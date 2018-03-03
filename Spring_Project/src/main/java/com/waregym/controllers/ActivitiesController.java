@@ -123,7 +123,8 @@ public class ActivitiesController {
 	 public String inscripcion(Model model) {
 		
 		model.addAttribute("activities", activities.findAll());
-	 
+		
+		
 		return "inscripcion";
 	 }
 	

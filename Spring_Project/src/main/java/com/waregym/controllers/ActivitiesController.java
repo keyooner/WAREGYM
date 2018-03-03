@@ -45,9 +45,11 @@ public class ActivitiesController {
 	@RequestMapping("clases/añadir_clase")
 	public String newActivity(Model model, HttpServletRequest request) {
 		
-		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
+		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	model.addAttribute("user", request.isUserInRole("USER"));
+    	//model.addAttribute("user-name", user.getName());
 		
 		model.addAttribute("activities", activities.findAll());
 		
@@ -59,8 +61,11 @@ public class ActivitiesController {
 			@RequestParam("file") MultipartFile[] files,
 			@RequestParam("schedule") String[] schedule)  {
 
-		model.addAttribute("user", request.isUserInRole("USER"));
-    	model.addAttribute("hidden",! request.isUserInRole("USER"));
+		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
+    	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
+    	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	model.addAttribute("user", request.isUserInRole("USER"));
+    	//model.addAttribute("user-name", user.getName());
     	
 		String[] fileName = new String[3];
 		File[] uploadedFiles = new File[3];
@@ -112,9 +117,11 @@ public class ActivitiesController {
 	@RequestMapping("clases/{id}-{name}")
 	 public String showActivity(Model model, HttpServletRequest request, @PathVariable long id, @PathVariable String name) {
 		
-		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
+		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	model.addAttribute("user", request.isUserInRole("USER"));
+    	//model.addAttribute("user-name", user.getName());
 		
 		Activity activity = activities.findOne(id);
 		
@@ -127,9 +134,11 @@ public class ActivitiesController {
 	@RequestMapping("clases/inscripcion")
 	 public String inscripcion(Model model, HttpServletRequest request) {
 		
-		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
+		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	model.addAttribute("user", request.isUserInRole("USER"));
+    	//model.addAttribute("user-name", user.getName());
 		
 		model.addAttribute("activities", activities.findAll());
 		

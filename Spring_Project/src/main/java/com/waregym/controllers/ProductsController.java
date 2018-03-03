@@ -65,9 +65,11 @@ public class ProductsController {
 	@RequestMapping("/productos")
 	 public String products(Model model, HttpServletRequest request, Pageable page) {
 		
-		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
+		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	model.addAttribute("user", request.isUserInRole("USER"));
+    	//model.addAttribute("user-name", user.getName());
 		
 		Page<Product> productsPage = products.findAll(new PageRequest(page.getPageNumber(), 4));
 		model.addAttribute("products",productsPage);
@@ -84,9 +86,11 @@ public class ProductsController {
 	@RequestMapping("/nuevoProducto")
 	 public String newProduct(Model model, HttpServletRequest request) {
 			
-		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
+		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	model.addAttribute("user", request.isUserInRole("USER"));
+    	//model.addAttribute("user-name", user.getName());
 		
 		model.addAttribute("products",products.findAll());
 		model.addAttribute("activities",activities.findAll());
@@ -98,9 +102,11 @@ public class ProductsController {
 	public String addActivity(Model model, HttpServletRequest request, Product product,
 			@RequestParam("file") MultipartFile file) {
 		
-		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
+		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	model.addAttribute("user", request.isUserInRole("USER"));
+    	//model.addAttribute("user-name", user.getName());
 		
 		String fileName = "image-" + product.getName() + ".jpg";
 		
@@ -133,9 +139,11 @@ public class ProductsController {
 		
 		products.delete(id);
 		
-		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
+		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	model.addAttribute("user", request.isUserInRole("USER"));
+    	//model.addAttribute("user-name", user.getName());
 		
 		Page<Product> productsPage = products.findAll(new PageRequest(page.getPageNumber(), 4));
 		model.addAttribute("products",productsPage);

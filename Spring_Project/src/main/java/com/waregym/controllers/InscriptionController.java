@@ -31,9 +31,11 @@ public class InscriptionController {
 	@RequestMapping("/inscripcion")
 	 public String index(Model model, HttpServletRequest request) {
 		
-		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
+		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	model.addAttribute("user", request.isUserInRole("USER"));
+    	//model.addAttribute("user-name", user.getName());
 		
 		model.addAttribute("activities", activities.findAll());
 		model.addAttribute("activities_ins",activities.findAll());
@@ -64,9 +66,11 @@ public class InscriptionController {
 	@RequestMapping("/clase_inscrita")
 	 public String inscribe(Model model, HttpServletRequest request, @RequestParam Long id) {
 		
-		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
+		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	model.addAttribute("user", request.isUserInRole("USER"));
+    	//model.addAttribute("user-name", user.getName());
 		
 		User user = userRepository.findById((long)1);
 		Activity activity = activityRepository.findById(id);

@@ -43,7 +43,7 @@ public class Training {
 			exercises.add(new Exercise("Press de pectoral", 20, 5));
 			break;
 		case "Experto": 
-			exercises.add(new Exercise("Flexiones",0,10));
+			exercises.add(new Exercise("Flexiones",20,10));
 			exercises.add(new Exercise("Press de Banca", 150, 10));
 			exercises.add(new Exercise("Levantar a Adri", 70, 1));
 			exercises.add(new Exercise("Piernas", 60, 20));

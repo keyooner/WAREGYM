@@ -30,7 +30,7 @@
     ================================================== -->
     <script src="../js/modernizr.js"></script>
     <script src="../js/pace.min.js"></script>
-    <script src="../js/code.js"></script>
+    <script src="../js/code.js"></script>     
 
     <!-- favicons
     ================================================== -->
@@ -143,76 +143,82 @@
 
         <article class="row format-video">
             <div class="s-content__header col-full">
-                <h1 class="s-content__header-title">
-                    MI ENTRENAMIENTO
+                <h1 class="display-1">
+                    CREAR     ENTRENAMIENTO
                 </h1>
+                
+               <p class="lead"> Selecciona que tipo de entrenamiento quieres emplear
+               de los cuatro distintos creados por nuestros expertos según tu experiencia<p>
+               
             </div>
-            <!-- end s-content__header -->
-
-            <div class="calendario text-center">
-                <h2>CALENDARIO DE ENTRENAMIENTOS</h2>
-                <div id="caleandar" style="margin-left: 250px">
-
-                </div>
-
-                <script type="text/javascript" src="../js/caleandar.js"></script>
-                <script type="text/javascript" src="../js/demo.js"></script>
-            </div>
-            <!-- FIN CALENDARIO -->
-
-            <!-- FORMULARIO -->
-                <center>
-                    <div>
+                  <!--   <div>
                         <label style="display: inline-block" for="date">Día:</label>
                         <input type="date" id="date">
-                    </div>
-                </center>
-                <table>
+                    </div> -->
                 <script>
                 function accion(){
                 	dir = document.getElementById("tipo").value
                 	return location.href="https://localhost:8443/entrenamientos"+dir
                 }
                 </script>
+                
+              <div align = "center">
                 <form action="javascript:;" onsubmit="accion()">
-                <select id="tipo" name="tipo">
+       
+                <select id="tipo" name="tipo" onchange="showDiv(this)">
                    <option value="/avanzado">Avanzado</option>
                    <option value="/medio">Medio</option>
                    <option value="/experto">Experto</option>
                    <option value="/principiante">Principiante</option>
                  </select>       
-                 <input type="submit"/>
+                 <input type="submit" value ="Seleccionar"/>
                  </form>
-                </table>
-            <!-- SEGUIMIENTO -->
-            <div>
-                <h2 style="text-align: center">SEGUIMIENTO DEL ENTRENAMIENTO</h2>
-                <div class="masonry" style="position: relative; height: 1388px; weigth: 2000px">
+                <script>
+                function showDiv(select){
+                	switch (select.value) {
+                	case "/principiante":
+                		document.getElementById("beginner").style.display="block";
+                		document.getElementById('medium').style.display="none";
+                		document.getElementById('advanced').style.display="none";
+                		document.getElementById('expert').style.display="none";
+                		break;
+                    case "/medio":
+                	    document.getElementById('beginner').style.display="none";
+                		document.getElementById('medium').style.display="block";
+                		document.getElementById('advanced').style.display="none";
+                		document.getElementById('expert').style.display="none";
+                		break;
+                 
+                    case "/avanzado":
+                		document.getElementById('beginner').style.display="none";
+                		document.getElementById('medium').style.display="none";
+                		document.getElementById('advanced').style.display="block";
+                		document.getElementById('expert').style.display="none";
+                	    break;
+                		
+                    case "/experto":
+                		document.getElementById('beginner').style.display="none";
+                		document.getElementById('medium').style.display="none";
+                		document.getElementById('advanced').style.display="none";
+                		document.getElementById('expert').style.display="block";
+                		break;
+                		}
+                	}
+                </script>
+               </div>
+               <br>
+            <!-- INFO -->
+                <h2 style="text-align: center">INFORMACIÓN DEL ENTRENAMIENTO</h2>
+                <p class="lead" style="text-align: center">El entrenamiento elegido tendra los siguientes ejercicios...</p>
 
-                    <div class="grid-sizer"></div>
-
-                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
-
-                        <div class="entry__text">
-                            <div class="entry__header">
-                                <h1 class="titulo__info">SESIONES TOTALES</h1>
-                            </div>
-                            <div class="entry__excerpt">
-                                <p class="info">3 </p>
-                            </div>
-                        </div>
-
-                    </article>
-                    <!-- end article -->
-
+                 <div id="beginner" style="display:none;">
                     <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
-
                         <div class="entry__text">
                             <div class="entry__header">
-                                <h1 class="titulo__info">SERIES TOTALES</h1>
+                                <h1 class="titulo__info">ABDOMINALES</h1>
                             </div>
                             <div class="entry__excerpt">
-                                <p class="info">12 </p>
+                                <p class="info">15</p>
                             </div>
                         </div>
 
@@ -226,7 +232,53 @@
                                 <h1 class="titulo__info">TIEMPO TOTAL DE ENTRENAMIENTO</h1>
                             </div>
                             <div class="entry__excerpt">
-                                <p class="info">20 minutos </p>
+                                <p class="info">20 minutos</p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">PRESS DE BANCA</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">50 kg </p>
+                                <p style="text-align: center;">5 repeticiones</p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+                
+                    <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">FLEXIONES</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info"> 10 </p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+                </div>
+
+                <!-- Medium training info -->
+                
+                <div id="medium" style="display:none;">
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">ABDOMINALES</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">15</p>
                             </div>
                         </div>
 
@@ -237,82 +289,236 @@
 
                         <div class="entry__text">
                             <div class="entry__header">
-                                <h1 class="titulo__info">MAYOR CANTIDAD DE PESO LEVANTADO</h1>
+                                <h1 class="titulo__info">TIEMPO TOTAL DE ENTRENAMIENTO</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">30 minutos</p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">PRESS DE BANCA</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">70 kg </p>
+                                <p style="text-align: center;">7 repeticiones</p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+                
+                <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">PESAS</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info"> 10 kg </p>
+                                <p style="text-align: center;">5 repeticiones</p>
+                            </div>
+                        </div>
+
+                    </article>
+
+                    <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">FLEXIONES</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info"> 20 </p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+                </div>
+                
+                
+                <div id="advanced" style="display:block;">
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">PIERNAS</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">40 kg</p>
+                                <p style="text-align: center;">15 repeticiones</p>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">TIEMPO TOTAL DE ENTRENAMIENTO</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">45 minutos</p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">PRESS DE BANCA</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">100 kg </p>
+                                <p style="text-align: center;">10 repeticiones</p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+                    
+                     <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">PRESS DE PECTORAL</h1>
                             </div>
                             <div class="entry__excerpt">
                                 <p class="info">50 kg </p>
-                                <p style="text-align: center;">17, Noviembre 2017</p>
+                                <p style="text-align: center;">20 repeticiones</p>
                             </div>
                         </div>
 
                     </article>
+  
+                
+                <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">PESAS</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info"> 20 kg </p>
+                                <p style="text-align: center;">10 repeticiones</p>
+                            </div>
+                        </div>
+
+                    </article>
+
                     <!-- end article -->
 
                     <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
 
                         <div class="entry__text">
                             <div class="entry__header">
-                                <h1 class="titulo__info">MAYOR CANTIDAD DE SERIES</h1>
+                                <h1 class="titulo__info">BARRAS</h1>
                             </div>
                             <div class="entry__excerpt">
-                                <p class="info">3 </p>
+                                <p class="info"> 10 repeticiones </p>
                             </div>
                         </div>
 
                     </article>
                     <!-- end article -->
-
-                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
-
-                        <div class="entry__text">
-                            <div class="entry__header">
-                                <h1 class="titulo__info">EJERCICIOS DIFERENTES REALIZADOS</h1>
-                            </div>
-                            <div class="entry__excerpt">
-                                <p class="info">7 </p>
-                            </div>
-                        </div>
-
-                    </article>
-                    <!-- end article -->
-
-                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
-
-                        <div class="entry__text">
-                            <div class="entry__header">
-                                <h1 class="titulo__info">EJERCICIO PREFERIDO</h1>
-                            </div>
-                            <div class="entry__excerpt">
-                                <p class="info">BODY-COMBAT </p>
-                            </div>
-                        </div>
-
-                    </article>
-                    <!-- end article -->
-
-                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 100%">
-
-                        <div class="entry__text">
-                            <div class="entry__header">
-                                <h1 class="titulo__info">SESIÓN DE EJERCICIOS MÁS LARGA</h1>
-                            </div>
-                            <div class="entry__excerpt">
-                                <p class="info">24</p>
-                                <p style="text-align: center; font-size-adjust: auto"> 3 Enero, 2018</p>
-                            </div>
-                        </div>
-
-                    </article>
-                    <!-- end article -->
-
                 </div>
-            </div>
-            <!-- end SEGUIMIENTO -->
+                
+                
+                <!-- Expert info -->
+                
+                <div id="expert" style="display:none;">
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">PIERNAS</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">60 kg</p>
+                                <p style="text-align: center;">20 repeticiones</p>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- end article -->
 
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">TIEMPO TOTAL DE ENTRENAMIENTO</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">1 hora</p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">PRESS DE BANCA</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">150 kg </p>
+                                <p style="text-align: center;">10 repeticiones</p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+                    
+                     <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">PRESS DE PECTORAL</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">70 kg </p>
+                                <p style="text-align: center;">10 repeticiones</p>
+                            </div>
+                        </div>
+
+                    </article>
+  
+                
+                <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">FLEXIONES</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info"> + 20 kg </p>
+                                <p style="text-align: center;">10 repeticiones</p>
+                            </div>
+                        </div>
+
+                    </article>
+
+                    <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">BARRAS</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info"> 10 repeticiones </p>
+                                <p style="text-align: center;">+10 kg</p>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- end article -->
+                </div>
+                
+                
+            <!-- end INFO -->
         </article>
     </section>
-
-
+    
     <!-- s-footer
     ================================================== -->
     <footer class="s-footer">
@@ -421,68 +627,3 @@
 </body>
 
 </html>
-<script>
-    var actual = new Date();
-
-    function mostrarCalendario(year, month) {
-        var now = new Date(year, month - 1, 1);
-        var last = new Date(year, month, 0);
-        var primerDiaSemana = (now.getDay() == 0) ? 7 : now.getDay();
-        var ultimoDiaMes = last.getDate();
-        var dia = 0;
-        var resultado = "<tr bgcolor='silver'>";
-        var diaActual = 0;
-        console.log(ultimoDiaMes);
-
-        var last_cell = primerDiaSemana + ultimoDiaMes;
-
-        // hacemos un bucle hasta 42, que es el máximo de valores que puede
-        // haber... 6 columnas de 7 dias
-        for (var i = 1; i <= 42; i++) {
-            if (i == primerDiaSemana) {
-                // determinamos en que dia empieza
-                dia = 1;
-            }
-            if (i < primerDiaSemana || i >= last_cell) {
-                // celda vacia
-                resultado += "<td>&nbsp;</td>";
-            } else {
-                // mostramos el dia
-                if (dia == actual.getDate() && month == actual.getMonth() + 1 && year == actual.getFullYear())
-                    resultado += "<td class='hoy'>" + dia + "</td>";
-                else
-                    resultado += "<td>" + dia + "</td>";
-                dia++;
-            }
-            if (i % 7 == 0) {
-                if (dia > ultimoDiaMes)
-                    break;
-                resultado += "</tr><tr>\n";
-            }
-        }
-        resultado += "</tr>";
-
-        var meses = Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-
-        // Calculamos el siguiente mes y año
-        nextMonth = month + 1;
-        nextYear = year;
-        if (month + 1 > 12) {
-            nextMonth = 1;
-            nextYear = year + 1;
-        }
-
-        // Calculamos el anterior mes y año
-        prevMonth = month - 1;
-        prevYear = year;
-        if (month - 1 < 1) {
-            prevMonth = 12;
-            prevYear = year - 1;
-        }
-
-        document.getElementById("calendar").getElementsByTagName("caption")[0].innerHTML = "<div>" + meses[month - 1] + " / " + year + "</div><div><a onclick='mostrarCalendario(" + prevYear + "," + prevMonth + ")'>&lt;</a> <a onclick='mostrarCalendario(" + nextYear + "," + nextMonth + ")'>&gt;</a></div>";
-        document.getElementById("calendar").getElementsByTagName("tbody")[0].innerHTML = resultado;
-    }
-
-    mostrarCalendario(actual.getFullYear(), actual.getMonth() + 1);
-</script>

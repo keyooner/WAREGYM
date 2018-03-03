@@ -116,14 +116,11 @@
                         <li><a href="productos" title="">Productos</a></li>
                         <li><a href="contacto.html" title="">Contacto</a></li>
                         {{#user}}
-						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /><input type="hidden" name="_csrf" value="{{token}}"/></form></li>
+						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /></form></li>
 						{{/user}}
                         {{#hidden}}
               			<li><a href="login.html" title="">Iniciar Sesión</a></li>
                         {{/hidden}}
-                        {{#admin}}
-						<li><p>Admin</p></li>
-						{{/admin}}
                     </ul>
                     <!-- end header__nav -->
 

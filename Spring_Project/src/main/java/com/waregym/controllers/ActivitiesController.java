@@ -45,8 +45,9 @@ public class ActivitiesController {
 	@RequestMapping("clases/añadir_clase")
 	public String newActivity(Model model, HttpServletRequest request) {
 		
-		model.addAttribute("user", request.isUserInRole("USER"));
-    	model.addAttribute("hidden",! request.isUserInRole("USER"));
+		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
+    	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
+    	model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		
 		model.addAttribute("activities", activities.findAll());
 		
@@ -109,7 +110,11 @@ public class ActivitiesController {
 	}
 	
 	@RequestMapping("clases/{id}-{name}")
-	 public String showActivity(Model model, @PathVariable long id, @PathVariable String name) {
+	 public String showActivity(Model model, HttpServletRequest request, @PathVariable long id, @PathVariable String name) {
+		
+		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
+    	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
+    	model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		
 		Activity activity = activities.findOne(id);
 		
@@ -120,7 +125,11 @@ public class ActivitiesController {
 	 }
 	
 	@RequestMapping("clases/inscripcion")
-	 public String inscripcion(Model model) {
+	 public String inscripcion(Model model, HttpServletRequest request) {
+		
+		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
+    	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
+    	model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		
 		model.addAttribute("activities", activities.findAll());
 		

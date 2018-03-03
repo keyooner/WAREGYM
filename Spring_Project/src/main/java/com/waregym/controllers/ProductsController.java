@@ -65,8 +65,8 @@ public class ProductsController {
 	@RequestMapping("/productos")
 	 public String products(Model model, HttpServletRequest request, Pageable page) {
 		
-		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN"));
-    	model.addAttribute("hidden",! request.isUserInRole("USER")||request.isUserInRole("ADMIN"));
+		model.addAttribute("user", request.isUserInRole("USER"));
+    	model.addAttribute("hidden",! request.isUserInRole("USER"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		
 		Page<Product> productsPage = products.findAll(new PageRequest(page.getPageNumber(), 4));
@@ -84,8 +84,8 @@ public class ProductsController {
 	@RequestMapping("/nuevoProducto")
 	 public String newProduct(Model model, HttpServletRequest request) {
 			
-		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN"));
-    	model.addAttribute("hidden",! request.isUserInRole("USER")||request.isUserInRole("ADMIN"));
+		model.addAttribute("user", request.isUserInRole("USER"));
+    	model.addAttribute("hidden",! request.isUserInRole("USER"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		
 		model.addAttribute("products",products.findAll());
@@ -98,8 +98,8 @@ public class ProductsController {
 	public String addActivity(Model model, HttpServletRequest request,Product product,
 			@RequestParam("file") MultipartFile file) {
 		
-		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN"));
-    	model.addAttribute("hidden",! request.isUserInRole("USER")||request.isUserInRole("ADMIN"));
+		model.addAttribute("user", request.isUserInRole("USER"));
+    	model.addAttribute("hidden",! request.isUserInRole("USER"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		
 		String fileName = "image-" + product.getName() + ".jpg";
@@ -131,8 +131,8 @@ public class ProductsController {
 	@RequestMapping("/producto_eliminado")
 	public String deleteProduct(Model model, HttpServletRequest request, @RequestParam("id") long id) {
 		
-		model.addAttribute("user", request.isUserInRole("USER")||request.isUserInRole("ADMIN"));
-    	model.addAttribute("hidden",! request.isUserInRole("USER")||request.isUserInRole("ADMIN"));
+		model.addAttribute("user", request.isUserInRole("USER"));
+    	model.addAttribute("hidden",! request.isUserInRole("USER"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
 		
     	products.delete(id);

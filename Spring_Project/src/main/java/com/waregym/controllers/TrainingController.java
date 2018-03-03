@@ -1,5 +1,6 @@
 package com.waregym.controllers;
 import com.waregym.classesJava.Training;
+import com.waregym.repositories.TrainingRepository;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class TrainingController {
 
+	TrainingRepository training;
+	
 	@RequestMapping("/entrenamientos/avanzado")
 	 public String avanzado(Model model, HttpServletRequest request) {
 			
@@ -19,7 +22,7 @@ public class TrainingController {
     	model.addAttribute("user", request.isUserInRole("USER"));
     	//model.addAttribute("user-name", user.getName());
 		
-	    model.addAttribute(new Training("avanzado"));
+	    training.save(new Training("avanzado"));
 	    
 		return "/entrenamientos/avanzado";
 	 }
@@ -45,7 +48,7 @@ public class TrainingController {
     	model.addAttribute("user", request.isUserInRole("USER"));
     	//model.addAttribute("user-name", user.getName());
 		
-		model.addAttribute(new Training("experto"));
+		training.save(new Training("experto"));
 		
 		return "/entrenamientos/experto";
 	 }
@@ -59,7 +62,7 @@ public class TrainingController {
     	model.addAttribute("user", request.isUserInRole("USER"));
     	//model.addAttribute("user-name", user.getName());
 		
-		model.addAttribute(new Training("medio"));
+		training.save(new Training("medio"));
 		
 		return "/entrenamientos/medio";
 	 }
@@ -73,7 +76,7 @@ public class TrainingController {
     	model.addAttribute("user", request.isUserInRole("USER"));
     	//model.addAttribute("user-name", user.getName());
 		
-		model.addAttribute(new Training("principiante"));
+		training.save(new Training("principiante"));
 		
 		return "/entrenamientos/principiante";
 	 }

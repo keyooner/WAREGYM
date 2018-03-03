@@ -105,14 +105,14 @@
                         <li class="has-children">
                             <a href="#0" title="">Entrenamientos</a>
                             <ul class="sub-menu">
-                                <li><a href="../entrenamientos/entrenamiento">Mi entrenamiento</a></li>
-                                <li><a href="../entrenamientos/principiante">Principiante</a></li>
-                                <li><a href="../entrenamientos/medio">Medio</a></li>
-                                <li><a href="../entrenamientos/avanzado">Avanzado</a></li>
-                                <li><a href="../entrenamientos/experto">Experto</a></li>
+                                <li><a href="/entrenamientos/entrenamiento">Mi entrenamiento</a></li>
+                                <li><a href="/entrenamientos/principiante">Principiante</a></li>
+                                <li><a href="/entrenamientos/medio">Medio</a></li>
+                                <li><a href="/entrenamientos/avanzado">Avanzado</a></li>
+                                <li><a href="/entrenamientos/experto">Experto</a></li>
                             </ul>
                         </li>
-                        <li><a href="../waregym" title="">Waregym</a></li>
+                        <li><a href="/waregym" title="">Waregym</a></li>
                         <li class="has-children">
                             <a href="#0" title="">Productos</a>
                             <ul class="sub-menu">
@@ -120,13 +120,16 @@
                                 <li><a href="/productos">Productos disponibles</a></li>
                             </ul>
                         </li>
-                        <li><a href="../contacto" title="">Contacto</a></li>
-                        {{#user}}
-						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /></form></li>
-						{{/user}}
+                        <li><a href="/contacto" title="">Contacto</a></li>
+                        {{#logout}}
+						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /></li>
+						{{/logout}}
                         {{#hidden}}
               			<li><a href="/login" title="">Iniciar Sesión</a></li>
                         {{/hidden}}
+                        {{#admin}}
+                        <li><p>Admin</p></li>
+                        {{/admin}}
                     </ul>
                     <!-- end header__nav -->
 

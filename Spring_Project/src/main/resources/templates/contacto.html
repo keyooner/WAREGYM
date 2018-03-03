@@ -119,12 +119,15 @@
                             </ul>
                         </li>
                         <li class="current"><a href="/contacto" title="">Contacto</a></li>
-                        {{#user}}
+                        {{#logout}}
 						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /></li>
-						{{/user}}
+						{{/logout}}
                         {{#hidden}}
               			<li><a href="/login" title="">Iniciar Sesión</a></li>
                         {{/hidden}}
+                        {{#admin}}
+                        <li><p>Admin</p></li>
+                        {{/admin}}
                     </ul>
                     <!-- end header__nav -->
 

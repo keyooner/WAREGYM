@@ -109,12 +109,15 @@
                         <li><a href="/waregym" title="">Waregym</a></li>
                         <li><a href="/productos" title="">Productos</a></li>
                         <li><a href="/contacto" title="">Contacto</a></li>
-                        {{#user}}
-						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /></form></li>
-						{{/user}}
+                        {{#logout}}
+						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /></li>
+						{{/logout}}
                         {{#hidden}}
               			<li><a href="/login" title="">Iniciar Sesión</a></li>
                         {{/hidden}}
+                        {{#admin}}
+                        <li><p>Admin</p></li>
+                        {{/admin}}
                     </ul> <!-- end header__nav -->
 
                     <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Cerrar</a>

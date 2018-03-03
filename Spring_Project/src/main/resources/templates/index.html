@@ -120,7 +120,7 @@
                         </li>
                         <li><a href="/contacto" title="">Contacto</a></li>
                         {{#user}}
-						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /><input type="hidden" name="_csrf" value="{{token}}"/></form></li>
+						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /></li>
 						{{/user}}
                         {{#hidden}}
               			<li><a href="/login" title="">Iniciar Sesión</a></li>

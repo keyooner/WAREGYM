@@ -24,7 +24,10 @@ public class InscriptionController {
 	
 	@Autowired
 	UserRepository userRepository;
-	
+
+	@Autowired
+	ActivityRepository activityRepository;
+
 	@RequestMapping("/inscripcion")
 	 public String index(Model model, HttpServletRequest request) {
 		
@@ -40,13 +43,16 @@ public class InscriptionController {
 		
 		for(Activity activity: activitiesFor) {
 			ActivityInscribed actIns = new ActivityInscribed();
-			actIns.setActivity(activity);			
+			actIns.setActivity(activity);	
+			actIns.setButtonText("Inscribirse");
 			for(int i = 0; i < activity.getUsers().size(); i++) {
 				if (activity.getUsers() != null && !activity.getUsers().isEmpty() 
 						&& activity.getUsers().get(i).getName().equals("user")) {
-					actIns.setInscribed(true);
+					actIns.setShowInscribed(true);
+					actIns.setButtonText("Borrar inscripción");
 				}
 			}
+			actIns.setShowDelete(!actIns.isShowInscribed());
 			activitiesInscribed.add(actIns);			 
 		}
 		
@@ -59,9 +65,30 @@ public class InscriptionController {
 	 public String inscribe(Model model, @RequestParam Long id, HttpServletRequest request) {
 		
 		User user = userRepository.findById((long)1);
+		Activity activity = activityRepository.findById(id);
 		
+		boolean found = false;
+		int counter = 0;
+		if(user != null && user.getActivities() != null && !user.getActivities().isEmpty()) {
+			while(!found && counter < user.getActivities().size()) {
+				if(user.getActivities().get(counter).getId() == id) {
+					found = true;
+				}
+				else{
+					counter++;
+				}
+			}
+		}
 		
-		return index(model, request);
+		if(!found) {
+			user.getActivities().add(activity);			
+		}
+		else {
+			user.getActivities().remove(counter);
+		}
 		
+		userRepository.save(user);
+		
+		return index(model, request);		
 	}
 }

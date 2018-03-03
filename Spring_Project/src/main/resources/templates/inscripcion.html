@@ -142,9 +142,9 @@
                 
                 <form action="/clase_inscrita">
                 <ul class="class-inscription">
-                    <li><br><a>{{activity.name}}</a></li>
-                        <input type="hidden" value="{{activity.id}}" name="id" >
-                        <input value="{{activity.id}}" class="btn btn-lg btn-primary btn-block" type="submit"><a>Registrarme</a>
+                    {{activity.name}}<br><br>
+                    <input type="hidden" value="{{activity.id}}" name="id" >
+                    <input value="{{buttonText}}" class="btn btn-lg btn-primary btn-block" type="submit">
                 </ul>
                 
                 </form>

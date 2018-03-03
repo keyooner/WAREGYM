@@ -8,7 +8,7 @@ import com.waregym.classesJava.Activity;
 
 
 public interface ActivityRepository extends JpaRepository<Activity, Long>{
-	
+	Activity findById(long id);
 	List<Activity> findByName(String name);
 	
 }

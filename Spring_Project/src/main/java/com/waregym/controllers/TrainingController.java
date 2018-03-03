@@ -4,14 +4,17 @@ import com.waregym.repositories.TrainingRepository;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class TrainingController {
-
-	TrainingRepository training;
+	
+	@Autowired
+	 TrainingRepository training;	 
+	
 	
 	@RequestMapping("/entrenamientos/avanzado")
 	 public String avanzado(Model model, HttpServletRequest request) {
@@ -21,8 +24,9 @@ public class TrainingController {
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
     	//model.addAttribute("user-name", user.getName());
-		
-	    training.save(new Training("avanzado"));
+		Training t = new Training("Avanzado");
+    	
+	    training.save(t);
 	    
 		return "/entrenamientos/avanzado";
 	 }
@@ -48,7 +52,7 @@ public class TrainingController {
     	model.addAttribute("user", request.isUserInRole("USER"));
     	//model.addAttribute("user-name", user.getName());
 		
-		training.save(new Training("experto"));
+		training.save(new Training("Experto"));
 		
 		return "/entrenamientos/experto";
 	 }
@@ -62,7 +66,7 @@ public class TrainingController {
     	model.addAttribute("user", request.isUserInRole("USER"));
     	//model.addAttribute("user-name", user.getName());
 		
-		training.save(new Training("medio"));
+		training.save(new Training("Medio"));
 		
 		return "/entrenamientos/medio";
 	 }
@@ -76,7 +80,7 @@ public class TrainingController {
     	model.addAttribute("user", request.isUserInRole("USER"));
     	//model.addAttribute("user-name", user.getName());
 		
-		training.save(new Training("principiante"));
+		training.save(new Training("Principiante"));
 		
 		return "/entrenamientos/principiante";
 	 }

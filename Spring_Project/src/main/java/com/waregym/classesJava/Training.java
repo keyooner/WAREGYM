@@ -20,7 +20,7 @@ public class Training {
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Exercise> exercises;
 
-	private Date date;
+	//private Date date;
 	
 	public Training(String type) {
 		switch (type) {
@@ -53,11 +53,11 @@ public class Training {
 		}
 	}
 	
-	public Training(Date date, List<Exercise> exercises) {
+	//public Training(Date date, List<Exercise> exercises) {
 
-		this.date = date;
-		this.exercises = exercises;
-	}
+		//this.date = date;
+		//this.exercises = exercises;
+	//}
 
 	public long getId() {
 		return id;
@@ -75,12 +75,12 @@ public class Training {
 		this.exercises = exercises;
 	}
 
-	public Date getDate() {
-		return date;
-	}
+	//public Date getDate() {
+	//	return date;
+	//}
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
+	//public void setDate(Date date) {
+	//	this.date = date;
+	//}
 	
 }

@@ -42,8 +42,8 @@
             <div class="header__content row">
 
                 <div class="header__logo">
-                    <a class="logo" href="index.html">
-                        <img href="index.html" src="images/logoGYM.png" alt="Homepage">
+                    <a class="logo" href="/index">
+                        <img href="/index" src="images/logoGYM.png" alt="Homepage">
                     </a>
                 </div>
                 <!-- end header__logo -->
@@ -89,28 +89,28 @@
                     <h2 class="header__nav-heading h6">Site Navigation</h2>
 
                     <ul class="header__nav">
-                        <li class="current"><a href="index.html" title="">Inicio</a></li>
+                        <li class="current"><a href="/index" title="">Inicio</a></li>
                         <li class="has-children">
                             <a href="#0">Clases</a>
                             <ul class="sub-menu">
-                            	<li><a href="clases/añadir_clase">Añadir Clase</a></li>
-                                <li><a href="clases/inscripcion">Apúntate</a></li>
+                            	<li><a href="/clases/añadir_clase">Añadir Clase</a></li>
+                                <li><a href="/clases/inscripcion">Apúntate</a></li>
                                 {{#activities}}
-                                <li><a href="clases/{{id}}-{{name}}.html">{{name}}</a></li>
+                                <li><a href="/clases/{{id}}-{{name}}">{{name}}</a></li>
                                 {{/activities}}
                             </ul>
                         </li>
                         <li class="has-children">
                             <a href="#0" title="">Entrenamientos</a>
                             <ul class="sub-menu">
-                                <li><a href="entrenamientos/entrenamiento.html">Mi Entrenamiento</a></li>
-                                <li><a href="entrenamientos/principiante.html">Principiante</a></li>
-                                <li><a href="entrenamientos/medio.html">Medio</a></li>
-                                <li><a href="entrenamientos/avanzado.html">Avanzado</a></li>
-                                <li><a href="entrenamientos/experto.html">Experto</a></li>
+                                <li><a href="/entrenamientos/entrenamiento">Mi Entrenamiento</a></li>
+                                <li><a href="/entrenamientos/principiante">Principiante</a></li>
+                                <li><a href="/entrenamientos/medio">Medio</a></li>
+                                <li><a href="/entrenamientos/avanzado">Avanzado</a></li>
+                                <li><a href="/entrenamientos/experto">Experto</a></li>
                             </ul>
                         </li>
-                        <li><a href="waregym.html" title="">Waregym</a></li>
+                        <li><a href="/waregym" title="">Waregym</a></li>
                         <li class="has-children">
                             <a href="#0" title="">Productos</a>
                             <ul class="sub-menu">
@@ -118,16 +118,13 @@
                                 <li><a href="/productos">Productos disponibles</a></li>
                             </ul>
                         </li>
-                        <li><a href="contacto.html" title="">Contacto</a></li>
+                        <li><a href="/contacto" title="">Contacto</a></li>
                         {{#user}}
 						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /><input type="hidden" name="_csrf" value="{{token}}"/></form></li>
 						{{/user}}
                         {{#hidden}}
-              			<li><a href="login.html" title="">Iniciar Sesión</a></li>
+              			<li><a href="/login" title="">Iniciar Sesión</a></li>
                         {{/hidden}}
-                        {{#admin}}
-						<li><p>Admin</p></li>
-						{{/admin}}
                     </ul>
                     <!-- end header__nav -->
 
@@ -155,9 +152,9 @@
                         <div class="entry" style="background-image:url('images/thumbs/featured/featured-fitnessworld.jpg');">
 
                             <div class="entry__content">
-                                <span class="entry__category"><a href="waregym.html">Fitness</a></span>
+                                <span class="entry__category"><a href="/waregym">Fitness</a></span>
 
-                                <h1><a href="waregym.html" title="">¿POR QUÉ WAREGYM?</a></h1>
+                                <h1><a href="/waregym" title="">¿POR QUÉ WAREGYM?</a></h1>
 
                             </div>
                             <!-- end entry__content -->
@@ -172,9 +169,9 @@
                         <div class="entry" style="background-image:url('images/index/oferta-gym.jpg');">
 
                             <div class="entry__content">
-                                <span class="entry__category"><a href="waregym.html">Precios</a></span>
+                                <span class="entry__category"><a href="/waregym">Precios</a></span>
 
-                                <h1><a href="waregym.html" title="">¡OFERTA ESPECIAL!</a></h1>
+                                <h1><a href="/waregym" title="">¡OFERTA ESPECIAL!</a></h1>
 
                             </div>
                             <!-- end entry__content -->
@@ -185,9 +182,9 @@
                         <div class="entry" style="background-image:url('images/thumbs/featured/featured-workout.jpg');">
 
                             <div class="entry__content">
-                                <span class="entry__category"><a href="entrenamientos/entrenamiento.html">Rutinas</a></span>
+                                <span class="entry__category"><a href="/entrenamientos/entrenamiento">Rutinas</a></span>
 
-                                <h1><a href="entrenamientos/entrenamiento.html" title="">Entrenamiento personal</a></h1>
+                                <h1><a href="/entrenamientos/entrenamiento" title="">Entrenamiento personal</a></h1>
 
                             </div>
                             <!-- end entry__content -->
@@ -221,14 +218,14 @@
                 <article class="masonry__brick entry format-standard" data-aos="fade-up">
 
                     <div class="entry__thumb">
-                        <a href="productos.html" class="entry__thumb-link">
+                        <a href="/productos" class="entry__thumb-link">
                             <img src="images/thumbs/masonry/product-400.jpg" srcset="images/thumbs/masonry/product-400.jpg 1x, images/thumbs/masonry/product-800.jpg 2x" alt="">
                         </a>
                     </div>
 
                     <div class="entry__text">
                         <div class="entry__header">
-                            <h1 class="entry__title"><a href="productos.html">Nuestros productos</a></h1>
+                            <h1 class="entry__title"><a href="/productos">Nuestros productos</a></h1>
                         </div>
                         <div class="entry__excerpt">
                             <p>
@@ -237,7 +234,7 @@
                         </div>
                         <div class="entry__meta">
                             <span class="entry__meta-links">
-                                <a href="productos.html">Nutrición</a> 
+                                <a href="/productos">Nutrición</a> 
                             </span>
                         </div>
                     </div>
@@ -275,14 +272,14 @@
                 <article class="masonry__brick entry format-standard" data-aos="fade-up">
 
                     <div class="entry__thumb">
-                        <a href="waregym.html" class="entry__thumb-link">
+                        <a href="/waregym" class="entry__thumb-link">
                             <img src="images/thumbs/masonry/gym-400.jpg" srcset="images/thumbs/masonry/gym-400.jpg 1x, images/thumbs/masonry/gym-800.jpg 2x" alt="">
                         </a>
                     </div>
 
                     <div class="entry__text">
                         <div class="entry__header">
-                            <h1 class="entry__title"><a href="waregym.html">Instalaciones únicas</a></h1>
+                            <h1 class="entry__title"><a href="/waregym">Instalaciones únicas</a></h1>
                         </div>
                         <div class="entry__excerpt">
                             <p>
@@ -291,7 +288,7 @@
                         </div>
                         <div class="entry__meta">
                             <span class="entry__meta-links">
-                                <a href="waregym.html">Salud</a>
+                                <a href="/waregym">Salud</a>
                             </span>
                         </div>
                     </div>
@@ -320,11 +317,11 @@
                     <h4>Secciones</h4>
 
                     <ul class="s-footer__linklist">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="waregym.html">Waregym</a></li>
-                        <li><a href="productos.html">Productos</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href="login.html">Iniciar Sesión</a></li>
+                        <li><a href="/index">Inicio</a></li>
+                        <li><a href="/waregym">Waregym</a></li>
+                        <li><a href="/productos">Productos</a></li>
+                        <li><a href="/contacto">Contacto</a></li>
+                        <li><a href="/login">Iniciar Sesión</a></li>
                     </ul>
 
                 </div>
@@ -335,11 +332,11 @@
                     <h4>Clases</h4>
 
                     <ul class="s-footer__linklist">
-                        <li><a href="clases/inscripcion.html">Apúntate</a></li>
-                        <li><a href="clases/spinning.html">Spinning</a></li>
-                        <li><a href="clases/body-combat.html">Body Combat</a></li>
-                        <li><a href="clases/moi-thai.html">Moi-Thai</a></li>
-                        <li><a href="clases/kick-boxing.html">Kick Boxing</a></li>
+                        <li><a href="/clases/inscripcion">Apúntate</a></li>
+                        <li><a href="/clases/spinning">Spinning</a></li>
+                        <li><a href="/clases/body-combat">Body Combat</a></li>
+                        <li><a href="/clases/moi-thai">Moi-Thai</a></li>
+                        <li><a href="/clases/kick-boxing">Kick Boxing</a></li>
                     </ul>
 
                 </div>
@@ -350,11 +347,11 @@
                     <h4>Entrenamiento</h4>
 
                     <ul class="s-footer__linklist">
-                        <li><a href="entrenamientos/entrenamiento.html">Mi Entrenamiento</a></li>
-                        <li><a href="entrenamientos/principiante.html">Principiante</a></li>
-                        <li><a href="entrenamientos/medio.html">Medio</a></li>
-                        <li><a href="entrenamientos/avanzado.html">Avanzado</a></li>
-                        <li><a href="entrenamientos/.html">Experto</a></li>
+                        <li><a href="/entrenamientos/entrenamiento">Mi Entrenamiento</a></li>
+                        <li><a href="/entrenamientos/principiante">Principiante</a></li>
+                        <li><a href="/entrenamientos/medio">Medio</a></li>
+                        <li><a href="/entrenamientos/avanzado">Avanzado</a></li>
+                        <li><a href="/entrenamientos/experto">Experto</a></li>
                     </ul>
 
                 </div>

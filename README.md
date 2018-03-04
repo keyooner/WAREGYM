@@ -85,8 +85,5 @@ Header único y común a todas las páginas html de la aplicación, y por tanto 
 
 ### Diagrama de templates:
 ![Se muestra el diagrama de Templates](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/templates_diagram.png "Diagrama de Templates")
-- Se muestra el diagrama de templates
-
-### Diagrama de seguridad:
 ![Se muestra el diagrama de Seguridad](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/security_diagram.png "Diagrama de Seguridad")
-- Se muestra el diagrama de seguridad
+- Se muestra el diagrama de templates

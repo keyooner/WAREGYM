@@ -47,7 +47,7 @@
 ![Se muestra un seguimiento de tus entrenamientos si eres usuario registrado](https://github.com/keyooner/WAREGYM/blob/master/Entrenamiento-seguimiento.PNG "Entrenamiento Personalizado")
 - Se muestra un seguimiento de tus entrenamientos si eres usuario registrado
 
-![Se muestra las diferentes clases colectivas con sus horarios correspondientes para apuntarse si estás registrado](https://github.com/keyooner/WAREGYM/blob/master/Gestion-clases.PNG "Diferentes Clases")7
+![Se muestra las diferentes clases colectivas con sus horarios correspondientes para apuntarse si estás registrado](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/Clases.PNG "Diferentes Clases")7
 - Se muestra las diferentes clases colectivas con sus horarios correspondientes para apuntarse si estás registrado
 
 ![Se muestra diferente información de interés para el usuario anonimo](https://github.com/keyooner/WAREGYM/blob/master/Informacion-gimnasio.PNG "Informacion sobre el gimnasio")
@@ -78,3 +78,6 @@ Header único y común a todas las páginas html de la aplicación, y por tanto 
 - productos
 - contacto
 - login
+
+### Diagrama de clases:
+

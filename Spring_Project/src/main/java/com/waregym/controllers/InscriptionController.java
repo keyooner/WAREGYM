@@ -28,7 +28,7 @@ public class InscriptionController {
 	@Autowired
 	ActivityRepository activityRepository;
 
-	@RequestMapping("/inscripcion")
+	@RequestMapping("/clases/inscripcion")
 	 public String index(Model model, HttpServletRequest request) {
 		
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));

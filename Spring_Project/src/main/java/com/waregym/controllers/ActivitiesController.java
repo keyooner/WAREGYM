@@ -137,22 +137,6 @@ public class ActivitiesController {
 		return "activity_template";
 	 }
 	
-	@RequestMapping("clases/inscripcion")
-	 public String inscripcion(Model model, HttpServletRequest request) {
-		
-		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
-    	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
-    	model.addAttribute("admin", request.isUserInRole("ADMIN"));
-    	model.addAttribute("user", request.isUserInRole("USER"));
-    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
-			model.addAttribute("userName",request.getRemoteUser());
-		} else {model.addAttribute("userName", "");}
-		
-		model.addAttribute("activities", activities.findAll());
-		
-		return "inscripcion";
-	 }
-	
 	@RequestMapping("/image/{fileName:.+}")
 	public void handleFileDownload(@PathVariable String fileName, HttpServletResponse res)
 			throws FileNotFoundException, IOException {

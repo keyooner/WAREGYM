@@ -80,9 +80,13 @@ Header único y común a todas las páginas html de la aplicación, y por tanto 
 - login
 
 ### Diagrama de clases:
-![Cualquier usuario podrá ver los productos mejor valorizados y vendidos]
-(https://github.com/keyooner/WAREGYM/blob/master/Images_readme/class_diagram.PNG "a")
+![Se muestra el diagrama de Clases](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/class_diagram.png "Diagrama de Clases")
+- Se muestra el diagrama de clases
 
 ### Diagrama de templates:
-(https://github.com/keyooner/WAREGYM/blob/master/Images_readme/templates_diagram.png "b")
-(https://github.com/keyooner/WAREGYM/blob/master/Images_readme/security_diagram.png)
+![Se muestra el diagrama de Templates](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/templates_diagram.png "Diagrama de Templates")
+- Se muestra el diagrama de templates
+
+### Diagrama de seguridad:
+![Se muestra el diagrama de Seguridad](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/security_diagram.png "Diagrama de Seguridad")
+- Se muestra el diagrama de templates

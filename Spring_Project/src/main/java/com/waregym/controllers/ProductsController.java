@@ -69,7 +69,9 @@ public class ProductsController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
 		
 		Page<Product> productsPage = products.findAll(new PageRequest(page.getPageNumber(), 4));
 		model.addAttribute("products",productsPage);
@@ -90,7 +92,9 @@ public class ProductsController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
 		
 		model.addAttribute("products",products.findAll());
 		model.addAttribute("activities",activities.findAll());
@@ -106,7 +110,9 @@ public class ProductsController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
 		
 		String fileName = "image-" + product.getName() + ".jpg";
 		
@@ -143,7 +149,9 @@ public class ProductsController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
 		
 		Page<Product> productsPage = products.findAll(new PageRequest(page.getPageNumber(), 4));
 		model.addAttribute("products",productsPage);

@@ -35,7 +35,9 @@ public class InscriptionController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
 		
 		model.addAttribute("activities", activities.findAll());
 		model.addAttribute("activities_ins",activities.findAll());
@@ -60,6 +62,7 @@ public class InscriptionController {
 		
 		model.addAttribute("activitiesInscribed", activitiesInscribed);
 		
+		
 		return "inscripcion";
 	 }
 	
@@ -70,7 +73,9 @@ public class InscriptionController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
 		
 		User user = userRepository.findById((long)1);
 		Activity activity = activityRepository.findById(id);

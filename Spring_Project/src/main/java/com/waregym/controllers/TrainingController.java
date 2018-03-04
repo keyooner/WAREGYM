@@ -23,7 +23,9 @@ public class TrainingController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
 		Training t = new Training("Avanzado");
     	
 	    training.save(t);
@@ -38,7 +40,9 @@ public class TrainingController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
     	
 		return "/entrenamientos/entrenamiento";
 	 }
@@ -50,7 +54,9 @@ public class TrainingController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
 		
 		training.save(new Training("Experto"));
 		
@@ -64,7 +70,9 @@ public class TrainingController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
 		
 		training.save(new Training("Medio"));
 		
@@ -78,7 +86,9 @@ public class TrainingController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
 		
 		training.save(new Training("Principiante"));
 		

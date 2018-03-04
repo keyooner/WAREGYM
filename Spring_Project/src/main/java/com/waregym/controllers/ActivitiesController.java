@@ -49,9 +49,11 @@ public class ActivitiesController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
 		
 		model.addAttribute("activities", activities.findAll());
+		if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
 		
 		return "new_activity";
 	}
@@ -65,7 +67,9 @@ public class ActivitiesController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
     	
 		String[] fileName = new String[3];
 		File[] uploadedFiles = new File[3];
@@ -121,7 +125,9 @@ public class ActivitiesController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
 		
 		Activity activity = activities.findOne(id);
 		
@@ -138,10 +144,11 @@ public class ActivitiesController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
 		
 		model.addAttribute("activities", activities.findAll());
-		
 		
 		return "inscripcion";
 	 }

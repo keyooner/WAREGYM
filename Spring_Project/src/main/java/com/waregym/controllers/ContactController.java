@@ -22,9 +22,12 @@ public class ContactController {
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("user", request.isUserInRole("USER"));
-    	//model.addAttribute("user-name", user.getName());
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
 		
 		model.addAttribute("activities", activities.findAll());
+		
 		
 		return "contacto";
 	 }

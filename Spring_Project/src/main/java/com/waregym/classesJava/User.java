@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -25,7 +26,7 @@ public class User {
 
 	private String name;
     
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
     private Training training;
 	
 	private String passwordHash;
@@ -43,6 +44,7 @@ public class User {
 		this.name = name;
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.roles = new ArrayList<>(Arrays.asList(roles));
+		this.training = new Training();
 	}
 
 	public String getName() {

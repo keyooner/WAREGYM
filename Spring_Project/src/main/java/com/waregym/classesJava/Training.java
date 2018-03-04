@@ -1,5 +1,6 @@
 package com.waregym.classesJava;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import com.waregym.classesJava.Exercise;
@@ -24,6 +25,10 @@ public class Training {
 
 	//private Date date;
 	
+	public Training() {
+		this.name = "Ninguno";
+	}
+	
 	public Training(String type) {
 		this.name = type;
 		switch (type) {
@@ -39,7 +44,7 @@ public class Training {
 			exercises.add(new Exercise("Abdominales", 0, 15));
 			break;
 		case "Avanzado": 
-			exercises.add(new Exercise("Pesas",20,10));
+			exercises.add(new Exercise("Pesas", 30, 20));
 			exercises.add(new Exercise("Press de Banca", 100, 10));
 			exercises.add(new Exercise("Piernas", 40, 15));
 			exercises.add(new Exercise("Barras", 0, 10));
@@ -74,7 +79,7 @@ public class Training {
 		return exercises;
 	}
 
-	public void setExercises(List<Exercise> exercises) {
+	public void setExercises(ArrayList<Exercise> exercises) {
 		this.exercises = exercises;
 	}
 

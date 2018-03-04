@@ -32,31 +32,31 @@
 - Correo electronico
 
 ### Capturas de pantalla de la Web:
-![Se muestra diferente información de interés para el usuario anonimo](https://github.com/keyooner/WAREGYM/blob/master/Inicio.PNG "Página principal")
+![Se muestra diferente información de interés para el usuario anonimo](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/Inicio.PNG "Página principal")
 - Se muestra diferente información de interés para el usuario anonimo
 
-![Se muestra muestra información sobre una clase además de sus horarios para el usuario anonimo](https://github.com/keyooner/WAREGYM/blob/master/Clases.PNG "Clases Disponibles")
+![Se muestra muestra información sobre una clase además de sus horarios para el usuario anonimo](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/Clases.PNG "Clases Disponibles")
 - Se muestra muestra información sobre una clase además de sus horarios para el usuario anonimo
 
-![Se muestra información de contacto del gimnasio](https://github.com/keyooner/WAREGYM/blob/master/Contacto.PNG "Contacta con el gimnasio")
+![Se muestra información de contacto del gimnasio](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/Contacto.PNG "Contacta con el gimnasio")
 - Se muestra información de contacto del gimnasio
 
-![Se muestran videos de formas de entrenar según el nivel a los usuarios registrados](https://github.com/keyooner/WAREGYM/blob/master/Entrenamientos.PNG "Diferentes Entrenamientos")
+![Se muestran videos de formas de entrenar según el nivel a los usuarios registrados](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/Entrenamientos.PNG "Diferentes Entrenamientos")
 - Se muestran videos de formas de entrenar según el nivel a los usuarios registrados
 
-![Se muestra un seguimiento de tus entrenamientos si eres usuario registrado](https://github.com/keyooner/WAREGYM/blob/master/Entrenamiento-seguimiento.PNG "Entrenamiento Personalizado")
+![Se muestra un seguimiento de tus entrenamientos si eres usuario registrado](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/Entrenamiento-seguimiento.PNG "Entrenamiento Personalizado")
 - Se muestra un seguimiento de tus entrenamientos si eres usuario registrado
 
 ![Se muestra las diferentes clases colectivas con sus horarios correspondientes para apuntarse si estás registrado](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/Clases.PNG "Diferentes Clases")7
 - Se muestra las diferentes clases colectivas con sus horarios correspondientes para apuntarse si estás registrado
 
-![Se muestra diferente información de interés para el usuario anonimo](https://github.com/keyooner/WAREGYM/blob/master/Informacion-gimnasio.PNG "Informacion sobre el gimnasio")
+![Se muestra diferente información de interés para el usuario anonimo](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/Informacion-gimnasio.PNG "Informacion sobre el gimnasio")
 - Se muestra diferente información de interés para el usuario anonimo
 
-![El usuario podrá loguearse o registrarse en el sistema](https://github.com/keyooner/WAREGYM/blob/master/LogIn.PNG "LogIn - Registro")
+![El usuario podrá loguearse o registrarse en el sistema](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/LogIn.PNG "LogIn - Registro")
 - El usuario podrá loguearse o registrarse en el sistema
 
-![Cualquier usuario podrá ver los productos mejor valorizados y vendidos](https://github.com/keyooner/WAREGYM/blob/master/Productos.PNG "Productos")
+![Cualquier usuario podrá ver los productos mejor valorizados y vendidos](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/Productos.PNG "Productos")
 - Cualquier usuario podrá ver los productos mejor valorizados y vendidos
 
 ### Diagrama de navegación:

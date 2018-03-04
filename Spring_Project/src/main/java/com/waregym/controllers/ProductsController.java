@@ -104,7 +104,7 @@ public class ProductsController {
 	
 	@RequestMapping("/producto_añadido")
 	public String addActivity(Model model, HttpServletRequest request, Product product,
-			@RequestParam("file") MultipartFile file) {
+			@RequestParam("file") MultipartFile file, Pageable page) {
 		
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
@@ -134,8 +134,14 @@ public class ProductsController {
 		
 		products.save(product);
 		
-		model.addAttribute("products",products.findAll());
-		model.addAttribute("activities", activities.findAll());
+		Page<Product> productsPage = products.findAll(new PageRequest(page.getPageNumber(), 4));
+		model.addAttribute("products",productsPage);
+		model.addAttribute("activities",activities.findAll());
+		
+		model.addAttribute("showNext",!productsPage.isLast());
+		model.addAttribute("showPrev",!productsPage.isFirst());
+		model.addAttribute("nextPage",productsPage.getNumber()+1);
+		model.addAttribute("prevPage",productsPage.getNumber()-1);
 		
 		return "productos";
 	} 

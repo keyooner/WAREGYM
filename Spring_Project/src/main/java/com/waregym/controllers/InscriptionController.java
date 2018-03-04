@@ -29,7 +29,7 @@ public class InscriptionController {
 	ActivityRepository activityRepository;
 
 	@RequestMapping("/clases/inscripcion")
-	 public String index(Model model, HttpServletRequest request) {
+	 public String index(Model model, HttpServletRequest request, User user) {
 		
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
@@ -40,7 +40,6 @@ public class InscriptionController {
 		} else {model.addAttribute("userName", "");}
 		
 		model.addAttribute("activities", activities.findAll());
-		model.addAttribute("activities_ins",activities.findAll());
 		
 		ArrayList<Activity> activitiesFor = (ArrayList<Activity>) activities.findAll();
 		ArrayList<ActivityInscribed> activitiesInscribed = new ArrayList<ActivityInscribed>();
@@ -51,7 +50,7 @@ public class InscriptionController {
 			actIns.setButtonText("Inscribirse");
 			for(int i = 0; i < activity.getUsers().size(); i++) {
 				if (activity.getUsers() != null && !activity.getUsers().isEmpty() 
-						&& activity.getUsers().get(i).getName().equals("user")) {
+						&& activity.getUsers().get(i).getName().equals(user.getName())) {
 					actIns.setShowInscribed(true);
 					actIns.setButtonText("Borrar inscripción");
 				}
@@ -67,7 +66,7 @@ public class InscriptionController {
 	 }
 	
 	@RequestMapping("/clase_inscrita")
-	 public String inscribe(Model model, HttpServletRequest request, @RequestParam Long id) {
+	 public String inscribe(Model model, HttpServletRequest request, @RequestParam Long id, User user) {
 		
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("PROFE"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("PROFE"));
@@ -77,14 +76,14 @@ public class InscriptionController {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
 		
-		User user = userRepository.findById((long)1);
+		User userAux = userRepository.findById((long)1);
 		Activity activity = activityRepository.findById(id);
 		
 		boolean found = false;
 		int counter = 0;
-		if(user != null && user.getActivities() != null && !user.getActivities().isEmpty()) {
-			while(!found && counter < user.getActivities().size()) {
-				if(user.getActivities().get(counter).getId() == id) {
+		if(userAux != null && userAux.getActivities() != null && !userAux.getActivities().isEmpty()) {
+			while(!found && counter < userAux.getActivities().size()) {
+				if(userAux.getActivities().get(counter).getId() == id) {
 					found = true;
 				}
 				else{
@@ -102,6 +101,6 @@ public class InscriptionController {
 		
 		userRepository.save(user);
 		
-		return index(model, request);		
+		return index(model, request,user);		
 	}
 }

@@ -171,10 +171,12 @@
                             </span>
                         </div>
                         <p>
+                        {{#admin}}
                         <form action="producto_eliminado" method="post">
                         	<input type="hidden" name="id" value="{{id}}">
                         	<button type="submit">Eliminar producto</button>
                         </form>
+                        {{/admin}}
                     </div>
                     
                 </article> <!-- end article --> 

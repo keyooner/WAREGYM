@@ -23,6 +23,7 @@ public class LoginController {
 	
 	@RequestMapping("/loginerror")
 	 public String loginerror(Model model) {
-		return "login";
+		
+		return "loginerror";
 	 }
 }

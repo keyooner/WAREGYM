@@ -20,4 +20,9 @@ public class LoginController {
 	 
 		return "login";
 	 }
+	
+	@RequestMapping("/loginerror")
+	 public String loginerror(Model model) {
+		return "login";
+	 }
 }

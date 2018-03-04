@@ -82,7 +82,7 @@ public class ProductsController {
 		model.addAttribute("nextPage",productsPage.getNumber()+1);
 		model.addAttribute("prevPage",productsPage.getNumber()-1);
 		
-		return "productos";
+		return "products";
 	 }	
 	
 	@RequestMapping("/nuevoProducto")
@@ -168,7 +168,7 @@ public class ProductsController {
 		model.addAttribute("nextPage",productsPage.getNumber()+1);
 		model.addAttribute("prevPage",productsPage.getNumber()-1);
     	
-    	return "productos";
+    	return "products";
 
 	} 
 	

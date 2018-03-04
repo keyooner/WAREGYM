@@ -81,8 +81,8 @@ Header único y común a todas las páginas html de la aplicación, y por tanto 
 
 ### Diagrama de clases:
 ![Cualquier usuario podrá ver los productos mejor valorizados y vendidos]
-(https://github.com/keyooner/WAREGYM/blob/master/Images_readme/class_diagram.PNG)
+(https://github.com/keyooner/WAREGYM/blob/master/Images_readme/class_diagram.PNG "a")
 
 ### Diagrama de templates:
-(https://github.com/keyooner/WAREGYM/blob/master/Images_readme/templates_diagram.png)
+(https://github.com/keyooner/WAREGYM/blob/master/Images_readme/templates_diagram.png "b")
 (https://github.com/keyooner/WAREGYM/blob/master/Images_readme/security_diagram.png)

@@ -33,12 +33,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         // Private pages (all other pages)
         //http.authorizeRequests().antMatchers("/clases/añadir_clase").hasAnyRole("ADMIN");
-        //http.authorizeRequests().antMatchers("/clases/inscripcion").hasAnyRole("USER","PROFE");
-        http.authorizeRequests().antMatchers("/entrenamientos/entrenamiento").hasAnyRole("ADMIN","USER","PROFE");
-        http.authorizeRequests().antMatchers("/entrenamientos/principiante").hasAnyRole("ADMIN","USER","PROFE");
-        http.authorizeRequests().antMatchers("/entrenamientos/medio").hasAnyRole("ADMIN","USER","PROFE");
-        http.authorizeRequests().antMatchers("/entrenamientos/avanzado").hasAnyRole("ADMIN","USER","PROFE");
-        http.authorizeRequests().antMatchers("/entrenamientos/experto").hasAnyRole("ADMIN","USER","PROFE");
+        //http.authorizeRequests().antMatchers("/clases/inscripcion").hasAnyRole("USER","TEACH");
+        http.authorizeRequests().antMatchers("/entrenamientos/entrenamiento").hasAnyRole("ADMIN","USER","TEACH");
+        http.authorizeRequests().antMatchers("/entrenamientos/principiante").hasAnyRole("ADMIN","USER","TEACH");
+        http.authorizeRequests().antMatchers("/entrenamientos/medio").hasAnyRole("ADMIN","USER","TEACH");
+        http.authorizeRequests().antMatchers("/entrenamientos/avanzado").hasAnyRole("ADMIN","USER","TEACH");
+        http.authorizeRequests().antMatchers("/entrenamientos/experto").hasAnyRole("ADMIN","USER","TEACH");
         http.authorizeRequests().antMatchers("/nuevoProducto").hasAnyRole("ADMIN");
 
         // Login form

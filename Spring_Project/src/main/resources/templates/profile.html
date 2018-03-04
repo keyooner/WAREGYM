@@ -119,12 +119,7 @@
                         {{#hidden}}
               			<li><a href="/login" title="">Iniciar Sesión</a></li>
                         {{/hidden}}
-                        {{#admin}}
-                        <li><p>Admin</p></li>
-                        {{/admin}}
-                        <li>
-                    		<p><a href="/entrenamientos/entrenamiento">{{userName}}</a></p>
-                    	</li>
+                        <li><a href="/profile">{{userName}}</a></li>
                     </ul>
                     <!-- end header__nav -->
 
@@ -146,10 +141,9 @@
     ================================================== -->
     <section class="s-content s-content--narrow">
         <div class="row text-center">
-                <img class="mb-4" src="images/profile.png" alt="" width="72" height="72">
-                <h4 class="h3 mb-3 font-weight-normal">Bienvenido a tu área Personal</h4>
-                <button class="btn btn-lg btn-primary btn-block" type="submit"><a href="#!">Clases</button>
-                <button class="btn btn-lg btn-primary btn-block" type="submit"><a href="signup.html">Entrenamientos</a></button>
+        	<h1 class="h3 mb-3 font-weight-normal">Bienvenido a tu área Personal</h1>
+            <form action="/clases/inscripcion"><input type="submit" value="Clases"></form>
+            <form action="/entrenamientos/entrenamiento"><input type="submit" value="Entrenamientos"></form>
         </div>
     </section>
     <!-- s-content -->

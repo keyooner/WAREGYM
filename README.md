@@ -80,4 +80,8 @@ Header único y común a todas las páginas html de la aplicación, y por tanto 
 - login
 
 ### Diagrama de clases:
+(https://github.com/keyooner/WAREGYM/blob/master/Images_readme/class_diagram.png)
 
+### Diagrama de templates:
+(https://github.com/keyooner/WAREGYM/blob/master/Images_readme/templates_diagram.png)
+(https://github.com/keyooner/WAREGYM/blob/master/Images_readme/security_diagram.png)

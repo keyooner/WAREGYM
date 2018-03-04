@@ -29,6 +29,6 @@ public class ContactController {
 		model.addAttribute("activities", activities.findAll());
 		
 		
-		return "contacto";
+		return "contact";
 	 }
 }

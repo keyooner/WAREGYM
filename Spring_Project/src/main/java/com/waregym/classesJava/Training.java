@@ -19,10 +19,13 @@ public class Training {
 	
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Exercise> exercises;
+	
+	private String name;
 
 	//private Date date;
 	
 	public Training(String type) {
+		this.name = type;
 		switch (type) {
 		case "Principiante": 
 			exercises.add(new Exercise("Flexiones",0,10));
@@ -73,6 +76,14 @@ public class Training {
 
 	public void setExercises(List<Exercise> exercises) {
 		this.exercises = exercises;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	//public Date getDate() {

@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -23,7 +24,10 @@ public class User {
 	private Long id;
 
 	private String name;
-
+    
+	@OneToOne
+    private Training training;
+	
 	private String passwordHash;
 	
 	@ManyToMany
@@ -79,5 +83,13 @@ public class User {
 
 	public void setActivities(List<Activity> activities) {
 		this.activities = activities;
+	}
+
+	public Training getTraining() {
+		return training;
+	}
+
+	public void setTraining(Training training) {
+		this.training = training;
 	}
 }

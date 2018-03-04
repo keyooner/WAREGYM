@@ -104,10 +104,10 @@
                             <a href="#0" title="">Entrenamientos</a>
                             <ul class="sub-menu">
                                 <li><a href="/entrenamientos/entrenamiento">Mi Entrenamiento</a></li>
-                                <li><a href="/entrenamientos/principiante">Principiante</a></li>
-                                <li><a href="/entrenamientos/medio">Medio</a></li>
-                                <li><a href="/entrenamientos/avanzado">Avanzado</a></li>
-                                <li><a href="/entrenamientos/experto">Experto</a></li>
+                                <li><a id = "hprinc" style="display:none;" href="/entrenamientos/principiante">Principiante</a></li>
+                                <li><a id = "hmed" style="display:none;" href="/entrenamientos/medio">Medio</a></li>
+                                <li><a id = "hadv" style="display:none;" href="/entrenamientos/avanzado">Avanzado</a></li>
+                                <li><a id = "hexp" style="display:none;" href="/entrenamientos/experto">Experto</a></li>
                             </ul>
                         </li>
                         <li><a href="/waregym" title="">Waregym</a></li>
@@ -417,3 +417,25 @@
 </body>
 
 </html>
+
+<!-- script
+    <script type="text/javascript">
+    function showTrainings(){
+    switch ({{training}}){
+    case "Principiante":
+    	document.getElementById("hprinc").style.display='block';
+    	break;
+    case "Medio":
+    	document.getElementById("hmed").style.display='block';
+    	break;
+    case "Avanzado":
+    	document.getElementById("hadv").style.display='block';
+    	break;
+    case "Experto":
+    	document.getElementById("hexp").style.display='block';
+    	break;
+    }
+    }
+    window.onload=showTrainings();
+    </script>
+    -->

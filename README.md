@@ -86,10 +86,11 @@ Unique and common Header for all the html pages of the application and therefore
 ### Templates diagram:
 ![It shows the templates diagram](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/templates_diagram.png "Diagrama de Templates")
 ![It shows the security diagram](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/security_diagram.png "Diagrama de Seguridad")
+- It shows the templates diagram
 
 ### Database model:
 ![It shows the database entities](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/Database-Entities.PNG "Diagrama de entidades en la BD")
-- It shows the templates diagram
+
 
 ### Development Environment configuration:
 - Spring Framework provides several data access methods, we use data access via JPA to a MySQL database using Hibernate. First we create the project, modifying the pom.xml file so that it contains the dependencies and configurations for JPA and MySQL.

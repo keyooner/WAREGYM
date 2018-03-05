@@ -126,6 +126,12 @@
               			<li><a href="/login" title="">Iniciar Sesión</a></li>
                         {{/hidden}}
                         <li class="current"><a href="/profile">{{userName}}</a></li>
+                        {{#teacher}}
+                        <li><a href="/profile">Profesor</a></li>
+                        {{/teacher}}
+                        {{#admin}}
+                        <li><a href="/profile">Admin</a></li>
+                        {{/admin}}
                     </ul>
                     <!-- end header__nav -->
 
@@ -148,6 +154,13 @@
     <section class="s-content s-content--narrow">
         <div class="row text-center">
         	<h1 class="h3 mb-3 font-weight-normal">Bienvenido a tu área Personal</h1>
+        	<h5>Nombre de Usuario: {{userName}}</h5>
+        	{{#teacher}}
+            <h5>Eres Profesor</h5>
+            {{/teacher}}
+            {{#admin}}
+            <h5>Eres Administrador</h5>
+            {{/admin}}
             <form action="/clases/inscripcion"><input type="submit" value="Clases"></form>
             <form action="/entrenamientos/entrenamiento"><input type="submit" value="Entrenamientos"></form>
         </div>

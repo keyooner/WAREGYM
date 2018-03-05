@@ -48,6 +48,7 @@ public class ActivitiesController {
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	model.addAttribute("teacher", request.isUserInRole("TEACH"));
     	model.addAttribute("user", request.isUserInRole("USER"));
 		
 		model.addAttribute("activities", activities.findAll());
@@ -66,6 +67,7 @@ public class ActivitiesController {
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	model.addAttribute("teacher", request.isUserInRole("TEACH"));
     	model.addAttribute("user", request.isUserInRole("USER"));
     	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH")) {
 			model.addAttribute("userName",request.getRemoteUser());
@@ -124,6 +126,7 @@ public class ActivitiesController {
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	model.addAttribute("teacher", request.isUserInRole("TEACH"));
     	model.addAttribute("user", request.isUserInRole("USER"));
     	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH")) {
 			model.addAttribute("userName",request.getRemoteUser());
@@ -161,6 +164,7 @@ public class ActivitiesController {
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	model.addAttribute("teacher", request.isUserInRole("TEACH"));
     	model.addAttribute("user", request.isUserInRole("USER"));
     	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH")) {
 			model.addAttribute("userName",request.getRemoteUser());

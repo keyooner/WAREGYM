@@ -128,6 +128,12 @@
               			<li><a href="/login" title="">Iniciar Sesión</a></li>
                         {{/hidden}}
                         <li><a href="/profile">{{userName}}</a></li>
+                        {{#teacher}}
+                        <li><a href="/profile">Profesor</a></li>
+                        {{/teacher}}
+                        {{#admin}}
+                        <li><a href="/profile">Admin</a></li>
+                        {{/admin}}
                     </ul>
                     <!-- end header__nav -->
 

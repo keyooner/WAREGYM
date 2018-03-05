@@ -23,6 +23,8 @@ public class ContactController {
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
     	model.addAttribute("teacher", request.isUserInRole("TEACH"));
     	model.addAttribute("user", request.isUserInRole("USER"));
+    	model.addAttribute("TeachOrAdmin",request.isUserInRole("TEACH")||request.isUserInRole("ADMIN"));
+    	model.addAttribute("UserOrTeach",request.isUserInRole("TEACH")||request.isUserInRole("USER"));
     	
     	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH")) {
 			model.addAttribute("userName",request.getRemoteUser());

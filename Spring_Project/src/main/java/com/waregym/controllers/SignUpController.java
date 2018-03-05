@@ -1,5 +1,7 @@
 package com.waregym.controllers;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,15 +21,18 @@ public class SignUpController {
 	UserRepository userRepository;
 
 	@RequestMapping("/signup")
-	 public String signup(Model model) {
-		
+	 public String signup(Model model,HttpServletRequest request) {
+		model.addAttribute("TeachOrAdmin",request.isUserInRole("TEACH")||request.isUserInRole("ADMIN"));
+    	model.addAttribute("UserOrTeach",request.isUserInRole("TEACH")||request.isUserInRole("USER"));
 		model.addAttribute("activities", activities.findAll());
 	 
 		return "signup";
 	 }
 	
 	@RequestMapping("/newUser")
-	 public String newUser(Model model, String name ,String password, String password2) {
+	 public String newUser(Model model, String name ,String password, String password2,HttpServletRequest request) {
+		model.addAttribute("TeachOrAdmin",request.isUserInRole("TEACH")||request.isUserInRole("ADMIN"));
+    	model.addAttribute("UserOrTeach",request.isUserInRole("TEACH")||request.isUserInRole("USER"));
 		if (password.equals(password2)) {
 			User sameUser = userRepository.findByName(name);
 			if (sameUser != null) {

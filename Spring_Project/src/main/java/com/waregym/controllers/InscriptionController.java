@@ -62,7 +62,7 @@ public class InscriptionController {
 		model.addAttribute("activitiesInscribed", activitiesInscribed);
 		
 		
-		return "inscripcion";
+		return "inscription";
 	 }
 	
 	@RequestMapping("/clase_inscrita")
@@ -101,7 +101,7 @@ public class InscriptionController {
 		
 		userRepository.save(user);
 		
-		return index(model, request,user);		
+		return index(model, request, user);		
 	}
 
 	

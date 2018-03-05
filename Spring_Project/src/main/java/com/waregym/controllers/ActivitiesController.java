@@ -152,4 +152,22 @@ public class ActivitiesController {
 			res.sendError(404, "File" + fileName + "(" + image.toAbsolutePath() + ") does not exist");
 		}
 	}
+	
+	@RequestMapping("clases/clase_eliminada")
+	public String addActivity(Model model, HttpServletRequest request, @RequestParam("id") long id)  {
+
+		activities.delete(id);
+		
+		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
+    	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
+    	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	model.addAttribute("user", request.isUserInRole("USER"));
+    	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH")) {
+			model.addAttribute("userName",request.getRemoteUser());
+		} else {model.addAttribute("userName", "");}
+    	
+		model.addAttribute("activities", activities.findAll());
+				
+		return "activity_deleted";
+	}
 }

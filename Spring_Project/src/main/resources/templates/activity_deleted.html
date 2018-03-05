@@ -6,7 +6,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Clase | {{activity.name}}</title>
+    <title>Clase eliminada</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -148,111 +148,11 @@
     <!-- s-content
     ================================================== -->
     <section class="s-content s-content--narrow s-content--no-padding-bottom">
-
-        <article class="row format-gallery">
-
-            <div class="s-content__header col-full">
-                <h1 class="s-content__header-title">
-                    {{activity.name}}
-                </h1>
-                {{#admin}}
-                <form action="clase_eliminada" method="post">
-                	<input type="hidden" name="id" value="{{activity.id}}">
-                	<button type="submit">Eliminar clase</button>
-                </form>
-                {{/admin}}
-            </div>
-            <!-- end s-content__header -->
-
-            <div class="s-content__media col-full">
-                <div class="s-content__slider slider">
-                    <div class="slider__slides">
-                        <div class="slider__slide">
-                            <img src="/image/{{activity.image1}}" srcset="/image/{{activity.image1}} 2000w, 
-                                         /image/{{activity.image1}} 1000w, 
-                                         /image/{{activity.image1}} 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
-                        </div>
-                        <div class="slider__slide">
-                            <img src="/image/{{activity.image2}}" srcset="/image/{{activity.image2}} 2000w, 
-                                         /image/{{activity.image2}} 1000w, 
-                                         /image/{{activity.image2}} 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end s-content__media -->
-
-            <div class="col-full s-content__main">
-
-                <div class="text-center">
-                    <h1 class="lead">¿Qué es el {{activity.name}}?</h1>
-                </div>
-
-                <p class="lead">{{activity.description}}</p>
-
-                <div class="text-center">
-                    <h1 class="lead">Desarrollo de una clase</h1>
-
-                    <p class="lead">{{activity.development}}</p>
-
-                    <img src="/image/{{activity.image3}}" srcset="/image/{{activity.image3}} 2000w, /image/{{activity.image3}} 1000w, /image/{{activity.image3}} 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
-
-                    <div class="text-center">
-                        <h1 class="lead">Beneficios</h1>
-                    </div>
-
-                    <p class="lead">{{activity.benefit}}</p>
-
-                    <div class="text-center">
-                        <h1 class="lead">Horarios</h1>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row-center">
-                <table class="table table-sm">
-                    <thead>
-                        <tr>
-                            <th style="text-align:center" scope="col">Días/Horas</th>
-                            <th style="text-align:center" scope="col">Lunes</th>
-                            <th style="text-align:center" scope="col">Martes</th>
-                            <th style="text-align:center" scope="col">Miércoles</th>
-                            <th style="text-align:center" scope="col">Jueves</th>
-                            <th style="text-align:center" scope="col">Viernes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th style="text-align:center" scope="row">10:00</th>
-                            <td style="text-align:center">{{activity.schedule.0.0}}</td>
-                            <td style="text-align:center">{{activity.schedule.1.0}}</td>
-                            <td style="text-align:center">{{activity.schedule.2.0}}</td>
-                            <td style="text-align:center">{{activity.schedule.3.0}}</td>
-                            <td style="text-align:center">{{activity.schedule.4.0}}</td>
-                        </tr>
-                        <tr>
-                            <th style="text-align:center" scope="row">12:00</th>
-                            <td style="text-align:center">{{activity.schedule.0.1}}</td>
-                            <td style="text-align:center">{{activity.schedule.1.1}}</td>
-                            <td style="text-align:center">{{activity.schedule.2.1}}</td>
-                            <td style="text-align:center">{{activity.schedule.3.1}}</td>
-                            <td style="text-align:center">{{activity.schedule.4.1}}</td>
-                        </tr>
-                        <tr>
-                            <th style="text-align:center" scope="row">17:00</th>
-                            <td style="text-align:center">{{activity.schedule.0.2}}</td>
-                            <td style="text-align:center">{{activity.schedule.1.2}}</td>
-                            <td style="text-align:center">{{activity.schedule.2.2}}</td>
-                            <td style="text-align:center">{{activity.schedule.3.2}}</td>
-                            <td style="text-align:center">{{activity.schedule.4.2}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <ul class="class-inscription text-center">
-                    <form action="/clases/inscripcion"><input type="submit" value="Inscripcion"></form>
-                </ul>
-            </div>
-        </article>
+		
+		<article class="row format-gallery">
+			<h1>La clase ha sido eliminada</h1>
+		</article>
+       
     </section>
 
     <!-- s-footer

@@ -28,6 +28,9 @@ public class TrainingController {
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
     	model.addAttribute("user", request.isUserInRole("USER"));
+    	model.addAttribute("teacher", request.isUserInRole("TEACH"));
+    	model.addAttribute("admin", request.isUserInRole("ADMIN"));
+    	
     	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH")) {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}

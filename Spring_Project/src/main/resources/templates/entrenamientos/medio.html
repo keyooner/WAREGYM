@@ -122,6 +122,12 @@
               			<li><a href="/login" title="">Iniciar Sesión</a></li>
                         {{/hidden}}
                         <li><a href="/entrenamientos/entrenamiento">{{userName}}</a></li>
+                        {{#teacher}}
+                        <li>Profesor</li>
+                        {{/teacher}}
+                        {{#admin}}
+                        <li>Admin</li>
+                        {{/admin}}
                     </ul> <!-- end header__nav -->
 
                     <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Cerrar</a>

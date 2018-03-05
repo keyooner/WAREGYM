@@ -27,9 +27,12 @@ public class InscriptionController {
 
 	@Autowired
 	ActivityRepository activityRepository;
+	
+	@Autowired
+	User user;
 
 	@RequestMapping("/clases/inscripcion")
-	 public String index(Model model, HttpServletRequest request, User user) {
+	 public String index(Model model, HttpServletRequest request) {
 		
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
@@ -50,7 +53,7 @@ public class InscriptionController {
 			actIns.setButtonText("Inscribirse");
 			for(int i = 0; i < activity.getUsers().size(); i++) {
 				if (activity.getUsers() != null && !activity.getUsers().isEmpty() 
-						&& activity.getUsers().get(i).getName().equals(user.getName())) {
+						&& activity.getUsers().get(i).getId().equals(user.getId())) {
 					actIns.setShowInscribed(true);
 					actIns.setButtonText("Borrar inscripción");
 				}
@@ -66,7 +69,7 @@ public class InscriptionController {
 	 }
 	
 	@RequestMapping("/clase_inscrita")
-	 public String inscribe(Model model, HttpServletRequest request, @RequestParam Long id, User user) {
+	 public String inscribe(Model model, HttpServletRequest request, @RequestParam Long id) {
 		
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
@@ -76,7 +79,7 @@ public class InscriptionController {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
 		
-		User userAux = userRepository.findById((long)1);
+		User userAux = userRepository.findById(user.getId());
 		Activity activity = activityRepository.findById(id);
 		
 		boolean found = false;
@@ -101,7 +104,7 @@ public class InscriptionController {
 		
 		userRepository.save(user);
 		
-		return index(model, request, user);		
+		return index(model, request);		
 	}
 
 	

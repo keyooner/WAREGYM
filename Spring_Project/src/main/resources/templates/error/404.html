@@ -6,7 +6,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Iniciar sesión</title>
+    <title>Error | 404</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -16,19 +16,19 @@
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/vendor.css">
+    <link rel="stylesheet" href="../css/main.css">
 
     <!-- script
     ================================================== -->
-    <script src="js/modernizr.js"></script>
-    <script src="js/pace.min.js"></script>
+    <script src="../js/modernizr.js"></script>
+    <script src="../js/pace.min.js"></script>
 
     <!-- favicons
     ================================================== -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
 
 </head>
 
@@ -89,11 +89,11 @@
                     <h2 class="header__nav-heading h6">Site Navigation</h2>
 
                     <ul class="header__nav">
-                        <li><a href="/index" title="">Inicio</a></li>
+                        <li class="current"><a href="/index" title="">Inicio</a></li>
                         <li class="has-children">
-                            <a href="#0" title="">Clases</a>
+                            <a href="#0">Clases</a>
                             <ul class="sub-menu">
-                                <li><a href="/clases/añadir_clase">Añadir Clase</a></li>
+                            	<li><a href="/clases/añadir_clase">Añadir Clase</a></li>
                                 <li><a href="/clases/inscripcion">Apúntate</a></li>
                                 {{#activities}}
                                 <li><a href="/clases/{{id}}-{{name}}">{{name}}</a></li>
@@ -111,9 +111,15 @@
                             </ul>
                         </li>
                         <li><a href="/waregym" title="">Waregym</a></li>
-                        <li><a href="/productos" title="">Productos</a></li>
+                        <li class="has-children">
+                            <a href="#0" title="">Productos</a>
+                            <ul class="sub-menu">
+                            	<li><a href="/nuevoProducto">Añadir producto</a></li>
+                                <li><a href="/productos">Productos disponibles</a></li>
+                            </ul>
+                        </li>
                         <li><a href="/contacto" title="">Contacto</a></li>
-                        <li class="current"><a href="/login" title="">Iniciar Sesión</a></li>
+              			<li><a href="/login" title="">Iniciar Sesión</a></li>
                     </ul>
                     <!-- end header__nav -->
 
@@ -136,7 +142,7 @@
     <section class="s-content s-content--narrow">
         <div class="row text-center">
            <h1>404</h1>
-           <h2>Vaya, parece que no podemos encontrar ese recurso.</h2>
+           <h2>Vaya, parece que no podemos encontrar este recurso.</h2>
          </div>
      </section>
     <!-- s-content -->
@@ -154,11 +160,14 @@
                     <h4>Secciones</h4>
 
                     <ul class="s-footer__linklist">
-                        <li><a href="/index">Inicio</a></li>
-                        <li><a href="/waregym">Waregym</a></li>
-                        <li><a href="/productos">Productos</a></li>
+                        <li class="current"><a href="/index">Inicio</a></li>
+                        <li><a href="/waregym" title="">Waregym</a></li>
+                        <li><a href="/nuevoProducto">Añadir producto</a></li>
+                        <li><a href="/productos">Productos disponibles</a></li>
                         <li><a href="/contacto">Contacto</a></li>
-                        <li><a href="/login">Iniciar Sesión</a></li>
+                        {{#hidden}}
+              			<li><a href="/login" title="">Iniciar Sesión</a></li>
+                        {{/hidden}}
                     </ul>
 
                 </div>
@@ -169,11 +178,11 @@
                     <h4>Clases</h4>
 
                     <ul class="s-footer__linklist">
+                        <li><a href="/clases/añadir_clase">Añadir Clase</a></li>
                         <li><a href="/clases/inscripcion">Apúntate</a></li>
-                        <li><a href="/clases/spinning">Spinning</a></li>
-                        <li><a href="/clases/body-combat">Body Combat</a></li>
-                        <li><a href="/clases/moi-thai">Moi-Thai</a></li>
-                        <li><a href="/clases/kick-boxing">Kick Boxing</a></li>
+                        {{#activities}}
+                        <li><a href="/clases/{{id}}-{{name}}">{{name}}</a></li>
+                        {{/activities}}
                     </ul>
 
                 </div>
@@ -185,10 +194,10 @@
 
                     <ul class="s-footer__linklist">
                         <li><a href="/entrenamientos/entrenamiento">Mi Entrenamiento</a></li>
-                        <li><a href="/entrenamientos/principiante">Principiante</a></li>
-                        <li><a href="/entrenamientos/medio">Medio</a></li>
-                        <li><a href="/entrenamientos/avanzado">Avanzado</a></li>
-                        <li><a href="/entrenamientos/experto">Experto</a></li>
+                        <li><a id = "hprinc" style="display:none;" href="/entrenamientos/principiante">Principiante</a></li>
+                        <li><a id = "hmed" style="display:none;" href="/entrenamientos/medio">Medio</a></li>
+                        <li><a id = "hadv" style="display:none;" href="/entrenamientos/avanzado">Avanzado</a></li>
+                        <li><a id = "hexp" style="display:none;" href="/entrenamientos/experto">Experto</a></li>
                     </ul>
 
                 </div>
@@ -198,7 +207,8 @@
 
                     <h4>Contacto</h4>
 
-                    <p>Telf: (+34) 123 456 789 <br> Ubicación: C/Serrano n º 1, Madrid, España </p>
+                    <p>Telf: (+34) 123 456 789
+                        <br> Ubicación: C/Serrano n º 1, Madrid, España </p>
 
                 </div>
                 <!-- end s-footer__subscribe -->
@@ -224,6 +234,7 @@
 
     </footer>
     <!-- end s-footer -->
+    
 
     <!-- preloader
     ================================================== -->

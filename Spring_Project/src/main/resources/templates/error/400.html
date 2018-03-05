@@ -6,7 +6,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Iniciar sesión</title>
+    <title>Error | 403</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -89,11 +89,11 @@
                     <h2 class="header__nav-heading h6">Site Navigation</h2>
 
                     <ul class="header__nav">
-                        <li><a href="/index" title="">Inicio</a></li>
+                        <li class="current"><a href="/index" title="">Inicio</a></li>
                         <li class="has-children">
-                            <a href="#0" title="">Clases</a>
+                            <a href="#0">Clases</a>
                             <ul class="sub-menu">
-                                <li><a href="/clases/añadir_clase">Añadir Clase</a></li>
+                            	<li><a href="/clases/añadir_clase">Añadir Clase</a></li>
                                 <li><a href="/clases/inscripcion">Apúntate</a></li>
                                 {{#activities}}
                                 <li><a href="/clases/{{id}}-{{name}}">{{name}}</a></li>
@@ -111,9 +111,15 @@
                             </ul>
                         </li>
                         <li><a href="/waregym" title="">Waregym</a></li>
-                        <li><a href="/productos" title="">Productos</a></li>
+                        <li class="has-children">
+                            <a href="#0" title="">Productos</a>
+                            <ul class="sub-menu">
+                            	<li><a href="/nuevoProducto">Añadir producto</a></li>
+                                <li><a href="/productos">Productos disponibles</a></li>
+                            </ul>
+                        </li>
                         <li><a href="/contacto" title="">Contacto</a></li>
-                        <li class="current"><a href="/login" title="">Iniciar Sesión</a></li>
+              			<li><a href="/login" title="">Iniciar Sesión</a></li>
                     </ul>
                     <!-- end header__nav -->
 
@@ -135,8 +141,8 @@
     ================================================== -->
     <section class="s-content s-content--narrow">
         <div class="row text-center">
-           <h1>400</h1>
-           <h2>Solicitud incorrecta.</h2> 
+           <h1>404</h1>
+           <h2>Solicitud incorrecta.</h2>
          </div>
      </section>
     <!-- s-content -->

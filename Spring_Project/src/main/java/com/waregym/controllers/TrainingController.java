@@ -1,8 +1,10 @@
 package com.waregym.controllers;
 import com.waregym.classesJava.Training;
+import com.waregym.classesJava.User;
 import com.waregym.classesJava.Exercise;
 import com.waregym.repositories.ExerciseRepository;
 import com.waregym.repositories.TrainingRepository;
+import com.waregym.repositories.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +23,8 @@ public class TrainingController {
 	 TrainingRepository training;	
 	@Autowired
 	 ExerciseRepository exercise;
+	@Autowired
+	 UserRepository userRepository;
 	
 	@RequestMapping("/entrenamientos/avanzado")
 	 public String avanzado(Model model, HttpServletRequest request) {
@@ -42,6 +46,10 @@ public class TrainingController {
 		exercises.add(new Exercise("Barras", 10, 10));
 		t.setExercises(exercise.save(exercises));
 	    training.save(t);
+	    String userName = request.getRemoteUser();
+		User user = userRepository.findByName(userName);
+		user.setTraining(t);
+		userRepository.save(user);
 		return "/entrenamientos/avanzado";
 	 }
 	
@@ -80,7 +88,10 @@ public class TrainingController {
 		exercises.add(new Exercise("Press de pectoral", 40, 10));
 		t.setExercises(exercise.save(exercises));
 	    training.save(t);
-		
+	    String userName = request.getRemoteUser();
+	  		User user = userRepository.findByName(userName);
+	  		user.setTraining(t);
+	  		userRepository.save(user);
 		return "/entrenamientos/experto";
 	 }
 	
@@ -103,7 +114,10 @@ public class TrainingController {
 		exercises.add(new Exercise("Abdominales", 0, 15));
 		t.setExercises(exercise.save(exercises));
 	    training.save(t);
-		
+	    String userName = request.getRemoteUser();
+	  		User user = userRepository.findByName(userName);
+	  		user.setTraining(t);
+	  		userRepository.save(user);
 		return "/entrenamientos/medio";
 	 }
 	
@@ -125,6 +139,10 @@ public class TrainingController {
 		exercises.add(new Exercise("Abdominales", 0, 15));
 		t.setExercises(exercise.save(exercises));
 	    training.save(t);
+	    String userName = request.getRemoteUser();
+	  		User user = userRepository.findByName(userName);
+	  		user.setTraining(t);
+	  		userRepository.save(user);
 		return "/entrenamientos/principiante";
 	 }
 	

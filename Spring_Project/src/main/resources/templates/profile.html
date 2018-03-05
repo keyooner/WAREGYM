@@ -153,16 +153,24 @@
     ================================================== -->
     <section class="s-content s-content--narrow">
         <div class="row text-center">
-        	<h1 class="h3 mb-3 font-weight-normal">Bienvenido a tu área Personal</h1>
+        	<h1 class="h3 mb-3 font-weight-normal">Bienvenido a tu área personal {{userName}}</h1>
         	<h5>Nombre de Usuario: {{userName}}</h5>
         	{{#teacher}}
             <h5>Eres Profesor</h5>
+            <form action="/clases/añadir_clase"><input type="submit" value="Añadir Clases"></form>
             {{/teacher}}
             {{#admin}}
             <h5>Eres Administrador</h5>
+            <form action="/clases/añadir_clase"><input type="submit" value="Añadir Clases"></form>
+            <form action="/nuevoProducto"><input type="submit" value="Añadir Productos"></form>
             {{/admin}}
-            <form action="/clases/inscripcion"><input type="submit" value="Clases"></form>
-            <form action="/entrenamientos/entrenamiento"><input type="submit" value="Entrenamientos"></form>
+            {{#onlyUser}}
+            <h5>¿Qué deseas hacer?</h5>
+            <form action="/entrenamientos/entrenamiento"><input type="submit" value="Mi entrenamiento"></form>
+            <form action="/productos"><input type="submit" value="Productos"></form>
+            <form action="/clases/inscripcion"><input type="submit" value="Clases disponibles"></form>
+            {{/onlyUser}}
+            
         </div>
     </section>
     <!-- s-content -->

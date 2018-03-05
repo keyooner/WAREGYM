@@ -87,10 +87,14 @@
                     <ul class="header__nav">
                         <li><a href="/index.html" title="">Inicio</a></li>
                         <li class="has-children">
-                            <a href="#0">Clases</a>
+                            <a href="#0" title="">Clases</a>
                             <ul class="sub-menu">
+                            	{{#TeachOrAdmin}}
                             	<li><a href="/clases/añadir_clase">Añadir Clase</a></li>
-                                <li><a href="/inscripcion">Apúntate</a></li>
+                            	{{/TeachOrAdmin}}
+                            	{{#UserOrTeach}}
+                                <li><a href="/clases/inscripcion">Apúntate</a></li>
+                                {{/UserOrTeach}}
                                 {{#activities}}
                                 <li><a href="/clases/{{id}}-{{name}}">{{name}}</a></li>
                                 {{/activities}}
@@ -99,9 +103,9 @@
                         <li class="has-children">
                             <a href="#0" title="">Entrenamientos</a>
                             <ul class="sub-menu">
-                                <li><a href="/entrenamientos/entrenamiento">Mi Entrenamiento</a></li>
+                                <li><a href="/entrenamientos/entrenamiento">Mi entrenamiento</a></li>
                                 <li><a href="/entrenamientos/principiante">Principiante</a></li>
-                                <li class="current"><a href="/entrenamientos/medio">Medio</a></li>
+                                <li><a href="/entrenamientos/medio">Medio</a></li>
                                 <li><a href="/entrenamientos/avanzado">Avanzado</a></li>
                                 <li><a href="/entrenamientos/experto">Experto</a></li>
                             </ul>
@@ -110,7 +114,9 @@
                         <li class="has-children">
                             <a href="#0" title="">Productos</a>
                             <ul class="sub-menu">
+                            	{{#admin}}
                             	<li><a href="/nuevoProducto">Añadir producto</a></li>
+                            	{{/admin}}
                                 <li><a href="/productos">Productos disponibles</a></li>
                             </ul>
                         </li>

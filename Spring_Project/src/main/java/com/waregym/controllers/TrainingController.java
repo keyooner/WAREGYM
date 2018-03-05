@@ -38,7 +38,7 @@ public class TrainingController {
     	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH")) {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
-		Training t = new Training("Avanzado");
+		Training t = new Training("avanzado");
 		List<Exercise> exercises = new ArrayList<Exercise>();
 		exercises.add(new Exercise("Flexiones",20,10));
 		exercises.add(new Exercise("Press de Banca", 150, 10));
@@ -78,7 +78,7 @@ public class TrainingController {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
 		
-    	Training t = new Training("Experto");
+    	Training t = new Training("experto");
 		List<Exercise> exercises = new ArrayList<Exercise>();
 		exercises.add(new Exercise("Flexiones",20,10));
 		exercises.add(new Exercise("Press de Banca", 150, 10));
@@ -106,7 +106,7 @@ public class TrainingController {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
 		
-    	Training t = new Training("Medio");
+    	Training t = new Training("medio");
 		List<Exercise> exercises = new ArrayList<Exercise>();
 		exercises.add(new Exercise("Flexiones",0,20));
 		exercises.add(new Exercise("Press de Banca", 70, 7));
@@ -132,7 +132,7 @@ public class TrainingController {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
     	
-    	Training t = new Training("Principiante");
+    	Training t = new Training("principiante");
 		List<Exercise> exercises = new ArrayList<Exercise>();
 		exercises.add(new Exercise("Flexiones",0,10));
 		exercises.add(new Exercise("Press de Banca", 50, 5));

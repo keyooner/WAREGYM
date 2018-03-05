@@ -34,7 +34,9 @@ public class IndexController {
     	model.addAttribute("user", request.isUserInRole("USER"));
     	String userName = request.getRemoteUser();
     	User user = userRepository.findByName(userName);
+    	if (user != null){
     	model.addAttribute("training", user.getTraining().getName());
+    	}
 		model.addAttribute("activities", activities.findAll());
 		if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH")) {
 			model.addAttribute("userName",request.getRemoteUser());

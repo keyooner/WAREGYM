@@ -1,5 +1,6 @@
 package com.waregym.controllers;
 
+import java.security.Principal;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -44,6 +45,9 @@ public class InscriptionController {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
 		
+    	String userName = request.getRemoteUser();
+		user = userRepository.findByName(userName);
+    	
 		model.addAttribute("activities", activities.findAll());
 		
 		ArrayList<Activity> activitiesFor = (ArrayList<Activity>) activities.findAll();
@@ -84,14 +88,15 @@ public class InscriptionController {
 			
 		} else {model.addAttribute("userName", "");}
 		
-		User userAux = userRepository.findById(user.getId());
+    	String userName = request.getRemoteUser();
+		user = userRepository.findByName(userName);
 		Activity activity = activityRepository.findById(id);
 		
 		boolean found = false;
 		int counter = 0;
-		if(userAux != null && userAux.getActivities() != null && !userAux.getActivities().isEmpty()) {
-			while(!found && counter < userAux.getActivities().size()) {
-				if(userAux.getActivities().get(counter).getId() == id) {
+		if(user != null && user.getActivities() != null && !user.getActivities().isEmpty()) {
+			while(!found && counter < user.getActivities().size()) {
+				if(user.getActivities().get(counter).getId() == id) {
 					found = true;
 				}
 				else{

@@ -26,6 +26,7 @@ public class DataBaseUsage implements CommandLineRunner{
 			userRepository.save(new User("admin", "adminpass", "ROLE_ADMIN"));
 			userRepository.save(new User("teach", "teachpass", "ROLE_TEACH"));
 			userRepository.save(new User("carolo", "carolo", "ROLE_ADMIN"));
+			userRepository.save(new User("adrian", "a", "ROLE_USER"));
 	    }
 
 		@Override

@@ -86,4 +86,12 @@ Unique and common Header for all the html pages of the application and therefore
 ### Templates diagram:
 ![It shows the templates diagram](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/templates_diagram.png "Diagrama de Templates")
 ![It shows the security diagram](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/security_diagram.png "Diagrama de Seguridad")
+
+### Database model:
+![It shows the database entities](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/Database-Entities.PNG "Diagrama de entidades en la BD")
 - It shows the templates diagram
+
+### Development Environment configuration:
+- Spring Framework provides several data access methods, we use data access via JPA to a MySQL database using Hibernate. First we create the project, modifying the pom.xml file so that it contains the dependencies and configurations for JPA and MySQL.
+To indicate to Spring how to access the Database, we need to create the configuration file: application.properties located in src / main / resources.
+We have to create a JPA entity, making a relationship with a relational database. Using the CrudRepository interface we can delete, create, edit or search elements in our data set. We add the main class in the MySQL database.

@@ -1,6 +1,11 @@
 package com.waregym.controllers;
 import com.waregym.classesJava.Training;
+import com.waregym.classesJava.Exercise;
+import com.waregym.repositories.ExerciseRepository;
 import com.waregym.repositories.TrainingRepository;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,8 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TrainingController {
 	
 	@Autowired
-	 TrainingRepository training;	 
-	
+	 TrainingRepository training;	
+	@Autowired
+	 ExerciseRepository exercise;
 	
 	@RequestMapping("/entrenamientos/avanzado")
 	 public String avanzado(Model model, HttpServletRequest request) {
@@ -27,9 +33,12 @@ public class TrainingController {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
 		Training t = new Training("Avanzado");
-    	
+		List<Exercise> exercises = new ArrayList<Exercise>();
+		exercises.add(new Exercise("Flexiones",0,10));
+		exercises.add(new Exercise("Press de Banca", 50, 5));
+		exercises.add(new Exercise("Abdominales", 0, 15));
+		t.setExercises(exercise.save(exercises));
 	    training.save(t);
-	    
 		return "/entrenamientos/avanzado";
 	 }
 	

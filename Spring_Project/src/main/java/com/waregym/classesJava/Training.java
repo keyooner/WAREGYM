@@ -12,13 +12,13 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Training {
+public class Training{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	@OneToMany(cascade=CascadeType.ALL)
+	@OneToMany
 	private List<Exercise> exercises;
 	
 	private String name;
@@ -31,7 +31,7 @@ public class Training {
 	
 	public Training(String type) {
 		this.name = type;
-		switch (type) {
+		this.exercises = new ArrayList<Exercise>();
 		case "Principiante": 
 			exercises.add(new Exercise("Flexiones",0,10));
 			exercises.add(new Exercise("Press de Banca", 50, 5));
@@ -44,11 +44,7 @@ public class Training {
 			exercises.add(new Exercise("Abdominales", 0, 15));
 			break;
 		case "Avanzado": 
-			exercises.add(new Exercise("Pesas", 30, 20));
-			exercises.add(new Exercise("Press de Banca", 100, 10));
-			exercises.add(new Exercise("Piernas", 40, 15));
-			exercises.add(new Exercise("Barras", 0, 10));
-			exercises.add(new Exercise("Press de pectoral", 20, 5));
+			exercises = new ArrayList<Exercise>();
 			break;
 		case "Experto": 
 			exercises.add(new Exercise("Flexiones",20,10));
@@ -79,8 +75,8 @@ public class Training {
 		return exercises;
 	}
 
-	public void setExercises(ArrayList<Exercise> exercises) {
-		this.exercises = exercises;
+	public void setExercises(List<Exercise> exercises2) {
+		this.exercises = exercises2;
 	}
 
 	public String getName() {

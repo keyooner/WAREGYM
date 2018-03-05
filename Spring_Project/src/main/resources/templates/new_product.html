@@ -120,7 +120,7 @@
                         </li>
                         <li><a href="/contacto" title="">Contacto</a></li>
                         {{#logout}}
-						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /></li>
+						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /></form></li>
 						{{/logout}}
                         {{#hidden}}
               			<li><a href="/login" title="">Iniciar Sesión</a></li>
@@ -148,7 +148,7 @@
     <section class="s-content s-content--narrow s-content--no-padding-bottom">
 
         <center>
-            <form action="producto_añadido" method="post" enctype="multipart/form-data">
+            <form action="/producto_añadido" method="post" enctype="multipart/form-data">
                 <label style="display: inline-block">Tipo de producto:</label>
                 <input type="text" name="type" required>
                 <label style="display: inline-block">Nombre:</label>

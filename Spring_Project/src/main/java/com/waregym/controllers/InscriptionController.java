@@ -103,4 +103,6 @@ public class InscriptionController {
 		
 		return index(model, request,user);		
 	}
-}
+
+	
+	}

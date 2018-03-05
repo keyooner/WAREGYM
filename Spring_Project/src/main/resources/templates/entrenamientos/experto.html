@@ -116,17 +116,12 @@
                         </li>
                         <li><a href="/contacto" title="">Contacto</a></li>
                         {{#logout}}
-						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /></li>
+						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /></form></li>
 						{{/logout}}
                         {{#hidden}}
               			<li><a href="/login" title="">Iniciar Sesión</a></li>
                         {{/hidden}}
-                        {{#admin}}
-                        <li><p>Admin</p></li>
-                        {{/admin}}
-                        <li>
-                    		<p><a href="/entrenamientos/entrenamiento">{{userName}}</a></p>
-                    	</li>
+                        <li><a href="/entrenamientos/entrenamiento">{{userName}}</a></li>
                     </ul> <!-- end header__nav -->
 
 

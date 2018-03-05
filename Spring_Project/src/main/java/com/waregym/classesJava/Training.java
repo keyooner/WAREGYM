@@ -31,31 +31,8 @@ public class Training{
 	
 	public Training(String type) {
 		this.name = type;
-		this.exercises = new ArrayList<Exercise>();
-		case "Principiante": 
-			exercises.add(new Exercise("Flexiones",0,10));
-			exercises.add(new Exercise("Press de Banca", 50, 5));
-			exercises.add(new Exercise("Abdominales", 0, 15));
-			break;
-		case "Medio": 
-			exercises.add(new Exercise("Flexiones",0,20));
-			exercises.add(new Exercise("Press de Banca", 70, 7));
-			exercises.add(new Exercise("Pesas", 10, 5));
-			exercises.add(new Exercise("Abdominales", 0, 15));
-			break;
-		case "Avanzado": 
-			exercises = new ArrayList<Exercise>();
-			break;
-		case "Experto": 
-			exercises.add(new Exercise("Flexiones",20,10));
-			exercises.add(new Exercise("Press de Banca", 150, 10));
-			exercises.add(new Exercise("Levantar a Adri", 70, 1));
-			exercises.add(new Exercise("Piernas", 60, 20));
-			exercises.add(new Exercise("Barras", 10, 10));
-			exercises.add(new Exercise("Press de pectoral", 40, 10));
-			break;
+		exercises = new ArrayList<Exercise>();
 		}
-	}
 	
 	//public Training(Date date, List<Exercise> exercises) {
 

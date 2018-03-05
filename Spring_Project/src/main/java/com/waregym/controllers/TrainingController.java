@@ -34,9 +34,10 @@ public class TrainingController {
 		} else {model.addAttribute("userName", "");}
 		Training t = new Training("Avanzado");
 		List<Exercise> exercises = new ArrayList<Exercise>();
-		exercises.add(new Exercise("Flexiones",0,10));
-		exercises.add(new Exercise("Press de Banca", 50, 5));
-		exercises.add(new Exercise("Abdominales", 0, 15));
+		exercises.add(new Exercise("Flexiones",20,10));
+		exercises.add(new Exercise("Press de Banca", 150, 10));
+		exercises.add(new Exercise("Piernas", 60, 20));
+		exercises.add(new Exercise("Barras", 10, 10));
 		t.setExercises(exercise.save(exercises));
 	    training.save(t);
 		return "/entrenamientos/avanzado";
@@ -67,7 +68,16 @@ public class TrainingController {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
 		
-		training.save(new Training("Experto"));
+    	Training t = new Training("Experto");
+		List<Exercise> exercises = new ArrayList<Exercise>();
+		exercises.add(new Exercise("Flexiones",20,10));
+		exercises.add(new Exercise("Press de Banca", 150, 10));
+		exercises.add(new Exercise("Levantar a Adri", 70, 1));
+		exercises.add(new Exercise("Piernas", 60, 20));
+		exercises.add(new Exercise("Barras", 10, 10));
+		exercises.add(new Exercise("Press de pectoral", 40, 10));
+		t.setExercises(exercise.save(exercises));
+	    training.save(t);
 		
 		return "/entrenamientos/experto";
 	 }
@@ -83,7 +93,14 @@ public class TrainingController {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
 		
-		training.save(new Training("Medio"));
+    	Training t = new Training("Medio");
+		List<Exercise> exercises = new ArrayList<Exercise>();
+		exercises.add(new Exercise("Flexiones",0,20));
+		exercises.add(new Exercise("Press de Banca", 70, 7));
+		exercises.add(new Exercise("Pesas", 10, 5));
+		exercises.add(new Exercise("Abdominales", 0, 15));
+		t.setExercises(exercise.save(exercises));
+	    training.save(t);
 		
 		return "/entrenamientos/medio";
 	 }
@@ -98,9 +115,14 @@ public class TrainingController {
     	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH")) {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
-		
-		training.save(new Training("Principiante"));
-		
+    	
+    	Training t = new Training("Principiante");
+		List<Exercise> exercises = new ArrayList<Exercise>();
+		exercises.add(new Exercise("Flexiones",0,10));
+		exercises.add(new Exercise("Press de Banca", 50, 5));
+		exercises.add(new Exercise("Abdominales", 0, 15));
+		t.setExercises(exercise.save(exercises));
+	    training.save(t);
 		return "/entrenamientos/principiante";
 	 }
 	

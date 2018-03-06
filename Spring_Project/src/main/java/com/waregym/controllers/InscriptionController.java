@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.waregym.classesJava.Activity;
 import com.waregym.classesJava.ActivityInscribed;
+import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
 import com.waregym.repositories.ActivityRepository;
 import com.waregym.repositories.UserRepository;
@@ -31,7 +32,7 @@ public class InscriptionController {
 	
 	@Autowired
 	User user;
-
+	
 	@RequestMapping("/clases/inscripcion")
 	 public String index(Model model, HttpServletRequest request) {
 		
@@ -71,6 +72,22 @@ public class InscriptionController {
 		}
 		
 		model.addAttribute("activitiesInscribed", activitiesInscribed);
+		
+		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
 		
 		
 		return "inscription";
@@ -117,6 +134,22 @@ public class InscriptionController {
 		}
 		
 		userRepository.save(user);
+		
+		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
 		
 		return index(model, request);		
 	}

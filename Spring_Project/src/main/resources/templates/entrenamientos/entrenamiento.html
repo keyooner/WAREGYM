@@ -114,10 +114,9 @@
                             <a href="#0" title="">Entrenamientos</a>
                             <ul class="sub-menu">
                                 <li><a href="/entrenamientos/entrenamiento">Mi entrenamiento</a></li>
-                                <li><a href="/entrenamientos/principiante">Principiante</a></li>
-                                <li><a href="/entrenamientos/medio">Medio</a></li>
-                                <li><a href="/entrenamientos/avanzado">Avanzado</a></li>
-                                <li><a href="/entrenamientos/experto">Experto</a></li>
+                                {{#ifTraining}}
+                                <li><a href="/entrenamientos/{{training}}">{{training}}</a></li>
+                                {{/ifTraining}}
                             </ul>
                         </li>
                         <li><a href="/waregym" title="">Waregym</a></li>
@@ -188,10 +187,10 @@
                 <form action="javascript:;" onsubmit="accion()">
        
                 <select id="tipo" name="tipo" onchange="showDiv(this)">
-                   <option value="/avanzado">Avanzado</option>
-                   <option value="/medio">Medio</option>
-                   <option value="/experto">Experto</option>
-                   <option value="/principiante">Principiante</option>
+                    <option value="/principiante">Principiante</option>
+                    <option value="/avanzado">Avanzado</option>
+                    <option value="/medio">Medio</option>
+                    <option value="/experto">Experto</option>
                  </select>       
                  <input type="submit" value ="Seleccionar"/>
                  </form>

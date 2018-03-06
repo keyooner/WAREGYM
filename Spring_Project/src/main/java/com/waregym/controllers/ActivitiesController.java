@@ -24,13 +24,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.waregym.classesJava.Activity;
+import com.waregym.classesJava.Training;
+import com.waregym.classesJava.User;
 import com.waregym.repositories.ActivityRepository;
+import com.waregym.repositories.UserRepository;
 
 @Controller
 public class ActivitiesController {
 	
 	@Autowired
 	ActivityRepository activities;
+	
+	@Autowired
+	User user;
+	
+	@Autowired
+	UserRepository userRepository;
+	
 	
 	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "files");
 	
@@ -57,6 +67,23 @@ public class ActivitiesController {
 		if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH")) {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
+		
+		String userName = request.getRemoteUser();
+		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
 		
 		return "new_activity";
 	}
@@ -120,6 +147,23 @@ public class ActivitiesController {
 					
 		model.addAttribute("activity", activity);
 		model.addAttribute("activities", activities.findAll());
+		
+		String userName = request.getRemoteUser();
+		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
 				
 		return "activity_template";
 	}
@@ -142,6 +186,23 @@ public class ActivitiesController {
 		
 		model.addAttribute("activity",activity);
 		model.addAttribute("activities", activities.findAll());
+		
+		String userName = request.getRemoteUser();
+		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
 		
 		return "activity_template";
 	 }
@@ -179,6 +240,23 @@ public class ActivitiesController {
 		} else {model.addAttribute("userName", "");}
     	
 		model.addAttribute("activities", activities.findAll());
+		
+		String userName = request.getRemoteUser();
+		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
 				
 		return "activity_deleted";
 	}

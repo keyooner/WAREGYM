@@ -7,19 +7,46 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.waregym.classesJava.Training;
+import com.waregym.classesJava.User;
 import com.waregym.repositories.ActivityRepository;
+import com.waregym.repositories.UserRepository;
 
 @Controller
 public class LoginController {
 	
 	@Autowired
 	ActivityRepository activities;
+	
+	@Autowired
+	User user;
+	
+	@Autowired
+	UserRepository userRepository;
+	
 
 	@RequestMapping("/login")
 	 public String login(Model model,HttpServletRequest request) {
 		model.addAttribute("TeachOrAdmin",request.isUserInRole("TEACH")||request.isUserInRole("ADMIN"));
     	model.addAttribute("UserOrTeach",request.isUserInRole("TEACH")||request.isUserInRole("USER"));
 		model.addAttribute("activities", activities.findAll());
+		
+		String userName = request.getRemoteUser();
+		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
 	 
 		return "login";
 	 }
@@ -28,6 +55,24 @@ public class LoginController {
 	 public String loginerror(Model model,HttpServletRequest request) {
 		model.addAttribute("TeachOrAdmin",request.isUserInRole("TEACH")||request.isUserInRole("ADMIN"));
     	model.addAttribute("UserOrTeach",request.isUserInRole("TEACH")||request.isUserInRole("USER"));
+    	
+    	String userName = request.getRemoteUser();
+		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
+		
 		return "loginerror";
 	 }
 }

@@ -21,10 +21,15 @@ public class TrainingController {
 	
 	@Autowired
 	 TrainingRepository training;	
+	
 	@Autowired
 	 ExerciseRepository exercise;
+	
 	@Autowired
 	 UserRepository userRepository;
+	
+	@Autowired
+	User user;
 	
 	@RequestMapping("/entrenamientos/avanzado")
 	 public String avanzado(Model model, HttpServletRequest request) {
@@ -52,6 +57,19 @@ public class TrainingController {
 		User user = userRepository.findByName(userName);
 		user.setTraining(t);
 		userRepository.save(user);
+		
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		}
+		
 		return "/entrenamientos/avanzado";
 	 }
 	
@@ -67,6 +85,23 @@ public class TrainingController {
     	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH")) {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
+    	
+    	String userName = request.getRemoteUser();
+		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
     	
 		return "/entrenamientos/entrenamiento";
 	 }
@@ -95,9 +130,27 @@ public class TrainingController {
 		t.setExercises(exercise.save(exercises));
 	    training.save(t);
 	    String userName = request.getRemoteUser();
-	  		User user = userRepository.findByName(userName);
-	  		user.setTraining(t);
-	  		userRepository.save(user);
+  		User user = userRepository.findByName(userName);
+  		user.setTraining(t);
+  		userRepository.save(user);
+
+		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
+	  		
+	  		
 		return "/entrenamientos/experto";
 	 }
 	
@@ -123,9 +176,27 @@ public class TrainingController {
 		t.setExercises(exercise.save(exercises));
 	    training.save(t);
 	    String userName = request.getRemoteUser();
-	  		User user = userRepository.findByName(userName);
-	  		user.setTraining(t);
-	  		userRepository.save(user);
+  		User user = userRepository.findByName(userName);
+  		user.setTraining(t);
+  		userRepository.save(user);
+  		
+		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
+ 
+	  		
 		return "/entrenamientos/medio";
 	 }
 	
@@ -150,9 +221,24 @@ public class TrainingController {
 		t.setExercises(exercise.save(exercises));
 	    training.save(t);
 	    String userName = request.getRemoteUser();
-	  		User user = userRepository.findByName(userName);
-	  		user.setTraining(t);
-	  		userRepository.save(user);
+  		User user = userRepository.findByName(userName);
+  		user.setTraining(t);
+  		userRepository.save(user);
+  		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
 		return "/entrenamientos/principiante";
 	 }
 	

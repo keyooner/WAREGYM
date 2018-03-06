@@ -20,8 +20,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.waregym.classesJava.Product;
+import com.waregym.classesJava.Training;
+import com.waregym.classesJava.User;
 import com.waregym.repositories.ActivityRepository;
 import com.waregym.repositories.ProductRepository;
+import com.waregym.repositories.UserRepository;
 
 
 @Controller
@@ -32,6 +35,13 @@ public class ProductsController {
 	
 	@Autowired
 	ActivityRepository activities;
+	
+	@Autowired
+	User user;
+	
+	@Autowired
+	UserRepository userRepository;
+	
 	
 	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "files");
 	
@@ -84,6 +94,23 @@ public class ProductsController {
 		model.addAttribute("nextPage",productsPage.getNumber()+1);
 		model.addAttribute("prevPage",productsPage.getNumber()-1);
 		
+		String userName = request.getRemoteUser();
+		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
+		
 		return "products";
 	 }	
 	
@@ -102,6 +129,23 @@ public class ProductsController {
 		
 		model.addAttribute("products",products.findAll());
 		model.addAttribute("activities",activities.findAll());
+		
+		String userName = request.getRemoteUser();
+		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
 
 		return "new_product";
 	 }
@@ -149,6 +193,23 @@ public class ProductsController {
 		model.addAttribute("nextPage",productsPage.getNumber()+1);
 		model.addAttribute("prevPage",productsPage.getNumber()-1);
 		
+		String userName = request.getRemoteUser();
+		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
+		
 		return "products";
 	} 
 	
@@ -175,6 +236,23 @@ public class ProductsController {
 		model.addAttribute("showPrev",!productsPage.isFirst());
 		model.addAttribute("nextPage",productsPage.getNumber()+1);
 		model.addAttribute("prevPage",productsPage.getNumber()-1);
+		
+		String userName = request.getRemoteUser();
+		user = userRepository.findByName(userName);
+		if (user != null) {
+			Training training = user.getTraining();
+			String trainingName = training.getName();
+			if ( trainingName != "Ninguno") {
+				model.addAttribute("training", training.getName());
+				model.addAttribute("ifTraining", true);
+			} else {
+					model.addAttribute("training", "");
+					model.addAttribute("ifTraining", false);
+			}
+		} else {
+			model.addAttribute("training", "");
+			model.addAttribute("ifTraining", false);
+		}
     	
     	return "products";
 

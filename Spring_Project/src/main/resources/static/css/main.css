@@ -4374,6 +4374,11 @@ footer h4::after {
 /* map
  * ----------------------------------------------- */
 
+#map {
+	height: 400px;
+    width: 80%;
+ }
+       
 #map-wrap {
     background: #FFFFFF;
     z-index: 500;

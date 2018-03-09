@@ -24,7 +24,6 @@
     ================================================== -->
     <script src="js/modernizr.js"></script>
     <script src="js/pace.min.js"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <!-- favicons
     ================================================== -->
@@ -163,81 +162,14 @@
 
             <div class="s-content__header col-full">
                 <h1 class="s-content__header-title">
-                    Contacta con nosotros
+                    Mensaje enviado con éxito
                 </h1>
             </div>
             <!-- end s-content__header -->
-
-            <div class="s-content__media col-full">
-                <center><div id="map"></div></center>
-            </div>
-            <!-- end s-content__media -->
-
-            <div class="col-full s-content__main">
-
-                <p class="lead">PUEDES ENCONTRAR LA INFORMACIÓN DE NUESTROS CENTROS EN LA PÁGINA WEB.</p>
-
-                <p>Si tu pregunta está relacionada con nuestras actividades dirigidas consulta el horario de actividades dirigidas en la sección "Clases". Si quieres saber más sobre la actividad podrás encontrar toda la información en "Entrenamientos".
-                </p>
-
-                <p>Si tu pregunta está relacionada con nuestras cuotas, podrás consultar nuestras cuotas y promociones en la página principal.
-                </p>
-
-                <div class="row">
-                    <div class="col-six tab-full">
-                        <h3>Donde entontrarnos</h3>
-
-                        <p>
-                            Calle Serrano 1
-                            <br> Madrid
-                            <br> 28901
-                        </p>
-
-                    </div>
-
-                    <div class="col-six tab-full">
-                        <h3>Información de contacto</h3>
-
-                        <p>contacto@waregym.com
-                            <br> info@waregym.com
-                            <br> Phone: (+1) 123 456
-                        </p>
-
-                    </div>
-                </div>
-                <!-- end row -->
-                
-                <h3>Déjanos tu mensaje</h3>
-
-                <form method="post" action="contacto_guardado">
-                    <fieldset>
-
-                        <div class="form-field">
-                            <input name="name" type="text" class="full-width" placeholder="Nombre" required>
-                        </div>
-
-                        <div class="form-field">
-                            <input name="number" type="number" class="full-width" placeholder="Móvil">
-                        </div>
-
-                        <div class="form-field">
-                            <input name="email" type="text" class="full-width" placeholder="Correo electrónico" required>
-                        </div>
-
-                        <div class="message form-field">
-                            <textarea name="message" class="full-width" placeholder="Tu mensaje"></textarea>
-                        </div>
-
-                        <center><div class="g-recaptcha" data-sitekey="6LfUZBMUAAAAAJIFByqzdQzO3KLzX79bmrQuzeW1"></div></center><br>
-                        <button type="submit" class="submit btn btn--primary full-width">Enviar</button>
-
-                    </fieldset>
-                </form>
-                <!-- end form -->
-                
-            </div>
-            <!-- end s-content__main -->
-
+			<center>
+			<p>El mensaje ha sido enviado correctamente</p>
+			<a href="/contactos">Volver a la página contacto</a>
+			</center>
         </div>
         <!-- end row -->
 
@@ -351,30 +283,7 @@
    <!-- Java Script
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script>
-      function initMap() {
-        var uluru = {lat: 40.4893538, lng: -3.6827461};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 14,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
-    <script>
-		window.onload = function() {
-    	var $recaptcha = document.querySelector('#g-recaptcha-response');
-
-    	if($recaptcha) {
-        	$recaptcha.setAttribute("required", "required");
-    	}
-	  };
-	</script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8BQGP4FzPqOyVBpc81J-tUyaFG4WRGJQ&callback=initMap" type="text/javascript"></script> 
+    <script src="js/plugins.js"></script> 
     <script src="js/main.js"></script>
 
 </body>

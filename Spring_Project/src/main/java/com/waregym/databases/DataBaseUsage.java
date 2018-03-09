@@ -1,11 +1,13 @@
 package com.waregym.databases;
 
+import com.waregym.repositories.CommentsRepository;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
 
+import com.waregym.classesJava.Comment;
 import com.waregym.classesJava.User;
 import com.waregym.repositories.ActivityRepository;
 import com.waregym.repositories.UserRepository;
@@ -18,6 +20,9 @@ public class DataBaseUsage implements CommandLineRunner{
 	
 	 @Autowired
 	    private UserRepository userRepository;
+	 
+	 @Autowired
+	 	private CommentsRepository repository;
 
 	    @PostConstruct
 	    private void initDatabase() {
@@ -27,6 +32,10 @@ public class DataBaseUsage implements CommandLineRunner{
 			userRepository.save(new User("teach", "teachpass", "ROLE_TEACH"));
 			userRepository.save(new User("carolo", "carolo", "ROLE_ADMIN"));
 			userRepository.save(new User("adrian", "a", "ROLE_USER"));
+			
+		    repository.save(new Comment("Pepe", "pp@gmail.com", 123456789 ,"Comentario 1"));
+			repository.save(new Comment("Juan", "juan@gmail.com", 123456789 ,"Comentario 2"));
+			
 	    }
 
 		@Override

@@ -148,6 +148,8 @@ public class ContactController {
 		return "contact_save";
 
 	}
+	
+	
 
 	@RequestMapping("/contacto/{id}")
 	public String viewComment(Model model, HttpServletRequest request, @PathVariable long id) {

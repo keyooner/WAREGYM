@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
+import com.waregym.repositories.ActivityRepository;
 import com.waregym.repositories.UserRepository;
 
 @Controller
@@ -19,10 +20,14 @@ public class ProfileController {
 	
 	@Autowired
 	User user;
+	
+	@Autowired
+	ActivityRepository activities;
 
 	@RequestMapping("/profile")
 	 public String login(Model model, HttpServletRequest request) {
 			
+			model.addAttribute("activities", activities.findAll());
 			model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
 	    	model.addAttribute("hidden", !request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
 	    	model.addAttribute("onlyUser", request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));

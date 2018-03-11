@@ -40,7 +40,7 @@ public class Activity {
 		this.development = development;
 		this.benefit = benefit;
 		this.schedule = new String[5][3];
-		this.inscribed = 30;
+		this.inscribed = 0;
 	}
 
 	public int getInscribed() {

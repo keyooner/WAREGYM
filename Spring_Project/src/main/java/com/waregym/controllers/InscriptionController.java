@@ -21,6 +21,8 @@ import com.waregym.repositories.UserRepository;
 @Controller
 public class InscriptionController {
 	
+	static final int MAX_INSCRIBED = 1;
+	
 	@Autowired
 	ActivityRepository activities;
 	
@@ -58,17 +60,24 @@ public class InscriptionController {
 		
 		for(Activity activity: activitiesFor) {
 			ActivityInscribed actIns = new ActivityInscribed();
-			actIns.setActivity(activity);	
-			actIns.setButtonText("Inscribirse");
-			for(int i = 0; i < activity.getUsers().size(); i++) {
-				if (activity.getUsers() != null && !activity.getUsers().isEmpty() 
-						&& activity.getUsers().get(i).getId().equals(user.getId())) {
-					actIns.setShowInscribed(true);
-					actIns.setButtonText("Borrar inscripción");
-				}
+			actIns.setActivity(activity);
+			if(activity.getInscribed() < MAX_INSCRIBED) {
+				
 			}
+				actIns.setButtonText("Inscribirse");
+				for(int i = 0; i < activity.getUsers().size(); i++) {
+					if (activity.getUsers() != null && !activity.getUsers().isEmpty() 
+							&& activity.getUsers().get(i).getId().equals(user.getId())) {
+						actIns.setShowInscribed(true);
+						actIns.setButtonText("Borrar inscripción");
+					}
+				}
+			actIns.setInscribed(activity.getInscribed());
 			actIns.setShowDelete(!actIns.isShowInscribed());
-			activitiesInscribed.add(actIns);			 
+			actIns.setFull(actIns.getInscribed() > 0);
+			actIns.setShowButton(actIns.isShowDelete() || actIns.isShowInscribed());
+			actIns.setShowText(!actIns.isShowButton());
+			activitiesInscribed.add(actIns);		 
 		}
 		
 		model.addAttribute("activitiesInscribed", activitiesInscribed);

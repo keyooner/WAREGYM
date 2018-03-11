@@ -157,17 +157,18 @@
 
                 <div class="row text-center">
 
-                <h1 class="lead">Clases Disponibles</h1>
-
-                 
+                <h1 class="lead">Clases Disponibles</h1><br>
 
                 {{#activitiesInscribed}}
                 
                 <form action="/clase_inscrita">
                 <ul class="class-inscription">
-                    {{activity.name}}<br><br>
+                    <span style="font-size: 50px; color: red">{{activity.name}}</span><br>
                     <input type="hidden" value="{{activity.id}}" name="id" >
-                    <input value="{{buttonText}}" class="btn btn-lg btn-primary btn-block" type="submit">
+                    {{#showText}}<p>Todas las plazas de {{activity.name}} están ocupadas</p>{{/showText}}
+                    {{#showButton}}
+                        <input value="{{buttonText}}" class="btn btn-lg btn-primary btn-block" type="submit"><span>Plazas ocupadas: {{activity.inscribed}}/15</span>
+                    {{/showButton}}
                 </ul>
                 
                 </form>

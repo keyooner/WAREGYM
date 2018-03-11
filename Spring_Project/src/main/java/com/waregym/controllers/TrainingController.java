@@ -2,6 +2,7 @@ package com.waregym.controllers;
 import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
 import com.waregym.classesJava.Exercise;
+import com.waregym.repositories.ActivityRepository;
 import com.waregym.repositories.ExerciseRepository;
 import com.waregym.repositories.TrainingRepository;
 import com.waregym.repositories.UserRepository;
@@ -29,11 +30,15 @@ public class TrainingController {
 	 UserRepository userRepository;
 	
 	@Autowired
+	ActivityRepository activities;
+	
+	@Autowired
 	User user;
 	
 	@RequestMapping("/entrenamientos/avanzado")
 	 public String avanzado(Model model, HttpServletRequest request) {
-			
+		
+		model.addAttribute("activities", activities.findAll());
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
     	model.addAttribute("user", request.isUserInRole("USER"));

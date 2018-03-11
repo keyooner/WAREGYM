@@ -172,7 +172,7 @@
             {{/admin}}
             {{#onlyUser}}
             <h5>¿Qué deseas hacer?</h5>
-            <form action="/entrenamientos/{{training}}"><input type="submit" value="Mi entrenamiento"></form>
+            {{#training-exists}}<form action="/entrenamientos/{{training}}"><input type="submit" value="Mi entrenamiento"></form>{{/training-exists}}
             <form action="/productos"><input type="submit" value="Productos"></form>
             <form action="/clases/inscripcion"><input type="submit" value="Clases disponibles"></form>
             {{/onlyUser}}

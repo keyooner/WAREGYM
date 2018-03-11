@@ -28,22 +28,7 @@ public class Activity {
 	@ManyToMany (mappedBy="activities")
 	private List<User> users;
 	
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public List<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
-
+	
 	public Activity() {
 		this.schedule = new String[5][3];
 	}
@@ -129,6 +114,23 @@ public class Activity {
 	public void setSchedule(String[][] schedule) {
 		this.schedule = schedule;
 	}
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
 	
 	
 }

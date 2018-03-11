@@ -31,6 +31,7 @@ public class ProfileController {
 	    	model.addAttribute("user", request.isUserInRole("USER"));
 	    	model.addAttribute("TeachOrAdmin",request.isUserInRole("TEACH")||request.isUserInRole("ADMIN"));
 	    	model.addAttribute("UserOrTeach",request.isUserInRole("TEACH")||request.isUserInRole("USER"));
+	    	model.addAttribute("notAdmin", request.isUserInRole("USER") || request.isUserInRole("TEACH"));
 	    	String userName = request.getRemoteUser();
 	    	User user = userRepository.findByName(userName);
 	    	model.addAttribute("training-exists", user.getTraining().getName() != "Ninguno");

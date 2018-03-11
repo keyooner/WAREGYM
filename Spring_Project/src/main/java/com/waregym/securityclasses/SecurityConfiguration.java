@@ -28,12 +28,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/waregym").permitAll();
         http.authorizeRequests().antMatchers("/productos").permitAll();
         http.authorizeRequests().antMatchers("/contacto").permitAll();
+        http.authorizeRequests().antMatchers("/contacto_guardado").permitAll();
         http.authorizeRequests().antMatchers("/activity_template").permitAll();
         
 
         // Private pages (all other pages)
         http.authorizeRequests().antMatchers("/clases/añadir_clase").hasAnyRole("ADMIN");
-        //http.authorizeRequests().antMatchers("/contactos").hasAnyRole("ADMIN");
+        http.authorizeRequests().antMatchers("/contactos").hasAnyRole("ADMIN");
+        http.authorizeRequests().antMatchers("/contacto/{id}").hasAnyRole("ADMIN");
         http.authorizeRequests().antMatchers("/clases/inscripcion").hasAnyRole("USER","TEACH");
         http.authorizeRequests().antMatchers("/entrenamientos/entrenamiento").hasAnyRole("ADMIN","USER","TEACH");
         http.authorizeRequests().antMatchers("/entrenamientos/principiante").hasAnyRole("ADMIN","USER","TEACH");

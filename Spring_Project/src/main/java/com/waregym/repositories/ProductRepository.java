@@ -6,4 +6,5 @@ import com.waregym.classesJava.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Long>{
 	
+	public Product deleteById(long id);
 }

@@ -25,13 +25,14 @@ import com.waregym.classesJava.User;
 import com.waregym.repositories.ActivityRepository;
 import com.waregym.repositories.ProductRepository;
 import com.waregym.repositories.UserRepository;
+import com.waregym.services.ProductService;
 
 
 @Controller
 public class ProductsController {
 
 	@Autowired
-	ProductRepository products;
+	ProductService productsService;
 	
 	@Autowired
 	ActivityRepository activities;
@@ -62,14 +63,14 @@ public class ProductsController {
 		Product p8 = new Product("Aminoácidos", "API BCAA 180", 8.0, "https://www.onelastrep.cl/products/api-bcaa-tablets-aminoacidos-180-tabletas","aminoacidos_2.png");
 
 		
-		products.save(p1);
-		products.save(p2);
-		products.save(p3);
-		products.save(p4);
-		products.save(p5);
-		products.save(p6);
-		products.save(p7);
-		products.save(p8);
+		productsService.saveProduct(p1);
+		productsService.saveProduct(p2);
+		productsService.saveProduct(p3);
+		productsService.saveProduct(p4);
+		productsService.saveProduct(p5);
+		productsService.saveProduct(p6);
+		productsService.saveProduct(p7);
+		productsService.saveProduct(p8);
 	}
 	
 	@RequestMapping("/productos")
@@ -85,7 +86,7 @@ public class ProductsController {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
 		
-		Page<Product> productsPage = products.findAll(new PageRequest(page.getPageNumber(), 4));
+		Page<Product> productsPage = productsService.findAllProductPage(new PageRequest(page.getPageNumber(), 4));
 		model.addAttribute("products",productsPage);
 		model.addAttribute("activities",activities.findAll());
 		
@@ -127,7 +128,7 @@ public class ProductsController {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
 		
-		model.addAttribute("products",products.findAll());
+		model.addAttribute("products",productsService.findAllProducts());
 		model.addAttribute("activities",activities.findAll());
 		
 		String userName = request.getRemoteUser();
@@ -182,9 +183,9 @@ public class ProductsController {
 			} catch (Exception e){}
 		}
 		
-		products.save(product);
+		productsService.saveProduct(product);
 		
-		Page<Product> productsPage = products.findAll(new PageRequest(page.getPageNumber(), 4));
+		Page<Product> productsPage = productsService.findAllProductPage(new PageRequest(page.getPageNumber(), 4));
 		model.addAttribute("products",productsPage);
 		model.addAttribute("activities",activities.findAll());
 		
@@ -216,7 +217,8 @@ public class ProductsController {
 	@RequestMapping("/producto_eliminado")
 	public String deleteProduct(Model model, HttpServletRequest request, @RequestParam("id") long id, Pageable page) {
 		
-		products.delete(id);
+		Product p = productsService.findOneById(id);
+		productsService.deleteProduct(p);
 		
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
@@ -228,7 +230,7 @@ public class ProductsController {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
 		
-		Page<Product> productsPage = products.findAll(new PageRequest(page.getPageNumber(), 4));
+		Page<Product> productsPage = productsService.findAllProductPage(new PageRequest(page.getPageNumber(), 4));
 		model.addAttribute("products",productsPage);
 		model.addAttribute("activities",activities.findAll());
 		

@@ -11,12 +11,13 @@ import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
 import com.waregym.repositories.ActivityRepository;
 import com.waregym.repositories.UserRepository;
+import com.waregym.services.ActivityService;
 
 @Controller
 public class SignUpController {
 	
 	@Autowired
-	ActivityRepository activities;
+	ActivityService activityService;
 	
 	@Autowired
 	UserRepository userRepository;
@@ -28,7 +29,7 @@ public class SignUpController {
 	 public String signup(Model model,HttpServletRequest request) {
 		model.addAttribute("TeachOrAdmin",request.isUserInRole("TEACH")||request.isUserInRole("ADMIN"));
     	model.addAttribute("UserOrTeach",request.isUserInRole("TEACH")||request.isUserInRole("USER"));
-		model.addAttribute("activities", activities.findAll());
+		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
 		user = userRepository.findByName(userName);
@@ -80,7 +81,7 @@ public class SignUpController {
 			} else {
 				User newUser = new User(name,password,"ROLE_USER");
 				userRepository.save(newUser);
-				model.addAttribute("activities", activities.findAll());
+				model.addAttribute("activities", activityService.findAllActivities());
 				return "/";
 			}
 		} else {

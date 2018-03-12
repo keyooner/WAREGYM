@@ -11,6 +11,7 @@ import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
 import com.waregym.repositories.ActivityRepository;
 import com.waregym.repositories.UserRepository;
+import com.waregym.services.ActivityService;
 
 @Controller
 public class ProfileController {
@@ -22,12 +23,12 @@ public class ProfileController {
 	User user;
 	
 	@Autowired
-	ActivityRepository activities;
+	ActivityService activityService;
 
 	@RequestMapping("/profile")
 	 public String login(Model model, HttpServletRequest request) {
 			
-			model.addAttribute("activities", activities.findAll());
+			model.addAttribute("activities", activityService.findAllActivities());
 			model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
 	    	model.addAttribute("hidden", !request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
 	    	model.addAttribute("onlyUser", request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));

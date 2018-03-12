@@ -6,6 +6,7 @@ import com.waregym.repositories.ActivityRepository;
 import com.waregym.repositories.ExerciseRepository;
 import com.waregym.repositories.TrainingRepository;
 import com.waregym.repositories.UserRepository;
+import com.waregym.services.ActivityService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,7 @@ public class TrainingController {
 	 UserRepository userRepository;
 	
 	@Autowired
-	ActivityRepository activities;
+	ActivityService activityService;
 	
 	@Autowired
 	User user;
@@ -38,7 +39,7 @@ public class TrainingController {
 	@RequestMapping("/entrenamientos/avanzado")
 	 public String avanzado(Model model, HttpServletRequest request) {
 		
-		model.addAttribute("activities", activities.findAll());
+		model.addAttribute("activities", activityService.findAllActivities());
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
     	model.addAttribute("user", request.isUserInRole("USER"));
@@ -80,7 +81,8 @@ public class TrainingController {
 	
 	@RequestMapping("/entrenamientos/entrenamiento")
 	 public String entrenamiento(Model model, HttpServletRequest request) {
-			
+		
+		model.addAttribute("activities", activityService.findAllActivities());
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
@@ -113,7 +115,8 @@ public class TrainingController {
 	
 	@RequestMapping("/entrenamientos/experto")
 	 public String experto(Model model, HttpServletRequest request) {
-			
+		
+		model.addAttribute("activities", activityService.findAllActivities());
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
@@ -161,7 +164,8 @@ public class TrainingController {
 	
 	@RequestMapping("/entrenamientos/medio")
 	 public String medio(Model model, HttpServletRequest request) {
-			
+		
+		model.addAttribute("activities", activityService.findAllActivities());
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));
@@ -207,7 +211,8 @@ public class TrainingController {
 	
 	@RequestMapping("/entrenamientos/principiante")
 	 public String principiante(Model model, HttpServletRequest request) {
-			
+		
+		model.addAttribute("activities", activityService.findAllActivities());
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
     	model.addAttribute("admin", request.isUserInRole("ADMIN"));

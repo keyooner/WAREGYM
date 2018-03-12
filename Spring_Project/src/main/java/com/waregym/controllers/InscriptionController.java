@@ -17,20 +17,18 @@ import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
 import com.waregym.repositories.ActivityRepository;
 import com.waregym.repositories.UserRepository;
+import com.waregym.services.ActivityService;
 
 @Controller
 public class InscriptionController {
 	
-	static final int MAX_INSCRIBED = 30;
+	static final int MAX_INSCRIBED = 1;
 	
 	@Autowired
-	ActivityRepository activities;
+	ActivityService activityService;
 	
 	@Autowired
 	UserRepository userRepository;
-
-	@Autowired
-	ActivityRepository activityRepository;
 	
 	@Autowired
 	User user;
@@ -53,25 +51,25 @@ public class InscriptionController {
     	String userName = request.getRemoteUser();
 		user = userRepository.findByName(userName);
     	
-		model.addAttribute("activities", activities.findAll());
+		model.addAttribute("activities", activityService.findAllActivities());
 		
-		ArrayList<Activity> activitiesFor = (ArrayList<Activity>) activities.findAll();
+		ArrayList<Activity> activitiesFor = (ArrayList<Activity>) activityService.findAllActivities();
 		ArrayList<ActivityInscribed> activitiesInscribed = new ArrayList<ActivityInscribed>();
 		
 		for(Activity activity: activitiesFor) {
 			ActivityInscribed actIns = new ActivityInscribed();
 			actIns.setActivity(activity);
-			
-			actIns.setShowInscribed(false);
-			actIns.setButtonText("Inscribirse");
-			for(int i = 0; i < activity.getUsers().size(); i++) {
-				if (activity.getUsers() != null && !activity.getUsers().isEmpty() 
-						&& activity.getUsers().get(i).getId().equals(user.getId())) {
-					actIns.setShowInscribed(true);
-					actIns.setButtonText("Borrar inscripción");
-				}
-			}
+			if(activity.getInscribed() < MAX_INSCRIBED) {
 				
+			}
+				actIns.setButtonText("Inscribirse");
+				for(int i = 0; i < activity.getUsers().size(); i++) {
+					if (activity.getUsers() != null && !activity.getUsers().isEmpty() 
+							&& activity.getUsers().get(i).getId().equals(user.getId())) {
+						actIns.setShowInscribed(true);
+						actIns.setButtonText("Borrar inscripción");
+					}
+				}
 			actIns.setInscribed(activity.getInscribed());
 			actIns.setShowDelete(!actIns.isShowInscribed());
 			actIns.setFull(actIns.getInscribed() > 0);
@@ -112,6 +110,7 @@ public class InscriptionController {
     	model.addAttribute("user", request.isUserInRole("USER"));
     	model.addAttribute("TeachOrAdmin",request.isUserInRole("TEACH")||request.isUserInRole("ADMIN"));
     	model.addAttribute("UserOrTeach",request.isUserInRole("TEACH")||request.isUserInRole("USER"));
+    	model.addAttribute("activities", activityService.findAllActivities());
     	
     	if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH")) {
 			model.addAttribute("userName",request.getRemoteUser());
@@ -120,7 +119,7 @@ public class InscriptionController {
 		
     	String userName = request.getRemoteUser();
 		user = userRepository.findByName(userName);
-		Activity activity = activityRepository.findById(id);
+		Activity activity = activityService.findOneById(id);
 		
 		boolean found = false;
 		int counter = 0;

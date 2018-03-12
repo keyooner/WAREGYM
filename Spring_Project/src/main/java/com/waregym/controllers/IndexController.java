@@ -13,12 +13,13 @@ import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
 import com.waregym.repositories.ActivityRepository;
 import com.waregym.repositories.UserRepository;
+import com.waregym.services.ActivityService;
 
 @Controller
 public class IndexController {
 	
 	@Autowired
-	ActivityRepository activities;
+	ActivityService activityService;
 	
 	@Autowired
 	User user;
@@ -44,7 +45,7 @@ public class IndexController {
     	if (user != null){
     	model.addAttribute("training", user.getTraining().getName());
     	}
-		model.addAttribute("activities", activities.findAll());
+		model.addAttribute("activities", activityService.findAllActivities());
 		if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH")) {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}

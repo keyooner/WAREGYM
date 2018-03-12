@@ -25,6 +25,7 @@ import com.waregym.classesJava.User;
 import com.waregym.repositories.ActivityRepository;
 import com.waregym.repositories.ProductRepository;
 import com.waregym.repositories.UserRepository;
+import com.waregym.services.ActivityService;
 import com.waregym.services.ProductService;
 
 
@@ -35,7 +36,7 @@ public class ProductsController {
 	ProductService productsService;
 	
 	@Autowired
-	ActivityRepository activities;
+	ActivityService activityService;
 	
 	@Autowired
 	User user;
@@ -88,7 +89,7 @@ public class ProductsController {
 		
 		Page<Product> productsPage = productsService.findAllProductPage(new PageRequest(page.getPageNumber(), 4));
 		model.addAttribute("products",productsPage);
-		model.addAttribute("activities",activities.findAll());
+		model.addAttribute("activities",activityService.findAllActivities());
 		
 		model.addAttribute("showNext",!productsPage.isLast());
 		model.addAttribute("showPrev",!productsPage.isFirst());
@@ -129,7 +130,7 @@ public class ProductsController {
 		} else {model.addAttribute("userName", "");}
 		
 		model.addAttribute("products",productsService.findAllProducts());
-		model.addAttribute("activities",activities.findAll());
+		model.addAttribute("activities",activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
 		user = userRepository.findByName(userName);
@@ -187,7 +188,7 @@ public class ProductsController {
 		
 		Page<Product> productsPage = productsService.findAllProductPage(new PageRequest(page.getPageNumber(), 4));
 		model.addAttribute("products",productsPage);
-		model.addAttribute("activities",activities.findAll());
+		model.addAttribute("activities",activityService.findAllActivities());
 		
 		model.addAttribute("showNext",!productsPage.isLast());
 		model.addAttribute("showPrev",!productsPage.isFirst());
@@ -232,7 +233,7 @@ public class ProductsController {
 		
 		Page<Product> productsPage = productsService.findAllProductPage(new PageRequest(page.getPageNumber(), 4));
 		model.addAttribute("products",productsPage);
-		model.addAttribute("activities",activities.findAll());
+		model.addAttribute("activities",activityService.findAllActivities());
 		
 		model.addAttribute("showNext",!productsPage.isLast());
 		model.addAttribute("showPrev",!productsPage.isFirst());

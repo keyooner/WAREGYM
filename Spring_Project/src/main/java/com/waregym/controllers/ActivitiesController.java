@@ -28,12 +28,13 @@ import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
 import com.waregym.repositories.ActivityRepository;
 import com.waregym.repositories.UserRepository;
+import com.waregym.services.ActivityService;
 
 @Controller
 public class ActivitiesController {
 	
 	@Autowired
-	ActivityRepository activities;
+	ActivityService activityService;
 	
 	@Autowired
 	User user;
@@ -62,8 +63,9 @@ public class ActivitiesController {
     	model.addAttribute("user", request.isUserInRole("USER"));
     	model.addAttribute("TeachOrAdmin",request.isUserInRole("TEACH")||request.isUserInRole("ADMIN"));
     	model.addAttribute("UserOrTeach",request.isUserInRole("TEACH")||request.isUserInRole("USER"));
+    	model.addAttribute("activities", activityService.findAllActivities());
 		
-		model.addAttribute("activities", activities.findAll());
+		model.addAttribute("activities", activityService.findAllActivities());
 		if (request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH")) {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
@@ -143,10 +145,10 @@ public class ActivitiesController {
 		
 		activity.setSchedule(activitySchedule);
 		
-		activities.save(activity);
+		activityService.saveActivity(activity);
 					
 		model.addAttribute("activity", activity);
-		model.addAttribute("activities", activities.findAll());
+		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
 		user = userRepository.findByName(userName);
@@ -182,10 +184,10 @@ public class ActivitiesController {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
 		
-		Activity activity = activities.findOne(id);
+		Activity activity = activityService.findOneById(id);
 		
 		model.addAttribute("activity",activity);
-		model.addAttribute("activities", activities.findAll());
+		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
 		user = userRepository.findByName(userName);
@@ -225,8 +227,9 @@ public class ActivitiesController {
 	
 	@RequestMapping("clases/clase_eliminada")
 	public String addActivity(Model model, HttpServletRequest request, @RequestParam("id") long id)  {
-
-		activities.delete(id);
+		
+		Activity activity = activityService.findOneById(id);
+		activityService.deleteActivity(activity);
 		
 		model.addAttribute("logout", request.isUserInRole("USER")||request.isUserInRole("ADMIN")||request.isUserInRole("TEACH"));
     	model.addAttribute("hidden",!request.isUserInRole("USER")&&!request.isUserInRole("ADMIN")&&!request.isUserInRole("TEACH"));
@@ -239,7 +242,7 @@ public class ActivitiesController {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
     	
-		model.addAttribute("activities", activities.findAll());
+		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
 		user = userRepository.findByName(userName);

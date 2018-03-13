@@ -22,7 +22,7 @@ import com.waregym.services.ActivityService;
 @Controller
 public class InscriptionController {
 	
-	static final int MAX_INSCRIBED = 1;
+	static final int MAX_INSCRIBED = 15;
 	
 	@Autowired
 	ActivityService activityService;

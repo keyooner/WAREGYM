@@ -15,9 +15,6 @@ import com.waregym.repositories.UserRepository;
 @Controller
 public class DataBaseUsage implements CommandLineRunner{
 	
-	@Autowired
-	private ActivityRepository activityRepository;
-	
 	 @Autowired
 	    private UserRepository userRepository;
 	 

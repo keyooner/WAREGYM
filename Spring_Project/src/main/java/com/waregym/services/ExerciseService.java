@@ -17,17 +17,10 @@ public class ExerciseService {
 	 public ExerciseService(ExerciseRepository exerciseRepository) {
 		 this.exerciseRepository = exerciseRepository;
 	 }
-	 
-    public Comment findOneById(long id) {
-        return commentsRepository.findById(id);
-    }
 
-    public List<Comment> findAllComments() {
-        return commentsRepository.findAll();
-    }
-
-    public void saveComment(Comment comment) {
-        commentsRepository.save(comment);
+    public List<Exercise> saveExercises(List<Exercise> exercises) {
+        exerciseRepository.save(exercises);
+        return exercises;
     }
 
 

@@ -16,7 +16,7 @@ import com.waregym.classesJava.ActivityInscribed;
 import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
 import com.waregym.repositories.ActivityRepository;
-import com.waregym.repositories.UserRepository;
+import com.waregym.services.UserService;
 import com.waregym.services.ActivityService;
 
 @Controller
@@ -28,7 +28,7 @@ public class InscriptionController {
 	ActivityService activityService;
 	
 	@Autowired
-	UserRepository userRepository;
+	UserService userService;
 	
 	@Autowired
 	User user;
@@ -49,7 +49,7 @@ public class InscriptionController {
 		} else {model.addAttribute("userName", "");}
 		
     	String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
     	
 		model.addAttribute("activities", activityService.findAllActivities());
 		
@@ -80,7 +80,7 @@ public class InscriptionController {
 		
 		model.addAttribute("activitiesInscribed", activitiesInscribed);
 		
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();
@@ -118,7 +118,7 @@ public class InscriptionController {
 		} else {model.addAttribute("userName", "");}
 		
     	String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		Activity activity = activityService.findOneById(id);
 		
 		boolean found = false;
@@ -143,9 +143,9 @@ public class InscriptionController {
 			activity.setInscribed(activity.getInscribed()-1);
 		}
 		
-		userRepository.save(user);
+		userService.saveUser(user);
 		
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();

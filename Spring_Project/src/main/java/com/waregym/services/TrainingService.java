@@ -21,5 +21,4 @@ public class TrainingService {
         trainingRepository.save(training);
     }
 
-
 }

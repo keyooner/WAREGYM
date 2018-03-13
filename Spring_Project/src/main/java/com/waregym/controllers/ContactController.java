@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
-import com.waregym.repositories.UserRepository;
+import com.waregym.services.UserService;
 import com.waregym.services.ActivityService;
 import com.waregym.services.CommentService;
 
@@ -26,7 +26,7 @@ public class ContactController {
 	User user;
 	
 	@Autowired
-	UserRepository userRepository;
+	UserService userService;
 	
 	@Autowired
 	private CommentService commentsService;
@@ -50,7 +50,7 @@ public class ContactController {
 		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();
@@ -88,7 +88,7 @@ public class ContactController {
 		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();
@@ -127,7 +127,7 @@ public class ContactController {
 		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();
@@ -168,7 +168,7 @@ public class ContactController {
 		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();

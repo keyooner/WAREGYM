@@ -26,9 +26,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.waregym.classesJava.Activity;
 import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
-import com.waregym.repositories.ActivityRepository;
-import com.waregym.repositories.UserRepository;
 import com.waregym.services.ActivityService;
+import com.waregym.services.UserService;
 
 @Controller
 public class ActivitiesController {
@@ -40,7 +39,7 @@ public class ActivitiesController {
 	User user;
 	
 	@Autowired
-	UserRepository userRepository;
+	UserService userService;
 	
 	
 	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "files");
@@ -71,7 +70,7 @@ public class ActivitiesController {
 		} else {model.addAttribute("userName", "");}
 		
 		String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();
@@ -151,7 +150,7 @@ public class ActivitiesController {
 		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();
@@ -190,7 +189,7 @@ public class ActivitiesController {
 		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();
@@ -245,7 +244,7 @@ public class ActivitiesController {
 		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();

@@ -15,17 +15,18 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.waregym.classesJava.User;
+import com.waregym.services.UserService;
 
 @Component
 public class UserRepositoryAuthenticationProvider implements AuthenticationProvider {
 
 	@Autowired
-	private UserRepository userRepository;
+	private UserService userService;
 
 	@Override
 	public Authentication authenticate(Authentication auth) throws AuthenticationException {
 
-		User user = userRepository.findByName(auth.getName());
+		User user = userService.findOneByName(auth.getName());
 
 		if (user == null) {
 			throw new BadCredentialsException("User not found");

@@ -14,8 +14,8 @@ public class ExerciseService {
 	private final ExerciseRepository exerciseRepository;
 	
 	 @Autowired
-	 public CommentService(CommentsRepository productRepository) {
-		 this.commentsRepository = productRepository;
+	 public ExerciseService(ExerciseRepository exerciseRepository) {
+		 this.exerciseRepository = exerciseRepository;
 	 }
 	 
     public Comment findOneById(long id) {

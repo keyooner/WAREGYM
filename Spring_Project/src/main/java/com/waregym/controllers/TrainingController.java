@@ -2,11 +2,10 @@ package com.waregym.controllers;
 import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
 import com.waregym.classesJava.Exercise;
-import com.waregym.repositories.ActivityRepository;
-import com.waregym.repositories.ExerciseRepository;
-import com.waregym.repositories.TrainingRepository;
-import com.waregym.repositories.UserRepository;
+import com.waregym.services.UserService;
 import com.waregym.services.ActivityService;
+import com.waregym.services.ExerciseService;
+import com.waregym.services.TrainingService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,13 +21,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TrainingController {
 	
 	@Autowired
-	 TrainingRepository training;	
+	 TrainingService trainingService;	
 	
 	@Autowired
-	 ExerciseRepository exercise;
+	 ExerciseService exerciseService;
 	
 	@Autowired
-	 UserRepository userRepository;
+	 UserService userService;
 	
 	@Autowired
 	ActivityService activityService;
@@ -57,12 +56,12 @@ public class TrainingController {
 		exercises.add(new Exercise("Press de Banca", 150, 10));
 		exercises.add(new Exercise("Piernas", 60, 20));
 		exercises.add(new Exercise("Barras", 10, 10));
-		t.setExercises(exercise.save(exercises));
-	    training.save(t);
+		t.setExercises(exerciseService.saveExercises(exercises));
+	    trainingService.saveService(t);
 	    String userName = request.getRemoteUser();
-		User user = userRepository.findByName(userName);
+		User user = userService.findOneByName(userName);
 		user.setTraining(t);
-		userRepository.save(user);
+		userService.saveUser(user);
 		
 		if (user != null) {
 			Training training = user.getTraining();
@@ -94,7 +93,7 @@ public class TrainingController {
 		} else {model.addAttribute("userName", "");}
     	
     	String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();
@@ -135,14 +134,14 @@ public class TrainingController {
 		exercises.add(new Exercise("Piernas", 60, 20));
 		exercises.add(new Exercise("Barras", 10, 10));
 		exercises.add(new Exercise("Press de pectoral", 40, 10));
-		t.setExercises(exercise.save(exercises));
-	    training.save(t);
+		t.setExercises(exerciseService.saveExercises(exercises));
+	    trainingService.saveService(t);
 	    String userName = request.getRemoteUser();
-  		User user = userRepository.findByName(userName);
+  		User user = userService.findOneByName(userName);
   		user.setTraining(t);
-  		userRepository.save(user);
+  		userService.saveUser(user);
 
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();
@@ -182,14 +181,14 @@ public class TrainingController {
 		exercises.add(new Exercise("Press de Banca", 70, 7));
 		exercises.add(new Exercise("Pesas", 10, 5));
 		exercises.add(new Exercise("Abdominales", 0, 15));
-		t.setExercises(exercise.save(exercises));
-	    training.save(t);
+		t.setExercises(exerciseService.saveExercises(exercises));
+	    trainingService.saveService(t);
 	    String userName = request.getRemoteUser();
-  		User user = userRepository.findByName(userName);
+  		User user = userService.findOneByName(userName);
   		user.setTraining(t);
-  		userRepository.save(user);
+  		userService.saveUser(user);
   		
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();
@@ -228,13 +227,13 @@ public class TrainingController {
 		exercises.add(new Exercise("Flexiones",0,10));
 		exercises.add(new Exercise("Press de Banca", 50, 5));
 		exercises.add(new Exercise("Abdominales", 0, 15));
-		t.setExercises(exercise.save(exercises));
-	    training.save(t);
+		t.setExercises(exerciseService.saveExercises(exercises));
+	    trainingService.saveService(t);
 	    String userName = request.getRemoteUser();
-  		User user = userRepository.findByName(userName);
+  		User user = userService.findOneByName(userName);
   		user.setTraining(t);
-  		userRepository.save(user);
-  		user = userRepository.findByName(userName);
+  		userService.saveUser(user);
+  		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();

@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
-import com.waregym.repositories.ActivityRepository;
-import com.waregym.repositories.UserRepository;
+import com.waregym.services.UserService;
 import com.waregym.services.ActivityService;
 
 @Controller
@@ -23,7 +22,7 @@ public class WaregymController {
 	User user;
 	
 	@Autowired
-	UserRepository userRepository;
+	UserService userService;
 	
 
 	@RequestMapping("/waregym")
@@ -44,7 +43,7 @@ public class WaregymController {
 		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();

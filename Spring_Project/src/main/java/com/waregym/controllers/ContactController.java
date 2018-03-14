@@ -1,6 +1,5 @@
 package com.waregym.controllers;
 
-import com.waregym.repositories.CommentsRepository;
 import com.waregym.classesJava.Comment;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
@@ -13,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
-import com.waregym.repositories.ActivityRepository;
-import com.waregym.repositories.UserRepository;
+import com.waregym.services.UserService;
 import com.waregym.services.ActivityService;
+import com.waregym.services.CommentService;
 
 @Controller
 public class ContactController {
@@ -27,10 +26,10 @@ public class ContactController {
 	User user;
 	
 	@Autowired
-	UserRepository userRepository;
+	UserService userService;
 	
 	@Autowired
-	private CommentsRepository repository;
+	private CommentService commentsService;
 	
 
 	@RequestMapping("/contacto")
@@ -51,7 +50,7 @@ public class ContactController {
 		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();
@@ -89,7 +88,7 @@ public class ContactController {
 		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();
@@ -105,7 +104,7 @@ public class ContactController {
 			model.addAttribute("ifTraining", false);
 		}
 		
-		model.addAttribute("comments", repository.findAll());
+		model.addAttribute("comments", commentsService.findAllComments());
 
 		return "contacts";
 	}
@@ -128,7 +127,7 @@ public class ContactController {
 		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();
@@ -144,13 +143,12 @@ public class ContactController {
 			model.addAttribute("ifTraining", false);
 		}
 
-		repository.save(comment);
+		commentsService.saveComment(comment);
 
 		return "contact_save";
 
 	}
-	
-	
+
 
 	@RequestMapping("/contacto/{id}")
 	public String viewComment(Model model, HttpServletRequest request, @PathVariable long id) {
@@ -170,7 +168,7 @@ public class ContactController {
 		model.addAttribute("activities", activityService.findAllActivities());
 		
 		String userName = request.getRemoteUser();
-		user = userRepository.findByName(userName);
+		user = userService.findOneByName(userName);
 		if (user != null) {
 			Training training = user.getTraining();
 			String trainingName = training.getName();
@@ -186,7 +184,7 @@ public class ContactController {
 			model.addAttribute("ifTraining", false);
 		}
 		
-		Comment comment = repository.findOne(id);
+		Comment comment = commentsService.findOneById(id);
 
 		model.addAttribute("comments", comment);
 

@@ -9,32 +9,29 @@ import org.springframework.stereotype.Controller;
 
 import com.waregym.classesJava.Comment;
 import com.waregym.classesJava.User;
-import com.waregym.repositories.ActivityRepository;
-import com.waregym.repositories.UserRepository;
+import com.waregym.services.CommentService;
+import com.waregym.services.UserService;
 
 @Controller
 public class DataBaseUsage implements CommandLineRunner{
 	
-	@Autowired
-	private ActivityRepository activityRepository;
-	
 	 @Autowired
-	    private UserRepository userRepository;
+	    private UserService userService;
 	 
 	 @Autowired
-	 	private CommentsRepository repository;
+	 	private CommentService commentService;
 
 	    @PostConstruct
 	    private void initDatabase() {
 	    	
-	    	userRepository.save(new User("user", "pass", "ROLE_USER"));
-			userRepository.save(new User("admin", "adminpass", "ROLE_ADMIN"));
-			userRepository.save(new User("teach", "teachpass", "ROLE_TEACH"));
-			userRepository.save(new User("carolo", "carolo", "ROLE_ADMIN"));
-			userRepository.save(new User("adrian", "a", "ROLE_USER"));
+	    	userService.saveUser(new User("user", "pass", "ROLE_USER"));
+			userService.saveUser(new User("admin", "adminpass", "ROLE_ADMIN"));
+			userService.saveUser(new User("teach", "teachpass", "ROLE_TEACH"));
+			userService.saveUser(new User("carolo", "carolo", "ROLE_ADMIN"));
+			userService.saveUser(new User("adrian", "a", "ROLE_USER"));
 			
-		    repository.save(new Comment("Pepe", "pp@gmail.com", 123456789 ,"Comentario 1"));
-			repository.save(new Comment("Juan", "juan@gmail.com", 123456789 ,"Comentario 2"));
+		    commentService.saveComment(new Comment("Pepe", "pp@gmail.com", 123456789 ,"Comentario 1"));
+			commentService.saveComment(new Comment("Juan", "juan@gmail.com", 123456789 ,"Comentario 2"));
 			
 	    }
 

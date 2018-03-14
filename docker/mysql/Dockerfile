@@ -1,4 +1,4 @@
-FROM mysql/mysql-server:5.6
+FROM mysql/mysql-server:8.0
 
 ENV MYSQL_ROOT_HOST=root
 ENV MYSQL_DATABASE=waregym

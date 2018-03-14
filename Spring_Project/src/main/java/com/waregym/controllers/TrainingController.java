@@ -57,7 +57,7 @@ public class TrainingController {
 		exercises.add(new Exercise("Piernas", 60, 20));
 		exercises.add(new Exercise("Barras", 10, 10));
 		t.setExercises(exerciseService.saveExercises(exercises));
-	    trainingService.saveService(t);
+	    trainingService.saveTraining(t);
 	    String userName = request.getRemoteUser();
 		User user = userService.findOneByName(userName);
 		user.setTraining(t);
@@ -135,7 +135,7 @@ public class TrainingController {
 		exercises.add(new Exercise("Barras", 10, 10));
 		exercises.add(new Exercise("Press de pectoral", 40, 10));
 		t.setExercises(exerciseService.saveExercises(exercises));
-	    trainingService.saveService(t);
+	    trainingService.saveTraining(t);
 	    String userName = request.getRemoteUser();
   		User user = userService.findOneByName(userName);
   		user.setTraining(t);
@@ -182,7 +182,7 @@ public class TrainingController {
 		exercises.add(new Exercise("Pesas", 10, 5));
 		exercises.add(new Exercise("Abdominales", 0, 15));
 		t.setExercises(exerciseService.saveExercises(exercises));
-	    trainingService.saveService(t);
+	    trainingService.saveTraining(t);
 	    String userName = request.getRemoteUser();
   		User user = userService.findOneByName(userName);
   		user.setTraining(t);
@@ -228,7 +228,7 @@ public class TrainingController {
 		exercises.add(new Exercise("Press de Banca", 50, 5));
 		exercises.add(new Exercise("Abdominales", 0, 15));
 		t.setExercises(exerciseService.saveExercises(exercises));
-	    trainingService.saveService(t);
+	    trainingService.saveTraining(t);
 	    String userName = request.getRemoteUser();
   		User user = userService.findOneByName(userName);
   		user.setTraining(t);

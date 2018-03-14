@@ -1,9 +1,9 @@
 package com.waregym.services;
 
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.waregym.classesJava.Training;
 import com.waregym.repositories.TrainingRepository;
 
@@ -16,9 +16,17 @@ public class TrainingService {
 	 public TrainingService(TrainingRepository trainingRepository) {
 		 this.trainingRepository = trainingRepository;
 	 }
+	 
+	 public List<Training> findAllTrainings() {
+         return trainingRepository.findAll();
+     }
+	 
+	 public Training findOneById(long id) {
+	        return trainingRepository.findOne(id);
+	 }
 
-    public void saveService(Training training) {
-        trainingRepository.save(training);
-    }
+     public void saveTraining(Training training) {
+         trainingRepository.save(training);
+     }
 
 }

@@ -43,7 +43,7 @@ public class CommentRestController {
         }   
     }
 
-    @RequestMapping(value = "/contactos/", method = RequestMethod.POST)
+    @RequestMapping(value = "/contactos", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public Comment newComment(@RequestBody Comment newComment) {
         commentService.saveComment(newComment);

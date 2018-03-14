@@ -1,9 +1,12 @@
 package com.waregym.services;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.waregym.classesJava.Product;
 import com.waregym.classesJava.User;
 import com.waregym.repositories.UserRepository;
 
@@ -16,6 +19,10 @@ public class UserService {
 	 public UserService(UserRepository userRepository) {
 		 this.userRepository = userRepository;
 	 }
+	 
+	 public List<User> findAllUsers() {
+	        return userRepository.findAll();
+	    }
 
     public User findOneByName(String name) {
         return userRepository.findByName(name);
@@ -24,5 +31,4 @@ public class UserService {
     public void saveUser(User user) {
     	userRepository.save(user);
     }
-
 }

@@ -5,16 +5,29 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 public class Comment {
 	
+	public interface Basic {
+	}
+	
+	@JsonView(Basic.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
+	@JsonView(Basic.class)
 	private String name;
+	
+	@JsonView(Basic.class)
 	private String email;
+	
+	@JsonView(Basic.class)
 	private long number;
+	
+	@JsonView(Basic.class)
 	private String message;
 
 	public Comment() {}

@@ -5,17 +5,33 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.waregym.classesJava.Exercise.Basic;
+
 @Entity
 public class Product {
 	
+	public interface Basic {
+	}
+	
+	@JsonView(Basic.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+	@JsonView(Basic.class)
 	private String type;
+	
+	@JsonView(Basic.class)
 	private String name;
+	
+	@JsonView(Basic.class)
 	private Double value;
+	
+	@JsonView(Basic.class)
 	private String link;
+	
+	@JsonView(Basic.class)
 	private String image;
 	
 	public Product() {}

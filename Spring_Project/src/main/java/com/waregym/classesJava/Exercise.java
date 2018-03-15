@@ -5,15 +5,27 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.waregym.classesJava.User.Basic;
+
 @Entity
 public class Exercise{
 	
+	public interface Basic {
+	}
+	
+	@JsonView(Basic.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+	@JsonView(Basic.class)
 	private String name;
+	
+	@JsonView(Basic.class)
 	private int weight;
+	
+	@JsonView(Basic.class)
 	private int reps;
 	
 	public Exercise() {}

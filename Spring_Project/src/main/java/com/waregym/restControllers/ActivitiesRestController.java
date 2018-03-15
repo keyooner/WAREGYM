@@ -1,7 +1,13 @@
 package com.waregym.restControllers;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import com.waregym.classesJava.Activity;
+import com.waregym.classesJava.Training;
+import com.waregym.classesJava.Exercise;
+import com.waregym.classesJava.User;
+import com.waregym.repositories.TrainingRepository;
 import com.waregym.services.ActivityService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +25,11 @@ public class ActivitiesRestController {
         this.activityService = activityService;
     }
 
-    @RequestMapping(value = "/activities", method = RequestMethod.GET)
+    interface ActivityDetail extends Activity.Basic, Activity.Users, User.Basic, User.UserTraining, Training.Basic, Training.Exercises, Exercise.Basic {
+	}
+    
+    @JsonView(ActivityDetail.class)
+    @RequestMapping(value = "/clases", method = RequestMethod.GET)
     public ResponseEntity<List<Activity>> getAllActivities() {
         List<Activity> activities = activityService.findAllActivities();
 
@@ -28,11 +38,12 @@ public class ActivitiesRestController {
         } else {
         	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        
     }
     
-    @RequestMapping(value = "/activity/{id}", method = RequestMethod.GET)
+    @JsonView(ActivityDetail.class)
+    @RequestMapping(value = "/clases/{id}", method = RequestMethod.GET)
     public ResponseEntity<Activity> getActivity(@PathVariable long id) {
+
     	Activity activity = activityService.findOneById(id);
 
         if (activity != null) {
@@ -43,26 +54,26 @@ public class ActivitiesRestController {
         }   
     }
 
-    @RequestMapping(value = "/activities/", method = RequestMethod.POST)
+    @RequestMapping(value = "/clases", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public Activity newActivity(@RequestBody Activity newActivity) {
     	activityService.saveActivity(newActivity);
         return newActivity;
     }
 
-    /*@RequestMapping(value = "/productos/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Product> deleteProduct(@PathVariable long id) {
-        Product product = productService.findOneById(id);
-
+    @RequestMapping(value = "/clases/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<Activity> deleteProduct(@PathVariable long id) {
+        
+    	Activity product = activityService.findOneById(id);
         if (product != null) {
-        	productService.deleteProduct(productService.findOneById(id));
+        	activityService.deleteActivity(product);
             return new ResponseEntity<>(product, HttpStatus.OK);
         } else {
         	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        
     }
     
+    /*
     @RequestMapping(value = "/productos/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Product> updateProduct(@PathVariable long id, @RequestBody Product updatedProduct) {
         Product product = productService.findOneById(id);

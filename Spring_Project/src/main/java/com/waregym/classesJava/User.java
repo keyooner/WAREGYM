@@ -20,25 +20,44 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.waregym.classesJava.Activity.Basic;
+
 @Component
 @Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 @Entity
 public class User {
 
+	public interface Basic {
+	}
+	
+	public interface Activities {
+	}
+	
+	public interface UserTraining{
+	}
+	
 	@Id
+	@JsonView(Basic.class)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	@JsonView(Basic.class)
 	private String name;
     
+	@JsonView(UserTraining.class)
 	@OneToOne(cascade = {CascadeType.ALL})
     private Training training;
 	
+	@JsonView(Basic.class)
 	private String passwordHash;
 	
+	@JsonView(Activities.class)
 	@ManyToMany
 	private List<Activity> activities;
 
+	@JsonView(Basic.class)
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
 

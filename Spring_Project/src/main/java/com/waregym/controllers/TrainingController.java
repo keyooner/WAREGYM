@@ -241,8 +241,8 @@ public class TrainingController {
 				model.addAttribute("training", training.getName());
 				model.addAttribute("ifTraining", true);
 			} else {
-					model.addAttribute("training", "");
-					model.addAttribute("ifTraining", false);
+				model.addAttribute("training", "");
+				model.addAttribute("ifTraining", false);
 			}
 		} else {
 			model.addAttribute("training", "");

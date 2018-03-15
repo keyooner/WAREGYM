@@ -8,24 +8,46 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+
+import com.fasterxml.jackson.annotation.JsonView;
+
+
+
 @Entity
 public class Activity {
 	
+	public interface Basic {
+	}
+
+	public interface Users {
+	}
+	
 	@Id
+	@JsonView(Basic.class)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+	@JsonView(Basic.class)
 	private String name;
+	@JsonView(Basic.class)
 	private String image1;
+	@JsonView(Basic.class)
 	private String image2;
+	@JsonView(Basic.class)
 	private String image3;
+	@JsonView(Basic.class)
 	private String description;
+	@JsonView(Basic.class)
 	private String development;
+	@JsonView(Basic.class)
 	private String benefit;
+	@JsonView(Basic.class)
 	private String[][] schedule;
+	@JsonView(Basic.class)
 	private int inscribed;
 	
-	@ManyToMany (mappedBy="activities")
+	@JsonView(Users.class)
+	@ManyToMany(mappedBy="activities")
 	private List<User> users;
 	
 	

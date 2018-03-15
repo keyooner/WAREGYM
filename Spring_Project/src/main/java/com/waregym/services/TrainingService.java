@@ -22,7 +22,7 @@ public class TrainingService {
      }
 	 
 	 public Training findOneById(long id) {
-	        return trainingRepository.findOne(id);
+	       return trainingRepository.findOne(id);
 	 }
 
      public void saveTraining(Training training) {

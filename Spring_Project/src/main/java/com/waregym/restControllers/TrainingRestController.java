@@ -24,7 +24,7 @@ public class TrainingRestController {
         this.userService = userService;
     }
 
-    @RequestMapping(value = "/training/{userName}", method = RequestMethod.GET)
+    @RequestMapping(value = "/entrenamientos/{userName}", method = RequestMethod.GET)
     public ResponseEntity<Training> getTrainingOfUser(@PathVariable String userName) {
         Training training = userService.findOneByName(userName).getTraining();
 
@@ -32,11 +32,10 @@ public class TrainingRestController {
         	return new ResponseEntity<>(training, HttpStatus.OK);
         } else {
         	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        
+        }   
     }
     
-    @RequestMapping(value = "/trainings", method = RequestMethod.GET)
+    @RequestMapping(value = "/entrenamientos", method = RequestMethod.GET)
     public ResponseEntity<List<Training>> getAllTrainings() {
         List<Training> trainings = trainingService.findAllTrainings();
 
@@ -48,7 +47,7 @@ public class TrainingRestController {
         }   
     }
     
-    /*@RequestMapping(value = "/training/{id}", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/entrenamientos/{id}", method = RequestMethod.GET)
     public ResponseEntity<Training> getTraining(@PathVariable long id) {
         Training training = trainingService.findOneById(id);
 
@@ -60,14 +59,14 @@ public class TrainingRestController {
         
     }*/
     
-    @RequestMapping(value = "/trainings", method = RequestMethod.POST)
+    @RequestMapping(value = "/entrenamientos", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public Training newTraining(@RequestBody Training newTraining) {
         trainingService.saveTraining(newTraining);
         return newTraining;
     }
     
-    @RequestMapping(value = "/training/{userName}", method = RequestMethod.PUT)
+    /*@RequestMapping(value = "/entrenamientos/{userName}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.CREATED)
     public Training newTrainingForUser(@RequestBody Training newTraining, @PathVariable String userName) {
         User user = userService.findOneByName(userName);

@@ -3,8 +3,10 @@ package com.waregym.classesJava;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonView;
 import com.waregym.classesJava.Exercise;
-import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,13 +16,22 @@ import javax.persistence.OneToMany;
 @Entity
 public class Training{
 	
+	public interface Basic {
+	}
+	
+	public interface Exercises {
+	}
+	
+	@JsonView(Basic.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+	@JsonView(Exercises.class)
 	@OneToMany
 	private List<Exercise> exercises;
 	
+	@JsonView(Basic.class)
 	private String name;
 
 	//private Date date;

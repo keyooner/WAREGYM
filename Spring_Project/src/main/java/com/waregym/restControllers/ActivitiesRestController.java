@@ -5,7 +5,6 @@ import com.waregym.classesJava.Activity;
 import com.waregym.classesJava.Training;
 import com.waregym.classesJava.Exercise;
 import com.waregym.classesJava.User;
-import com.waregym.repositories.TrainingRepository;
 import com.waregym.services.ActivityService;
 
 import org.springframework.beans.factory.annotation.Autowired;

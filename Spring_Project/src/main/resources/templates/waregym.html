@@ -121,7 +121,21 @@
                                 <li><a href="/productos">Productos disponibles</a></li>
                             </ul>
                         </li>
+                        {{#hidden}}
                         <li><a href="/contacto" title="">Contacto</a></li>
+                        {{/hidden}}
+                        {{#UserOrTeach}}
+                        <li><a href="/contacto" title="">Contacto</a></li>
+                        {{/UserOrTeach}}
+                        {{#admin}}
+                        <li class="has-children">
+                            <a href="#0" title="">Contacto</a>
+                             <ul class="sub-menu">
+                                <li><a href="/contacto">Contacta</a></li>
+                                <li><a href="/contactos">Comentarios</a></li>
+                            </ul>
+                        </li>
+                        {{/admin}}
                         {{#logout}}
 						<li><form action="/logout" method="post"><input type="submit" value="Sign Out" /></form></li>
 						{{/logout}}

@@ -96,3 +96,35 @@ Unique and common Header for all the html pages of the application and therefore
 - Spring Framework provides several data access methods, we use data access via JPA to a MySQL database using Hibernate. First we create the project, modifying the pom.xml file so that it contains the dependencies and configurations for JPA and MySQL.
 To indicate to Spring how to access the Database, we need to create the configuration file: application.properties located in src / main / resources.
 We have to create a JPA entity, making a relationship with a relational database. Using the CrudRepository interface we can delete, create, edit or search elements in our data set. We add the main class in the MySQL database.
+
+### API REST Documentation
+- Activities: 
+  - Operations Suported: GET POST DELETE
+  - https://localhost:8443/api/clases (GET)
+  - Exit information format: id, name, image1, image2, image3, description, development, benefit, schedule,                                                           inscribed, users. [Status: 200 OK]
+- Comments:
+  - Operations Suported: GET POST
+  - https://localhost:8443/api/contactos (GET)
+  - Exit information format: 
+- Exercises:
+  - Operations Suported: GET POST
+  - https://localhost:8443/api/exercises (GET
+  - Exit information format:
+- Products:
+  - Operations Suported: GET POST DELETE
+  - https://localhost:8443/api/productos (GET)
+  - Exit information format: id, type, name, value, link, image. [Status: 200 OK]
+- Trainings:
+  - Operations Suported: GET
+  - https://localhost:8443/api/entrenamientos (GET)
+  - Exit information format:
+- Users: 
+  - Operations Suported: GET POST
+  - https://localhost:8443/api/users (GET)
+  - Exit information format:
+
+### API REST Class diagram:
+
+### Docker Instructions: 
+
+### Docker installation and configuration: 

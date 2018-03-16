@@ -1,6 +1,10 @@
 package com.waregym.restControllers;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.waregym.classesJava.Activity;
+import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
+import com.waregym.restControllers.ActivitiesRestController.ActivityDetail;
 import com.waregym.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,11 +18,15 @@ public class UserRestController {
 
     private final UserService userService;
 
+    interface UserDetail extends User.Basic, User.UserTraining, Training.Basic, User.Activities, Activity.Basic {
+	}
+    
     @Autowired
     public UserRestController(UserService userService) {
         this.userService = userService;
     }
 
+    @JsonView(UserDetail.class)
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> users = userService.findAllUsers();
@@ -31,6 +39,7 @@ public class UserRestController {
         
     }
     
+    @JsonView(UserDetail.class)
     @RequestMapping(value = "/user/{name}", method = RequestMethod.GET)
     public ResponseEntity<User> getUser(@PathVariable String name) {
         User product = userService.findOneByName(name);
@@ -43,6 +52,7 @@ public class UserRestController {
         }   
     }
 
+    
     @RequestMapping(value = "/users", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public User newUser(@RequestBody User newUser) {

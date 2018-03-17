@@ -3,6 +3,9 @@ package com.waregym.restControllers;
 import com.waregym.classesJava.Product;
 import com.waregym.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,11 +23,11 @@ public class ProductRestController {
     }
 
     @RequestMapping(value = "/productos", method = RequestMethod.GET)
-    public ResponseEntity<List<Product>> getAllProducts() {
-        List<Product> products = productService.findAllProducts();
-
-        if (products != null) {
-        	return new ResponseEntity<>(products, HttpStatus.OK);
+    public ResponseEntity<Page<Product>> getAllProducts(Pageable pages,
+			@RequestParam(value = "page", defaultValue = "0") int page) {
+    	Page<Product> pageProduct = productService.findAllProductPage(new PageRequest(page, 4));
+        if (pageProduct != null) {
+        	return new ResponseEntity<>(pageProduct, HttpStatus.OK);
         } else {
         	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

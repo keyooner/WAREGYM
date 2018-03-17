@@ -20,7 +20,7 @@ public class Comment {
 
 	@JsonView(Basic.class)
 	private String name;
-	
+
 	@JsonView(Basic.class)
 	private String email;
 	
@@ -70,6 +70,14 @@ public class Comment {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	@Override

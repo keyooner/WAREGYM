@@ -19,7 +19,7 @@ public class ExerciseRestController {
         this.exerciseService = exerciseService;
     }
 
-    @RequestMapping(value = "/exercises", method = RequestMethod.GET)
+    @RequestMapping(value = "/ejercicios", method = RequestMethod.GET)
     public ResponseEntity<List<Exercise>> getAllExercises() {
         List<Exercise> exercises = exerciseService.findAllExercises();
 
@@ -31,7 +31,7 @@ public class ExerciseRestController {
         
     }
     
-    @RequestMapping(value = "/exercise/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/ejercicio/{id}", method = RequestMethod.GET)
     public ResponseEntity<Exercise> getExercise(@PathVariable long id) {
     	Exercise exercise = exerciseService.findOneById(id);
 
@@ -43,35 +43,35 @@ public class ExerciseRestController {
         }   
     }
 
-    @RequestMapping(value = "/exercises", method = RequestMethod.POST)
+    @RequestMapping(value = "/ejercicios", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public Exercise newExercise(@RequestBody Exercise newExercise) {
     	exerciseService.saveExercise(newExercise);
         return newExercise;
     }
 
-    /*@RequestMapping(value = "/productos/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Product> deleteProduct(@PathVariable long id) {
-        Product product = productService.findOneById(id);
+    /*@RequestMapping(value = "/ejercicios/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<Exercise> deleteExercise(@PathVariable long id) {
+        Exercise Exercise = exerciseService.findOneById(id);
 
-        if (product != null) {
-        	productService.deleteProduct(productService.findOneById(id));
-            return new ResponseEntity<>(product, HttpStatus.OK);
+        if (Exercise != null) {
+        	exerciseService.deleteExercise(exerciseService.findOneById(id));
+            return new ResponseEntity<>(Exercise, HttpStatus.OK);
         } else {
         	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         
     }
 
-    /*@RequestMapping(value = "/productos/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Product> updateProduct(@PathVariable long id, @RequestBody Product updatedProduct) {
-        Product product = productService.findOneById(id);
+    /*@RequestMapping(value = "/ejercicios/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<Exercise> updateExercise(@PathVariable long id, @RequestBody Exercise updatedExercise) {
+        Exercise Exercise = ExerciseService.findOneById(id);
 
-        if (product == null && updatedProduct == null) {
+        if (Exercise == null && updatedExercise == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        updatedProduct.setId(id);
-        productService.saveProduct(updatedProduct);
-        return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
+        updatedExercise.setId(id);
+        ExerciseService.saveExercise(updatedExercise);
+        return new ResponseEntity<>(updatedExercise, HttpStatus.OK);
     }*/
 }

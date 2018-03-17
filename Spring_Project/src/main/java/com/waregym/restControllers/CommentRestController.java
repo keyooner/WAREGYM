@@ -31,7 +31,7 @@ public class CommentRestController {
         
     }
     
-    @RequestMapping(value = "/contacto/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/contactos/{id}", method = RequestMethod.GET)
     public ResponseEntity<Comment> getComment(@PathVariable long id) {
         Comment comment = commentService.findOneById(id);
 
@@ -50,7 +50,7 @@ public class CommentRestController {
         return newComment;
     }
 
-    /*@RequestMapping(value = "/contacto/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/contactos/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Comment> deleteComment(@PathVariable long id) {
         Comment comment= commentService.findOneById(id);
 
@@ -63,15 +63,15 @@ public class CommentRestController {
         
     }
 
-    /*@RequestMapping(value = "/productos/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Product> updateProduct(@PathVariable long id, @RequestBody Product updatedProduct) {
-        Product product = productService.findOneById(id);
+    @RequestMapping(value = "/contactos/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<Comment> updateProduct(@PathVariable long id, @RequestBody Comment updatedComment) {
+        Comment comment = commentService.findOneById(id);
 
-        if (product == null && updatedProduct == null) {
+        if (comment == null && updatedComment == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        updatedProduct.setId(id);
-        productService.saveProduct(updatedProduct);
-        return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
-    }*/
+        updatedComment.setId(id);
+        commentService.saveComment(updatedComment);
+        return new ResponseEntity<>(updatedComment, HttpStatus.OK);
+    }
 }

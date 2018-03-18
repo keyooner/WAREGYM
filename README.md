@@ -102,6 +102,6 @@ We have to create a JPA entity, making a relationship with a relational database
 
 ### API REST Class diagram:
 
-### Docker Instructions: 
-
-### Docker installation and configuration: 
+### Docker:
+This app could be execute with this instrucctions about Docker:
+[docker-compose.yml](https://github.com/keyooner/waregym/blob/master/docker/docker-compose.yml)

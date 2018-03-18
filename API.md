@@ -1,11 +1,230 @@
 ## API REST Documentation
 
-### Activities: 
-  - Operations Suported: GET POST DELETE
-  - https://localhost:8443/api/clases (GET) public
-  - Exit information format: {id, name, image1, image2, image3, description, development, benefit, schedule, inscribed, users}. [Status: 200OK]
-  - https://localhost:8443/api/clases (POST) teachers or admins
-  - Exit information format: {id, name, image1, image2, image3, description, development, benefit, schedule, inscribed, users}. [Status: 201 Created]
+### Activity 
+
+A continuación se muestran consultas relativas a la entidad actividad. Estas han de ir precedidas de /api.
+Todos los métodos ligados a Comentario devolverán las mismas respuestas a excepción de los indicados.
+
+* ##### Success Response:
+
+	* HttpStatus.OK
+
+* ##### Error Response:
+
+	* Code: 404 NOT FOUND
+        * Code: 401 Unauthorized
+
+### OBTENER DATOS DE TODAS LAS CLASES
+
+Muestra todos los datos de todas las clases con sus usuarios inscritos.
+
+* ##### URL
+
+	< /clases >
+
+* ##### Método:
+
+	`GET`
+
+* ##### Success Response:
+
+      {
+        "id": 1,
+        "name": "Zumba",
+        "image1": "image-Zumba-1.jpg",
+        "image2": "image-Zumba-2.jpg",
+        "image3": "image-Zumba-3.jpg",
+        "description": "La mejor clase de zumba",
+        "development": "Clases de 45 minutos.",
+        "benefit": "Consigue un cuerpo 10 de forma divertida.",
+        "schedule": [
+            [
+                "X",
+                "",
+                "X"
+            ],
+            [
+                "",
+                "X",
+                ""
+            ],
+            [
+                "X",
+                "",
+                "X"
+            ],
+            [
+                "",
+                "X",
+                ""
+            ],
+            [
+                "X",
+                "",
+                "X"
+            ]
+        ],
+        "inscribed": 0,
+        "users": []
+       }
+
+### OBTENER DATOS DE UNA CLASE
+
+Muestra todos los datos de una clase en función de su id.
+
+* ##### URL
+
+	< /clases >
+
+* ##### Método:
+
+	`GET`
+
+* ##### URL Params
+
+	* Required:
+
+	   `{id}`
+
+* ##### Success Response:
+
+      {
+        "id": 1,
+        "name": "Zumba",
+        "image1": "image-Zumba-1.jpg",
+        "image2": "image-Zumba-2.jpg",
+        "image3": "image-Zumba-3.jpg",
+        "description": "La mejor clase de zumba",
+        "development": "Clases de 45 minutos.",
+        "benefit": "Consigue un cuerpo 10 de forma divertida.",
+        "schedule": [
+            [
+                "X",
+                "",
+                "X"
+            ],
+            [
+                "",
+                "X",
+                ""
+            ],
+            [
+                "X",
+                "",
+                "X"
+            ],
+            [
+                "",
+                "X",
+                ""
+            ],
+            [
+                "X",
+                "",
+                "X"
+            ]
+        ],
+        "inscribed": 0,
+        "users": []
+       }
+  
+### AÑADIR UNA CLASE
+
+Añadir una clase a la lista de clases.
+
+* ##### URL
+
+	< /clases >
+
+* ##### Método:
+
+	`POST`
+
+* ##### Entry Data:
+
+      {
+        "id": 2,
+        "name": "Spinning",
+        "image1": "image-Spinning-1.jpg",
+        "image2": "image-Spinning-2.jpg",
+        "image3": "image-Spinning-3.jpg",
+        "description": "La mejor clase de Spinning",
+        "development": "Clases de 45 minutos.",
+        "benefit": "Consigue un cuerpo 10 de forma divertida.",
+        "schedule": [
+        [
+            "X",
+            "",
+            "X"
+        ],
+        [
+            "",
+            "X",
+            ""
+        ],
+        [
+            "X",
+            "",
+            "X"
+        ],
+        [
+            "",
+            "X",
+            ""
+        ],
+        [
+            "X",
+            "",
+            "X"
+        ]
+      ],
+      "inscribed": 0,
+      "users": []
+      }
+     
+* ##### Success Response:
+
+      {
+        "id": 2,
+        "name": "Spinning",
+        "image1": "image-Spinning-1.jpg",
+        "image2": "image-Spinning-2.jpg",
+        "image3": "image-Spinning-3.jpg",
+        "description": "La mejor clase de Spinning",
+        "development": "Clases de 45 minutos.",
+        "benefit": "Consigue un cuerpo 10 de forma divertida.",
+        "schedule": [
+        [
+            "X",
+            "",
+            "X"
+        ],
+        [
+            "",
+            "X",
+            ""
+        ],
+        [
+            "X",
+            "",
+            "X"
+        ],
+        [
+            "",
+            "X",
+            ""
+        ],
+        [
+            "X",
+            "",
+            "X"
+        ]
+      ],
+      "inscribed": 0,
+      "users": []
+      }     
+
+* 201 CREATED OK
 
 ### Comment
   

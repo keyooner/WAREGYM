@@ -1,4 +1,4 @@
-version: '2'
+version: '2.1'
  
 services:
   mysql:
@@ -21,8 +21,8 @@ services:
  
   waregym:
     depends_on:
-      - mysql
-      condition: service_healthy
+      mysql:
+        condition: service_healthy
     image: hervas/demo
     container_name: waregym
     ports:

@@ -19,12 +19,12 @@ services:
     logging:
        driver: json-file
  
-  web_server:
+  waregym:
     depends_on:
       - mysql
       condition: service_healthy
-    image: web_server
-    container_name: web_server
+    image: hervas/demo
+    container_name: waregym
     ports:
       - 8443:8443
     links:

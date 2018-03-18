@@ -7,12 +7,176 @@
   - https://localhost:8443/api/clases (POST) teachers or admins
   - Exit information format: {id, name, image1, image2, image3, description, development, benefit, schedule, inscribed, users}. [Status: 201 Created]
 
-### Comments:
-  - Operations Suported: GET POST
-  - https://localhost:8443/api/contactos (GET) only for admins
-  - Exit information format: {id, name, email, number, message}. [Status: 200OK]
-  - https://localhost:8443/api/contactos (POST) only for admins
-  - Entry information format: {id, name, email, number, message}. [Status: 201 Created]
+### Comment
+  
+A continuación se muestran consultas relativas a la entidad comentario. Estas han de ir precedidas de /api.
+Todos los métodos ligados a Comentario devolverán las mismas respuestas a excepción de los indicados.
+
+* ##### Success Response:
+
+	* HttpStatus.OK
+
+* ##### Error Response:
+
+	* Code: 404 NOT FOUND
+        * Code: 401 Unauthorized
+
+### OBTENER DATOS DE TODOS LOS COMENTARIOS
+
+Muestra todos los datos de todos los comentarios.
+
+* ##### URL
+
+	< /contactos >
+
+* ##### Método:
+
+	`GET`
+
+* ##### Success Response:
+
+    	{
+          "id": 1,
+          "name": "Pepe",
+          "email": "pp@gmail.com",
+          "number": 123456789,
+          "message": "Comentario 1"
+          },
+        {
+          "id": 2,
+          "name": "Juan",
+          "email": "juan@gmail.com",
+          "number": 123456789,
+          "message": "Comentario 2"
+        }
+
+### OBTENER DATOS DE UN COMENTARIO
+
+Muestra todos los datos de un comentario en función de su id.
+
+* ##### URL
+
+	< /contactos >
+
+* ##### Método:
+
+	`GET`
+
+* ##### URL Params
+
+	* Required:
+
+	   `{id}`
+
+* ##### Success Response:
+
+      {
+       "id": 1,
+       "name": "Pepe",
+       "email": "pp@gmail.com",
+       "number": 123456789,
+       "message": "Comentario 1"
+      }
+ 
+### AÑADIR UN COMENTARIO
+
+Añadir un comentario a la lista de comentarios.
+
+* ##### URL
+
+	< /contactos >
+
+* ##### Método:
+
+	`POST`
+
+* ##### Entry Data:
+
+      {
+       "id": 3,
+       "name": "Arturo",
+       "email": "Arturo@gmail.com",
+       "number": 626326126,
+       "message": "Comentario 3"
+      }
+
+* ##### Success Response:
+
+      {
+       "id": 3,
+       "name": "Arturo",
+       "email": "Arturo@gmail.com",
+       "number": 626326126,
+       "message": "Comentario 3"
+      }
+      
+* 201 CREATED OK 
+
+### ELIMINAR UN COMENTARIO
+
+Permite la eliminación de un comentario en función de su id.
+
+* ##### URL
+
+	< /contactos >
+
+* ##### Método:
+
+	`DELETE`
+
+* ##### URL Params
+
+	* Required:
+
+	   `{id}`
+
+* ##### Success Response:
+
+      {
+       "id": 3,
+       "name": "Arturo",
+       "email": "Arturo@gmail.com",
+       "number": 626326126,
+       "message": "Comentario 3"
+      }
+   
+### MODIFICAR UN COMENTARIO
+
+Permite la modificación de un comentario en función de su id.
+
+* ##### URL
+
+	< /contactos >
+
+* ##### Método:
+
+	`PUt`
+
+* ##### URL Params
+
+	* Required:
+
+	   `{id}`
+
+* ##### Entry Data:
+
+	  {
+    	    "id": 4,
+     	    "name": "Juan",
+    	    "email": "Juan@gmail.com",
+    	    "number": 626326126,
+    	    "message": "Comentario 4"
+	  }
+
+* ##### Success Response:
+
+	  {
+    	    "id": 4,
+     	    "name": "Juan",
+    	    "email": "Juan@gmail.com",
+    	    "number": 626326126,
+    	    "message": "Comentario 4"
+	  }
 
 ### Exercise
 
@@ -26,7 +190,7 @@ Todos los métodos ligados a Ejercicio devolverán las mismas respuestas a excep
 * ##### Error Response:
 
 	* Code: 404 NOT FOUND
-  * Code: 401 Unauthorized
+        * Code: 401 Unauthorized
 
 ### OBTENER DATOS DE TODOS LOS EJERCICIOS
 
@@ -77,7 +241,7 @@ Muestra todos los datos de un ejercicio concreto en función de su id.
 
 	* Required:
 
-		`{id}`
+	   `{id}`
 
 * ##### Success Response:
 

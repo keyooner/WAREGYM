@@ -31,13 +31,9 @@ services:
       - mysql:mysql
     networks:
       - spring_mysql_network
+    links:
+     -mysql:mysql
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/test
       - SPRING_DATASOURCE_USER=user
       - SPRING_DATASOURCE_PASS=pass
-
-networks:
-  spring_mysql_network:
-    driver: bridge
-
-

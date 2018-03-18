@@ -97,10 +97,37 @@ Unique and common Header for all the html pages of the application and therefore
 To indicate to Spring how to access the Database, we need to create the configuration file: application.properties located in src / main / resources.
 We have to create a JPA entity, making a relationship with a relational database. Using the CrudRepository interface we can delete, create, edit or search elements in our data set. We add the main class in the MySQL database.
 
-### API REST Documentation
+### API REST Documentation:
 [API.md](https://github.com/keyooner/WAREGYM/blob/master/API.md "API.md")
 
-### API REST Class diagram:
+### Prepare development environment:
+- You need install Docker Client in your SO. In these case Ubuntu.
+
+     sudo apt-get update
+     sudo apt-get install docker-ee
+
+- Download docker_compose file:
+
+     wget https://github.com/keyooner/WAREGYM/blob/master/docker/docker-compose.yml
+
+- Go to directory where file was be downloaded:
+     
+     cd /home/downloads
+
+- Execute docker-compose:
+
+    docker-compose up docker-compose.yml
+
+### Development instructions:
+- You need created a new directory (/docker) in GitHub Repository. It contains:
+      - DockerFile: New file to create the docker web image 
+      - create_image.sh: Script to build app on command line using maven container
+
+          cd /project_location
+          mvn dockerfile:build
+
+      - publish_image.sh: Script to publish the image on DockerHub.
+      - docker_compose.yml: Execute these file with docker-compose up to download all necesary images on DockerHub and run the application. 
 
 ### Docker:
 This app could be execute with this instrucctions about Docker:

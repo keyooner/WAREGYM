@@ -51,13 +51,14 @@ public class UserRestController {
         	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }   
     }
-
     
     @RequestMapping(value = "/users", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public User newUser(@RequestBody User newUser) {
-        userService.saveUser(newUser);
-        return newUser;
+    	User newUser2 = new User(newUser.getName(),newUser.getPasswordHash());
+    	newUser2.setRoles(newUser.getRoles());
+        userService.saveUser(newUser2);
+        return newUser2;
     }
 
     /*@RequestMapping(value = "/productos/{id}", method = RequestMethod.DELETE)

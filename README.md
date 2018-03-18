@@ -120,14 +120,15 @@ We have to create a JPA entity, making a relationship with a relational database
 
 ### Development instructions:
 - You need created a new directory (/docker) in GitHub Repository. It contains:
-      - DockerFile: New file to create the docker web image 
-      - create_image.sh: Script to build app on command line using maven container
 
-          cd /project_location
-          mvn dockerfile:build
+     - DockerFile: New file to create the docker web image 
+     - create_image.sh: Script to build app on command line using maven container
 
-      - publish_image.sh: Script to publish the image on DockerHub.
-      - docker_compose.yml: Execute these file with docker-compose up to download all necesary images on DockerHub and run the application. 
+           cd /project_location
+           mvn dockerfile:build
+
+     - publish_image.sh: Script to publish the image on DockerHub.
+     - docker_compose.yml: Execute these file with docker-compose up to download all necesary images on DockerHub and run the application. 
 
 ### Docker:
 This app could be execute with this instrucctions about Docker:

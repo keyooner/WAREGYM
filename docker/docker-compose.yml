@@ -7,9 +7,12 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=pass 
       - MYSQL_DATABASE=waregym
-    #restart: always
     networks:
       - spring_mysql_network
+    ports:
+      - "3306:3306"
+    logging:
+       driver: json-file
  
   web_server:
     depends_on:

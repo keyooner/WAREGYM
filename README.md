@@ -103,12 +103,12 @@ We have to create a JPA entity, making a relationship with a relational database
 ### Prepare development environment:
 - You need install Docker Client in your SO. In these case Ubuntu.
 
-     sudo apt-get update
-     sudo apt-get install docker-ee
+      sudo apt-get update
+      sudo apt-get install docker-ee
 
 - Download docker_compose file:
 
-     wget https://github.com/keyooner/WAREGYM/blob/master/docker/docker-compose.yml
+      wget https://github.com/keyooner/WAREGYM/blob/master/docker/docker-compose.yml
 
 - Go to directory where file was be downloaded:
      

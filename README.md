@@ -112,11 +112,11 @@ We have to create a JPA entity, making a relationship with a relational database
 
 - Go to directory where file was be downloaded:
      
-     cd /home/downloads
+      cd /home/downloads
 
 - Execute docker-compose:
 
-    docker-compose up docker-compose.yml
+      docker-compose up docker-compose.yml
 
 ### Development instructions:
 - You need created a new directory (/docker) in GitHub Repository. It contains:

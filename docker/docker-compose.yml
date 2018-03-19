@@ -1,39 +1,39 @@
-version: '2.1'
- 
+version: '2.3'
 services:
   mysql:
-    image: mysql
     container_name: mysql
+    image: mysql:5.6.26
+    volumes:
+      - ./app/db:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=pass 
-      - MYSQL_DATABASE=waregym
-    networks:
-      - spring_mysql_network
-    healthcheck:
-      test: curl --fail -s http://localhost:3306/ || exit 1
-      interval: 30s
-      timeout: 10s
-      retries: 10
+       - MYSQL_ROOT_PASSWORD=pass
+       - MYSQL_DATABASE=waregym
+       - MYSQL_USER=root
+       - MYSQL_PASSWORD=pass
     ports:
       - "3306:3306"
     logging:
-       driver: json-file
- 
-  waregym:
+      driver: json-file
+    healthcheck:
+      test: mysqladmin ping -h localhost
+      timeout: 5s
+      retries: 10
+
+  app:
+    container_name: waregym 
+    image: hervas/demo:latest
+    volumes:
+      - ./app/data:/app/uploaded
     depends_on:
       mysql:
         condition: service_healthy
-    image: hervas/demo
-    container_name: waregym
     ports:
-      - 8443:8443
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=pass
+      - SPRING_JPA_HIBERNATE_DDL-AUTO=create
     links:
       - mysql:mysql
-    networks:
-      - spring_mysql_network
-    links:
-     -mysql:mysql
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/test
-      - SPRING_DATASOURCE_USER=user
-      - SPRING_DATASOURCE_PASS=pass
+    logging:
+      driver: json-file

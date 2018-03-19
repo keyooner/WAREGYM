@@ -1,3 +1,4 @@
 cd ..
 cd Spring_Project/
-mvn dockerfile:build
+mvn package -DskipTests
+docker build -t hervas/demo .

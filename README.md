@@ -101,34 +101,22 @@ We have to create a JPA entity, making a relationship with a relational database
 [API.md](https://github.com/keyooner/WAREGYM/blob/master/API.md "API.md")
 
 ### Prepare development environment:
-- You need install Docker Client in your SO. In these case Ubuntu.
-
-      sudo apt-get update
-      sudo apt-get install docker-ee
-
-- Download docker_compose file:
-
-      wget https://github.com/keyooner/WAREGYM/blob/master/docker/docker-compose.yml
-
-- Go to directory where file was be downloaded:
-     
-      cd /home/downloads
-
-- Execute docker-compose:
-
-      docker-compose up docker-compose.yml
+- Download and install postman.
+- There are three parts available in API (PUBLIC, ADMIN, USER OR TEACH) with different rules.
+- You can logIn like Admin, User or Teach, or create public request.
+- Create request in postman with login or without login (GET PUT POST DELETE)
 
 ### Development instructions:
-- You need created a new directory (/docker) in GitHub Repository. It contains:
+- Download or clone repository. 
+- Go to /docker in project directory.
+- LogIn in DockerHub.
+- Execute build.sh
+        
+     ./ build.sh
+- Execute push.sh
 
-     - DockerFile: New file to create the docker web image 
-     - create_image.sh: Script to build app on command line using maven container
-
-           cd /project_location
-           mvn dockerfile:build
-
-     - publish_image.sh: Script to publish the image on DockerHub.
-     - docker_compose.yml: Execute these file with docker-compose up to download all necesary images on DockerHub and run the application. 
+     ./ push.sh
+- Run docker-compose.yml
 
 ### Docker:
 This app could be execute with this instrucctions about Docker:

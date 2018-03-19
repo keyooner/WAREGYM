@@ -106,18 +106,20 @@ We have to create a JPA entity, making a relationship with a relational database
 - You can logIn like Admin, User or Teach, or create public request.
 - Create request in postman with login or without login (GET PUT POST DELETE)
 
-### Development instructions:
-- Download or clone repository. 
-- Go to /docker in project directory.
-- LogIn in DockerHub.
-- Execute build.sh
-        
-     ./ build.sh
-- Execute push.sh
+### Development instructions for docker:
+You will need:
+ - maven
+ - docker
+ - a recent docker-compose version (2.3+ version needs to be supported)*
+ - git
+Clone this repo and follow the instructions below.
+*You might need to run docker-compose as root in some OSs, namely Ubuntu, because the user's docker-compose version is very outdated.
 
-     ./ push.sh
-- Run docker-compose.yml
+### Docker-compose instructions:
+execute docker-compose up in the /docker folder
 
-### Docker:
-This app could be execute with this instrucctions about Docker:
-[docker-compose.yml](https://github.com/keyooner/waregym/blob/master/docker/docker-compose.yml)
+### Build and install docker image
+execute the build.sh script in /docker. You can check out the contents of the script if you're interested in how it works internally.
+
+
+

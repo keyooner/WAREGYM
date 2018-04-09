@@ -62,8 +62,7 @@ public class ProductRestController {
             return new ResponseEntity<>(product, HttpStatus.OK);
         } else {
         	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        
+        }  
     }
 
     /*@RequestMapping(value = "/productos/{id}", method = RequestMethod.PUT)

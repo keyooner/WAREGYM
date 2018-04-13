@@ -10,7 +10,7 @@ import { FooterComponent } from './../footer/footer.component';
 
 @NgModule({
     imports: [BrowserModule,
-        NgbModule.forRoot(),
+        //NgbModule.forRoot(),
         routing
 
     ],

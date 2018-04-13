@@ -1,163 +1,125 @@
 
 <section class="s-pageheader s-pageheader--home">
-    <headerComponent></headerComponent>
-    <div class="pageheader-content row">
-        <div class="col-full">
-
-            <div class="featured">
-
-                <div class="featured__column featured__column--big">
-                    <div class="entry" style="background-image:url('assets/images/thumbs/featured/featured-fitnessworld.jpg');">
-
-                        <div class="entry__content">
-                            <span class="entry__category"><a href="/waregym">Fitness</a></span>
-
-                            <h1><a href="/waregym" title="">¿POR QUÉ WAREGYM?</a></h1>
-
-                        </div>
-                        <!-- end entry__content -->
-
+        <header class="header">
+                <div class="header__content row">
+              
+                    <div class="header__logo">
+                        <a class="logo" href="/index">
+                            <img href="/index" src="assets/images/logoGYM.png" alt="Homepage">
+                        </a>
                     </div>
-                    <!-- end entry -->
+                    <!-- end header__logo -->
+              
+                    <ul class="header__social">
+                        <li>
+                            <a href="https://es-es.facebook.com/FitnessMotivacion/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/fltness?lang=es" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/fitnessgirlsmotivation/?hl=es" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.pinterest.es/categories/health_fitness/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                    <!-- end header__social -->
+              
+                    <a class="header__search-trigger" href="#0"></a>
+              
+                    <div class="header__search">
+              
+                        <form role="search" method="get" class="header__search-form" action="#">
+                            <label>
+                                <span class="hide-content">Buscar por:</span>
+                                <input type="search" class="search-field" placeholder="Type Keywords" value="" name="s" title="Buscar por:" autocomplete="off">
+                            </label>
+                            <input type="submit" class="search-submit" value="Search">
+                        </form>
+              
+                        <a href="#0" title="Close Search" class="header__overlay-close">Close</a>
+              
+                    </div>
+                    <!-- end header__search -->
+              
+              
+                    <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
+              
+                    <nav class="header__nav-wrap">
+              
+                        <h2 class="header__nav-heading h6">Site Navigation</h2>
+              
+                        <ul class="header__nav">
+                            <li class="current"><a href="/index" title="">Inicio</a></li>
+                            <li class="has-children">
+                                <a href="#0" title="">Clases</a>
+                                <ul class="sub-menu">
+                                  
+                                  <li><a href="/clases/añadir_clase">Añadir Clase</a></li>
+                               
+                                  
+                                    <li><a href="/clases/inscripcion">Apúntate</a></li>
+                                    
+                                    
+                                    <li><a href="/clases/{{id}}-{{name}}"></a></li>
+                                   
+                                </ul>
+                            </li>
+                            <li class="has-children">
+                                <a href="#0" title="">Entrenamientos</a>
+                                 <ul class="sub-menu">
+                                    <li><a href="/entrenamientos/entrenamiento">Mi entrenamiento</a></li>
+                                    
+                                    <li><a href="/entrenamientos/{{training}}"></a></li>
+                                   
+                                </ul>
+                            </li>
+                            <li><a href="/waregym" title="">Waregym</a></li>
+                            <li class="has-children">
+                                <a href="#0" title="">Productos</a>
+                                <ul class="sub-menu">
+                                  
+                                  <li><a href="/nuevoProducto">Añadir producto</a></li>
+                                 
+                                    <li><a href="/productos">Productos disponibles</a></li>
+                                </ul>
+                            </li>
+                           
+                            <li><a [routerLink]="['/contacto']" title="">Contacto</a></li>
+                            
+                            
+              
+              
+                           
+                <li><form action="/logout" method="post"><input type="submit" value="Sign Out" /></form></li>
+              
+                           
+                        <li><a href="/login" title="">Iniciar Sesión</a></li>
+                            
+                            <li><a href="/profile"></a></li>
+                            
+                            <li>Profesor</li>
+                          
+                            <li>Admin</li>
+                            
+                        </ul>
+                        <!-- end header__nav -->
+              
+                        <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+              
+                    </nav>
+                    <!-- end header__nav-wrap -->
+              
                 </div>
-                <!-- end featured__big -->
-
-                <div class="featured__column featured__column--small">
-
-                    <div class="entry" style="background-image:url('assets/images/index/oferta-gym.jpg');">
-
-                        <div class="entry__content">
-                            <span class="entry__category"><a href="/waregym">Precios</a></span>
-
-                            <h1><a  [routerLink]="['login']" title="">¡OFERTA ESPECIAL!</a></h1>
-
-                        </div>
-                        <!-- end entry__content -->
-
-                    </div>
-                    <!-- end entry -->
-
-                    <div class="entry" style="background-image:url('assets/images/thumbs/featured/featured-workout.jpg');">
-
-                        <div class="entry__content">
-                            <span class="entry__category"><a href="/entrenamientos/entrenamiento">Rutinas</a></span>
-
-                            <h1><a href="/entrenamientos/entrenamiento" title="">Entrenamiento personal</a></h1>
-
-                        </div>
-                        <!-- end entry__content -->
-
-                    </div>
-                    <!-- end entry -->
-
-                </div>
-                <!-- end featured__small -->
-            </div>
-            <!-- end featured -->
-
-        </div>
-        <!-- end col-full -->
-    </div>
-    <!-- end pageheader-content row -->
-</section>
-
-<section class="s-content">
-
-    <div class="row masonry-wrap">
-        <div class="masonry">
-
-            <div class="grid-sizer"></div>
-
-            <article class="masonry__brick entry format-standard" data-aos="fade-up">
-
-                <div class="entry__thumb">
-                    <a href="/productos" class="entry__thumb-link">
-                        <img src="assets/images/thumbs/masonry/product-400.jpg" srcset="assets/images/thumbs/masonry/product-400.jpg 1x, assets/images/thumbs/masonry/product-800.jpg 2x" alt="">
-                    </a>
-                </div>
-
-                <div class="entry__text">
-                    <div class="entry__header">
-                        <h1 class="entry__title"><a href="/productos">Nuestros productos</a></h1>
-                    </div>
-                    <div class="entry__excerpt">
-                        <p>
-                            Conoce en un clic los productos que tu cuerpo necesita.
-                        </p>
-                    </div>
-                    <div class="entry__meta">
-                        <span class="entry__meta-links">
-                            <a href="/productos">Nutrición</a> 
-                        </span>
-                    </div>
-                </div>
-
-            </article>
-            <!-- end article -->
-
-            <article class="masonry__brick entry format-quote" data-aos="fade-up">
-
-                <div class="entry__thumb">
-                    <blockquote>
-                        <p>Si eres persistente, lo conseguirás. If you are consistent, you will keep it.</p>
-
-                        <cite>Bruce Lee</cite>
-                    </blockquote>
-                </div>
-
-            </article>
-            <!-- end article -->
-
-            <article class="masonry__brick entry format-quote" data-aos="fade-up">
-
-                <div class="entry__thumb">
-                    <blockquote>
-                        <p>Un ganador es un perdedor que nunca se dió por vencido.</p>
-
-                        <cite>Arnold Schwarzenegger</cite>
-                    </blockquote>
-                </div>
-
-            </article>
-            <!-- end article -->
-
-
-            <article class="masonry__brick entry format-standard" data-aos="fade-up">
-
-                <div class="entry__thumb">
-                    <a href="/waregym" class="entry__thumb-link">
-                        <img src="assets/images/thumbs/masonry/gym-400.jpg" srcset="assets/images/thumbs/masonry/gym-400.jpg 1x, assets/images/thumbs/masonry/gym-800.jpg 2x" alt="">
-                    </a>
-                </div>
-
-                <div class="entry__text">
-                    <div class="entry__header">
-                        <h1 class="entry__title"><a href="/waregym">Instalaciones únicas</a></h1>
-                    </div>
-                    <div class="entry__excerpt">
-                        <p>
-                            Échale un vistazo a nuestras instalaciones y precios.
-                        </p>
-                    </div>
-                    <div class="entry__meta">
-                        <span class="entry__meta-links">
-                            <a href="/waregym">Salud</a>
-                        </span>
-                    </div>
-                </div>
-
-            </article>
-            <!-- end article -->
-
-        </div>
-        <!-- end masonry -->
-    </div>
-    <!-- end masonry-wrap -->
-
-</section>
-<!-- s-content -->
-
+                <!-- header-content -->
+              </header>
+    </section>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+<section class="s-footer">
 <footer class="s-footer"> 
     <footerComponent></footerComponent>
 </footer>
-    
+</section>

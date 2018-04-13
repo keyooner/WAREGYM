@@ -50,7 +50,6 @@ public class User {
 	@OneToOne(cascade = {CascadeType.ALL})
     private Training training;
 	
-	@JsonView(Basic.class)
 	private String passwordHash;
 	
 	@JsonView(Activities.class)

@@ -5,7 +5,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { LoginComponent } from './login.component';
-import { HeaderComponent } from './../headerComponent/header.component';
+import { HeaderComponent } from './../header/header.component';
 import { FooterComponent } from './../footer/footer.component';
 
 @NgModule({

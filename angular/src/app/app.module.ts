@@ -16,6 +16,10 @@ import { ContactDetailComponent } from './contact/contact-detail.component';
 import { ContactFormComponent } from './contact/contact-form.component';
 import { ContactService } from './contact/contact.service';
 
+import { LoginComponent } from './login/login.component';
+import {LoginService } from './login/login.service';
+
+
 
 @NgModule({
   declarations: [
@@ -26,7 +30,8 @@ import { ContactService } from './contact/contact.service';
 
     ContactDetailComponent, 
     ContactListComponent, 
-    ContactFormComponent
+    ContactFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,8 @@ import { ContactService } from './contact/contact.service';
     routing
   ],
   providers: [
-    ContactService
+    ContactService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })

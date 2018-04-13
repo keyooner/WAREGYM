@@ -11,7 +11,7 @@ import { ContactFormComponent } from './contact/contact-form.component';
 
 const appRoutes = [
   { path: 'index', component: IndexComponent, useAsDefault: true},
-  /*{ path: 'login', component: LoginComponent},*/
+  { path: 'login', component: LoginComponent},
 
   { path: 'comentarios', component: ContactListComponent },
   { path: 'contacto', component: ContactFormComponent },

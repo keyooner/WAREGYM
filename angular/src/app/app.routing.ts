@@ -3,7 +3,7 @@ import { AppComponent } from './app.component';
 
 import { LoginComponent } from './login/login.component';
 
-import { IndexComponent } from './indexComponent/index.component';
+import { IndexComponent } from './index/index.component';
 
 import { ContactListComponent } from './contact/contact-list.component';
 import { ContactDetailComponent } from './contact/contact-detail.component';

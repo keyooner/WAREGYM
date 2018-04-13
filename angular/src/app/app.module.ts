@@ -7,8 +7,8 @@ import { HttpModule, JsonpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
-import { IndexComponent } from './indexComponent/index.component';
-import { HeaderComponent } from './headerComponent/header.component';
+import { IndexComponent } from './index/index.component';
+import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { ContactListComponent } from './contact/contact-list.component';

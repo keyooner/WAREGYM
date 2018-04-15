@@ -1,0 +1,30 @@
+<section class="s-content s-content--narrow">
+
+    <div class="row">
+
+        <div class="s-content__header col-full">
+            <h1 class="s-content__header-title">
+                <div *ngIf="contact"></div>
+                Comentario de {{contact.name}}
+            </h1>
+        </div>
+        <!-- end s-content__header -->
+        <fieldset>
+            <div class="text-center">
+                <h2>Nombre </h2><p>{{contact.name}}</p>
+                <h2>Email </h2><p>{{contact.email}}</p>
+                <button (click)="sendMessage()" class="submit btn btn--primary full-width">Enviar Email</button>
+                <h2>Numero </h2><p>{{contact.number}}</p>
+                <h2>Comentario </h2><p>{{contact.message}}</p>
+                <button (click)="removeContact()" class="submit btn btn--primary full-width">Eliminar</button>
+                <br>
+                <button (click)="gotoComents()" class="submit btn btn--primary full-width">Volver a los mensajes</button>
+                <br>
+                <button (click)="editContact()" class="submit btn btn--primary full-width">Editar Mensaje</button>
+            </div>
+        </fieldset>
+    </div>
+    <!-- end row -->
+
+</section>
+<!-- s-content -->

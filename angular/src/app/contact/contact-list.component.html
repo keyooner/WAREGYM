@@ -1,0 +1,21 @@
+<section class="s-content s-content--narrow">
+
+    <div class="row" class="text-center">
+
+        <div class="s-content__header col-full">
+            <h1 class="s-content__header-title">
+                Nuevos comentarios
+            </h1>
+        </div>
+        <!-- end s-content__header -->
+        <ul class="items">
+            <li *ngFor="let contact of contacts">
+                <a [routerLink]="['/comentario', contact.id]">Nombre: {{contact.name}} - Email: {{contact.email}}</a>
+            </li>
+            </ul>
+            <button (click)="newContact()">New Coment</button>
+    </div>
+    <!-- end row -->
+
+</section>
+<!-- s-content -->

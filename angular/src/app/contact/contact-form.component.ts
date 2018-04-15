@@ -5,9 +5,10 @@ import { Contact, ContactService } from './contact.service';
 @Component({
   moduleId: module.id,
   selector: 'ContactFormComponent',
-  templateUrl: 'contact.component.html',
-  styleUrls: ['contact.component.scss']
+  templateUrl: 'contact-form.component.html',
+  styleUrls: ['contact-form.component.scss']
 })
+
 export class ContactFormComponent {
 
   newContact: boolean;

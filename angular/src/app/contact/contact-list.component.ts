@@ -4,16 +4,11 @@ import { Router } from '@angular/router';
 import { Contact, ContactService } from './contact.service';
 
 @Component({
-  template: `
-    <h2>Comentarios</h2>
-    <ul class="items">
-      <li *ngFor="let contact of contacts">
-        <a [routerLink]="['/comentario', contact.id]">Nombre: {{contact.name}} - Email: {{contact.email}}</a>
-      </li>
-    </ul>
-    <button (click)="newContact()">New Coment</button>
-  `
+  moduleId: module.id,
+  selector: 'ContactListComponent',
+  templateUrl: 'contact-list.component.html'
 })
+
 export class ContactListComponent implements OnInit {
 
   contacts: Contact[];

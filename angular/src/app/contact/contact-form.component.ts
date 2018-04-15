@@ -11,6 +11,10 @@ import { Contact, ContactService } from './contact.service';
 
 export class ContactFormComponent {
 
+  zoom: number = 16;
+  lat: number = 40.4893538;
+  lng: number = -3.6827461;
+
   newContact: boolean;
   contact: Contact;
 

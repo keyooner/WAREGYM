@@ -9,5 +9,5 @@ import { Component } from '@angular/core';
               '../../../Spring_Project/src/main/resources/static/css/main.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'WareGym';
 }

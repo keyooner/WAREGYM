@@ -25,6 +25,7 @@ import { ProductService } from './product/product.service';
 import { LoginComponent } from './login/login.component';
 import {LoginService } from './login/login.service';
 
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import {LoginService } from './login/login.service';
     ProductDetailComponent,
     ProductFormComponent,
 
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +51,9 @@ import {LoginService } from './login/login.service';
     FormsModule, 
     HttpModule, 
     JsonpModule,
-    routing
+    routing,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyATELNKgTAuJcLmWZFFZoEO6-mhjGbJrRs'}),
   ],
   providers: [
     ContactService,

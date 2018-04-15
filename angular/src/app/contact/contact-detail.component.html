@@ -13,7 +13,7 @@
             <div class="text-center">
                 <h2>Nombre </h2><p>{{contact.name}}</p>
                 <h2>Email </h2><p>{{contact.email}}</p>
-                <button (click)="sendMessage()" class="submit btn btn--primary full-width">Enviar Email</button>
+               <a href="mailto:{{contact.email}}?Subject=WareGym" target="_top"><button class="submit btn btn--primary full-width">Enviar Email</button></a>
                 <h2>Numero </h2><p>{{contact.number}}</p>
                 <h2>Comentario </h2><p>{{contact.message}}</p>
                 <button (click)="removeContact()" class="submit btn btn--primary full-width">Eliminar</button>

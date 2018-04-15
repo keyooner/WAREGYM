@@ -39,5 +39,4 @@ export class ContactDetailComponent {
     gotoComents() {
         this.router.navigate(['/comentarios']);
     }
-    
 }

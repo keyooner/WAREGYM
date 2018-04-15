@@ -9,6 +9,10 @@ import { ContactListComponent } from './contact/contact-list.component';
 import { ContactDetailComponent } from './contact/contact-detail.component';
 import { ContactFormComponent } from './contact/contact-form.component';
 
+import { ProductListComponent } from './product/product-list.component';
+import { ProductDetailComponent } from './product/product-detail.component';
+import { ProductFormComponent } from './product/product-form.component';
+
 const appRoutes = [
   { path: 'index', component: IndexComponent, useAsDefault: true},
   { path: 'login', component: LoginComponent},
@@ -17,6 +21,10 @@ const appRoutes = [
   { path: 'contacto', component: ContactFormComponent },
   { path: 'comentario/:id', component: ContactDetailComponent },
   { path: 'comentario/edit/:id', component: ContactFormComponent },
+
+  { path: 'productos', component: ProductListComponent },
+  { path: 'producto/new', component: ProductFormComponent },
+  { path: 'producto/:id', component: ProductDetailComponent },
 
   { path: '', redirectTo: 'index', pathMatch: 'full' },
 ]

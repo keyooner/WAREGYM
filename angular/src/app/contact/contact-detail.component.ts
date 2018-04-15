@@ -5,7 +5,7 @@ import { Contact, ContactService } from './contact.service';
 
 @Component({
     moduleId: module.id,
-    selector: 'ContactListComponent',
+    selector: 'ContacDetailComponent',
     templateUrl: 'contact-detail.component.html',
 })
 

@@ -16,6 +16,12 @@ import { ContactDetailComponent } from './contact/contact-detail.component';
 import { ContactFormComponent } from './contact/contact-form.component';
 import { ContactService } from './contact/contact.service';
 
+import { ProductListComponent } from './product/product-list.component';
+import { ProductDetailComponent } from './product/product-detail.component';
+import { ProductFormComponent } from './product/product-form.component';
+
+import { ProductService } from './product/product.service';
+
 import { LoginComponent } from './login/login.component';
 import {LoginService } from './login/login.service';
 
@@ -31,6 +37,11 @@ import {LoginService } from './login/login.service';
     ContactDetailComponent, 
     ContactListComponent, 
     ContactFormComponent,
+
+    ProductListComponent,
+    ProductDetailComponent,
+    ProductFormComponent,
+
     LoginComponent
   ],
   imports: [
@@ -43,6 +54,7 @@ import {LoginService } from './login/login.service';
   ],
   providers: [
     ContactService,
+    ProductService,
     LoginService
   ],
   bootstrap: [AppComponent]

@@ -26,6 +26,7 @@ import { LoginComponent } from './login/login.component';
 import {LoginService } from './login/login.service';
 
 import { AgmCoreModule } from '@agm/core';
+import { WaregymComponent } from './waregym/waregym.component';
 
 
 @NgModule({
@@ -44,6 +45,8 @@ import { AgmCoreModule } from '@agm/core';
     ProductFormComponent,
 
     LoginComponent,
+
+    WaregymComponent
   ],
   imports: [
     BrowserModule,

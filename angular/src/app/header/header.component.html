@@ -74,12 +74,12 @@
                          
                       </ul>
                   </li>
-                  <li><a href="/waregym" title="">Waregym</a></li>
+                  <li><a [routerLink]="['/waregym']" title="">Waregym</a></li>
                   <li class="has-children">
                       <a href="#0" title="">Productos</a>
                       <ul class="sub-menu">
                         
-                        <li><a href="/nuevoProducto">Añadir producto</a></li>
+                        <li><a [routerLink]="['/producto/new']">Añadir producto</a></li>
                        
                           <li><a [routerLink]="['/productos']">Productos disponibles</a></li>
                       </ul>

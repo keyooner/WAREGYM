@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-<body id="top">
-
     <!-- s-content
     ================================================== -->
     <section class="s-content s-content--narrow s-content--no-padding-bottom">
@@ -22,9 +19,9 @@
 
             <div class="s-content__media col-full">
                 <div class="s-content__post-thumb">
-                    <img src="images/precios.jpg" srcset="images/precios.jpg 2000w, 
-                                 images/precios.jpg 1000w, 
-                                 images/precios.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+                    <img src="../assets/images/precios.jpg" srcset="../assets/images/precios.jpg 2000w, 
+                              ../assets/images/precios.jpg 1000w, 
+                              ../assets/images/precios.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
                 </div>
             </div>
             <!-- end s-content__media -->
@@ -35,32 +32,12 @@
             </div>
             
             <div class="s-content__media col-full">
-                <div class="s-content__slider slider">
-                    <div class="slider__slides">
-                        <div class="slider__slide">
-                            <img src="images/piscina.jpg" 
-                                 srcset="images/piscina.jpg 2000w, 
-                                         images/piscina.jpg 1000w, 
-                                         images/piscina.jpg 500w" 
-                                 sizes="(max-width: 2000px) 100vw, 2000px" alt="" >
-                        </div>
-                        <div class="slider__slide">
-                            <img src="images/fitness.jpg" 
-                                 srcset="images/fitness.jpg 2000w, 
-                                         images/fitness.jpg 1000w, 
-                                         images/fitness.jpg 500w" 
-                                 sizes="(max-width: 2000px) 100vw, 2000px" alt="" >
-                        </div>
-                        <div class="slider__slide">
-                            <img src="images/spinning.jpg" 
-                                 srcset="images/spinning.jpg 2000w, 
-                                         images/spinning.jpg 1000w, 
-                                         images/spinning.jpg 500w" 
-                                 sizes="(max-width: 2000px) 100vw, 2000px" alt="" >
-                        </div>
-                    </div>
+                <div class="s-content__post-thumb">
+                    <img src="../assets/images/piscina.jpg" srcset="../assets/images/piscina.jpg 2000w, 
+                              ../assets/images/piscina.jpg 1000w, 
+                              ../assets/images/piscina.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
                 </div>
-            </div> <!-- end s-content__media -->
+            </div>
             
             <div class="s-content__header col-full">
                 <h2 class="s-content__header-title">
@@ -70,9 +47,9 @@
             
             <div class="s-content__media col-full">
                 <div class="s-content__post-thumb">
-                    <img src="images/resultados.jpg" srcset="images/resultados.jpg 2000w, 
-                                 images/resultados.jpg 1000w, 
-                                 images/resultados.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+                    <img src="../assets/images/resultados.jpg" srcset="../assets/images/resultados.jpg 2000w, 
+                              ../assets/images/resultados.jpg 1000w, 
+                              ../assets/images/resultados.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
                 </div>
             </div>
             <!-- end s-content__media -->
@@ -101,108 +78,3 @@
         </article>
     </section>
     <!-- s-content -->
-
-
-    <!-- s-footer
-    ================================================== -->
-    <footer class="s-footer">
-
-        <div class="s-footer__main">
-            <div class="row">
-
-                <div class="col-two md-four mob-full s-footer__sitelinks">
-
-                    <h4>Secciones</h4>
-
-                    <ul class="s-footer__linklist">
-                        <li class="current"><a href="/index">Inicio</a></li>
-                        <li><a href="/waregym" title="">Waregym</a></li>
-                        <li><a href="/nuevoProducto">Añadir producto</a></li>
-                        <li><a href="/productos">Productos disponibles</a></li>
-                        <li><a href="/contacto">Contacto</a></li>
-                        {{#hidden}}
-              			<li><a href="/login" title="">Iniciar Sesión</a></li>
-                        {{/hidden}}
-                    </ul>
-
-                </div>
-                <!-- end s-footer__sitelinks -->
-
-                <div class="col-two md-four mob-full s-footer__archives">
-
-                    <h4>Clases</h4>
-
-                    <ul class="s-footer__linklist">
-                        <li><a href="/clases/añadir_clase">Añadir Clase</a></li>
-                        <li><a href="/clases/inscripcion">Apúntate</a></li>
-                        {{#activities}}
-                        <li><a href="/clases/{{id}}-{{name}}">{{name}}</a></li>
-                        {{/activities}}
-                    </ul>
-
-                </div>
-                <!-- end s-footer__archives -->
-
-                <div class="col-two md-four mob-full s-footer__social">
-
-                    <h4>Entrenamiento</h4>
-
-                    <ul class="s-footer__linklist">
-                        <li><a href="/entrenamientos/entrenamiento">Mi Entrenamiento</a></li>
-                        <li><a id = "hprinc" style="display:none;" href="/entrenamientos/principiante">Principiante</a></li>
-                        <li><a id = "hmed" style="display:none;" href="/entrenamientos/medio">Medio</a></li>
-                        <li><a id = "hadv" style="display:none;" href="/entrenamientos/avanzado">Avanzado</a></li>
-                        <li><a id = "hexp" style="display:none;" href="/entrenamientos/experto">Experto</a></li>
-                    </ul>
-
-                </div>
-                <!-- end s-footer__social -->
-
-                <div class="col-five md-full end s-footer__subscribe">
-
-                    <h4>Contacto</h4>
-
-                    <p>Telf: (+34) 123 456 789
-                        <br> Ubicación: C/Serrano n º 1, Madrid, España </p>
-
-                </div>
-                <!-- end s-footer__subscribe -->
-
-            </div>
-        </div>
-        <!-- end s-footer__main -->
-
-        <div class="s-footer__bottom">
-            <div class="row">
-                <div class="col-full">
-                    <div class="s-footer__copyright">
-                        <span>© Copyright Waregym 2018</span>
-                    </div>
-
-                    <div class="go-top">
-                        <a class="smoothscroll" title="Back to Top" href="#top"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end s-footer__bottom -->
-
-    </footer>
-    <!-- end s-footer -->
-
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader">
-            <div class="line-scale">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-    </div>
-</body>
-
-</html>

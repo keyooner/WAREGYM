@@ -13,6 +13,8 @@ import { ProductListComponent } from './product/product-list.component';
 import { ProductDetailComponent } from './product/product-detail.component';
 import { ProductFormComponent } from './product/product-form.component';
 
+import {WaregymComponent} from './waregym/waregym.component';
+
 const appRoutes = [
   { path: 'index', component: IndexComponent, useAsDefault: true},
   { path: 'login', component: LoginComponent},
@@ -25,6 +27,8 @@ const appRoutes = [
   { path: 'productos', component: ProductListComponent },
   { path: 'producto/new', component: ProductFormComponent },
   { path: 'producto/:id', component: ProductDetailComponent },
+
+  { path: 'waregym', component: WaregymComponent },
 
   { path: '', redirectTo: 'index', pathMatch: 'full' },
 ]

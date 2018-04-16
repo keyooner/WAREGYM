@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { LoginComponent } from './login/login.component';
+import { RegistredComponent } from './login/registred.component';
 
 import { IndexComponent } from './index/index.component';
 
@@ -24,6 +25,7 @@ import {WaregymComponent} from './waregym/waregym.component';
 const appRoutes = [
   { path: 'index', component: IndexComponent, useAsDefault: true},
   { path: 'login', component: LoginComponent},
+  { path: 'registro', component: RegistredComponent },
 
   { path: 'comentarios', component: ContactListComponent },
   { path: 'contacto', component: ContactFormComponent },

@@ -25,6 +25,7 @@ import { ProductService } from './product/product.service';
 
 import { LoginComponent } from './login/login.component';
 import {LoginService } from './login/login.service';
+import { RegistredComponent } from './login/registred.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { WaregymComponent } from './waregym/waregym.component';
@@ -56,6 +57,7 @@ import { ClassService } from './class/class.service';
     ClassFormComponent,
     
     LoginComponent,
+    RegistredComponent,
 
     WaregymComponent
   ],

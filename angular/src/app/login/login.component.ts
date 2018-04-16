@@ -23,4 +23,8 @@ export class LoginComponent {
             error => window.confirm("Usuario o contraseña erróneo :(")
         );      
     }
+
+    gotoRegistred () {
+        this.router.navigate(['/registro']);
+    }
 }

@@ -30,6 +30,9 @@ logIn(user: string, pass: string) {
         .catch(error => error.json()
     );
 }
+
+registred() {}
+
 }
 
 function utf8_to_b64(str) {
@@ -37,3 +40,4 @@ function utf8_to_b64(str) {
         return String.fromCharCode(<any>'0x' + p1);
     }));
 }
+

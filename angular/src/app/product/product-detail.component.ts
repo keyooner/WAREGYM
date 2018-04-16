@@ -31,6 +31,10 @@ export class ProductDetailComponent {
         }
     }
 
+    editProduct() {
+        this.router.navigate(['/producto/edit', this.product.id]);
+    }
+
     gotoProducts() {
         this.router.navigate(['/productos']);
     }

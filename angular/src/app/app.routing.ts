@@ -35,6 +35,7 @@ const appRoutes = [
 
   { path: 'productos', component: ProductListComponent },
   { path: 'producto/new', component: ProductFormComponent },
+  { path: 'producto/edit/:id', component: ProductFormComponent },
   { path: 'producto/:id', component: ProductDetailComponent },
 
   { path: 'clases', component: ClassListComponent },

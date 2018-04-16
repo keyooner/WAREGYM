@@ -2,7 +2,7 @@
     <div class="text-center">
     <div class="row masonry-wrap">
         <div class="masonry">
-    
+            <div class="text-center">
             <div class="grid-sizer"></div>
             <div *ngIf="product">
             <h1>Producto {{product.name}}</h1>
@@ -38,14 +38,16 @@
                 </div>
             </article> <!-- end article -->
             </div> 
+            </div>
         </div> <!-- end masonry -->
     </div> <!-- end masonry-wrap -->
     </div>
     
-    <div>
-        <div style="margin:0 auto; width: 400px;">
-            <button (click)="gotoProducts()">Todos los productos</button>
-        </div>
+    <div class="text-center">
+        
+        <button (click)="gotoProducts()">Todos los productos</button>
+        <button (click)="editProduct()">Editar Producto</button>
+     
     </div>
 
     </section> <!-- s-content -->

@@ -53,6 +53,14 @@ public class Product {
 		this.image = image;
 	}
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public String getType() {
 		return type;
 	}

@@ -66,7 +66,7 @@ public class ProductRestController {
         
     }
 
-    /*@RequestMapping(value = "/productos/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/productos/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Product> updateProduct(@PathVariable long id, @RequestBody Product updatedProduct) {
         Product product = productService.findOneById(id);
 
@@ -76,5 +76,5 @@ public class ProductRestController {
         updatedProduct.setId(id);
         productService.saveProduct(updatedProduct);
         return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
-    }*/
+    }
 }

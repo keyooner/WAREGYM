@@ -4,6 +4,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { routing }  from './app.routing';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
+import { AgmCoreModule } from '@agm/core';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 
 
 import { AppComponent } from './app.component';
@@ -27,7 +30,6 @@ import { LoginComponent } from './login/login.component';
 import {LoginService } from './login/login.service';
 import { RegistredComponent } from './login/registred.component';
 
-import { AgmCoreModule } from '@agm/core';
 import { WaregymComponent } from './waregym/waregym.component';
 
 import { ClassListComponent } from './class/class-list.component';
@@ -70,6 +72,8 @@ import { ClassService } from './class/class.service';
     routing,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyATELNKgTAuJcLmWZFFZoEO6-mhjGbJrRs'}),
+    RecaptchaModule.forRoot(),
+    RecaptchaFormsModule
   ],
   providers: [
     ContactService,

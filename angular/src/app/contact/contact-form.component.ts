@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Contact, ContactService } from './contact.service';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 
 @Component({
   moduleId: module.id,
@@ -17,6 +18,10 @@ export class ContactFormComponent {
 
   newContact: boolean;
   contact: Contact;
+
+  resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response ${captchaResponse}:`);
+  }
 
   constructor(
     private router: Router,
@@ -48,4 +53,6 @@ export class ContactFormComponent {
     window.confirm('Quieres enviar este mensaje?')
     this.router.navigate(['/contacto/confirmation']);
   }
+
+  
 }

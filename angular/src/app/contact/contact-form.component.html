@@ -73,7 +73,7 @@
                             <textarea [(ngModel)]="contact.message" class="full-width" placeholder="Tu mensaje"></textarea>
                         </div>
 
-                        <div class="g-recaptcha" data-sitekey="6LfUZBMUAAAAAJIFByqzdQzO3KLzX79bmrQuzeW1"></div>
+                        <re-captcha (resolved)="resolved($event)" siteKey="6LfUZBMUAAAAAJIFByqzdQzO3KLzX79bmrQuzeW1"></re-captcha>
                         <button (click)="saveContact()" class="submit btn btn--primary full-width">Enviar</button>
                         <button (click)="cancel()" class="submit btn btn--primary full-width">Cancelar</button>
                     </div>

@@ -26,7 +26,6 @@
                         <label>Imagen</label><input [(ngModel)]="product.image" type="file" required/>
                     </div>
                     <div class="text-center">
-                        <re-captcha (resolved)="resolved($event)" siteKey="6LfUZBMUAAAAAJIFByqzdQzO3KLzX79bmrQuzeW1"></re-captcha>
                         <button (click)="saveProduct()">Guardar</button>
                         <button (click)="cancel()">Cancelar</button>
                     </div>

@@ -7,14 +7,14 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-import com.waregym.repositories.UserRepositoryAuthenticationProvider;
+import com.waregym.repositories.UserRepositoryAuthProvider;
 
 @Configuration
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    public UserRepositoryAuthenticationProvider authenticationProvider;
+    public UserRepositoryAuthProvider authenticationProvider;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

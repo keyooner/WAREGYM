@@ -3,6 +3,7 @@ import { AppComponent } from './app.component';
 
 import { LoginComponent } from './login/login.component';
 import { RegistredComponent } from './login/registred.component';
+import { RegistredService } from './login/registred.service';
 
 import { IndexComponent } from './index/index.component';
 
@@ -20,7 +21,6 @@ import { ProductEditComponent } from './product/product-edit.component';
 import { ClassListComponent } from './class/class-list.component';
 import { ClassDetailComponent } from './class/class-detail.component';
 import { ClassFormComponent } from './class/class-form.component';
-import { ClassService } from './class/class.service';
 
 import {WaregymComponent} from './waregym/waregym.component';
 

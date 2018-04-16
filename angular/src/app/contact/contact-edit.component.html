@@ -1,0 +1,33 @@
+<!-- s-content
+================================================== -->
+<section class="s-content">
+    <div class="row">
+    <h3>Modificar Mensaje</h3>
+    <fieldset>
+        <div *ngIf="contact">
+            <div *ngIf="contact.id">
+                <label>Id: {{contact.id}}</label>
+            </div>    
+            <div class="form-field">
+                <input [(ngModel)]="contact.name" type="text" class="full-width" placeholder="Nombre" required/>
+            </div>
+
+            <div class="form-field">
+                <input input [(ngModel)]="contact.number" type="number" class="full-width" placeholder="Móvil"/>
+            </div>
+
+            <div class="form-field">
+                <input [(ngModel)]="contact.email" type="text" class="full-width" placeholder="Correo electrónico" required/>
+            </div>
+
+            <div class="message form-field">
+                <textarea [(ngModel)]="contact.message" class="full-width" placeholder="Tu mensaje"></textarea>
+            </div>
+
+            <button (click)="saveEditContact()" class="submit btn btn--primary full-width">Guardar</button>
+            <button (click)="cancel()" class="submit btn btn--primary full-width">Cancelar</button>
+        </div>
+    </fieldset>
+    </div>                
+    <!-- end form -->
+</section>

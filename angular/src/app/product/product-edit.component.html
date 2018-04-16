@@ -1,0 +1,35 @@
+ <!-- s-content
+    ================================================== -->
+    <section class="s-content s-content--narrow s-content--no-padding-bottom">
+            <div class="row">
+        
+                <div *ngIf="product">
+                        <h2>Editar Producto</h2>
+                        <fieldset>
+        
+                            <div class="form-field">
+                                    <input [(ngModel)]="product.type" type="text" class="full-width" placeholder="Tipo de producto" required/>
+                            </div>
+        
+                            <div class="form-field">
+                                    <input [(ngModel)]="product.name" type="text" class="full-width" placeholder="Nombre" required/>
+                            </div>
+        
+                            <div class="form-field">
+                                <input [(ngModel)]="product.value" type="number" class="full-width" placeholder="Valoración" required/>
+                            </div>
+        
+                            <div class="form-field">
+                                    <input [(ngModel)]="product.link" type="text" class="full-width" placeholder="Url" required/>
+                            </div>
+                            <div>
+                                <label>Imagen</label><input [(ngModel)]="product.image" type="file" required/>
+                            </div>
+                            <div class="text-center">
+                                <button (click)="saveEditProduct()">Guardar</button>
+                                <button (click)="cancel()">Cancelar</button>
+                            </div>
+                        </fieldset>                   
+                    </div>
+            </div>
+            </section>

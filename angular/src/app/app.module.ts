@@ -17,12 +17,14 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactListComponent } from './contact/contact-list.component';
 import { ContactDetailComponent } from './contact/contact-detail.component';
 import { ContactFormComponent } from './contact/contact-form.component';
+import { ContactEditComponent } from './contact/contact-edit.component';
 import { ContactConfirmationComponent } from './contact/contact-confirmation.component';
 import { ContactService } from './contact/contact.service';
 
 import { ProductListComponent } from './product/product-list.component';
 import { ProductDetailComponent } from './product/product-detail.component';
 import { ProductFormComponent } from './product/product-form.component';
+import { ProductEditComponent } from './product/product-edit.component';
 
 import { ProductService } from './product/product.service';
 
@@ -49,10 +51,12 @@ import { ClassService } from './class/class.service';
     ContactListComponent, 
     ContactFormComponent,
     ContactConfirmationComponent,
+    ContactEditComponent,
 
     ProductListComponent,
     ProductDetailComponent,
     ProductFormComponent,
+    ProductEditComponent,
 
     ClassListComponent,
     ClassDetailComponent,

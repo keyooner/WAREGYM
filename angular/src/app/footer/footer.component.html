@@ -8,13 +8,13 @@
                     <h4>Secciones</h4>
 
                     <ul class="s-footer__linklist">
-                        <li class="current"><a href="/index">Inicio</a></li>
-                        <li><a href="/waregym" title="">Waregym</a></li>
-                        <li><a href="/nuevoProducto">Añadir producto</a></li>
-                        <li><a href="/productos">Productos disponibles</a></li>
-                        <li><a href="/contacto">Contacto</a></li>
+                        <li><a [routerLink]="['/index']">Inicio</a></li>
+                        <li><a [routerLink]="['/waregym']" title="">Waregym</a></li>
+                        <li><a [routerLink]="['/producto/new']">Añadir producto</a></li>
+                        <li><a [routerLink]="['/productos']">Productos disponibles</a></li>
+                        <li><a [routerLink]="['/contacto']">Contacto</a></li>
                         
-              			<li><a href="/login" title="">Iniciar Sesión</a></li>
+              			<li><a [routerLink]="['/logIn']" title="">Iniciar Sesión</a></li>
                         
                     </ul>
 
@@ -26,11 +26,8 @@
                     <h4>Clases</h4>
 
                     <ul class="s-footer__linklist">
-                        <li><a href="/clases/añadir_clase">Añadir Clase</a></li>
-                        <li><a href="/clases/inscripcion">Apúntate</a></li>
-                        
-                        <li><a href="/clases/{{id}}-{{name}}"></a></li>
-                        
+                        <li><a [routerLink]="['/clases']">Añadir Clase</a></li>
+                        <li><a [routerLink]="['/clases']">Apúntate</a></li>
                     </ul>
 
                 </div>
@@ -41,11 +38,11 @@
                     <h4>Entrenamiento</h4>
 
                     <ul class="s-footer__linklist">
-                        <li><a href="/entrenamientos/entrenamiento">Mi Entrenamiento</a></li>
-                        <li><a id = "hprinc" style="display:none;" href="/entrenamientos/principiante">Principiante</a></li>
-                        <li><a id = "hmed" style="display:none;" href="/entrenamientos/medio">Medio</a></li>
-                        <li><a id = "hadv" style="display:none;" href="/entrenamientos/avanzado">Avanzado</a></li>
-                        <li><a id = "hexp" style="display:none;" href="/entrenamientos/experto">Experto</a></li>
+                        <li><a [routerLink]="">Mi Entrenamiento</a></li>
+                        <li><a id = "hprinc" style="display:none;" [routerLink]="">Principiante</a></li>
+                        <li><a id = "hmed" style="display:none;" [routerLink]="">Medio</a></li>
+                        <li><a id = "hadv" style="display:none;" [routerLink]="">Avanzado</a></li>
+                        <li><a id = "hexp" style="display:none;" [routerLink]="">Experto</a></li>
                     </ul>
 
                 </div>

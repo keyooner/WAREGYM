@@ -1,31 +1,35 @@
  <!-- s-content
     ================================================== -->
     <section class="s-content s-content--narrow s-content--no-padding-bottom">
+    <div class="row">
 
         <div *ngIf="product">
-            <div class="text-center">
                 <h2>Nuevo producto</h2>
-                    <div>
-                        <label style="display: inline-block">Tipo de producto:</label>
-                        <input [(ngModel)]="product.type" placeholder="type" required/>
+                <fieldset>
+
+                    <div class="form-field">
+                            <input [(ngModel)]="product.type" type="text" class="full-width" placeholder="Tipo de producto" required/>
                     </div>
-                    <div>
-                        <label style="display: inline-block">Nombre:</label>
-                        <input style="width: 20%" input [(ngModel)]="product.name" placeholder="name" required/>
+
+                    <div class="form-field">
+                            <input [(ngModel)]="product.name" type="text" class="full-width" placeholder="Nombre" required/>
                     </div>
-                    <div>
-                        <label style="display: inline-block">Valoración (sobre 10):</label>
-                        <input style="width: 4%" input [(ngModel)]="product.value" placeholder="value" required/>
+
+                    <div class="form-field">
+                        <input [(ngModel)]="product.value" type="number" class="full-width" placeholder="Valoración" required/>
                     </div>
-                    <div>
-                        <label style="display: inline-block">Enlace:</label>
-                        <input style="width: 50%;" [(ngModel)]="product.link" placeholder="url" required/>
+
+                    <div class="form-field">
+                            <input [(ngModel)]="product.link" type="text" class="full-width" placeholder="Url" required/>
                     </div>
                     <div>
                         <label>Imagen</label><input [(ngModel)]="product.image" type="file" required/>
                     </div>
-                    <button (click)="cancel()">Cancelar</button>
-                    <button (click)="save()">Guardar</button>                    
+                    <div class="text-center">
+                        <button (click)="saveProduct()">Guardar</button>
+                        <button (click)="cancel()">Cancelar</button>
+                    </div>
+                </fieldset>                   
             </div>
-        </div>
+    </div>
     </section>

@@ -1,0 +1,72 @@
+<section class="s-content s-content--narrow s-content--no-padding-bottom">
+    <div class="row">
+        <div class="col-full s-content__main">
+            <h2>Añadir Clase</h2>
+                <div *ngIf="gclass">
+                    <fieldset>
+                        <div *ngIf="gclass.id"><label>Id: </label>{{gclass.id}</div>
+
+                        <div class="form-field">
+                            <input [(ngModel)]="gclass.name" type="text" class="full-width" placeholder="Nombre" required/>
+                        </div>
+
+                        <div class="message form-field">
+                            <textarea [(ngModel)]="gclass.description" class="full-width" placeholder="Description"></textarea>
+                        </div>
+
+                        <div class="message form-field">
+                                <textarea [(ngModel)]="gclass.development" class="full-width" placeholder="Desarrollo"></textarea>
+                        </div>
+
+                        <div class="message form-field">
+                                <textarea [(ngModel)]="gclass.benefits" class="full-width" placeholder="Beneficios"></textarea>
+                        </div>
+
+                        <div>
+                            <label>Imagen</label><input type="file" name="file" />
+                        </div>
+                        
+                        <h2>Horario</h2>
+                            <table>
+                                <tr>
+                                    <td>Días/Horas</td>
+                                    <td>Lunes</td>
+                                    <td>Martes</td>
+                                    <td>Miércoles</td>
+                                    <td>Jueves</td>
+                                    <td>Viernes</td>
+                                </tr>
+                                <tr>
+                                    <td>10:00</td>
+                                    <td><input type="checkbox" name ="schedule" value="0"></td>
+                                    <td><input type="checkbox" name ="schedule" value="1"></td>
+                                    <td><input type="checkbox" name ="schedule" value="2"></td>
+                                    <td><input type="checkbox" name ="schedule" value="3"></td>
+                                    <td><input type="checkbox" name ="schedule" value="4"></td>
+                                </tr>
+                                <tr>
+                                    <td>12:00</td>
+                                    <td><input type="checkbox" name ="schedule" value="5"></td>
+                                    <td><input type="checkbox" name ="schedule" value="6"></td>
+                                    <td><input type="checkbox" name ="schedule" value="7"></td>
+                                    <td><input type="checkbox" name ="schedule" value="8"></td>
+                                    <td><input type="checkbox" name ="schedule" value="9"></td>
+                                </tr>
+                                <tr>
+                                    <td>17:00</td>
+                                    <td><input type="checkbox" name ="schedule" value="10"></td>
+                                    <td><input type="checkbox" name ="schedule" value="11"></td>
+                                    <td><input type="checkbox" name ="schedule" value="12"></td>
+                                    <td><input type="checkbox" name ="schedule" value="13"></td>
+                                    <td><input type="checkbox" name ="schedule" value="14"></td>
+                                </tr>
+                        </table>
+                    </fieldset>
+                </div>
+                <div class="text-center">
+                    <button (click)="saveClass()">Añadir Clase</button>
+                    <button (click)="cancel()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+</section>

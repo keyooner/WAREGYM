@@ -19,7 +19,7 @@ export class ContactFormComponent {
   contact: Contact;
 
   constructor(
-    private _router: Router,
+    private router: Router,
     activatedRoute: ActivatedRoute,
     private service: ContactService) {
 
@@ -40,11 +40,12 @@ export class ContactFormComponent {
     window.history.back();
   }
 
-  save() {
+  saveContact() {
     this.service.saveContact(this.contact).subscribe(
       contact => { },
-      error => console.error('Error creating new contact: ' + error)
+      error => console.error('Error creating new contact: ' + error),
     );
-    window.history.back();
+    window.confirm('Quieres enviar este mensaje?')
+    this.router.navigate(['/contacto/confirmation']);
   }
 }

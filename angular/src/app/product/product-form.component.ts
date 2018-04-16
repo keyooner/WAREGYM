@@ -13,7 +13,7 @@ export class ProductFormComponent {
   product: Product;
 
   constructor(
-    private _router: Router,
+    private router: Router,
     activatedRoute: ActivatedRoute,
     private service: ProductService) {
 
@@ -34,11 +34,12 @@ export class ProductFormComponent {
     window.history.back();
   }
 
-  save() {
+  saveProduct() {
     this.service.saveProduct(this.product).subscribe(
-      product => { },
+      product => { } ,
       error => console.error('Error creating new product: ' + error)
     );
-    window.history.back();
+    window.confirm('Seguro que quieres crear este producto?')
+    this.router.navigate(['/productos']);
   }
 }

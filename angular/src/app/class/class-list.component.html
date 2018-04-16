@@ -1,0 +1,23 @@
+ <section class="s-content s-content--narrow s-content--no-padding-bottom">
+
+    <article class="row format-gallery">
+
+        <div class="s-content__header col-full">
+            <h1 class="s-content__header-title">Inscríbete a las clases que quieras</h1>
+        </div> <!-- end s-content__header -->
+
+            <div class="row text-center">
+
+            <h1 class="lead">Clases Disponibles</h1><br>
+
+            <ul class="items">
+              <li *ngFor="let gclass of classes">
+                <h2><a [routerLink]="['/clase', gclass.id]">{{gclass.name}}</a></h2>
+              </li>
+            </ul>
+              <button (click)="newClass()">Añadir Clase</button>
+        </div>
+
+    </article>
+
+</section>

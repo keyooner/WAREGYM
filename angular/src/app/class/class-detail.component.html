@@ -1,0 +1,98 @@
+<!-- s-content
+================================================== -->
+<section class="s-content s-content--narrow s-content--no-padding-bottom">
+
+    <article class="row format-gallery">
+        <div *ngIf="gclass">
+        <div class="s-content__header col-full">
+            <h1 class="s-content__header-title">
+                {{gclass.name}}
+            </h1>
+        <!-- end s-content__header -->
+        <div class="s-content__media col-full">
+            <div class="s-content__post-thumb">
+                <img src="../assets/images/piscina.jpg" srcset="../assets/images/piscina.jpg 2000w, 
+                          ../assets/images/piscina.jpg 1000w, 
+                          ../assets/images/piscina.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+            </div>
+        </div>
+        <!-- end s-content__media -->
+
+        <div class="col-full s-content__main">
+
+            <div class="text-center">
+                <h1>¿Qué es el {{gclass.name}}?</h1>
+
+            <p>{{gclass.description}}</p>
+
+            <div class="text-center">
+                <h1>Desarrollo de una clase</h1>
+
+                <p>{{gclass.development}}</p>
+
+                <img src="../assets/image/{{gclass.image}}" srcset="../assets/image/{{gclass.image}} 2000w, ../assets/image/{{gclass.image}} 1000w, ../assets/image/{{gclass.image}} 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+
+                <div class="text-center">
+                    <h1>Beneficios</h1>
+                </div>
+
+                <p>{{gclass.benefit}}</p>
+          </div>
+                <!--
+                <div class="text-center">
+                    <h1 class="lead">Horarios</h1>
+                </div>
+                -->
+            </div>
+        </div>
+        <div class="row-center">
+            <!--
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th style="text-align:center" scope="col">Días/Horas</th>
+                        <th style="text-align:center" scope="col">Lunes</th>
+                        <th style="text-align:center" scope="col">Martes</th>
+                        <th style="text-align:center" scope="col">Miércoles</th>
+                        <th style="text-align:center" scope="col">Jueves</th>
+                        <th style="text-align:center" scope="col">Viernes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th style="text-align:center" scope="row">10:00</th>
+                        <td style="text-align:center">{{glcass.schedule.0.0}}</td>
+                        <td style="text-align:center">{{gclass.schedule.1.0}}</td>
+                        <td style="text-align:center">{{gclass.schedule.2.0}}</td>
+                        <td style="text-align:center">{{gclass.schedule.3.0}}</td>
+                        <td style="text-align:center">{{gclass.schedule.4.0}}</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align:center" scope="row">12:00</th>
+                        <td style="text-align:center">{{gclass.schedule.0.1}}</td>
+                        <td style="text-align:center">{{gclass.schedule.1.1}}</td>
+                        <td style="text-align:center">{{gclass.schedule.2.1}}</td>
+                        <td style="text-align:center">{{gclass.schedule.3.1}}</td>
+                        <td style="text-align:center">{{gclass.schedule.4.1}}</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align:center" scope="row">17:00</th>
+                        <td style="text-align:center">{{gclass.schedule.0.2}}</td>
+                        <td style="text-align:center">{{gclass.schedule.1.2}}</td>
+                        <td style="text-align:center">{{gclass.schedule.2.2}}</td>
+                        <td style="text-align:center">{{gclass.schedule.3.2}}</td>
+                        <td style="text-align:center">{{gclass.schedule.4.2}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            -->
+            <div class="class-inscription text-center">
+                <button (click)="removeClass()">Borrar Clase</button>
+                <button (click)="gotoClasses()">Todas las Clases</button>
+                <button (click)="inscriptionClass()">Inscribirme</button>
+            </div>
+        </div>
+        </div>
+        </div>
+    </article>
+</section>

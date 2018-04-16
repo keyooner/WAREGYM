@@ -1,12 +1,20 @@
 <!-- s-content
     ================================================== -->
     <section class="s-content s-content--narrow">
-            <div class="row text-center">
-                    <label>Nombre de usuario:</label>
-                    <input [(ngModel)]="userName" type="text" name="username" placeholder="Usuario" required/><br />
-                    <label>Contraseña:</label>
-                    <input [(ngModel)]="password" type="password" name="password" placeholder="Contraseña" required/><br />
-                    <input (click)="logIn()" type="button" value="Login">
+            <div class="row">
+                    <h4>Usuario</h4>
+                    <div class="form-field">
+                        <input [(ngModel)]="userName" type="text" name="username" class="full-width" placeholder="Usuario" required/>
+                    </div>
+
+                    <h4>Contraseña</h4>
+                    <div class="form-field">
+                        <input [(ngModel)]="password" type="password" name="password" class="full-width" placeholder="Contraseña" required/>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button (click)="logIn()" class="submit btn btn--primary full-width">LogIn</button>
+                    </div>
              </div>
          </section>
 <!-- s-content -->

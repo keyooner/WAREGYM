@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactListComponent } from './contact/contact-list.component';
 import { ContactDetailComponent } from './contact/contact-detail.component';
 import { ContactFormComponent } from './contact/contact-form.component';
+import { ContactConfirmationComponent } from './contact/contact-confirmation.component';
 import { ContactService } from './contact/contact.service';
 
 import { ProductListComponent } from './product/product-list.component';
@@ -28,6 +29,11 @@ import {LoginService } from './login/login.service';
 import { AgmCoreModule } from '@agm/core';
 import { WaregymComponent } from './waregym/waregym.component';
 
+import { ClassListComponent } from './class/class-list.component';
+import { ClassDetailComponent } from './class/class-detail.component';
+import { ClassFormComponent } from './class/class-form.component';
+import { ClassService } from './class/class.service';
+
 
 @NgModule({
   declarations: [
@@ -39,11 +45,16 @@ import { WaregymComponent } from './waregym/waregym.component';
     ContactDetailComponent, 
     ContactListComponent, 
     ContactFormComponent,
+    ContactConfirmationComponent,
 
     ProductListComponent,
     ProductDetailComponent,
     ProductFormComponent,
 
+    ClassListComponent,
+    ClassDetailComponent,
+    ClassFormComponent,
+    
     LoginComponent,
 
     WaregymComponent
@@ -61,7 +72,8 @@ import { WaregymComponent } from './waregym/waregym.component';
   providers: [
     ContactService,
     ProductService,
-    LoginService
+    LoginService,
+    ClassService
   ],
   bootstrap: [AppComponent]
 })

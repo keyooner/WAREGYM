@@ -25,7 +25,7 @@ export class ClassFormComponent {
       );
       this.newClass = false;
     } else {
-      this.gclass = { name: '',description: '', development: '', benefit: '' };
+      this.gclass = { name: '', image1: '', image2: '', image3: '', description: '', development: '', benefit: '' };
       this.newClass = true;
     }
   }

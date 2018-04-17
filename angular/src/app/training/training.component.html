@@ -1,0 +1,330 @@
+<section class="s-content s-content--narrow s-content--no-padding-bottom">
+
+    <article class="row format-video">
+        <div class="s-content__header col-full">
+                <h1 class="display-1">
+                    CREAR     ENTRENAMIENTO
+                </h1>
+                <p class="lead"> Selecciona qué tipo de entrenamiento quieres emplear
+                de los cuatro distintos creados por nuestros expertos según tu experiencia<p>
+        </div>
+        <div align = "center">
+            <form action="javascript:;" onsubmit="accion()">
+                <select [(ngModel)]="currentTraining" id="tipo" name="tipo" >
+                    <option value="principiante">Principiante</option>
+                    <option value="avanzado">Avanzado</option>
+                    <option value="medio">Medio</option>
+                    <option value="experto" >Experto</option>
+                </select>      
+                <button (click)="saveTraining()"> Seleccionar </button>
+            </form>
+        </div>
+        
+        <br>
+            <!-- INFO -->
+            <h2 style="text-align: center">INFORMACIÓN DEL ENTRENAMIENTO ({{currentTraining}})</h2>
+            <p class="lead" style="text-align: center">El entrenamiento elegido tendra los siguientes ejercicios...</p>
+                <div *ngIf="currentTraining == 'principiante'" id="beginner">
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="titulo__info">ABDOMINALES</h1>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p class="info">15</p>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">TIEMPO TOTAL DE ENTRENAMIENTO</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info">20 minutos</p>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+    
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">PRESS DE BANCA</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info">50 kg </p>
+                                    <p style="text-align: center;">5 repeticiones</p>
+                                </div>
+                            </div>
+    
+                        </article>
+                        <!-- end article -->
+                    
+                        <!-- end article -->
+    
+                        <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+    
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">FLEXIONES</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info"> 10 </p>
+                                </div>
+                            </div>
+    
+                        </article>
+                        <!-- end article -->
+                </div>
+
+                <!-- Medium training info -->
+                
+                <div *ngIf="currentTraining == 'medio'" id="medium">
+                        <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">ABDOMINALES</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info">15</p>
+                                </div>
+                            </div>
+    
+                        </article>
+                        <!-- end article -->
+    
+                        <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+    
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">TIEMPO TOTAL DE ENTRENAMIENTO</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info">30 minutos</p>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+    
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">PRESS DE BANCA</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info">70 kg </p>
+                                    <p style="text-align: center;">7 repeticiones</p>
+                                </div>
+                            </div>
+    
+                        </article>
+                        <!-- end article -->
+                    
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+    
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">PESAS</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info"> 10 kg </p>
+                                    <p style="text-align: center;">5 repeticiones</p>
+                                </div>
+                            </div>
+    
+                        </article>
+    
+                        <!-- end article -->
+    
+                        <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+    
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">FLEXIONES</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info"> 20 </p>
+                                </div>
+                            </div>
+    
+                        </article>
+                        <!-- end article -->
+                    </div>
+                    
+                    
+                    <div *ngIf="currentTraining == 'avanzado'" id="advanced" >
+                        <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">PIERNAS</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info">40 kg</p>
+                                    <p style="text-align: center;">15 repeticiones</p>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- end article -->
+    
+                        <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">TIEMPO TOTAL DE ENTRENAMIENTO</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info">45 minutos</p>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">PRESS DE BANCA</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info">100 kg </p>
+                                    <p style="text-align: center;">10 repeticiones</p>
+                                </div>
+                            </div>
+    
+                        </article>
+                        <!-- end article -->
+                        
+                         <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">PRESS DE PECTORAL</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info">50 kg </p>
+                                    <p style="text-align: center;">20 repeticiones</p>
+                                </div>
+                            </div>
+    
+                        </article>
+      
+                    
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">PESAS</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info"> 20 kg </p>
+                                    <p style="text-align: center;">10 repeticiones</p>
+                                </div>
+                            </div>
+    
+                        </article>
+    
+                        <!-- end article -->
+    
+                        <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+    
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">BARRAS</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info"> 10 repeticiones </p>
+                                </div>
+                            </div>
+    
+                        </article>
+                        <!-- end article -->
+                    </div>
+                    <!-- Expert info -->
+                
+                <div *ngIf=" currentTraining == 'experto'" id="expert" >
+                        <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">PIERNAS</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info">60 kg</p>
+                                    <p style="text-align: center;">20 repeticiones</p>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- end article -->
+    
+                        <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">TIEMPO TOTAL DE ENTRENAMIENTO</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info">1 hora</p>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">PRESS DE BANCA</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info">150 kg </p>
+                                    <p style="text-align: center;">10 repeticiones</p>
+                                </div>
+                            </div>
+    
+                        </article>
+                        <!-- end article -->
+                        
+                         <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%;">
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">PRESS DE PECTORAL</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info">70 kg </p>
+                                    <p style="text-align: center;">10 repeticiones</p>
+                                </div>
+                            </div>
+    
+                        </article>
+      
+                    
+                    <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">FLEXIONES</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info"> + 20 kg </p>
+                                    <p style="text-align: center;">10 repeticiones</p>
+                                </div>
+                            </div>
+    
+                        </article>
+    
+                        <!-- end article -->
+    
+                        <article class="masonry__brick entry format-standard aos-init aos-animate" style="width: 50%">
+    
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <h1 class="titulo__info">BARRAS</h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p class="info"> 10 repeticiones </p>
+                                    <p style="text-align: center;">+10 kg</p>
+                                </div>
+                            </div>
+    
+                        </article>
+                        <!-- end article -->
+                    </div>
+                    
+                    
+                <!-- end INFO -->
+    </article>
+</section>

@@ -23,6 +23,7 @@ import { ClassDetailComponent } from './class/class-detail.component';
 import { ClassFormComponent } from './class/class-form.component';
 
 import {WaregymComponent} from './waregym/waregym.component';
+import { TrainingComponent } from './training/training.component';
 
 const appRoutes = [
   { path: 'index', component: IndexComponent, useAsDefault: true},
@@ -39,6 +40,8 @@ const appRoutes = [
   { path: 'producto/new', component: ProductFormComponent },
   { path: 'producto/edit/:id', component: ProductEditComponent },
   { path: 'producto/:id', component: ProductDetailComponent },
+
+  { path: 'training', component: TrainingComponent },
 
   { path: 'clases', component: ClassListComponent },
   { path: 'clase/new', component: ClassFormComponent },

@@ -39,6 +39,8 @@ import { ClassListComponent } from './class/class-list.component';
 import { ClassDetailComponent } from './class/class-detail.component';
 import { ClassFormComponent } from './class/class-form.component';
 import { ClassService } from './class/class.service';
+import { TrainingComponent } from './training/training.component';
+import { TrainingService } from './training/training.service';
 
 
 @NgModule({
@@ -62,6 +64,8 @@ import { ClassService } from './class/class.service';
     ClassListComponent,
     ClassDetailComponent,
     ClassFormComponent,
+
+    TrainingComponent,
     
     LoginComponent,
     RegistredComponent,
@@ -85,7 +89,8 @@ import { ClassService } from './class/class.service';
     ProductService,
     LoginService,
     RegistredService,
-    ClassService
+    ClassService,
+    TrainingService
   ],
   bootstrap: [AppComponent]
 })

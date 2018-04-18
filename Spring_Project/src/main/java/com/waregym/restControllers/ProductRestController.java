@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -26,9 +27,9 @@ public class ProductRestController {
 			@RequestParam(value = "page", defaultValue = "0") int page) {
     	Page<Product> pageProduct = productService.findAllProductPage(new PageRequest(page, 4));
         if (pageProduct != null) {
-        	return new ResponseEntity<Page<Product>>(pageProduct, HttpStatus.OK);
+        	return new ResponseEntity<>(pageProduct, HttpStatus.OK);
         } else {
-        	return new ResponseEntity<Page<Product>>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         
     }
@@ -38,10 +39,10 @@ public class ProductRestController {
         Product product = productService.findOneById(id);
 
         if (product != null) {
-        	return new ResponseEntity<Product>(product, HttpStatus.OK);
+        	return new ResponseEntity<>(product, HttpStatus.OK);
         }
         else {
-        	return new ResponseEntity<Product>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }   
     }
 
@@ -58,9 +59,9 @@ public class ProductRestController {
 
         if (product != null) {
         	productService.deleteProduct(productService.findOneById(id));
-            return new ResponseEntity<Product>(product, HttpStatus.OK);
+            return new ResponseEntity<>(product, HttpStatus.OK);
         } else {
-        	return new ResponseEntity<Product>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         
     }
@@ -70,10 +71,10 @@ public class ProductRestController {
         Product product = productService.findOneById(id);
 
         if (product == null && updatedProduct == null) {
-            return new ResponseEntity<Product>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         updatedProduct.setId(id);
         productService.saveProduct(updatedProduct);
-        return new ResponseEntity<Product>(updatedProduct, HttpStatus.OK);
+        return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
     }
 }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
+import com.waregym.repositories.ActivityRepository;
 import com.waregym.services.UserService;
 import com.waregym.services.ActivityService;
 

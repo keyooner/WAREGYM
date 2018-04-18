@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.waregym.classesJava.Exercise.Basic;
 
 @Entity
 public class Product {

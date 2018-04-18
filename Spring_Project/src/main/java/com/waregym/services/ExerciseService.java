@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.waregym.classesJava.Comment;
 import com.waregym.classesJava.Exercise;
+import com.waregym.classesJava.Product;
 import com.waregym.repositories.ExerciseRepository;
 
 @Service

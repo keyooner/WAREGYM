@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.waregym.classesJava.Product;
 import com.waregym.classesJava.User;
 import com.waregym.repositories.UserRepository;
 

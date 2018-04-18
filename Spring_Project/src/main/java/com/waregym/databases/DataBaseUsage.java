@@ -1,5 +1,6 @@
 package com.waregym.databases;
 
+import com.waregym.repositories.CommentsRepository;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;

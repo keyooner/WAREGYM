@@ -1,6 +1,7 @@
 package com.waregym.controllers;
 
 import com.waregym.classesJava.Comment;
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;

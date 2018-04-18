@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import com.waregym.classesJava.Activity;
 import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
+import com.waregym.restControllers.ActivitiesRestController.ActivityDetail;
 import com.waregym.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,9 +32,9 @@ public class UserRestController {
         List<User> users = userService.findAllUsers();
 
         if (users != null) {
-        	return new ResponseEntity<List<User>>(users, HttpStatus.OK);
+        	return new ResponseEntity<>(users, HttpStatus.OK);
         } else {
-        	return new ResponseEntity<List<User>>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         
     }
@@ -44,10 +45,10 @@ public class UserRestController {
         User product = userService.findOneByName(name);
 
         if (product != null) {
-        	return new ResponseEntity<User>(product, HttpStatus.OK);
+        	return new ResponseEntity<>(product, HttpStatus.OK);
         }
         else {
-        	return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }   
     }
     

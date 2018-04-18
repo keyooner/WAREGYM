@@ -20,9 +20,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
-import com.waregym.classesJava.Activity.Basic;
 
 @Component
 @Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
@@ -66,7 +64,7 @@ public class User {
 	public User(String name, String password, String... roles) {
 		this.name = name;
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
-		this.roles = new ArrayList<>(Arrays.asList(roles));
+		this.roles = new ArrayList<String> (Arrays.asList(roles));
 		this.training = new Training();
 	}
 

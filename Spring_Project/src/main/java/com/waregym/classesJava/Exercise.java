@@ -6,7 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.waregym.classesJava.User.Basic;
 
 @Entity
 public class Exercise{

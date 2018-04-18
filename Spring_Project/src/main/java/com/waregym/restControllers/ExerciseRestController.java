@@ -24,9 +24,9 @@ public class ExerciseRestController {
         List<Exercise> exercises = exerciseService.findAllExercises();
 
         if (exercises != null) {
-        	return new ResponseEntity<>(exercises, HttpStatus.OK);
+        	return new ResponseEntity<List<Exercise>>(exercises, HttpStatus.OK);
         } else {
-        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<List<Exercise>>(HttpStatus.NOT_FOUND);
         }
         
     }
@@ -36,10 +36,10 @@ public class ExerciseRestController {
     	Exercise exercise = exerciseService.findOneById(id);
 
         if (exercise != null) {
-        	return new ResponseEntity<>(exercise, HttpStatus.OK);
+        	return new ResponseEntity<Exercise>(exercise, HttpStatus.OK);
         }
         else {
-        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<Exercise>(HttpStatus.NOT_FOUND);
         }   
     }
 

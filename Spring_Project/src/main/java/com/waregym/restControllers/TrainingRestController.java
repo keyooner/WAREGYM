@@ -1,7 +1,6 @@
 package com.waregym.restControllers;
 
 import com.waregym.classesJava.Training;
-import com.waregym.classesJava.User;
 import com.waregym.services.TrainingService;
 import com.waregym.services.UserService;
 
@@ -29,9 +28,9 @@ public class TrainingRestController {
         Training training = userService.findOneByName(userName).getTraining();
 
         if (training != null) {
-        	return new ResponseEntity<>(training, HttpStatus.OK);
+        	return new ResponseEntity<Training>(training, HttpStatus.OK);
         } else {
-        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<Training>(HttpStatus.NOT_FOUND);
         }   
     }
     
@@ -40,10 +39,10 @@ public class TrainingRestController {
         List<Training> trainings = trainingService.findAllTrainings();
 
         if (trainings != null) {
-        	return new ResponseEntity<>(trainings, HttpStatus.OK);
+        	return new ResponseEntity<List<Training>>(trainings, HttpStatus.OK);
         }
         else {
-        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<List<Training>>(HttpStatus.NOT_FOUND);
         }   
     }
     

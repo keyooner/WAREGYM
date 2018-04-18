@@ -33,9 +33,9 @@ public class ActivitiesRestController {
         List<Activity> activities = activityService.findAllActivities();
 
         if (activities != null) {
-        	return new ResponseEntity<>(activities, HttpStatus.OK);
+        	return new ResponseEntity<List<Activity>>(activities, HttpStatus.OK);
         } else {
-        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<List<Activity>>(HttpStatus.NOT_FOUND);
         }
     }
     
@@ -46,10 +46,10 @@ public class ActivitiesRestController {
     	Activity activity = activityService.findOneById(id);
 
         if (activity != null) {
-        	return new ResponseEntity<>(activity, HttpStatus.OK);
+        	return new ResponseEntity<Activity>(activity, HttpStatus.OK);
         }
         else {
-        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<Activity>(HttpStatus.NOT_FOUND);
         }   
     }
 
@@ -66,9 +66,9 @@ public class ActivitiesRestController {
     	Activity product = activityService.findOneById(id);
         if (product != null) {
         	activityService.deleteActivity(product);
-            return new ResponseEntity<>(product, HttpStatus.OK);
+            return new ResponseEntity<Activity>(product, HttpStatus.OK);
         } else {
-        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<Activity>(HttpStatus.NOT_FOUND);
         }
     }
     

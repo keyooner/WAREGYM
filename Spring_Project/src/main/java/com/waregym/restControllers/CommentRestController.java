@@ -24,9 +24,9 @@ public class CommentRestController {
         List<Comment> comments = commentService.findAllComments();
 
         if (comments != null) {
-        	return new ResponseEntity<>(comments, HttpStatus.OK);
+        	return new ResponseEntity<List<Comment>>(comments, HttpStatus.OK);
         } else {
-        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<List<Comment>>(HttpStatus.NOT_FOUND);
         }
         
     }
@@ -36,10 +36,10 @@ public class CommentRestController {
         Comment comment = commentService.findOneById(id);
 
         if (comment != null) {
-        	return new ResponseEntity<>(comment, HttpStatus.OK);
+        	return new ResponseEntity<Comment>(comment, HttpStatus.OK);
         }
         else {
-        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<Comment>(HttpStatus.NOT_FOUND);
         }   
     }
 
@@ -56,9 +56,9 @@ public class CommentRestController {
 
         if (comment != null) {
         	commentService.deleteComment(commentService.findOneById(id));
-        	return new ResponseEntity<>(comment, HttpStatus.OK);
+        	return new ResponseEntity<Comment>(comment, HttpStatus.OK);
         } else {
-        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<Comment>(HttpStatus.NOT_FOUND);
         }
         
     }
@@ -68,10 +68,10 @@ public class CommentRestController {
         Comment comment = commentService.findOneById(id);
 
         if (comment == null && updatedComment == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Comment>(HttpStatus.NOT_FOUND);
         }
         updatedComment.setId(id);
         commentService.saveComment(updatedComment);
-        return new ResponseEntity<>(updatedComment, HttpStatus.OK);
+        return new ResponseEntity<Comment>(updatedComment, HttpStatus.OK);
     }
 }

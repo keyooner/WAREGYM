@@ -19,7 +19,7 @@ public class RestSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.antMatcher("/api/**");
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/logIn").permitAll();
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/logIn").authenticated();
 		
 		// URLs that need authentication to access to it
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/clases").hasRole("ADMIN");
@@ -33,7 +33,8 @@ public class RestSecurityConfig extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/exercises").hasAnyRole("ADMIN","USER","TEACH");
 		
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/productos").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/producto/{id}").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/producto/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/productos").hasRole("ADMIN");
 		
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/entrenamientos").hasAnyRole("ADMIN","USER","TEACH");
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/entrenamiento/{userName}").hasAnyRole("ADMIN","USER","TEACH");

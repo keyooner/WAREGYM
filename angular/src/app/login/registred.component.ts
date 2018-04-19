@@ -12,6 +12,7 @@ export class RegistredComponent {
 
     newUser: boolean;
     user: User;
+    rePass: string;
 
     constructor(
         private router: Router,
@@ -29,6 +30,17 @@ export class RegistredComponent {
       this.newUser = true;
     }
         }
+
+    validationPassword() {
+      if (this.rePass === this.user.passwordHash) {
+        this.registredUser() 
+        console.log(this.rePass)
+        console.log(this.user.passwordHash)
+      } else {
+        window.confirm('Las contraseñas no coinciden.')
+        this.router.navigate(['/registro']);
+      }
+    }    
 
     registredUser() {
         this.service.registredUser(this.user).subscribe(

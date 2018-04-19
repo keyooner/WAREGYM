@@ -13,10 +13,15 @@
                 <div class="form-field">
                     <input [(ngModel)]="user.passwordHash" type="password" name="passwordHash" class="full-width" placeholder="Contraseña" required/>
                 </div>
+
+                <h4>Repetir Contraseña</h4>
+                <div class="form-field">
+                    <input [(ngModel)]="rePass" type="password" name="passwordHash" class="full-width" placeholder="Contraseña" required/>
+                </div>
                 
                 <div class="text-center">
                     <re-captcha (resolved)="resolved($event)" siteKey="6LfUZBMUAAAAAJIFByqzdQzO3KLzX79bmrQuzeW1"></re-captcha>
-                    <button (click)="registredUser()" class="submit full-width">Registrarme</button>
+                    <button (click)="validationPassword()" class="submit full-width">Registrarme</button>
                     <button (click)="cancel()" class="submit btn btn--primary full-width">Cancelar</button>
                 </div>
             </div>

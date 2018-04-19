@@ -1,24 +1,27 @@
 <!-- s-content
     ================================================== -->
     <section class="s-content s-content--narrow">
+        <form *ngIf="!loginService.isLogged" role="search">
+
             <div class="row">
                 <div class="text-center">
                     <h2>Iniciar Sesión</h2>
                 </div>
                     <h4>Usuario</h4>
                     <div class="form-field">
-                        <input [(ngModel)]="userName" type="text" name="username" class="full-width" placeholder="Usuario" required/>
+                        <input #user type="text" class="form-control full-width" name="username" placeholder="Username" required/>
                     </div>
 
                     <h4>Contraseña</h4>
                     <div class="form-field">
-                        <input [(ngModel)]="password" type="password" name="password" class="full-width" placeholder="Contraseña" required/>
+                        <input #pass type="password" class="form-control full-width" name="password" placeholder="Password" required/>
                     </div>
                     
                     <div class="text-center">
-                        <button (click)="logIn()" class="submit full-width">Iniciar Sesión</button>
+                        <button type="submit" (click)="logIn($event, user.value, pass.value)" class="btn full-width">Iniciar Sesión</button>
                         <button (click)="gotoRegistred()" class="submit btn btn--primary full-width">Registrarme</button>
                     </div>
              </div>
-         </section>
+        </form>
+    </section>
 <!-- s-content -->

@@ -1,30 +1,28 @@
 import { Component } from '@angular/core';
-import {LoginService} from './login.service';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { LoginService } from './login.service';
 
 @Component({
-    moduleId: module.id,
-    selector: 'loginComponent',
-    templateUrl: 'login.component.html',
-    styleUrls: ['login.component.scss']
+  selector: 'login',
+  templateUrl: './login.component.html'
 })
-
 export class LoginComponent {
-    userName: string;
-    password: string;
 
-    constructor (private loginService: LoginService, private router: Router) {}
+  constructor(private router: Router,
+    activatedRoute: ActivatedRoute, private loginService: LoginService) { }
 
-    logIn() {
-        this.loginService.logIn(this.userName, this.password).subscribe(
-            response => this.router.navigate(['/index']),
-            error => window.confirm("Usuario o contraseña erróneo :(")
-        );      
-    }
+  logIn(event: any, user: string, pass: string) {
 
-    gotoRegistred () {
-        this.router.navigate(['/registro']);
-    }
+    event.preventDefault();
+
+    this.loginService.logIn(user, pass).subscribe(
+      u => console.log(u),
+      error => alert('Invalid user or password')
+    );
+  }
+
+  gotoRegistred() {
+    this.router.navigate(['/registro']);
+  }
+
 }

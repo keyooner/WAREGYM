@@ -29,7 +29,7 @@ import { ProductEditComponent } from './product/product-edit.component';
 import { ProductService } from './product/product.service';
 
 import { LoginComponent } from './login/login.component';
-import {LoginService } from './login/login.service';
+import { LoginService } from './login/login.service';
 import { RegistredComponent } from './login/registred.component';
 import { RegistredService } from './login/registred.service';
 
@@ -90,7 +90,8 @@ import { TrainingService } from './training/training.service';
     LoginService,
     RegistredService,
     ClassService,
-    TrainingService
+    TrainingService,
+
   ],
   bootstrap: [AppComponent]
 })

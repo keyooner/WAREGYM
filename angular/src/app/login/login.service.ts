@@ -1,38 +1,83 @@
-import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import { Injectable, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/Rx';
 
+const URL = 'https://localhost:8443/api';
+
+export interface User {
+    id?: number;
+    name: string;
+    roles: string[];
+}
 
 @Injectable()
 export class LoginService {
-    user: string;
-    pass: string;
 
-    constructor(private http: Http) {}
+    isLogged = false;
+    isAdmin = false;
+    user: User;
 
-logIn(user: string, pass: string) {
+    constructor(private http: Http, private router: Router, activatedRoute: ActivatedRoute) {
+        this.reqIsLogged();
+    }
 
-    this.user = user;
-    this.pass = pass;
+    reqIsLogged() {
 
-    const userPass = user + ':' + pass;
+        const headers = new Headers({
+            'X-Requested-With': 'XMLHttpRequest'
+        });
 
-    const headers = new Headers({
-        'Authorization': 'Basic ' + utf8_to_b64(userPass),
-        'X-Requested-With': 'XMLHttpRequest'
-    });
+        const options = new RequestOptions({ withCredentials: true, headers });
 
-    const options = new RequestOptions({ withCredentials: true, headers });
+        this.http.get(URL + '/logIn', options).subscribe(
+            response => { this.processLogInResponse(response),
+            this.router.navigate(['/registro'])
+        },
+            error => {
+                if (error.status !== 401) {
+                    console.error('Error de inicio de sesión: ' +
+                        JSON.stringify(error));
+                }
+            }
+        );
+    }
 
-    return this.http.get("https://localhost:8443/api/clases", options)
-        .map(response => response.json())
-        .catch(error => error.json()
-    );
-}
+    private processLogInResponse(response) {
+        this.isLogged = true;
+        this.user = response.json();
+        this.isAdmin = this.user.roles.indexOf('ROLE_ADMIN') !== -1;
+    }
 
-registred() {}
+    logIn(user: string, pass: string) {
 
+        const userPass = user + ':' + pass;
+
+        const headers = new Headers({
+            'Authorization': 'Basic ' + utf8_to_b64(userPass),
+            'X-Requested-With': 'XMLHttpRequest'
+        });
+
+        const options = new RequestOptions({ withCredentials: true, headers });
+
+        return this.http.get(URL + '/logIn', options).map(
+            response => {
+                this.processLogInResponse(response);
+                return this.user;
+            }
+        );
+    }
+
+    logOut() {
+
+        return this.http.get(URL + '/logOut', { withCredentials: true }).map(
+            response => {
+                this.isLogged = false;
+                this.isAdmin = false;
+                return response;
+            }
+        );
+    }
 }
 
 function utf8_to_b64(str) {
@@ -40,4 +85,3 @@ function utf8_to_b64(str) {
         return String.fromCharCode(<any>'0x' + p1);
     }));
 }
-

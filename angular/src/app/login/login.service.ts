@@ -16,6 +16,9 @@ export class LoginService {
 
     isLogged = false;
     isAdmin = false;
+    isTeach = false;
+    isUser = false;
+    notLogged = true;
     user: User;
 
     constructor(private http: Http, private router: Router, activatedRoute: ActivatedRoute) {
@@ -45,8 +48,11 @@ export class LoginService {
 
     private processLogInResponse(response) {
         this.isLogged = true;
+        this.notLogged = false;
         this.user = response.json();
+        this.isUser = this.user.roles.indexOf('ROLE_USER') !== -1;
         this.isAdmin = this.user.roles.indexOf('ROLE_ADMIN') !== -1;
+        this.isTeach = this.user.roles.indexOf('ROLE_TEACH') !== -1;
     }
 
     logIn(user: string, pass: string) {

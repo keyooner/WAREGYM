@@ -1,0 +1,33 @@
+<!-- s-content
+    ================================================== -->
+    <section class="s-content s-content--narrow">
+        <div class="row text-center">
+                
+            <div *ngIf="loginService.isLogged">
+                
+                <h1 class="h3 mb-3 font-weight-normal">Bienvenido a tu área personal {{loginService.user.name}}</h1>
+                
+                <div *ngIf="loginService.isUser">
+                    <h5>¿Qué deseas hacer?</h5>
+                    <button (click)="gotoMyTraining()" class="submit full-width">Mi entrenamiento</button>
+                    <button (click)="gotoViewClass()" class="submit full-width">Ver clases</button>
+                    <button (click)="gotoViewProducts()" class="submit full-width">Productos disponibles</button>
+                </div>
+
+                <div *ngIf="loginService.isAdmin">
+                    <h5>Eres Administrador</h5>
+                    <button (click)="gotoAddClass()" class="submit full-width">Añadir Clases</button>
+                    <button (click)="gotoAddProduct()" class="submit full-width">Añadir Productos</button>
+                    <button (click)="gotoViewMessages()" class="submit full-width">Ver Mensajes</button>
+                </div>
+
+                <div *ngIf="loginService.isTeach">
+                    <h5>Eres Profesor</h5>
+                    <button (click)="gotoAddClass()" class="submit full-width">Añadir Clases</button>
+                    <button (click)="gotoAddProduct()" class="submit full-width">Añadir Productos</button>
+                    <button (click)="gotoViewClass()" class="submit full-width">Ver clases</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- s-content -->

@@ -76,29 +76,20 @@
                        
                           <li><a [routerLink]="['/productos']">Productos disponibles</a></li>
                       </ul>
-                  </li>
+                    </li>
                  
-                  <li><a [routerLink]="['/contacto']" title="">Contacto</a></li>
+                     <li><a [routerLink]="['/contacto']" title="">Contacto</a></li>
                   
-              <li><a [routerLink]="['/login']" title="">Iniciar Sesión</a></li>
-                  
-                  <li><a href="/profile"></a></li>
-                  
+                     <li *ngIf="loginService.notLogged"><a [routerLink]="['/login']" title="">Iniciar Sesión</a></li>
+
+            
+                    <li *ngIf="loginService.isLogged">
+                        <a [routerLink]="['/perfil']">{{loginService.user.name}}</a>
+                    </li>
+                    <li *ngIf="loginService.isLogged">
+                        <button class="btn" (click)="logOut()" type="button">Log Out</button>
+                    </li>
               </ul>
-
-              <div *ngIf="loginService.isLogged" class="nav navbar-nav navbar-right">
-
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="#">{{loginService.user.name}}</a>
-                        </li>
-                        <li>
-                            <button class="btn" (click)="logOut()" type="button">Log Out</button>
-                        </li>
-                    </ul>
-                
-                </div>
-
               <!-- end header__nav -->
     
               <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>

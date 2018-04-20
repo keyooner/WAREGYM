@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from '../login/login.service';
 import { LoginComponent } from '../login/login.component';
 
@@ -6,15 +7,14 @@ import { LoginComponent } from '../login/login.component';
     moduleId: module.id,
     selector: 'headerComponent',
     templateUrl: 'header.component.html',
-    styleUrls: ['header.component.scss']
 })
 export class HeaderComponent {
 
-    constructor (public loginService: LoginService) {}
+    constructor (private router: Router, public loginService: LoginService) {}
 
     logOut() {
     this.loginService.logOut().subscribe(
-      response => { },
+      response => { this.router.navigate(['/login']), window.alert('Te has desconectado con éxito') },
       error => console.log('Error when trying to log out: ' + error)
     );
   }

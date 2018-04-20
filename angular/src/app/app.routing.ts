@@ -22,13 +22,16 @@ import { ClassListComponent } from './class/class-list.component';
 import { ClassDetailComponent } from './class/class-detail.component';
 import { ClassFormComponent } from './class/class-form.component';
 
-import {WaregymComponent} from './waregym/waregym.component';
+import { WaregymComponent } from './waregym/waregym.component';
 import { TrainingComponent } from './training/training.component';
+
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes = [
   { path: 'index', component: IndexComponent, useAsDefault: true},
   { path: 'login', component: LoginComponent},
   { path: 'registro', component: RegistredComponent },
+  { path: 'perfil', component: ProfileComponent },
 
   { path: 'comentarios', component: ContactListComponent },
   { path: 'contacto', component: ContactFormComponent },

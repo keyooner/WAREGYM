@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { routing }  from './app.routing';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AgmCoreModule } from '@agm/core';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
+import { CommonModule } from "@angular/common";
 
 
 import { AppComponent } from './app.component';
@@ -42,6 +43,7 @@ import { ClassService } from './class/class.service';
 import { TrainingComponent } from './training/training.component';
 import { TrainingService } from './training/training.service';
 
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,9 @@ import { TrainingService } from './training/training.service';
     LoginComponent,
     RegistredComponent,
 
-    WaregymComponent
+    WaregymComponent,
+
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -78,6 +82,7 @@ import { TrainingService } from './training/training.service';
     FormsModule, 
     HttpModule, 
     JsonpModule,
+    CommonModule,
     routing,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyATELNKgTAuJcLmWZFFZoEO6-mhjGbJrRs'}),

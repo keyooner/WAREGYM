@@ -7,7 +7,7 @@ import { Contact, ContactService } from './contact.service';
    template: `
     <section class="s-content s-content--narrow">
         <div class="text-center">
-            <h2> Mensaje Enviado correctamente </h2>
+            <h2> Mensaje enviado correctamente </h2>
             <button (click)="gotoContact()">Volver a contacto</button>
         </div>
     </section>

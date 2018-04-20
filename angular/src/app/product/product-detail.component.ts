@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Product, ProductService } from './product.service';
+import { LoginService } from '../login/login.service';
 
 @Component({
     moduleId: module.id,
@@ -12,7 +13,10 @@ export class ProductDetailComponent {
 
     product: Product;
 
-    constructor(private router: Router, activatedRoute: ActivatedRoute, public service: ProductService) {
+    constructor(private router: Router, 
+        activatedRoute: ActivatedRoute, 
+        public service: ProductService, 
+        public loginService: LoginService) {
 
         const id = activatedRoute.snapshot.params['id'];
         service.getProduct(id).subscribe(

@@ -15,7 +15,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.waregym.classesJava.User;
-import com.waregym.repositories.UserRepository;
 import com.waregym.securityclasses.UserComponent;
 
 @Component

@@ -15,7 +15,7 @@
                 <h2><a [routerLink]="['/clase', gclass.id]">{{gclass.name}}</a></h2>
               </li>
             </ul>
-              <button (click)="newClass()">Añadir Clase</button>
+              <button *ngIf="loginService.isTeach || loginService.isAdmin" (click)="newClass()">Añadir Clase</button>
         </div>
 
     </article>

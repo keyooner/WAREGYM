@@ -33,7 +33,7 @@
                         </span>
                     </div>
                     <div>
-                    <p><button (click)="removeProduct()">Eliminar Producto</button></p>
+                    <button *ngIf="loginService.isAdmin" (click)="removeProduct()">Eliminar Producto</button>
                     </div>
                 </div>
             </article> <!-- end article -->
@@ -46,7 +46,7 @@
     <div class="text-center">
         
         <button (click)="gotoProducts()">Todos los productos</button>
-        <button (click)="editProduct()">Editar Producto</button>
+        <button *ngIf="loginService.isAdmin" (click)="editProduct()">Editar Producto</button>
      
     </div>
 

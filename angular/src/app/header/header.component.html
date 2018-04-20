@@ -52,33 +52,35 @@
               <ul class="header__nav">
                   <li ><a [routerLink]="['/index']" title="">Inicio</a></li>
                   <li class="has-children">
-                      <a href="#0" title="">Clases</a>
+                      <a [routerLink]="['/clases']" title="">Clases</a>
                       <ul class="sub-menu">
                         <li><a [routerLink]="['/clases']">Clases disponibles</a></li>
-                        <li><a [routerLink]="['/clase/new']">Añadir Clase</a></li>
+                        <li *ngIf="loginService.isAdmin || loginService.isTeach"><a [routerLink]="['/clase/new']">Añadir Clase</a></li>
                       </ul>
                   </li>
+
                   <li class="has-children">
-                      <a href="#0" title="">Entrenamientos</a>
+                      <a [routerLink]="['/training']" title="">Entrenamientos</a>
                        <ul class="sub-menu">
                           <li><a [routerLink]="['/training']">Mi entrenamiento</a></li>
-                          
-                          <li><a href="/entrenamientos/{{training}}"></a></li>
-                         
                       </ul>
                   </li>
                   <li><a [routerLink]="['/waregym']" title="">Waregym</a></li>
+
                   <li class="has-children">
-                      <a href="#0" title="">Productos</a>
-                      <ul class="sub-menu">
-                        
-                        <li><a [routerLink]="['/producto/new']">Añadir producto</a></li>
-                       
-                          <li><a [routerLink]="['/productos']">Productos disponibles</a></li>
-                      </ul>
-                    </li>
-                 
-                     <li><a [routerLink]="['/contacto']" title="">Contacto</a></li>
+                    <a [routerLink]="['/productos']" title="">Productos</a>
+                    <ul class="sub-menu">
+                        <li *ngIf="loginService.isAdmin || loginService.isTeach"><a [routerLink]="['/producto/new']">Añadir producto</a></li>
+                        <li><a [routerLink]="['/productos']">Productos disponibles</a></li>
+                    </ul>
+                  </li>
+                  
+                  <li class="has-children">
+                    <a [routerLink]="['/contacto']" title="">Contacto</a>
+                    <ul class="sub-menu">
+                        <li *ngIf="loginService.isAdmin"><a [routerLink]="['/comentarios']">Ver Comentarios</a></li>
+                    </ul>
+                  </li>
                   
                      <li *ngIf="loginService.notLogged"><a [routerLink]="['/login']" title="">Iniciar Sesión</a></li>
 

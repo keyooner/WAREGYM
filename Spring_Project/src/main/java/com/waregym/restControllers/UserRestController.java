@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonView;
 import com.waregym.classesJava.Activity;
 import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
-import com.waregym.restControllers.ActivitiesRestController.ActivityDetail;
 import com.waregym.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

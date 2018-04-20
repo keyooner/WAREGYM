@@ -1,6 +1,5 @@
 package com.waregym.controllers;
 
-import java.security.Principal;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +14,6 @@ import com.waregym.classesJava.Activity;
 import com.waregym.classesJava.ActivityInscribed;
 import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
-import com.waregym.repositories.ActivityRepository;
 import com.waregym.services.UserService;
 import com.waregym.services.ActivityService;
 

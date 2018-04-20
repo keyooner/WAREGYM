@@ -1,7 +1,6 @@
 package com.waregym.restControllers;
 
 import com.waregym.classesJava.Training;
-import com.waregym.classesJava.User;
 import com.waregym.services.TrainingService;
 import com.waregym.services.UserService;
 

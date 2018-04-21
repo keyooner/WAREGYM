@@ -9,7 +9,7 @@ import { LoginService } from './login.service';
 export class LoginComponent {
 
   constructor(private router: Router,
-    activatedRoute: ActivatedRoute, private loginService: LoginService) { }
+    activatedRoute: ActivatedRoute, public loginService: LoginService) { }
 
   logIn(event: any, user: string, pass: string) {
 

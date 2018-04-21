@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import {User} from '../login/login.service';
 import 'rxjs/Rx';
+
 
 export interface Class {
   id?: number;
@@ -12,6 +14,7 @@ export interface Class {
   description: string;
   development: string;
   benefit: string;
+  users :User[];
 }
 
 const URL = 'https://localhost:8443/api/clases/';

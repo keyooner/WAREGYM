@@ -38,14 +38,13 @@ import { ProductFormComponent } from './product-form.component';
   }
 
   saveEditProduct() {
-    console.log(this.product.image);
-    let parse = this.product.image.split('\\');
-    this.product.image = parse[parse.length - 1];
-    this.service.saveProduct(this.product).subscribe(
-      product => { } ,
-      error => console.error('Error al guardar el nuevo producto: ' + error)
-    );
-    window.confirm('Seguro que quieres guardar los cambios en el producto?')
-    this.router.navigate(['/productos']);
-  }
+      let parse = this.product.image.split('\\');
+      this.product.image = parse[parse.length - 1];
+      this.service.saveProduct(this.product).subscribe(
+        product => { } ,
+        error => console.error('Error creating new product: ' + error)
+      );
+      window.confirm('Seguro que quieres crear este producto?')
+      this.router.navigate(['/productos']);
+    }
 }

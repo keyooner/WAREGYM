@@ -14,7 +14,8 @@ export interface Class {
   description: string;
   development: string;
   benefit: string;
-  users :User[];
+  schedule: boolean[];
+  users: User[];
 }
 
 const URL = 'https://localhost:8443/api/clases/';

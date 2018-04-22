@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Product, ProductService } from './product.service';
+import { LoginService } from '../login/login.service';
 
 @Component({
   moduleId: module.id,
@@ -14,7 +15,7 @@ export class ProductListComponent implements OnInit {
   max: number;
   page = 0;
 
-  constructor(private router: Router, private service: ProductService) { }
+  constructor(private router: Router, private service: ProductService, private loginService: LoginService) { }
 
   ngOnInit() {
     this.service.getProducts(this.page).subscribe(

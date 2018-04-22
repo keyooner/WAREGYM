@@ -7,8 +7,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
 
 import com.waregym.classesJava.Comment;
+import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
 import com.waregym.services.CommentService;
+import com.waregym.services.TrainingService;
 import com.waregym.services.UserService;
 
 @Controller
@@ -19,6 +21,9 @@ public class DataBaseUsage implements CommandLineRunner{
 	 
 	 @Autowired
 	 	private CommentService commentService;
+	 
+	 @Autowired
+	 	private TrainingService trainingService;
 
 	    @PostConstruct
 	    private void initDatabase() {
@@ -31,6 +36,11 @@ public class DataBaseUsage implements CommandLineRunner{
 			
 		    commentService.saveComment(new Comment("Pepe", "pp@gmail.com", 123456789 ,"Comentario 1"));
 			commentService.saveComment(new Comment("Juan", "juan@gmail.com", 123456789 ,"Comentario 2"));
+			
+			trainingService.saveTraining(new Training("Principiante"));
+			trainingService.saveTraining(new Training("Avanzado"));
+			trainingService.saveTraining(new Training("Medio"));
+			trainingService.saveTraining(new Training("Experto"));
 			
 	    }
 

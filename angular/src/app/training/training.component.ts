@@ -51,7 +51,8 @@ export class TrainingComponent {
     }
     
     saveTraining() {
-        this.service.saveTraining(this.training).subscribe(
+        console.log(this.currentTraining);
+        this.service.saveTraining(this.training, this.currentTraining).subscribe(
             training => { } ,
             error => console.error('Error creating new training: ' + error)
         );

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
+import { LoginService } from '../login/login.service';
 
 export interface Exercise{
     id?:number;
@@ -19,7 +20,7 @@ export interface Training{
 const URL = 'https://localhost:8443/api/entrenamientos/';
 @Injectable()
 export class TrainingService {
-    constructor(private http:Http) {}
+    constructor(private http:Http, private loginService: LoginService) {}
     abdPrincipiante:number;
     
     getTrainings(page: number) {
@@ -34,7 +35,7 @@ export class TrainingService {
           .catch(error => this.handleError(error));
     }
 
-    saveTraining(training: Training) {
+    saveTraining(training: Training, id: string) {
 
         const body = JSON.stringify(training);
         const headers = new Headers({
@@ -43,12 +44,12 @@ export class TrainingService {
         });
         const options = new RequestOptions({ withCredentials: true, headers });
     
-        if (!training.id) {
+        if (!id) {
           return this.http.post(URL, body, options)
             .map(response => response.json())
             .catch(error => this.handleError(error));
         } else {
-          return this.http.put(URL + training.id, body, options)
+          return this.http.put(URL + this.loginService.user.name + '/' + id, body, options)
             .map(response => response.json())
             .catch(error => this.handleError(error));
         }

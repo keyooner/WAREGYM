@@ -1,6 +1,7 @@
 package com.waregym.restControllers;
 
 import com.waregym.classesJava.Training;
+import com.waregym.classesJava.User;
 import com.waregym.services.TrainingService;
 import com.waregym.services.UserService;
 
@@ -65,13 +66,15 @@ public class TrainingRestController {
         return newTraining;
     }
     
-    /*@RequestMapping(value = "/entrenamientos/{userName}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/entrenamientos/{userName}/{newTraining}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.CREATED)
-    public Training newTrainingForUser(@RequestBody Training newTraining, @PathVariable String userName) {
+    public Training newTrainingForUser(@PathVariable long newTraining, @PathVariable String userName) {
         User user = userService.findOneByName(userName);
-    	user.setTraining(newTraining);
-    	trainingService.saveTraining(newTraining);
-        return newTraining;
+        Training training = trainingService.findOneById(newTraining);
+    	user.setTraining(training);
+    	userService.saveUser(user);
+    	// trainingService.saveTraining(newTraining);
+        return training;
     }
 
     /*@RequestMapping(value = "/productos/{id}", method = RequestMethod.DELETE)

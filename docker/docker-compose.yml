@@ -21,14 +21,14 @@ services:
 
   app:
     container_name: waregym 
-    image: hervas/demo:latest
+    image: waregym:dev
     volumes:
       - ./app/data:/app/uploaded
     depends_on:
       mysql:
         condition: service_healthy
     ports:
-      - "8080:8080"
+      - "80:80"
     environment:
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=pass

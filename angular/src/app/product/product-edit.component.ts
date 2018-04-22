@@ -38,6 +38,9 @@ import { ProductFormComponent } from './product-form.component';
   }
 
   saveEditProduct() {
+    console.log(this.product.image);
+    let parse = this.product.image.split('\\');
+    this.product.image = parse[parse.length - 1];
     this.service.saveProduct(this.product).subscribe(
       product => { } ,
       error => console.error('Error al guardar el nuevo producto: ' + error)

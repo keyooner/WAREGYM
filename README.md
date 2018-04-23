@@ -121,5 +121,8 @@ execute docker-compose up in the /docker folder
 ### Build and install docker image
 execute the build.sh script in /docker. You can check out the contents of the script if you're interested in how it works internally.
 
+### Angular class diagram:
+![It shows the Angular class diagram] (https://github.com/keyooner/WAREGYM/blob/master/Images_readme/angular_class_diagram.png "Diagrama de Clases en Angular")
+- It shows the Angular class diagram
 
 

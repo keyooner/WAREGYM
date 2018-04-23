@@ -43,7 +43,7 @@ public class ProductsController {
 	UserService userService;
 	
 	
-	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "files");
+	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "../angular/src/assets/files");
 	
 	@PostConstruct
 	public void init() throws IOException {
@@ -164,11 +164,11 @@ public class ProductsController {
 			model.addAttribute("userName",request.getRemoteUser());
 		} else {model.addAttribute("userName", "");}
 		
-		String fileName = "image-" + product.getName() + ".jpg";
+		String fileName = file.getOriginalFilename();
 		
 		if (file.isEmpty()) {
 			
-			//Error file empty
+			product.setImage("");
 			
 		} else {
 			

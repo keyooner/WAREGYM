@@ -110,7 +110,7 @@ public class ActivitiesController {
 		
 		for (int i=0; i<3; i++) {
 			
-			fileName[i] = files[i].getOriginalFilename();
+			fileName[i] = files[i].getName() + ".jpg";
 			
 			if (files[i].isEmpty()) {
 				

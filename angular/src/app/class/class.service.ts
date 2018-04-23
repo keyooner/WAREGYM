@@ -14,7 +14,7 @@ export interface Class {
   description: string;
   development: string;
   benefit: string;
-  schedule: string[][];
+  schedule: boolean[];
   users: User[];
 }
 

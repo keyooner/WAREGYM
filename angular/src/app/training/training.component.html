@@ -22,10 +22,9 @@
         
         <br>
             <!-- INFO -->
-
-                <div *ngIf="currentTraining == '6'" id="beginner">
-                        <h2 style="text-align: center">INFORMACIÓN DEL ENTRENAMIENTO PRINCIPIANTE</h2>
-                        <p class="lead" style="text-align: center">El entrenamiento elegido tendra los siguientes ejercicios...</p>
+            <h2 style="text-align: center">INFORMACIÓN DEL ENTRENAMIENTO ({{currentTraining}})</h2>
+            <p class="lead" style="text-align: center">El entrenamiento elegido tendra los siguientes ejercicios...</p>
+                <div *ngIf="currentTraining == 'principiante'" id="beginner">
                     <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
                         <div class="entry__text">
                             <div class="entry__header">
@@ -84,9 +83,7 @@
 
                 <!-- Medium training info -->
                 
-                <div *ngIf="currentTraining == '7'" id="medium">
-                        <h2 style="text-align: center">INFORMACIÓN DEL ENTRENAMIENTO AVANZADO</h2>
-                        <p class="lead" style="text-align: center">El entrenamiento elegido tendra los siguientes ejercicios...</p>
+                <div *ngIf="currentTraining == 'medio'" id="medium">
                         <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
                             <div class="entry__text">
                                 <div class="entry__header">
@@ -159,9 +156,7 @@
                     </div>
                     
                     
-                    <div *ngIf="currentTraining == '8'" id="advanced" >
-                            <h2 style="text-align: center">INFORMACIÓN DEL ENTRENAMIENTO MEDIO</h2>
-                            <p class="lead" style="text-align: center">El entrenamiento elegido tendra los siguientes ejercicios...</p>
+                    <div *ngIf="currentTraining == 'avanzado'" id="advanced" >
                         <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
                             <div class="entry__text">
                                 <div class="entry__header">
@@ -245,9 +240,7 @@
                     </div>
                     <!-- Expert info -->
                 
-                <div *ngIf=" currentTraining == '9'" id="expert" >
-                        <h2 style="text-align: center">INFORMACIÓN DEL ENTRENAMIENTO EXPERTO</h2>
-                        <p class="lead" style="text-align: center">El entrenamiento elegido tendra los siguientes ejercicios...</p>
+                <div *ngIf=" currentTraining == 'experto'" id="expert" >
                         <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
                             <div class="entry__text">
                                 <div class="entry__header">

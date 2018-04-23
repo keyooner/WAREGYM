@@ -10,13 +10,10 @@
 
             <h1 class="lead">Clases Disponibles</h1><br>
 
-            <ul class="items">
-              <li *ngFor="let gclass of classes">
+            <div *ngFor="let gclass of classes">
                 <h2><a [routerLink]="['/clase', gclass.id]">{{gclass.name}}</a></h2>
-                <button><p></p></button>
-                <p>{{oo}}</p>
-              </li>
-            </ul>
+            </div>
+
               <button *ngIf="loginService.isTeach || loginService.isAdmin" (click)="newClass()">Añadir Clase</button>
         </div>
 

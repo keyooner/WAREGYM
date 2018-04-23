@@ -41,7 +41,7 @@ public class ActivitiesController {
 	UserService userService;
 	
 	
-	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "files");
+	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "../angular/src/assets/files");
 	
 	@PostConstruct
 	public void init() throws IOException {

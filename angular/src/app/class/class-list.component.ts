@@ -13,8 +13,8 @@ export class ClassListComponent implements OnInit {
 
   classes: Class[];
   booleans: boolean[];
-  o:boolean;
-  oo='';
+  //o:boolean;
+  //oo='';
 
   constructor(private router: Router, private service: ClassService, public loginService: LoginService) { }
 
@@ -23,8 +23,8 @@ export class ClassListComponent implements OnInit {
       classes => this.classes = classes,
       error => console.log(error)
     );
-    this.booleans[0]=true;
-    this.oo='aaa';
+    //this.booleans[0]=true;
+    //this.oo='aaa';
     
   }
 

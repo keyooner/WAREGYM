@@ -35,6 +35,8 @@ export class ClassFormComponent {
   }
 
   saveClass() {
+    let parse = this.gclass.image1.split('\\');
+    this.gclass.image1 = parse[parse.length - 1];
     this.service.saveClass(this.gclass).subscribe(
       gclass => { },
       error => console.error('Error creating new class: ' + error)

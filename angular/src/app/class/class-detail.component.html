@@ -11,9 +11,9 @@
         <!-- end s-content__header -->
         <div class="s-content__media col-full">
             <div class="s-content__post-thumb">
-                <img src="../assets/images/piscina.jpg" srcset="../assets/images/piscina.jpg 2000w, 
-                          ../assets/images/piscina.jpg 1000w, 
-                          ../assets/images/piscina.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+                <img src="../assets/images/{{gclass.image1}}" srcset="../assets/images/{{gclass.image1}} 2000w, 
+                          ../assets/images/{{gclass.image1}} 1000w, 
+                          ../assets/images/{{gclass.image1}} 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
             </div>
         </div>
         <!-- end s-content__media -->
@@ -29,8 +29,6 @@
                 <h1>Desarrollo de una clase</h1>
 
                 <p>{{gclass.development}}</p>
-
-                <img src="../assets/image/{{gclass.image}}" srcset="../assets/image/{{gclass.image}} 2000w, ../assets/image/{{gclass.image}} 1000w, ../assets/image/{{gclass.image}} 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
 
                 <div class="text-center">
                     <h1>Beneficios</h1>
@@ -58,27 +56,27 @@
                 <tbody>
                     <tr>
                         <th style="text-align:center" scope="row">10:00</th>
-                        <td style="text-align:center"><p ng-if="gclass.schedule[0]">X</p></td>
-                        <td style="text-align:center"><p ng-if="gclass.schedule[1]">X</p></td>
-                        <td style="text-align:center"><p ng-if="gclass.schedule[2]">X</p></td>
-                        <td style="text-align:center"><p ng-if="gclass.schedule[3]">X</p></td>
-                        <td style="text-align:center"><p ng-if="gclass.schedule[4]">X</p></td>
+                        <td style="text-align:center">{{gclass.schedule[0][0]}}</td>
+                        <td style="text-align:center">{{gclass.schedule[1][0]}}</td>
+                        <td style="text-align:center">{{gclass.schedule[2][0]}}</td>
+                        <td style="text-align:center">{{gclass.schedule[3][0]}}</td>
+                        <td style="text-align:center">{{gclass.schedule[4][0]}}</td>
                     </tr>
                     <tr>
                         <th style="text-align:center" scope="row">12:00</th>
-                        <td style="text-align:center"><p ng-if="gclass.schedule[5]">X</p></td>
-                        <td style="text-align:center"><p ng-if="gclass.schedule[6]">X</p></td>
-                        <td style="text-align:center"><p ng-if="gclass.schedule[7]">X</p></td>
-                        <td style="text-align:center"><p ng-if="gclass.schedule[8]">X</p></td>
-                        <td style="text-align:center"><p ng-if="gclass.schedule[9]">X</p></td>
+                        <td style="text-align:center">{{gclass.schedule[0][1]}}</td>
+                        <td style="text-align:center">{{gclass.schedule[1][1]}}</td>
+                        <td style="text-align:center">{{gclass.schedule[2][1]}}</td>
+                        <td style="text-align:center">{{gclass.schedule[3][1]}}</td>
+                        <td style="text-align:center">{{gclass.schedule[4][1]}}</td>
                     </tr>
                     <tr>
                         <th style="text-align:center" scope="row">17:00</th>
-                        <td style="text-align:center"><p ng-if="gclass.schedule[10]">X</p></td>
-                        <td style="text-align:center"><p ng-if="gclass.schedule[11]">X</p></td>
-                        <td style="text-align:center"><p ng-if="gclass.schedule[12]">X</p></td>
-                        <td style="text-align:center"><p ng-if="gclass.schedule[13]">X</p></td>
-                        <td style="text-align:center"><p ng-if="gclass.schedule[14]">X</p></td>
+                        <td style="text-align:center">{{gclass.schedule[0][2]}}</td>
+                        <td style="text-align:center">{{gclass.schedule[1][2]}}</td>
+                        <td style="text-align:center">{{gclass.schedule[2][2]}}</td>
+                        <td style="text-align:center">{{gclass.schedule[3][2]}}</td>
+                        <td style="text-align:center">{{gclass.schedule[4][2]}}</td>
                     </tr>
                 </tbody>
             </table>

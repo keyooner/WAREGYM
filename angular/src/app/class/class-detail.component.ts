@@ -29,6 +29,7 @@ export class ClassDetailComponent {
                 error => console.error(error)
             );
         }
+        this.router.navigate(['/clases']);
     }
 
     gotoClasses() {

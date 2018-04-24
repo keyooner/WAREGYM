@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import {User} from '../login/login.service';
+import {User, LoginService} from '../login/login.service';
 import 'rxjs/Rx';
 
 

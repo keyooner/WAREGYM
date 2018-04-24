@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Class, ClassService } from './class.service';
+import { LoginService } from '../login/login.service';
 
 @Component({
     moduleId: module.id,
@@ -12,7 +13,9 @@ export class ClassDetailComponent {
 
     gclass: Class;
 
-    constructor(private router: Router, activatedRoute: ActivatedRoute, public service: ClassService) {
+    constructor(private router: Router, activatedRoute: ActivatedRoute,
+                public service: ClassService,
+                private loginService: LoginService) {
 
         const id = activatedRoute.snapshot.params['id'];
         service.getClass(id).subscribe(

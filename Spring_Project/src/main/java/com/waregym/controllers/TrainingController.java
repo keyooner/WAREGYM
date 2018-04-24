@@ -1,14 +1,11 @@
 package com.waregym.controllers;
 import com.waregym.classesJava.Training;
 import com.waregym.classesJava.User;
-import com.waregym.classesJava.Exercise;
 import com.waregym.services.UserService;
 import com.waregym.services.ActivityService;
 import com.waregym.services.ExerciseService;
 import com.waregym.services.TrainingService;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 

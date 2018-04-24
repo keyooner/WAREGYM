@@ -23,7 +23,7 @@ public class RestSecurityConfig extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/logIn").authenticated();
 		
 		// URLs that need authentication to access to it
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/clases").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/clases/").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/clases/{id}").hasRole("ADMIN");
 		
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/contactos").hasRole("ADMIN");
@@ -33,8 +33,8 @@ public class RestSecurityConfig extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/exercise/{id}").hasAnyRole("ADMIN","USER","TEACH");
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/exercises").hasAnyRole("ADMIN","USER","TEACH");
 		
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/productos").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/producto/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/productos/").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/productos/{id}").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/productos").hasRole("ADMIN");
 		
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/entrenamientos").hasAnyRole("ADMIN","USER","TEACH");

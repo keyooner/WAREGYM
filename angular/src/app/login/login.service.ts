@@ -9,7 +9,6 @@ export interface User {
     id?: number;
     name: string;
     roles: string[];
-    training:string;
 }
 
 @Injectable()
@@ -81,7 +80,6 @@ export class LoginService {
             response => {
                 this.isLogged = false;
                 this.isAdmin = false;
-                this.user.training="";
                 return response;
             }
         );

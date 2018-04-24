@@ -44,7 +44,6 @@ import { TrainingComponent } from './training/training.component';
 import { TrainingService } from './training/training.service';
 
 import { ProfileComponent } from './profile/profile.component';
-import { TrainingDetailComponent1 } from './training/training-detail(1).component';
 
 @NgModule({
   declarations: [
@@ -69,7 +68,6 @@ import { TrainingDetailComponent1 } from './training/training-detail(1).componen
     ClassFormComponent,
 
     TrainingComponent,
-    TrainingDetailComponent1,
     
     LoginComponent,
     RegistredComponent,

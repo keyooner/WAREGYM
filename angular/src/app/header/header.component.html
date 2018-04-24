@@ -63,10 +63,6 @@
                       <a [routerLink]="['/training']" title="">Entrenamientos</a>
                        <ul class="sub-menu">
                           <li><a [routerLink]="['/training']">Mi entrenamiento</a></li>
-                          <li *ngIf="loginService.user.training == '6'"><a [routerLink]="['training/detailedTraining']">Principiante</a></li>
-                          <li *ngIf="loginService.user.training == '7'"><a [routerLink]="['training/detailedTraining']">Avanzado</a></li>
-                          <li *ngIf="loginService.user.training == '8'"><a [routerLink]="['training/detailedTraining']">Medio</a></li>
-                          <li *ngIf="loginService.user.training == '9'"><a [routerLink]="['training/detailedTraining']">Experto</a></li>
                       </ul>
                   </li>
                   <li><a [routerLink]="['/waregym']" title="">Waregym</a></li>

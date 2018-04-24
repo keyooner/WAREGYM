@@ -81,7 +81,7 @@
                 </tbody>
             </table>
             <div class="class-inscription text-center">
-                <button *ngIf="loginService.isUser || loginService.isTeach" (click)="removeClass()">Borrar Clase</button>
+                <button *ngIf="loginService.isAdmin || loginService.isTeach" (click)="removeClass()">Borrar Clase</button>
                 <button (click)="gotoClasses()">Todas las Clases</button>
                 <button *ngIf="loginService.isUser || loginService.isTeach" (click)="inscriptionClass()">Inscribirme</button>
             </div>

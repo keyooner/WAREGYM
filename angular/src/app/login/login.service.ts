@@ -80,6 +80,7 @@ export class LoginService {
             response => {
                 this.isLogged = false;
                 this.isAdmin = false;
+                this.notLogged = true;
                 return response;
             }
         );

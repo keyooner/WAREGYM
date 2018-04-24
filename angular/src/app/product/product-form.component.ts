@@ -35,6 +35,10 @@ export class ProductFormComponent {
   }
 
   saveProduct() {
+    
+    //console.log(this.product.image);
+    let parse = this.product.image.split('\\');
+    this.product.image = parse[parse.length - 1];
     this.service.saveProduct(this.product).subscribe(
       product => { } ,
       error => console.error('Error creating new product: ' + error)

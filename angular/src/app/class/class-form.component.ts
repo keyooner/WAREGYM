@@ -25,7 +25,7 @@ export class ClassFormComponent {
       );
       this.newClass = false;
     } else {
-      this.gclass = { name: '', description: '', development: '', benefit: '', schedule: [['','',''],['','',''],['','',''],['','',''],['','','']], users: [] };
+      this.gclass = { name: '', image1: '', image2: '', image3: '', description: '', development: '', benefit: '', schedule: [['','',''],['','',''],['','',''],['','',''],['','','']], users: [] };
       this.newClass = true;
     }
   }
@@ -35,6 +35,9 @@ export class ClassFormComponent {
   }
 
   saveClass() {
+    //console.log(this.gclass.image1);
+    let parse = this.gclass.image1.split('\\');
+    this.gclass.image1 = parse[parse.length - 1];
     this.service.saveClass(this.gclass).subscribe(
       gclass => { },
       error => console.error('Error creating new class: ' + error)

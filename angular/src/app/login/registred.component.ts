@@ -48,11 +48,11 @@ export class RegistredComponent {
           error => console.error('Error al crear un nuevo usuario: ' + error)
         );
         window.confirm('Has insertado bien todos los datos?')
-        this.router.navigate(['/index']);
+        this.router.navigate(['/perfil']);
       }
     
       cancel() {
-        window.history.back();
+        this.router.navigate(['/login']);
       }
 }
 

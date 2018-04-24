@@ -23,6 +23,10 @@
                             <input [(ngModel)]="product.link" type="text" class="full-width" placeholder="Url" required/>
                     </div>
                     
+                    <div class="form-field">
+                        <input [(ngModel)]="product.image" type="file"/>
+                    </div>
+
                     <div class="text-center">
                         <button (click)="saveProduct()">Guardar</button>
                         <button (click)="cancel()">Cancelar</button>

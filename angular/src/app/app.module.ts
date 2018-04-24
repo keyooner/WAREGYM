@@ -40,8 +40,10 @@ import { ClassListComponent } from './class/class-list.component';
 import { ClassDetailComponent } from './class/class-detail.component';
 import { ClassFormComponent } from './class/class-form.component';
 import { ClassService } from './class/class.service';
+
 import { TrainingComponent } from './training/training.component';
 import { TrainingService } from './training/training.service';
+import { TrainingDetailComponent } from './training/training-detail.component';
 
 import { ProfileComponent } from './profile/profile.component';
 
@@ -68,6 +70,7 @@ import { ProfileComponent } from './profile/profile.component';
     ClassFormComponent,
 
     TrainingComponent,
+    TrainingDetailComponent,
     
     LoginComponent,
     RegistredComponent,

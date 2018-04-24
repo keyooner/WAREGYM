@@ -26,6 +26,7 @@ import { WaregymComponent } from './waregym/waregym.component';
 import { TrainingComponent } from './training/training.component';
 
 import { ProfileComponent } from './profile/profile.component';
+import { TrainingDetailComponent } from './training/training-detail.component';
 
 const appRoutes = [
   { path: 'index', component: IndexComponent, useAsDefault: true},
@@ -44,7 +45,8 @@ const appRoutes = [
   { path: 'producto/edit/:id', component: ProductEditComponent },
   { path: 'producto/:id', component: ProductDetailComponent },
 
-  { path: 'training', component: TrainingComponent },
+  { path: 'entrenamiento', component: TrainingComponent },
+  { path: 'entrenamiento/:id', component: TrainingDetailComponent },
 
   { path: 'clases', component: ClassListComponent },
   { path: 'clase/new', component: ClassFormComponent },

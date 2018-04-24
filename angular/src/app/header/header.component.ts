@@ -15,7 +15,7 @@ export class HeaderComponent {
     logOut() {
     this.loginService.logOut().subscribe(
       response => { this.router.navigate(['/login']), window.alert('Te has desconectado con éxito') },
-      error => console.log('Error when trying to log out: ' + error)
+      error => console.log('Error al intentar cerrar sesión: ' + error)
     );
   }
 }

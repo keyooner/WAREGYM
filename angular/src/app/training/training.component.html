@@ -10,7 +10,7 @@
         </div>
         <div align = "center">
             <form action="javascript:;" onsubmit="accion()">
-                <select [(ngModel)]="currentTraining" id="tipo" name="tipo" >
+                <select [(ngModel)]="logingService.user.training" id="tipo" name="tipo" >
                     <option value="6">Principiante</option>
                     <option value="7">Avanzado</option>
                     <option value="8">Medio</option>
@@ -23,7 +23,7 @@
         <br>
             <!-- INFO -->
 
-                <div *ngIf="currentTraining == '6'" id="beginner">
+                <div *ngIf="logingService.user.training == '6'" id="beginner">
                         <h2 style="text-align: center">INFORMACIÓN DEL ENTRENAMIENTO PRINCIPIANTE</h2>
                         <p class="lead" style="text-align: center">El entrenamiento elegido tendra los siguientes ejercicios...</p>
                     <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
@@ -84,7 +84,7 @@
 
                 <!-- Medium training info -->
                 
-                <div *ngIf="currentTraining == '7'" id="medium">
+                <div *ngIf="logingService.user.training == '7'" id="medium">
                         <h2 style="text-align: center">INFORMACIÓN DEL ENTRENAMIENTO AVANZADO</h2>
                         <p class="lead" style="text-align: center">El entrenamiento elegido tendra los siguientes ejercicios...</p>
                         <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
@@ -159,7 +159,7 @@
                     </div>
                     
                     
-                    <div *ngIf="currentTraining == '8'" id="advanced" >
+                    <div *ngIf="logingService.user.training == '8'" id="advanced" >
                             <h2 style="text-align: center">INFORMACIÓN DEL ENTRENAMIENTO MEDIO</h2>
                             <p class="lead" style="text-align: center">El entrenamiento elegido tendra los siguientes ejercicios...</p>
                         <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">
@@ -245,7 +245,7 @@
                     </div>
                     <!-- Expert info -->
                 
-                <div *ngIf=" currentTraining == '9'" id="expert" >
+                <div *ngIf=" logingService.user.training == '9'" id="expert" >
                         <h2 style="text-align: center">INFORMACIÓN DEL ENTRENAMIENTO EXPERTO</h2>
                         <p class="lead" style="text-align: center">El entrenamiento elegido tendra los siguientes ejercicios...</p>
                         <article class="masonry__brick entry format-standard aos-init aos-animate" style="width:50%">

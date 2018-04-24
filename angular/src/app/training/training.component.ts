@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TrainingService, Training, Exercise } from './training.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from '../login/login.service';
 
 @Component({
     moduleId: module.id,
@@ -19,7 +20,7 @@ export class TrainingComponent {
     e4principiante:Exercise;
     principianteExercise:Exercise[]
 
-    constructor(private service:TrainingService,activatedRoute: ActivatedRoute,private router:Router){
+    constructor(private service:TrainingService,activatedRoute: ActivatedRoute,private router:Router, public logingService:LoginService){
         this.currentTraining="principiante";
         this.e1principiante= {name:"flexiones",weigth:0,reps:10};
         this.e2principiante= {name:"press de banca",weigth:50,reps:5};

@@ -202,37 +202,37 @@
                 <form action="javascript:;" onsubmit="accion()">
        
                 <select id="tipo" name="tipo" onchange="showDiv(this)">
-                    <option value="/principiante">Principiante</option>
-                    <option value="/avanzado">Avanzado</option>
-                    <option value="/medio">Medio</option>
-                    <option value="/experto">Experto</option>
+                    <option value="/Principiante">Principiante</option>
+                    <option value="/Avanzado">Avanzado</option>
+                    <option value="/Medio">Medio</option>
+                    <option value="/Experto">Experto</option>
                  </select>       
                  <input type="submit" value ="Seleccionar"/>
                  </form>
                 <script>
                 function showDiv(select){
                 	switch (select.value) {
-                	case "/principiante":
+                	case "/Principiante":
                 		document.getElementById("beginner").style.display="block";
                 		document.getElementById('medium').style.display="none";
                 		document.getElementById('advanced').style.display="none";
                 		document.getElementById('expert').style.display="none";
                 		break;
-                    case "/medio":
+                    case "/Medio":
                 	    document.getElementById('beginner').style.display="none";
                 		document.getElementById('medium').style.display="block";
                 		document.getElementById('advanced').style.display="none";
                 		document.getElementById('expert').style.display="none";
                 		break;
                  
-                    case "/avanzado":
+                    case "/Avanzado":
                 		document.getElementById('beginner').style.display="none";
                 		document.getElementById('medium').style.display="none";
                 		document.getElementById('advanced').style.display="block";
                 		document.getElementById('expert').style.display="none";
                 	    break;
                 		
-                    case "/experto":
+                    case "/Experto":
                 		document.getElementById('beginner').style.display="none";
                 		document.getElementById('medium').style.display="none";
                 		document.getElementById('advanced').style.display="none";

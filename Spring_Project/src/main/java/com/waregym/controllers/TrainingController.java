@@ -32,7 +32,7 @@ public class TrainingController {
 	@Autowired
 	User user;
 	
-	@RequestMapping("/entrenamientos/avanzado")
+	@RequestMapping("/entrenamientos/Avanzado")
 	 public String avanzado(Model model, HttpServletRequest request) {
 		
 		model.addAttribute("activities", activityService.findAllActivities());
@@ -65,7 +65,7 @@ public class TrainingController {
 			}
 		}
 		
-		return "/entrenamientos/avanzado";
+		return "/entrenamientos/Avanzado";
 	 }
 	
 	@RequestMapping("/entrenamientos/entrenamiento")
@@ -102,7 +102,7 @@ public class TrainingController {
 		return "/entrenamientos/entrenamiento";
 	 }
 	
-	@RequestMapping("/entrenamientos/experto")
+	@RequestMapping("/entrenamientos/Experto")
 	 public String experto(Model model, HttpServletRequest request) {
 		
 		model.addAttribute("activities", activityService.findAllActivities());
@@ -139,10 +139,10 @@ public class TrainingController {
 		}
 	  		
 	  		
-		return "/entrenamientos/experto";
+		return "/entrenamientos/Experto";
 	 }
 	
-	@RequestMapping("/entrenamientos/medio")
+	@RequestMapping("/entrenamientos/Medio")
 	 public String medio(Model model, HttpServletRequest request) {
 		
 		model.addAttribute("activities", activityService.findAllActivities());
@@ -179,10 +179,10 @@ public class TrainingController {
 		}
  
 	  		
-		return "/entrenamientos/medio";
+		return "/entrenamientos/Medio";
 	 }
 	
-	@RequestMapping("/entrenamientos/principiante")
+	@RequestMapping("/entrenamientos/Principiante")
 	 public String principiante(Model model, HttpServletRequest request) {
 		
 		model.addAttribute("activities", activityService.findAllActivities());
@@ -216,7 +216,7 @@ public class TrainingController {
 			model.addAttribute("training", "");
 			model.addAttribute("ifTraining", false);
 		}
-		return "/entrenamientos/principiante";
+		return "/entrenamientos/Principiante";
 	 }
 	
 }

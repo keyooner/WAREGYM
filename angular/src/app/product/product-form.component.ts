@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Product, ProductService } from './product.service';
+import { LoginService } from '../login/login.service';
 
 @Component({
   moduleId: module.id,
@@ -15,7 +16,8 @@ export class ProductFormComponent {
   constructor(
     private router: Router,
     activatedRoute: ActivatedRoute,
-    private service: ProductService) {
+    private service: ProductService,
+    public loginService: LoginService) {
 
     const id = activatedRoute.snapshot.params['id'];
     if (id) {
@@ -30,13 +32,20 @@ export class ProductFormComponent {
     }
   }
 
+  ngOnInit() {
+    if (!this.loginService.isAdmin) {
+      this.router.navigate((['/login'])),
+      window.alert('No tienes permisos, por favor inicia sesión');
+    }
+  }
+
   cancel() {
     window.history.back();
   }
 
   saveProduct() {
     
-    //console.log(this.product.image);
+//  console.log(this.product.image);
     let parse = this.product.image.split('\\');
     this.product.image = parse[parse.length - 1];
     this.service.saveProduct(this.product).subscribe(

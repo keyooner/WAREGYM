@@ -12,7 +12,7 @@ export class ProfileComponent {
 
     constructor (public loginService: LoginService, private router: Router) {}
 
-    gotoAddClass() {
+  gotoAddClass() {
       this.router.navigate(['/clase/new']);
   }
 

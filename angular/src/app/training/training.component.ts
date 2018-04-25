@@ -61,7 +61,8 @@ export class TrainingComponent {
             training => { } ,
             error => console.error('Error creating new training: ' + error)
         );
-        window.confirm('¿Añadir el entrenamiento?')
-        this.router.navigate(['/entrenamiento/']);
+        window.confirm('¿Añadir el entrenamiento?'),
+        this.router.navigate(['/entrenamiento/']),
+        window.alert('Entrenamiento añadido con éxito');
       }
 }

@@ -25,7 +25,6 @@ export class ClassListComponent implements OnInit {
     );
     //this.booleans[0]=true;
     //this.oo='aaa';
-    
   }
 
   newClass() {

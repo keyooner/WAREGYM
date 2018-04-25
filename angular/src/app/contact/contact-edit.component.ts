@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Contact, ContactService } from './contact.service';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
+import { LoginService } from '../login/login.service';
 
 @Component({
   moduleId: module.id,
@@ -21,7 +22,8 @@ export class ContactEditComponent {
   constructor(
     private router: Router,
     activatedRoute: ActivatedRoute,
-    private service: ContactService) {
+    private service: ContactService,
+    public loginService: LoginService) {
 
     const id = activatedRoute.snapshot.params['id'];
     if (id) {
@@ -33,6 +35,13 @@ export class ContactEditComponent {
     } else {
       this.contact = { name: '',email: '', message: '' };
       this.newContact = true;
+    }
+  }
+
+  ngOnInit() {
+    if (!this.loginService.isAdmin) {
+      this.router.navigate((['/login'])),
+      window.alert('No tienes permisos, por favor inicia sesión');
     }
   }
 

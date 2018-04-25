@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Class, ClassService } from './class.service';
+import { LoginService } from '../login/login.service';
 
 @Component({
   moduleId: module.id,
@@ -15,7 +16,8 @@ export class ClassFormComponent {
   constructor(
     private router: Router,
     activatedRoute: ActivatedRoute,
-    private service: ClassService) {
+    private service: ClassService,
+    public loginService: LoginService) {
 
     const id = activatedRoute.snapshot.params['id'];
     if (id) {
@@ -27,6 +29,13 @@ export class ClassFormComponent {
     } else {
       this.gclass = { name: '', image1: '', image2: '', image3: '', description: '', development: '', benefit: '', schedule: [['','',''],['','',''],['','',''],['','',''],['','','']], users: [] };
       this.newClass = true;
+    }
+  }
+
+  ngOnInit() {
+    if (!this.loginService.isAdmin) {
+      this.router.navigate((['/login'])),
+      window.alert('No tienes permisos, por favor inicia sesión');
     }
   }
 

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Product, ProductService } from './product.service';
 import { ProductFormComponent } from './product-form.component';
+import { LoginService } from '../login/login.service';
 
 @Component({
     moduleId: module.id,
@@ -18,7 +19,8 @@ import { ProductFormComponent } from './product-form.component';
   constructor(
     private router: Router,
     activatedRoute: ActivatedRoute,
-    private service: ProductService) {
+    private service: ProductService,
+    public loginService: LoginService) {
 
     const id = activatedRoute.snapshot.params['id'];
     if (id) {
@@ -30,6 +32,13 @@ import { ProductFormComponent } from './product-form.component';
     } else {
       this.product = { type: '', name: '', link: '' };
       this.newProduct = true;
+    }
+  }
+
+  ngOnInit() {
+    if (!this.loginService.isAdmin) {
+      this.router.navigate((['/login'])),
+      window.alert('No tienes permisos, por favor inicia sesión');
     }
   }
 

@@ -4,7 +4,7 @@ services:
     container_name: mysql
     image: mysql:5.6.26
     volumes:
-      - ./app/db:/var/lib/mysql
+            - "./data/db/mysql:/var/lib/mysql"
     environment:
        - MYSQL_ROOT_PASSWORD=pass
        - MYSQL_DATABASE=waregym
@@ -22,14 +22,28 @@ services:
   app:
     container_name: waregym 
     image: waregym:dev
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    links:
+      - mysql:mysql
+    logging:
+      driver: json-file
+
+  api:
+    container_name: api 
+    image: hervas/demo:latest
     volumes:
       - ./app/data:/app/uploaded
     depends_on:
       mysql:
         condition: service_healthy
     ports:
-      - "80:80"
-    environment:
+      - "8081:8081"
+    environment:   
+    ##      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/waregym
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=pass
       - SPRING_JPA_HIBERNATE_DDL-AUTO=create

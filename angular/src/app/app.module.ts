@@ -43,7 +43,7 @@ import { ClassService } from './class/class.service';
 
 import { TrainingComponent } from './training/training.component';
 import { TrainingService } from './training/training.service';
-import { TrainingDetailComponent } from './training/training-detail.component';
+//import { TrainingDetailComponent } from './training/training-detail.component';
 
 import { ProfileComponent } from './profile/profile.component';
 
@@ -54,8 +54,8 @@ import { ProfileComponent } from './profile/profile.component';
     HeaderComponent,
     FooterComponent,
 
-    ContactDetailComponent, 
-    ContactListComponent, 
+    ContactDetailComponent,
+    ContactListComponent,
     ContactFormComponent,
     ContactConfirmationComponent,
     ContactEditComponent,
@@ -70,8 +70,8 @@ import { ProfileComponent } from './profile/profile.component';
     ClassFormComponent,
 
     TrainingComponent,
-    TrainingDetailComponent,
-    
+    // TrainingDetailComponent,
+
     LoginComponent,
     RegistredComponent,
 
@@ -82,8 +82,8 @@ import { ProfileComponent } from './profile/profile.component';
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    FormsModule, 
-    HttpModule, 
+    FormsModule,
+    HttpModule,
     JsonpModule,
     CommonModule,
     routing,

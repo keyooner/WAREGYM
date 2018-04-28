@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { User, RegistredService } from './registred.service';
+import { User, RegistredService } from './registred.service';7
+import { LoginService } from './login.service';
 
 @Component({
     moduleId: module.id,
@@ -17,8 +18,11 @@ export class RegistredComponent {
     constructor(
         private router: Router,
         activatedRoute: ActivatedRoute,
-        private service: RegistredService) {
-            const id = activatedRoute.snapshot.params['id'];
+        private service: RegistredService,
+        public loginService: LoginService) {
+
+        const id = activatedRoute.snapshot.params['id'];
+    
     if (id) {
       service.getUser(id).subscribe(
         product => this.user = product,

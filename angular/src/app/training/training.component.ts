@@ -23,7 +23,7 @@ export class TrainingComponent {
     constructor(private service:TrainingService, 
                 activatedRoute: ActivatedRoute, 
                 private router:Router, 
-                private loginService: LoginService){
+                public loginService: LoginService){
 
         this.currentTraining="principiante";
         this.e1principiante= {name:"flexiones",weigth:0,reps:10};

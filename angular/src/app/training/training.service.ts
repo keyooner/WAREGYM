@@ -2,7 +2,13 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
-import { LoginService } from '../login/login.service';
+import { User, LoginService } from '../login/login.service';
+
+export interface User {
+    id?: number;
+    name: string;
+    roles: string[];
+}
 
 export interface Exercise{
     id?:number;
@@ -23,14 +29,14 @@ export class TrainingService {
     constructor(private http:Http, private loginService: LoginService) {}
     abdPrincipiante:number;
     
-    getTrainings(page: number) {
-        return this.http.get(URL + "?page=" + page, { withCredentials: true })
+    getTrainings() {
+        return this.http.get(URL, { withCredentials: true })
           .map(response => response.json())
           .catch(error => this.handleError(error));
     }
 
-    getTraining(id: number | string) {
-        return this.http.get(URL + id, { withCredentials: true })
+    getTraining(id) {
+        return this.http.get(URL + this.loginService.user.name, { withCredentials: true })
           .map(response => response.json())
           .catch(error => this.handleError(error));
     }

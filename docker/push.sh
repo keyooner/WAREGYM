@@ -1,2 +1,2 @@
 docker login
-docker push hervas/demo:latest
+docker push hervas/waregym:latest

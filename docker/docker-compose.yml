@@ -12,13 +12,12 @@ services:
        MYSQL_PASSWORD: pass
     
   spring:
-    #image: waregym:final
-    image: contruco/prueba:latest
+    image: hervas/waregym:latest
     restart: always
     depends_on:
       - db
     ports:
-      - 8443:8443
+      - 8080:8443
     environment:
       ## - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/pott
       - SPRING_DATASOURCE_USERNAME=root

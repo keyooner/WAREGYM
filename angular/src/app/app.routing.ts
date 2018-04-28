@@ -23,10 +23,11 @@ import { ClassDetailComponent } from './class/class-detail.component';
 import { ClassFormComponent } from './class/class-form.component';
 
 import { WaregymComponent } from './waregym/waregym.component';
+
 import { TrainingComponent } from './training/training.component';
+import { TrainingDetailComponent } from './training/training-detail.component';
 
 import { ProfileComponent } from './profile/profile.component';
-//import { TrainingDetailComponent } from './training/training-detail.component';
 
 const appRoutes = [
   { path: 'index', component: IndexComponent, useAsDefault: true},
@@ -46,7 +47,7 @@ const appRoutes = [
   { path: 'producto/:id', component: ProductDetailComponent },
 
   { path: 'entrenamiento', component: TrainingComponent },
-  //{ path: 'entrenamiento/:id', component: TrainingDetailComponent },
+  { path: 'entrenamiento/personal', component: TrainingDetailComponent },
 
   { path: 'clases', component: ClassListComponent },
   { path: 'clase/new', component: ClassFormComponent },

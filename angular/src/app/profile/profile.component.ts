@@ -25,7 +25,7 @@ export class ProfileComponent {
   }
 
   gotoMyTraining() {
-
+      this.router.navigate(['/entrenamiento/personal']);
   }
 
   gotoViewClass() {

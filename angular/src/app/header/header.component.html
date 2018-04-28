@@ -62,7 +62,8 @@
                   <li class="has-children">
                       <a [routerLink]="['/entrenamiento']" title="">Entrenamientos</a>
                        <ul class="sub-menu">
-                          <li><a [routerLink]="['/entrenamiento']">Mi entrenamiento</a></li>
+                          <li><a [routerLink]="['/entrenamiento']">Entrenamientos Disponibles</a></li>
+                          <li><a *ngIf="loginService.isLogged" [routerLink]="['/entrenamiento/personal']">Mi Entrenamiento</a></li>
                       </ul>
                   </li>
                   <li><a [routerLink]="['/waregym']" title="">Waregym</a></li>

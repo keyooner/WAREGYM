@@ -14,26 +14,17 @@ export class TrainingComponent {
     currentTraining:string;
     page = 0;
     training:Training;
-    e1principiante:Exercise;
-    e2principiante:Exercise;
-    e3principiante:Exercise;
-    e4principiante:Exercise;
-    principianteExercise:Exercise[]
 
     constructor(private service:TrainingService, 
                 activatedRoute: ActivatedRoute, 
                 private router:Router, 
                 public loginService: LoginService){
 
-        this.currentTraining="principiante";
-        this.e1principiante= {name:"flexiones",weigth:0,reps:10};
-        this.e2principiante= {name:"press de banca",weigth:50,reps:5};
-        this.e3principiante= {name:"abdominales",weigth:0,reps:15};
-        this.principianteExercise= [this.e1principiante,this.e2principiante,this.e3principiante];
+        this.currentTraining="";
 
         const id = activatedRoute.snapshot.params['id'];
         if (id) {
-        service.getTraining(id).subscribe(
+        service.getTraining().subscribe(
             training => this.training = training,
             error => console.error(error)
         );
@@ -56,7 +47,7 @@ export class TrainingComponent {
     }
     
     saveTraining() {
-        console.log(this.currentTraining);
+        
         this.service.saveTraining(this.training, this.currentTraining).subscribe(
             training => { } ,
             error => console.error('Error creating new training: ' + error)
@@ -64,5 +55,8 @@ export class TrainingComponent {
         window.confirm('¿Añadir el entrenamiento?'),
         this.router.navigate(['/entrenamiento/']),
         window.alert('Entrenamiento añadido con éxito');
+        this.service.getCurrentTraining().subscribe(
+            response => {this.training = response, this.router.navigate(['entrenamiento/personal'])}
+        )
       }
 }

@@ -29,7 +29,12 @@ import { TrainingDetailComponent } from './training/training-detail.component';
 
 import { ProfileComponent } from './profile/profile.component';
 
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+
 const appRoutes = [
+
+  {path: 'not-found', component: PageNotFoundComponent},
+
   { path: 'index', component: IndexComponent, useAsDefault: true},
   { path: 'login', component: LoginComponent},
   { path: 'registro', component: RegistredComponent },
@@ -56,6 +61,8 @@ const appRoutes = [
   { path: 'waregym', component: WaregymComponent },
 
   { path: '', redirectTo: 'index', pathMatch: 'full' },
+
+  {path: '**', redirectTo: 'not-found'}
 ]
 
 export const routing = RouterModule.forRoot(appRoutes);

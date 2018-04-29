@@ -46,6 +46,7 @@ import { TrainingService } from './training/training.service';
 import { TrainingDetailComponent } from './training/training-detail.component';
 
 import { ProfileComponent } from './profile/profile.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 
 @NgModule({
   declarations: [
@@ -77,7 +78,9 @@ import { ProfileComponent } from './profile/profile.component';
 
     WaregymComponent,
 
-    ProfileComponent
+    ProfileComponent,
+
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

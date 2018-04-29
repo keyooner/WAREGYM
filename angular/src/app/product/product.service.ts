@@ -12,7 +12,7 @@ export interface Product {
   image?: string;
 }
 
-const URL = 'https://localhost:8080/api/productos/';
+const URL = 'https://localhost:8443/api/productos/';
 @Injectable()
 export class ProductService {
 

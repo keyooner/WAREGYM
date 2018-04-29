@@ -17,7 +17,7 @@ export interface Training{
     exercises:Exercise[];
 }
 
-const URL = 'https://localhost:8080/api/entrenamientos/';
+const URL = 'https://localhost:8443/api/entrenamientos/';
 @Injectable()
 export class TrainingService {
     constructor(private http:Http, private loginService: LoginService) {}

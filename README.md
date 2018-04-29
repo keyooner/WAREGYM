@@ -119,4 +119,6 @@ execute the build.sh script in /docker. You can check out the contents of the sc
 ### Angular class diagram:
 ![It shows the Angular class diagram](https://github.com/keyooner/WAREGYM/blob/master/Images_readme/angular_class_diagram.png "Angular Class Diagrama")
 
+### WAREGYM video:
+https://www.youtube.com/watch?v=YBF5XKPXju4&t=8s
 

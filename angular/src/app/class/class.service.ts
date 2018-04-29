@@ -18,7 +18,7 @@ export interface Class {
   users: User[];
 }
 
-const URL = 'https://localhost:8443/api/clases/';
+const URL = 'https://localhost:8080/api/clases/';
 @Injectable()
 export class ClassService {
 

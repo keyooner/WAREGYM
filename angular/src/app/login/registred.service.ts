@@ -12,7 +12,7 @@ export interface User {
   roles: [string];
   }
 
-const URL = 'https://localhost:8443/api/users/';
+const URL = 'https://localhost:8080/api/users/';
 @Injectable()
 export class RegistredService {
     

@@ -11,7 +11,7 @@ export interface Contact {
     message: string;
   }
 
-  const URL = 'https://localhost:8443/api/contactos/';
+  const URL = 'https://localhost:8080/api/contactos/';
 @Injectable()
 export class ContactService {
 

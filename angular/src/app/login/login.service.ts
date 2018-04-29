@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/Rx';
 
-const URL = 'https://localhost:8443/api';
+const URL = 'https://localhost:8080/api';
 
 export interface User {
     id?: number;

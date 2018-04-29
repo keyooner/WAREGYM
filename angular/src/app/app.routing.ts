@@ -35,7 +35,7 @@ const appRoutes = [
 
   {path: 'not-found', component: PageNotFoundComponent},
 
-  { path: 'index', component: IndexComponent, useAsDefault: true},
+  { path: 'index.html', component: IndexComponent, useAsDefault: true},
   { path: 'login', component: LoginComponent},
   { path: 'registro', component: RegistredComponent },
   { path: 'perfil', component: ProfileComponent },
@@ -60,7 +60,7 @@ const appRoutes = [
 
   { path: 'waregym', component: WaregymComponent },
 
-  { path: '', redirectTo: 'index', pathMatch: 'full' },
+  { path: '', redirectTo: 'index.html', pathMatch: 'full' },
 
   {path: '**', redirectTo: 'not-found'}
 ]

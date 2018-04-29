@@ -65,7 +65,7 @@ public class TrainingController {
 			}
 		}
 		
-		return "/entrenamientos/Avanzado";
+		return "entrenamientos/Avanzado";
 	 }
 	
 	@RequestMapping("/entrenamientos/entrenamiento")
@@ -99,7 +99,7 @@ public class TrainingController {
 			model.addAttribute("ifTraining", false);
 		}
     	
-		return "/entrenamientos/entrenamiento";
+		return "entrenamientos/entrenamiento";
 	 }
 	
 	@RequestMapping("/entrenamientos/Experto")
@@ -139,7 +139,7 @@ public class TrainingController {
 		}
 	  		
 	  		
-		return "/entrenamientos/Experto";
+		return "entrenamientos/Experto";
 	 }
 	
 	@RequestMapping("/entrenamientos/Medio")
@@ -179,7 +179,7 @@ public class TrainingController {
 		}
  
 	  		
-		return "/entrenamientos/Medio";
+		return "entrenamientos/Medio";
 	 }
 	
 	@RequestMapping("/entrenamientos/Principiante")
@@ -216,7 +216,7 @@ public class TrainingController {
 			model.addAttribute("training", "");
 			model.addAttribute("ifTraining", false);
 		}
-		return "/entrenamientos/Principiante";
+		return "entrenamientos/Principiante";
 	 }
 	
 }

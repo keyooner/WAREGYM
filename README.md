@@ -107,13 +107,8 @@ We have to create a JPA entity, making a relationship with a relational database
 - Create request in postman with login or without login (GET PUT POST DELETE)
 
 ### Development instructions for docker:
-You will need:
- - maven
- - docker
- - a recent docker-compose version (2.3+ version needs to be supported)*
- - git
-Clone this repo and follow the instructions below.
-*You might need to run docker-compose as root in some OSs, namely Ubuntu, because the user's docker-compose version is very outdated.
+You only need a recent docker and docker-compose (3.3 version of docker-compose needs to be supported) and the files of the /docker folder.
+The dockerfile automatically downloads updated containers for all the project's dependencies (including a clone of this very repository's master branch!).
 
 ### Docker-compose instructions:
 execute docker-compose up in the /docker folder
